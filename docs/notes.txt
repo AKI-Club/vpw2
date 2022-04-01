@@ -1,0 +1,13 @@
+various notes
+=============
+VPW2's boot code differs from 2.0K's /usr/lib/PR/Boot by one byte.
+(at least within the first 0x400 bytes)
+
+Objects linked into the main segment:
+- main code
+- libultra stuff
+- lib/PR/rspboot.o
+- lib/PR/n_aspMain.o
+- lib/PR/gspF3DEX2.xbus.o
+- lib/PR/gspF3DLX2.Rej.xbus.o
+anything else?

@@ -1,0 +1,35 @@
+Notes on the Filetable
+======================
+
+Extracting Filetable Data
+-------------------------
+(todo; this probably involves the filetable index, though it can cause issues with
+WWF No Mercy...)
+
+ge project's extract script is using:
+offset,size,name,compressed,extract
+
+where...
+offset is the offset into the z64 rom for this file.
+size is the size of the file.
+name is the path of the extracted file.
+compressed is 0 for false or 1 for true.
+extract is 0 for don't extract or 1 for extract.
+
+Building the Filetable
+----------------------
+Game code references file table indices in the code.
+A tool needs to be created to handle this. The preferred way would be to have
+said tool generate a header file consisting of #defines of file IDs.
+
+The tool would take a file with entries like this:
+identifier,filepath,compressed,exportfilesize
+
+where...
+identifier is the define name to be put in the header.
+filepath is the path to the file to include.
+compressed is either 0 for false or 1 for true. data is compressed with LZSS.
+exportfilesize is either 0 for false or 1 for true. xxx: what does the game expect, compressed or uncompressed size?
+
+The generated header file will use "FILEID_identifier" as the symbol format.
+If a filesize export is requested, the symbol would be "FILESIZE_identifier".

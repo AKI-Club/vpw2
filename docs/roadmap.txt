@@ -1,0 +1,89 @@
+The Roadmap, a.k.a. "shit that needs to get done"
+=================================================
+This might not be complete. You have been warned.
+
+--------------------------------------------------------------------------------
+
+* things kholdfuzion told me about
+- extract filetable contents
+- look into n64split subfolders hack
+- try to find all splits before fucking with it
+- linker sections (part of the splits thing but also the overlays)
+- object files with obviously shared code (part of the splits thing)
+
+--------------------------------------------------------------------------------
+
+* fix up address references in code
+e.g. we're given something like
+/* 133AFC 8013944C 3C018015 */  lui   $at, 0x8015
+/* 133B00 80139450 D4207828 */  ldc1  $f0, 0x7828($at)
+
+and it really needs to be
+/* 133AFC 8013944C 3C018015 */  lui   $at, %hi(0x80157828)
+/* 133B00 80139450 D4207828 */  ldc1  $f0, %lo(0x80157828)($at)
+
+This needs to be done to allow for a shiftable disassembly.
+Of course, you'd replace hardcoded addresses with labels, but to figure out
+where those labels are, you need to take this step first.
+
+This task is largely done, but there may be a few stray addresses hanging out.
+
+--------------------------------------------------------------------------------
+
+* figure out what's what in the data portions of each segment (main, seg000-003)
+All of the data referenced in the code needs to be split out to files so they
+can be edited by enterprising hackers.
+
+--------------------------------------------------------------------------------
+
+* figure out what's what in the bss portions of each segment (main, seg000-003)
+The BSS stuff being things that aren't initialized but used later. This includes
+important things like the Player Map in the gameplay segment.
+
+As of March 2022, most of the BSS addresses have been labeled.
+Not all of them have been identified.
+
+--------------------------------------------------------------------------------
+
+* extract files from the filetable so the filetable can be rebuilt
+Part of this requires a LZSS encoder/decoder, which has been made.
+
+--------------------------------------------------------------------------------
+
+* create filetable builder
+Since the game code references specific file IDs, this tool would need to spit
+out a header file with identifiers that can be used in the code. Sometimes,
+file sizes are also hardcoded; the build tool will need to figure this out.
+
+--------------------------------------------------------------------------------
+
+* figure out what to do about the soundtable binaries
+In theory, you could rebuild them. In practice, idk if anyone has created decent
+replacements for the N64 Sound Tools.
+
+--------------------------------------------------------------------------------
+
+* split out the libultra code and other things typically provided by the N64 SDK
+e.g. microcode for boot, f3dex2, etc.
+
+--------------------------------------------------------------------------------
+
+* splitting everything else out
+This is the worst part, as the file boundaries aren't always obvious.
+
+--------------------------------------------------------------------------------
+
+* makefile bullshit
+yeah I am not really looking forward to doing this
+
+--------------------------------------------------------------------------------
+
+* __BUGFIXES symbol or something similar
+There are some bugs I'd like to fix in the game, but obviously, that'd make it
+a non-matching version.
+
+A few things to fix:
+- "&207 Lock" (requires editing an AkiText archive)
+- Battle Royal Shootfighter Elimination outside the ring (fixed by WldFb)
+- Event mode attendance bug (found by Melonbread)
+- Game softlocks on exiting a match with a manager/second under player control (todo: re-confirm)
