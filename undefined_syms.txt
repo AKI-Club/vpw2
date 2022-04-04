@@ -108,15 +108,6 @@ func_8400193C = 0x8400193C;
 func_84001BE4 = 0x84001BE4;
 func_84001BB0 = 0x84001BB0;
 
-/* ----- [seg002 data referenced in seg000] ----- */
-D_8016F5AC = 0x8016F5AC;
-D_8016F6F4 = 0x8016F6F4;
-D_80176628 = 0x80176628;
-D_80176630 = 0x80176630;
-D_8017838A = 0x8017838A;
-D_8017873C = 0x8017873C;
-D_80179060 = 0x80179060;
-
 /* ----- [??? I am unsure of how this memory gets initialized/used] ----- */
 D_8012E8C0 = 0x8012E8C0;
 D_8012E8C2 = 0x8012E8C2;

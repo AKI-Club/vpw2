@@ -29707,16 +29707,16 @@ func_800FD8F4:
 /* 062D7C 800FD92C 00151880 */  sll   $v1, $s5, 2
 /* 062D80 800FD930 00751821 */  addu  $v1, $v1, $s5
 /* 062D84 800FD934 00031840 */  sll   $v1, $v1, 1
-/* 062D88 800FD938 3C048017 */  lui   $a0, %hi(D_8016F6F4) # $a0, 0x8017
-/* 062D8C 800FD93C 2484F6F4 */  addiu $a0, %lo(D_8016F6F4) # addiu $a0, $a0, -0x90c
+/* 062D88 800FD938 3C048017 */  lui   $a0, %hi(tbl2_8016F6F4) # $a0, 0x8017
+/* 062D8C 800FD93C 2484F6F4 */  addiu $a0, %lo(tbl2_8016F6F4) # addiu $a0, $a0, -0x90c
 /* 062D90 800FD940 00641821 */  addu  $v1, $v1, $a0
 /* 062D94 800FD944 AFA3001C */  sw    $v1, 0x1c($sp)
 /* 062D98 800FD948 94630002 */  lhu   $v1, 2($v1)
 /* 062D9C 800FD94C 2417FFFF */  li    $s7, -1
 /* 062DA0 800FD950 0000A021 */  addu  $s4, $zero, $zero
 /* 062DA4 800FD954 8FA6001C */  lw    $a2, 0x1c($sp)
-/* 062DA8 800FD958 3C048017 */  lui   $a0, %hi(D_8016F5AC) # $a0, 0x8017
-/* 062DAC 800FD95C 2484F5AC */  addiu $a0, %lo(D_8016F5AC) # addiu $a0, $a0, -0xa54
+/* 062DA8 800FD958 3C048017 */  lui   $a0, %hi(tbl2_8016F5AC) # $a0, 0x8017
+/* 062DAC 800FD95C 2484F5AC */  addiu $a0, %lo(tbl2_8016F5AC) # addiu $a0, $a0, -0xa54
 /* 062DB0 800FD960 0040F021 */  addu  $fp, $v0, $zero
 /* 062DB4 800FD964 80C50004 */  lb    $a1, 4($a2)
 /* 062DB8 800FD968 000318C0 */  sll   $v1, $v1, 3
