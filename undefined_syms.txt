@@ -86,11 +86,6 @@ osRomBase = 0x80000308;
 osResetType = 0x8000030C;
 osAppNMIBuffer = 0x8000031C;
 
-/* not sure if these are rom locations or just constants */
-D_00105630 = 0x00105630;
-D_00105668 = 0x00105668;
-D_00105698 = 0x00105698;
-
 /* ----- [main ???] ----- */
 /* "fake" entries from rsp code areas */
 func_84001008 = 0x84001008;
