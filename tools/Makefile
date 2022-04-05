@@ -1,4 +1,5 @@
 # tools makefile
+CFLAGS := -Wall -s
 
 BUILD_PROGRAMS := aki_lzss extract_filetable
 aki_lzss_SOURCES := aki_lzss.c
