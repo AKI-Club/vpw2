@@ -87,7 +87,7 @@ osResetType = 0x8000030C;
 osAppNMIBuffer = 0x8000031C;
 
 /* ----- [main ???] ----- */
-/* "fake" entries from rsp code areas */
+/* entries from rsp code areas */
 func_84001008 = 0x84001008;
 func_8400103C = 0x8400103C;
 func_84001064 = 0x84001064;
