@@ -1,3 +1,5 @@
 /*.z64
 /build/*
 /bin/*
+/tools/aki_lzss
+/tools/extract_filetable
