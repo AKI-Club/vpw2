@@ -19,7 +19,17 @@ LD_SCRIPT := $(TARGET).ld
 # Code directories
 SRC_DIRS := src src/menu1 src/cutscene src/menu2 src/game
 ASM_DIRS := asm
-BIN_DIRS := bin bin/soundtable
+
+# Binary Directories
+MAIN_BIN_DIR := bin
+
+SOUNDTABLE_BINDIR := $(MAIN_BIN_DIR)/soundtable
+FILETABLE_BINDIR  := $(MAIN_BIN_DIR)/filetable
+
+BIN_DIRS := $(MAIN_BIN_DIR) $(SOUNDTABLE_BINDIR) $(FILETABLE_BINDIR)
+
+# Asset Directories
+ASSET_DIR := assets
 
 # todo: these should be 1) available 2) determined by filename (see mario party makefile)
 # header, boot
@@ -58,7 +68,15 @@ TOOLS_DIR = tools
 N64CKSUM = $(TOOLS_DIR)/n64cksum
 ASM_PREPROC := python3 $(TOOLS_DIR)/asmpreproc/asm-processor.py
 
+# repo-specific tools
+AKI_LZSS = $(TOOLS_DIR)/aki_lzss
+EXTRACT_FILETABLE = $(TOOLS_DIR)/extract_filetable
+
 FixPath = $(subst /,\,$1)
+
+################### Filetable-related ########################
+FILETABLE_INDEX := $(MAIN_BIN_DIR)/filetable.idx
+FILETABLE_DATA  := $(MAIN_BIN_DIR)/filedata.bin
 
 ######################## Targets #############################
 
@@ -67,9 +85,27 @@ default: all
 all: $(OUT_ROM)
 
 clean:
+	make -C $(TOOLS_DIR) clean
 	rm -rf $(BUILD_DIR)
 	rm -f $(OUT_ROM)
 
+#------------------------------------------------------------#
+setup: tools extractbins extractft
+
+tools:
+	make -C $(TOOLS_DIR)
+
+extractbins:
+	./extract_baserom.sh
+
+extractft:
+	if [ ! -d $(FILETABLE_BINDIR) ]; then \
+		mkdir $(FILETABLE_BINDIR); \
+	fi
+
+	$(EXTRACT_FILETABLE) $(FILETABLE_INDEX) $(FILETABLE_DATA) $(FILETABLE_BINDIR)
+
+#------------------------------------------------------------#
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR)
 
@@ -102,5 +138,5 @@ $(BUILD_DIR)/$(TARGET).hex: $(OUT_ROM)
 $(BUILD_DIR)/$(TARGET).objdump: $(OUT_ELF)
 	$(OBJDUMP) -D $< > $@
 
-.PHONY: all clean default diff
+.PHONY: all clean default diff setup tools extractbins extractft
 
