@@ -85,8 +85,13 @@ default: all
 all: $(OUT_ROM)
 
 clean:
+	rm -rf $(BUILD_DIR)
+	rm -f $(OUT_ROM)
+
+distclean:
 	make -C $(TOOLS_DIR) clean
 	rm -rf $(BUILD_DIR)
+	rm -rf $(MAIN_BIN_DIR)
 	rm -f $(OUT_ROM)
 
 #------------------------------------------------------------#
