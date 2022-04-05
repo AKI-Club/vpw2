@@ -44,13 +44,6 @@ echo "[extract_baserom] bin/base_dl.bin"
 dd if=$BASEROM of=./bin/base_dl.bin skip="$((0x4BEA0))" count=160 iflag=count_bytes,skip_bytes status=none
 
 #------------------------------------------------------------------------------#
-# [segment data portions] (temporary)
-
-# 0x0D5840: seg002 ("seg2_data.bin") 47456 bytes
-echo "[extract_baserom] bin/seg2_data.bin"
-dd if=$BASEROM of=./bin/seg2_data.bin skip="$((0xD5840))" count=47456 iflag=count_bytes,skip_bytes status=none
-
-#------------------------------------------------------------------------------#
 # [filetable initial extract]
 # 0x152DF0: filetable data (18604368 bytes)
 echo "[extract_baserom] bin/filedata.bin (just under 18 megabytes; this will take a moment...)"
