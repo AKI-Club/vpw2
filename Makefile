@@ -56,7 +56,7 @@ SHA1SUM = sha1sum
 # N64 tools
 TOOLS_DIR = tools
 N64CKSUM = $(TOOLS_DIR)/n64cksum
-ASM_PREPROC := python3 tools/asmpreproc/asm-processor.py
+ASM_PREPROC := python3 $(TOOLS_DIR)/asmpreproc/asm-processor.py
 
 FixPath = $(subst /,\,$1)
 
