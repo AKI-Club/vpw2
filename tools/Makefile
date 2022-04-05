@@ -12,7 +12,7 @@ default: all
 all: $(BUILD_PROGRAMS)
 
 clean:
-	rm $(BUILD_PROGRAMS)
+	rm -f $(BUILD_PROGRAMS)
 
 define COMPILE
 $(1): $($1_SOURCES)
