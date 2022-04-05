@@ -1,8 +1,15 @@
-/* aki_lzss - LZSS encoder and decoder for AKI Corporation's N64 wrestling games */
+/* aki_lzss - LZSS encoder and decoder for AKI Corporation's N64 wrestling games
+ * written by freem; original source https://github.com/freem/aki_lzss/
+ *
+ * (the only difference between this and the standard distribution is credit and
+ * licensing information.)
+ *
+ * This program is licensed under the Unlicense.
+ * See the "UNLICENSE" file for more information.
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 enum ProgramMode{
 	MODE_ENCODE = 0,
