@@ -1,7 +1,11 @@
 /* extract_filetable
- * tool to extract filetable contents from AKI Corporation's N64 wrestling games
+ * quick and dirty tool to extract filetable contents from AKI Corporation's
+ * N64 wrestling games. written by freem.
  *
  * Warning: Only tested with Virtual Pro-Wrestling 2.
+ *
+ * This program is licensed under the Unlicense.
+ * See the "UNLICENSE" file for more information.
  */
 
 #include <stdlib.h>
@@ -107,6 +111,7 @@ int main(int argc, char* argv[]){
 		}
 		indexEntries[i] = (int)(indexTemp[0] & 0xFF) << 24 | (indexTemp[1] & 0xFF) << 16 | (indexTemp[2] & 0xFF) << 8 | (indexTemp[3] & 0xFF);
 	}
+	free(indexTemp);
 	fclose(indexFile);
 
 	/* determine size of filetable data */
@@ -115,6 +120,7 @@ int main(int argc, char* argv[]){
 	rewind(dataFile);
 
 	/* handle extraction */
+	printf("Extracting files, please wait...\n");
 	for(int i = 0; i < numIndexEntries; i++){
 		/* length check also serves as a sanity check */
 		if(i < numIndexEntries-1){
@@ -134,6 +140,7 @@ int main(int argc, char* argv[]){
 			}
 		}
 	}
+	printf("File Table extraction complete.\n");
 
 	free(indexEntries);
 	fclose(dataFile);
