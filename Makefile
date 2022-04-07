@@ -110,7 +110,7 @@ distclean:
 	rm -f $(OUT_ROM)
 
 #------------------------------------------------------------#
-setup: tools extractbins extractft
+setup: tools extractbins extractft delzss
 
 # tools - build any tools used
 tools:
@@ -131,7 +131,14 @@ extractft:
 
 	$(EXTRACT_FILETABLE) $(FILETABLE_INDEX) $(FILETABLE_DATA) $(FILETABLE_BINDIR)
 
-# todo: de-lzss step, using $(wildcard $(FILETABLE_BINDIR)/*.lzss)
+# delzss - decode LZSS-encoded files
+LZSS_EXTRACT_INPUT := $(wildcard $(FILETABLE_BINDIR)/*.lzss)
+LZSS_EXTRACT_OUTPUT := $(foreach file,$(LZSS_EXTRACT_INPUT),$(file:.lzss=.bin))
+
+delzss: $(LZSS_EXTRACT_OUTPUT)
+
+$(FILETABLE_BINDIR)/%.bin: $(FILETABLE_BINDIR)/%.lzss
+	@$(AKI_LZSS) -d $< $@
 
 #------------------------------------------------------------#
 # todo2: both steps of the asset conversion process
@@ -173,4 +180,4 @@ $(BUILD_DIR)/$(TARGET).hex: $(OUT_ROM)
 $(BUILD_DIR)/$(TARGET).objdump: $(OUT_ELF)
 	$(OBJDUMP) -D $< > $@
 
-.PHONY: all clean default diff setup tools extractbins extractft 
+.PHONY: all clean default diff setup tools extractbins extractft delzss
