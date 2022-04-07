@@ -122,6 +122,11 @@ int main(int argc, char* argv[]){
 	/* handle extraction */
 	printf("Extracting files, please wait...\n");
 	for(int i = 0; i < numIndexEntries; i++){
+		/* output progress every 1000 files extracted */
+		if( i > 0 && i % 1000 == 0){
+			printf("Progress: %d/%d files extracted\n", i, numIndexEntries);
+		}
+		
 		/* length check also serves as a sanity check */
 		if(i < numIndexEntries-1){
 			if(indexEntries[i+1] - indexEntries[i] > 0){
