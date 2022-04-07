@@ -1,0 +1,3 @@
+[submodule "tools/sm64tools"]
+	path = tools/sm64tools
+	url = https://github.com/queueRAM/sm64tools.git
