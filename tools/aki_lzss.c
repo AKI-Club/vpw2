@@ -341,7 +341,10 @@ void Decode(unsigned char* inData, FILE* outFile, unsigned int outLen){
 				else{
 					v = outData[p];
 				}
-				outData[outputPos++] = v;
+
+				if(outputPos < outLen){
+					outData[outputPos++] = v;
+				}
 				p += 1;
 			}
 		}
