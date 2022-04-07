@@ -45,11 +45,6 @@ Not all of them have been identified.
 
 --------------------------------------------------------------------------------
 
-* extract files from the filetable so the filetable can be rebuilt
-Part of this requires a LZSS encoder/decoder, which has been made.
-
---------------------------------------------------------------------------------
-
 * create filetable builder
 Since the game code references specific file IDs, this tool would need to spit
 out a header file with identifiers that can be used in the code. Sometimes,

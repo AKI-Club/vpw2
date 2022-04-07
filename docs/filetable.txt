@@ -3,18 +3,21 @@ Notes on the Filetable
 
 Extracting Filetable Data
 -------------------------
-(todo; this probably involves the filetable index, though it can cause issues with
-WWF No Mercy...)
+This is handled with an ad-hoc tool, "extract_filetable".
 
-ge project's extract script is using:
-offset,size,name,compressed,extract
+The tool passes in the filetable index and the filetable data.
+(This may cause issues with WWF No Mercy, as its filetable has some weirdness
+going on at the end.)
 
-where...
-offset is the offset into the z64 rom for this file.
-size is the size of the file.
-name is the path of the extracted file.
-compressed is 0 for false or 1 for true.
-extract is 0 for don't extract or 1 for extract.
+Any LZSS'd data will need to be decoded by aki_lzss before it becomes editable.
+
+Converting Assets
+-----------------
+The filetable holds most of the game assets that are interesting to edit.
+The conversion process consists of two parts:
+
+1) Game-ready data to human-editable
+2) Human-editable to game-ready data
 
 Building the Filetable
 ----------------------
