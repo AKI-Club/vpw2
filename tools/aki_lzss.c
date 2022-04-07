@@ -358,6 +358,7 @@ int main(int argc, char* argv[]){
 	char* outFilename;
 	FILE* inFile;
 	FILE* outFile;
+	int mallocFilenameHack = 0;
 
 	printf("aki_lzss - LZSS encoder and decoder for N64 AKI wrestling games\n");
 
@@ -405,6 +406,7 @@ int main(int argc, char* argv[]){
 		outFilename = malloc(14);
 		sprintf(outFilename, "temp_out.%s", (PROGRAM_MODE==MODE_ENCODE) ? "lzss" : "bin");
 		printf("Warning: No output filename defined. Outputting to '%s'.\n", outFilename);
+		mallocFilenameHack = 1;
 	}
 
 	outFile = fopen(outFilename, "wb");
@@ -468,7 +470,10 @@ int main(int argc, char* argv[]){
 			break;
 	}
 
-	free(outFilename);
+	if(mallocFilenameHack == 1){
+		free(outFilename);
+	}
+
 	fclose(inFile);
 	fclose(outFile);
 
