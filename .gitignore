@@ -3,3 +3,5 @@
 /bin/*
 /tools/aki_lzss
 /tools/extract_filetable
+/tools/n64cksum
+/tools/n64graphics
