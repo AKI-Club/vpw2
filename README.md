@@ -62,6 +62,9 @@ sudo apt-get install build-essential
 git clone --recurse-submodules https://github.com/AKI-Club/vpw2
 ```
 
+If you are manually cloning the repository (i.e. without `--recurse-submodules`),
+you *need* to initialize the submodules as well.
+
 ### Step 3: Perform setup
 Place an unmodified copy of your existing ROM inside the root of this repository
 with the name `baserom.z64`, then run the following command:
