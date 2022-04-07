@@ -1,9 +1,13 @@
 # Makefile to rebuild VPW2 split image
 
-############### Base ROM (for extracting data) ##############
+################################################################################
+# Base ROM (for extracting data)
+################################################################################
 BASE_ROM := baserom.z64
 
-################ Target Executable and Sources ###############
+################################################################################
+# Target Executable, Sources, and Binaries
+################################################################################
 
 # BUILD_DIR is location where all build artifacts are placed
 BUILD_DIR := build
@@ -46,7 +50,9 @@ S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 # Object Files
 O_FILES := $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
 
-##################### Compiler Options #######################
+################################################################################
+# Compiler & Assembler Options
+################################################################################
 CROSS = mips-linux-gnu-
 AS = $(CROSS)as
 CC = $(CROSS)gcc
@@ -59,8 +65,10 @@ ASFLAGS = -EB -mtune=vr4300 -mabi=32 -march=vr4300 -I include
 CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -I include -G 0 -c
 LDFLAGS = -T undefined_syms.txt -T $(BUILD_DIR)/$(LD_SCRIPT) -Map $(BUILD_DIR)/vpw2.map
 
-####################### Other Tools #########################
-
+################################################################################
+# Other Tools 
+################################################################################
+# general tools
 SHA1SUM = sha1sum
 
 # N64 tools
@@ -74,11 +82,15 @@ EXTRACT_FILETABLE = $(TOOLS_DIR)/extract_filetable
 
 FixPath = $(subst /,\,$1)
 
-################### Filetable-related ########################
+################################################################################
+# Filetable-related 
+################################################################################
 FILETABLE_INDEX := $(MAIN_BIN_DIR)/filetable.idx
 FILETABLE_DATA  := $(MAIN_BIN_DIR)/filedata.bin
 
-######################## Targets #############################
+################################################################################
+# Targets 
+################################################################################
 
 default: all
 
@@ -97,18 +109,33 @@ distclean:
 #------------------------------------------------------------#
 setup: tools extractbins extractft
 
+# tools - build any tools used
 tools:
 	make -C $(TOOLS_DIR)
+	make -C $(TOOLS_DIR)/sm64tools n64cksum n64graphics
+	mv $(TOOLS_DIR)/sm64tools/n64cksum $(TOOLS_DIR)/n64cksum
+	mv $(TOOLS_DIR)/sm64tools/n64graphics $(TOOLS_DIR)/n64graphics
 
+# extractbins - extract main binary files from ROM
 extractbins:
 	./extract_baserom.sh
 
+# extractft - extract contents of file table
 extractft:
 	if [ ! -d $(FILETABLE_BINDIR) ]; then \
 		mkdir $(FILETABLE_BINDIR); \
 	fi
 
 	$(EXTRACT_FILETABLE) $(FILETABLE_INDEX) $(FILETABLE_DATA) $(FILETABLE_BINDIR)
+
+# todo: de-lzss step, using $(wildcard $(FILETABLE_BINDIR)/*.lzss)
+
+#------------------------------------------------------------#
+# todo2: both steps of the asset conversion process
+# (game-ready to human-editable and vice versa)
+
+#------------------------------------------------------------#
+# todo: filetable re-building process
 
 #------------------------------------------------------------#
 $(BUILD_DIR):
@@ -143,5 +170,4 @@ $(BUILD_DIR)/$(TARGET).hex: $(OUT_ROM)
 $(BUILD_DIR)/$(TARGET).objdump: $(OUT_ELF)
 	$(OBJDUMP) -D $< > $@
 
-.PHONY: all clean default diff setup tools extractbins extractft
-
+.PHONY: all clean default diff setup tools extractbins extractft 
