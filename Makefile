@@ -74,6 +74,7 @@ SHA1SUM = sha1sum
 # N64 tools
 TOOLS_DIR = tools
 N64CKSUM = $(TOOLS_DIR)/n64cksum
+N64GRAPHICS = $(TOOLS_DIR)/n64graphics
 ASM_PREPROC := python3 $(TOOLS_DIR)/asmpreproc/asm-processor.py
 
 # repo-specific tools
@@ -102,6 +103,8 @@ clean:
 
 distclean:
 	make -C $(TOOLS_DIR) clean
+	make -C $(TOOLS_DIR)/sm64tools clean
+	rm -rf $(N64CKSUM) $(N64GRAPHICS)
 	rm -rf $(BUILD_DIR)
 	rm -rf $(MAIN_BIN_DIR)
 	rm -f $(OUT_ROM)
@@ -113,8 +116,8 @@ setup: tools extractbins extractft
 tools:
 	make -C $(TOOLS_DIR)
 	make -C $(TOOLS_DIR)/sm64tools n64cksum n64graphics
-	mv $(TOOLS_DIR)/sm64tools/n64cksum $(TOOLS_DIR)/n64cksum
-	mv $(TOOLS_DIR)/sm64tools/n64graphics $(TOOLS_DIR)/n64graphics
+	mv $(TOOLS_DIR)/sm64tools/n64cksum $(N64CKSUM)
+	mv $(TOOLS_DIR)/sm64tools/n64graphics $(N64GRAPHICS)
 
 # extractbins - extract main binary files from ROM
 extractbins:
