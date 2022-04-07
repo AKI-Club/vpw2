@@ -445,7 +445,7 @@ int main(int argc, char* argv[]){
 			fread(filesize, 1, 3, inFile);
 
 			/* get output file length from next 3 bytes (big endian) */
-			unsigned int outSize = (filesize[0] << 16 | filesize[1] << 8 | filesize[2]);
+			unsigned int outSize = ((filesize[0]&0xFF) << 16 | (filesize[1]&0xFF) << 8 | (filesize[2]&0xFF));
 
 			/* read encoded data into a buffer */
 			fseek(inFile, 0, SEEK_END);
