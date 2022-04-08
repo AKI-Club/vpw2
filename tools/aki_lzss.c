@@ -377,12 +377,17 @@ int main(int argc, char* argv[]){
 		exit(0);
 	}
 
+	if(argc < 3){
+		printf("Error: Not enough arguments passed in.");
+		exit(9);
+	}
+
 	/* "aki_lzss -e infile outfile" to encode */
-	if(memcmp(argv[1], "-e", 2) == 0){
+	if(strcmp(argv[1], "-e") == 0){
 		PROGRAM_MODE = MODE_ENCODE;
 	}
 	/* "aki_lzss -d infile ourfile" to decode */
-	else if(memcmp(argv[1], "-d", 2) == 0){
+	else if(strcmp(argv[1], "-d") == 0){
 		PROGRAM_MODE = MODE_DECODE;
 	}
 	else{
@@ -403,7 +408,7 @@ int main(int argc, char* argv[]){
 		exit(3);
 	}
 
-	if(argv[3] != NULL){
+	if(argc == 4){
 		//strcpy(outFilename, argv[3]);
 		outFilename = argv[3];
 	}
