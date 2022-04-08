@@ -306,7 +306,11 @@ void Encode(size_t inLen, unsigned char* inData, FILE* outFile){
 void Decode(unsigned char* inData, FILE* outFile, unsigned int outLen){
 	int inputPos = 0;
 	int outputPos = 0;
-	unsigned char* outData = malloc(outLen);
+	unsigned char* outData = (unsigned char*)calloc(outLen, 1);
+	if(outData == NULL){
+		printf("Unable to allocate memory for decoded data.");
+		exit(8);
+	}
 
 	unsigned long command = 0;
 	while(outputPos < outLen){
@@ -361,7 +365,6 @@ int main(int argc, char* argv[]){
 	char* outFilename;
 	FILE* inFile;
 	FILE* outFile;
-	int mallocFilenameHack = 0;
 
 	printf("aki_lzss - LZSS encoder and decoder for N64 AKI wrestling games\n");
 
@@ -406,10 +409,13 @@ int main(int argc, char* argv[]){
 	}
 	else{
 		/* if we aren't given an output filename, make one up */
-		outFilename = malloc(14);
-		sprintf(outFilename, "temp_out.%s", (PROGRAM_MODE==MODE_ENCODE) ? "lzss" : "bin");
+		if(PROGRAM_MODE == MODE_ENCODE){
+			outFilename = "temp_out.lzss";
+		}
+		else{
+			outFilename = "temp_out.bin";
+		}
 		printf("Warning: No output filename defined. Outputting to '%s'.\n", outFilename);
-		mallocFilenameHack = 1;
 	}
 
 	outFile = fopen(outFilename, "wb");
@@ -424,7 +430,7 @@ int main(int argc, char* argv[]){
 			fseek(inFile, 0, SEEK_END);
 			long inSize = ftell(inFile);
 			fseek(inFile, 0, SEEK_SET);
-			unsigned char* inData = malloc(inSize);
+			unsigned char* inData = (unsigned char*)calloc(inSize, 1);
 			if(inData == NULL){
 				printf("Unable to allocate memory for input file data.\n");
 				exit(5);
@@ -454,7 +460,7 @@ int main(int argc, char* argv[]){
 			fseek(inFile, 0, SEEK_END);
 			long inSize = ftell(inFile) - 4;
 			fseek(inFile, 4, SEEK_SET);
-			unsigned char* encodedData = malloc(inSize);
+			unsigned char* encodedData = (unsigned char*)calloc(inSize, 1);
 			if(encodedData == NULL){
 				printf("Unable to allocate memory for input file data.\n");
 				exit(7);
@@ -471,10 +477,6 @@ int main(int argc, char* argv[]){
 		default:
 			printf("shouldn't get here\n");
 			break;
-	}
-
-	if(mallocFilenameHack == 1){
-		free(outFilename);
 	}
 
 	fclose(inFile);
