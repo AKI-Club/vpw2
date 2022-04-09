@@ -132,14 +132,14 @@ int main(int argc, char* argv[]){
 			if(indexEntries[i+1] - indexEntries[i] > 0){
 				ExtractFile(dataFile, i+1,
 					indexEntries[i] & 0xFFFFFFFE,
-					indexEntries[i+1] - indexEntries[i],
+					(indexEntries[i+1] & 0xFFFFFFFE) - (indexEntries[i] & 0xFFFFFFFE),
 					indexEntries[i] & 1
 				);
 			}
 			else{
 				ExtractFile(dataFile, i+1,
 					indexEntries[i] & 0xFFFFFFFE,
-					dataFileSize - indexEntries[i],
+					dataFileSize - (indexEntries[i] & 0xFFFFFFFE),
 					indexEntries[i] & 1
 				);
 			}
