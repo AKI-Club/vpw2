@@ -78,7 +78,7 @@ N64GRAPHICS = $(TOOLS_DIR)/n64graphics
 ASM_PREPROC := python3 $(TOOLS_DIR)/asmpreproc/asm-processor.py
 
 # repo-specific tools
-LZSS = $(TOOLS_DIR)/lzss.py
+AKI_LZSS = $(TOOLS_DIR)/aki_lzss
 EXTRACT_FILETABLE = $(TOOLS_DIR)/extract_filetable
 
 FixPath = $(subst /,\,$1)
@@ -138,7 +138,7 @@ LZSS_EXTRACT_OUTPUT := $(foreach file,$(LZSS_EXTRACT_INPUT),$(file:.lzss=.bin))
 delzss: $(LZSS_EXTRACT_OUTPUT)
 
 $(FILETABLE_BINDIR)/%.bin: $(FILETABLE_BINDIR)/%.lzss
-	@python3 $(LZSS) -d $< $@
+	@$(AKI_LZSS) -d $< $@
 
 #------------------------------------------------------------#
 # todo2: both steps of the asset conversion process

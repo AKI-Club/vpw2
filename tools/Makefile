@@ -1,8 +1,9 @@
 # tools makefile
 CFLAGS := -Wall -s
 
-BUILD_PROGRAMS := extract_filetable
+BUILD_PROGRAMS := extract_filetable aki_lzss
 extract_filetable_SOURCES := extract_filetable.c
+aki_lzss_SOURCES := aki_lzss.c
 
 .phony: all, clean
 
