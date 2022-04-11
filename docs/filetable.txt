@@ -19,6 +19,12 @@ The conversion process consists of two parts:
 1) Game-ready data to human-editable
 2) Human-editable to game-ready data
 
+Example for converting a TEX file (title screen logo) with n64graphics:
+./n64graphics -e 0015.tex -g 0015.png -p 0015.tex -o 0x210 -P 0x10 -f ci8 -w 320 -h 240
+
+However, n64graphics (technically stb_image) seems to ignore palettes,
+which is not ideal for a game that relies on them.
+
 Building the Filetable
 ----------------------
 Game code references file table indices in the code.
