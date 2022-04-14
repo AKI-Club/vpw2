@@ -1,9 +1,11 @@
 # tools makefile
 CFLAGS := -Wall -s
 
-BUILD_PROGRAMS := extract_filetable aki_lzss
+BUILD_PROGRAMS := extract_filetable aki_lzss akiarc
+
 extract_filetable_SOURCES := extract_filetable.c
 aki_lzss_SOURCES := aki_lzss.c
+akiarc_SOURCES := akiarc.c
 
 .phony: all, clean
 
