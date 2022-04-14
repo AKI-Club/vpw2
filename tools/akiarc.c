@@ -419,7 +419,7 @@ int main(int argc, char* argv[]){
 
 		fclose(arcFileHandle);
 
-		printf("Successfully wrote %d files to archive '%s'.\n", progArgs.numFilesDefined, progArgs.arcFilename);
+		printf("Successfully wrote %d files to archive '%s'.\n", numExtractedFiles, progArgs.arcFilename);
 
 		for(int i = progArgs.numFilesDefined-1; i >= 0; i--){
 			free(progArgs.buildArcFiles[i]);
