@@ -58,7 +58,7 @@ static void Usage(char* execName){
 	printf("  Build archive:\t%s -b ARCHIVE_FILE [FILES]\n", execName);
 	printf("Optional arguments:\n");
 	printf(" -q            Quiet mode; only show errors and success messages\n");
-	/*printf(" -l LIST_FILE  (Build mode only) List of files to add to the archive\n");*/
+	printf(" -l LIST_FILE  (Build mode only) List of files to add to the archive\n");
 }
 
 static int parseArgs(int argc, char* argv[], InputArgs* outArgs){
