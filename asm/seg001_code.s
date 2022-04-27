@@ -1984,8 +1984,6 @@ func_8011AB64:
 /* 0731A4 8011AB64 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 0731A8 8011AB68 AFB00010 */  sw    $s0, 0x10($sp)
 /* 0731AC 8011AB6C 00808021 */  addu  $s0, $a0, $zero
-
-func_8011AB70:
 /* 0731B0 8011AB70 3C028013 */  lui   $v0, %hi(bss1_8012C0E4) # $v0, 0x8013
 /* 0731B4 8011AB74 8C42C0E4 */  lw    $v0, %lo(bss1_8012C0E4)($v0)
 /* 0731B8 8011AB78 3C048013 */  lui   $a0, %hi(bss1_8012C0E0) # $a0, 0x8013
