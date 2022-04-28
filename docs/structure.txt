@@ -36,6 +36,7 @@ Planned sub-directories:
 - assets/fonts/  - Font-related files
 - assets/i4/     - I4 textures
 - assets/meshes/ - Mesh files (VPW Studio exports as ".model" file)
+- assets/text/   - Text files (both AkiText and otherwise)
 
 --------------------------------------------------------------------------------
 bin/
