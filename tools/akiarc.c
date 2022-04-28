@@ -13,7 +13,8 @@
 
 enum ProgMode{
 	MODE_EXTRACT = 0, /* -e; extract files */
-	MODE_BUILD        /* -b; build archive */
+	MODE_BUILD,       /* -b; build archive */
+	MODE_LIST         /* -i; list entries */
 } ProgramMode;
 
 static char* GetBaseFilename(const char* filename){
@@ -54,6 +55,7 @@ static const InputArgs defaultArgs = {
 static void Usage(char* execName){
 	printf("%s - AKI archive tool\n", execName);
 	printf("Usage:\n");
+	printf("  List files:\t%s -i ARCHIVE_FILE\n", execName);
 	printf("  Extract files:\t%s -e ARCHIVE_FILE\n", execName);
 	printf("  Build archive:\t%s -b ARCHIVE_FILE [FILES]\n", execName);
 	printf("Optional arguments:\n");
@@ -82,6 +84,15 @@ static int parseArgs(int argc, char* argv[], InputArgs* outArgs){
 					}
 					outArgs->arcFilename = argv[i];
 					ProgramMode = MODE_BUILD;
+					break;
+
+				case 'i': /* -i: list archive */
+					if(++i >= argc){
+						printf("Error: -i requires a filename\n");
+						return 0;
+					}
+					outArgs->arcFilename = argv[i];
+					ProgramMode = MODE_LIST;
 					break;
 
 				case 'q': /* -q: quiet mode */
@@ -170,7 +181,52 @@ int main(int argc, char* argv[]){
 		}
 	}
 
-	if(ProgramMode == MODE_EXTRACT){
+	if(ProgramMode == MODE_LIST){
+		uint32_t* offsets;
+
+		arcFileHandle = fopen(progArgs.arcFilename, "rb");
+		if(!arcFileHandle){
+			printf("Error opening archive '%s'\n", progArgs.arcFilename);
+			exit(EXIT_FAILURE);
+		}
+
+		fseek(arcFileHandle, 0, SEEK_END);
+		arcFileLength = ftell(arcFileHandle);
+		rewind(arcFileHandle);
+
+		char* headerNumFiles = (char*)calloc(4,sizeof(char));
+		if(!headerNumFiles){
+			printf("Error allocating memory for number of files\n");
+			exit(EXIT_FAILURE);
+		}
+		fread(headerNumFiles, 1, 4, arcFileHandle);
+		numFiles = (headerNumFiles[0] & 0xFF) << 24 | (headerNumFiles[1] & 0xFF) << 16 | (headerNumFiles[2] & 0xFF) << 8 | (headerNumFiles[3] & 0xFF);
+		if(!progArgs.quiet){
+			printf("Header claims to have %d files; dumping contents of offset table:\n", numFiles);
+		}
+		free(headerNumFiles);
+
+		offsets = (uint32_t*)calloc(numFiles,sizeof(uint32_t));
+		if(!offsets){
+			printf("Error allocating memory for offset list\n");
+			exit(EXIT_FAILURE);
+		}
+		/* parse numFiles entries */
+		char* _offset = (char*)calloc(4,sizeof(char));
+		for(int i = 0; i < numFiles; i++){
+			fread(_offset, 1, 4, arcFileHandle);
+			offsets[i] = (_offset[0] & 0xFF) << 24 | (_offset[1] & 0xFF) << 16 | (_offset[2] & 0xFF) << 8 | (_offset[3] & 0xFF);
+		}
+		free(_offset);
+		fclose(arcFileHandle);
+
+		for(int i = 0; i < numFiles; i++){
+			printf("File %d at offset 0x%X\n", i, offsets[i]);
+		}
+		free(offsets);
+	
+	}
+	else if(ProgramMode == MODE_EXTRACT){
 		uint32_t* offsets;
 		char outFilename[256];
 
@@ -254,7 +310,7 @@ int main(int argc, char* argv[]){
 		free(offsets);
 		fclose(arcFileHandle);
 	}
-	else{ /* ProgramMode == MODE_BUILD */
+	else if(ProgramMode == MODE_BUILD){
 		uint32_t* fileLengths;
 		numFiles = progArgs.numFilesDefined;
 		char c;
