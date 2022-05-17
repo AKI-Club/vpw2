@@ -38,20 +38,20 @@ D_8003FDF8:
 	.byte 3    # Chest
 	.byte 4    # Head X/Y
 	.byte 5    # Head Depth
-	.byte 7    #
-	.byte 6    #
-	.byte 8    #
-	.byte 0xC  #
-	.byte 0xB  #
-	.byte 9    #
-	.byte 0xA  #
-	.byte 0xE  #
-	.byte 0xD  #
-	.byte 0xF  #
-	.byte 0x13 #
-	.byte 0x10 #
-	.byte 0x11 #
-	.byte 0x12 # Right Fingers
+	.byte 7    # Left Upper Leg
+	.byte 6    # Left Lower Leg
+	.byte 8    # Left Foot
+	.byte 0xC  # Left Upper Arm
+	.byte 0xB  # Left Forearm
+	.byte 9    # Left Hand
+	.byte 0xA  # Left Fingers
+	.byte 0xE  # Right Upper Leg
+	.byte 0xD  # Right Lower Leg
+	.byte 0xF  # Right Foot
+	.byte 0x13 # Right Upper Arm
+	.byte 0x10 # Right Hand
+	.byte 0x11 # Right Fingers
+	.byte 0x12 # Right Forearm
 
 # "somehow related to body part positioning" (0x5AC8 offset)
 D_8003FE0C:
