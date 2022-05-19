@@ -8,16 +8,21 @@
 
 # "We then have (up to 4) 16 bit addresses: these addresses tell you which
 # "Move Menu" that the move might be selected from. For example, if we take
-# the first set of values, there is only one value here: 0001. That’s
+# the first set of values, there is only one value here: 0001. That's
 # because you can only select a Weak A Grapple Move from Menu 1."
 
 # "However, if we look at Target Moveslot 0046 (the Front Special Grapple
-# Move), we see that there’s 4 different values here: Move Menu 0003,
-# Move Menu 0002, Move Menu 0083 and Move Menu 0001. That’s because
+# Move), we see that there's 4 different values here: Move Menu 0003,
+# Move Menu 0002, Move Menu 0083 and Move Menu 0001. That's because
 # (in Edit mode) you can choose a Front Special Grapple Move from the
 # Front Special Move Menu (0003), from the Front Strong Grapple Move
 # Menu (0002), from the Front Weak B Grapple Move Menu (0083) and
 # from the Front Weak A Grapple Move Menu (0001)."
+
+# "[T]ake one or more (up to 4) "Move Menu" values from this table.
+# You then look up each Move Menu on a separate table (tbl_8003D930)
+# to determine how many 'bits' are required to properly record/document
+# the move in question."
 
 # 8003C8E0 (0x259C offset) 153 entries (wrestler?)
 tbl_8003C8E0:
