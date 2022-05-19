@@ -5825,14 +5825,19 @@ func_80004D0C:
 
 /*----------------------------------------------------------------------------*/
 # Params:
-# $a0 - 
-# $a1 - ???
-# $a2 - 
-# $a3 - 
+# $a0 - location of data to pack
+# $a1 - n/a?
+# $a2 - related to shifting
+# $a3 - also related to shifting
+# 0x10($sp) - number of bits to pack?
+# 0x14($sp) - when 0, performs setup?
+
+# Returns:
+# $v0 - packed bits value?
 
 PackBits:
 /* 005960 80004D60 27BDFFF8 */  addiu $sp, $sp, -8
-/* 005964 80004D64 00806021 */  addu  $t4, $a0, $zero
+/* 005964 80004D64 00806021 */  addu  $t4, $a0, $zero # store packed location in $t4
 /* 005968 80004D68 8FA2001C */  lw    $v0, 0x1c($sp)
 /* 00596C 80004D6C 00C05021 */  addu  $t2, $a2, $zero
 /* 005970 80004D70 8FA80018 */  lw    $t0, 0x18($sp)
@@ -6013,7 +6018,7 @@ PackBits:
 
 UnpackBits:
 /* 005B64 80004F64 27BDFFE8 */  addiu $sp, $sp, -0x18
-/* 005B68 80004F68 0080C021 */  addu  $t8, $a0, $zero
+/* 005B68 80004F68 0080C021 */  addu  $t8, $a0, $zero # store unpack location in $t8
 /* 005B6C 80004F6C AFB30010 */  sw    $s3, 0x10($sp)
 /* 005B70 80004F70 AFB2000C */  sw    $s2, 0xc($sp)
 /* 005B74 80004F74 14C00008 */  bnez  $a2, .L80004F98
@@ -82060,6 +82065,7 @@ bssMain_800800F0: .short 0
 bssMain_80080104: .short 0
 	.skip 0x3EA
 
+/*----------------------------------------------------------------------------*/
 # 800804F0 [b]
 bssMain_800804F0: .byte 0
 
