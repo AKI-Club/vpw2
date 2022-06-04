@@ -62,6 +62,8 @@ malloc_8017920C: .word 0
 
 # It probably doesn't belong in the malloc section, but laziness prevails.
 
+# Internal framebuffer size is 480x240 pixels.
+
 framebuffer_8038F800: .skip 0x38400
 framebuffer_803C7C00: .skip 0x38400
 
