@@ -47252,11 +47252,15 @@ func_80023FB4:
 /* 024D7C 8002417C 27BD0008 */   addiu $sp, $sp, 8
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - number of player menu inputs??
+# $a1 - ?
+
 func_80024180:
 /* 024D80 80024180 14800003 */  bnez  $a0, .L80024190
 /* 024D84 80024184 27BDFFF8 */   addiu $sp, $sp, -8
 
-/* 024D88 80024188 08009080 */  j     .L80024200
+/* 024D88 80024188 08009080 */  j     .L80024200 # exit
 /* 024D8C 8002418C 00001021 */   addu  $v0, $zero, $zero
 
 .L80024190:
@@ -49813,6 +49817,12 @@ func_80025EDC:
 /* 026B88 80025F88 27BD0030 */   addiu $sp, $sp, 0x30
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+# $a1 -
+# $a2 -
+# $a3 -
+
 func_80025F8C:
 /* 026B8C 80025F8C 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 026B90 80025F90 AFB20018 */  sw    $s2, 0x18($sp)
@@ -82535,7 +82545,7 @@ bssMain_8008DEDC: .short 0
 # 8008DEDE [h]
 bssMain_8008DEDE: .short 0
 
-# 8008DEE0 [w]
+# 8008DEE0 [w] number of times player has made a valid menu input?
 bssMain_8008DEE0: .word 0
 
 # 8008DEE4 [w]
