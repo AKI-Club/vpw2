@@ -102,7 +102,3 @@ func_8400187C = 0x8400187C;
 func_8400193C = 0x8400193C;
 func_84001BE4 = 0x84001BE4;
 func_84001BB0 = 0x84001BB0;
-
-/* ----- [??? I am unsure of how this memory gets initialized/used] ----- */
-D_8012E8C0 = 0x8012E8C0;
-D_8012E8C2 = 0x8012E8C2;
