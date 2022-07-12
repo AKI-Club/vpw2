@@ -21022,6 +21022,8 @@ func_800F6F04:
 /* 05C3E8 800F6F98 27BD0020 */   addiu $sp, $sp, 0x20
 
 /*----------------------------------------------------------------------------*/
+# Run on successful completion of renaming a stable?
+
 func_800F6F9C:
 /* 05C3EC 800F6F9C 3C028011 */  lui   $v0, %hi(D_80108CC0) # $v0, 0x8011
 /* 05C3F0 800F6FA0 8C428CC0 */  lw    $v0, %lo(D_80108CC0)($v0)
