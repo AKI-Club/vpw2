@@ -8630,6 +8630,8 @@ func_80006C64:
 func_80006C78:
 /* 007878 80006C78 90A20000 */  lbu   $v0, ($a1)
 /* 00787C 80006C7C A0820000 */  sb    $v0, ($a0)
+
+# check for null/0x00 terminator
 /* 007880 80006C80 90A20000 */  lbu   $v0, ($a1)
 /* 007884 80006C84 10400003 */  beqz  $v0, .L80006C94
 /* 007888 80006C88 24A50001 */   addiu $a1, $a1, 1
@@ -8659,11 +8661,13 @@ func_80006C9C:
 .L80006CB0:
 /* 0078B0 80006CB0 90A20000 */  lbu   $v0, ($a1)
 /* 0078B4 80006CB4 A0620000 */  sb    $v0, ($v1)
+
+# check for null/0x00 terminator
 /* 0078B8 80006CB8 90A20000 */  lbu   $v0, ($a1)
-/* 0078BC 80006CBC 10400003 */  beqz  $v0, .L80006CCC # exit loop
+/* 0078BC 80006CBC 10400003 */  beqz  $v0, .L80006CCC # exit read loop
 /* 0078C0 80006CC0 24A50001 */   addiu $a1, $a1, 1
 
-/* 0078C4 80006CC4 08001B2C */  j     .L80006CB0 # loop
+/* 0078C4 80006CC4 08001B2C */  j     .L80006CB0 # continue read loop
 /* 0078C8 80006CC8 24630001 */   addiu $v1, $v1, 1
 
 .L80006CCC:
@@ -8681,16 +8685,17 @@ func_80006CD4:
 /* 0078D8 80006CD8 1040001B */  beqz  $v0, .L80006D48
 /* 0078DC 80006CDC 00000000 */   nop   
 
-/* 0078E0 80006CE0 2409000A */  li    $t1, 0x0A
-/* 0078E4 80006CE4 24080090 */  li    $t0, 0x90
-/* 0078E8 80006CE8 24070080 */  li    $a3, 0x80
-/* 0078EC 80006CEC 240600E0 */  li    $a2, 0xE0
-/* 0078F0 80006CF0 240500F0 */  li    $a1, 0xF0
+/* 0078E0 80006CE0 2409000A */  li    $t1, 0x0A # '\n' (line break)
+/* 0078E4 80006CE4 24080090 */  li    $t0, 0x90 # JIS X 0208 characters (2 bytes)
+/* 0078E8 80006CE8 24070080 */  li    $a3, 0x80 # could be Shift-JIS if 0x80, or JIS X 0208 if greater than 0x80
+/* 0078EC 80006CEC 240600E0 */  li    $a2, 0xE0 # JIS X 0208 characters (2 bytes)
+/* 0078F0 80006CF0 240500F0 */  li    $a1, 0xF0 # Shift-JIS specific (2 bytes)
 
 .L80006CF4:
 /* 0078F4 80006CF4 14490003 */  bne   $v0, $t1, .L80006D04 # branch if not \n
 /* 0078F8 80006CF8 304300F0 */   andi  $v1, $v0, 0xF0 # mask for top nibble
 
+# '\n': advance 1 byte and exit
 /* 0078FC 80006CFC 08001B52 */  j     .L80006D48
 /* 007900 80006D00 24840001 */   addiu $a0, $a0, 1
 
@@ -8702,23 +8707,25 @@ func_80006CD4:
 /* 007910 80006D10 00000000 */   nop   
 
 /* 007914 80006D14 10670008 */  beq   $v1, $a3, .L80006D38 # branch if 0x80
-/* 007918 80006D18 24020002 */   li    $v0, 2
+/* 007918 80006D18 24020002 */   li    $v0, 2 # advance 2 bytes
 
 /* 00791C 80006D1C 08001B4E */  j     .L80006D38
-/* 007920 80006D20 24020001 */   li    $v0, 1
+/* 007920 80006D20 24020001 */   li    $v0, 1 # advance 1 byte
 
 .L80006D24:
 /* 007924 80006D24 10660004 */  beq   $v1, $a2, .L80006D38
-/* 007928 80006D28 24020002 */   li    $v0, 2
+/* 007928 80006D28 24020002 */   li    $v0, 2 # advance 2 bytes
 
 /* 00792C 80006D2C 14650002 */  bne   $v1, $a1, .L80006D38
-/* 007930 80006D30 24020001 */   li    $v0, 1
+/* 007930 80006D30 24020001 */   li    $v0, 1 # advance 1 byte
 
 .L80006D34:
-/* 007934 80006D34 24020002 */  li    $v0, 2
+/* 007934 80006D34 24020002 */  li    $v0, 2 # advance 2 bytes
 
 .L80006D38:
 /* 007938 80006D38 00822021 */  addu  $a0, $a0, $v0 # advance by one or two bytes as needed
+
+# loop condition
 /* 00793C 80006D3C 90820000 */  lbu   $v0, ($a0)
 /* 007940 80006D40 1440FFEC */  bnez  $v0, .L80006CF4
 /* 007944 80006D44 00000000 */   nop   
@@ -8730,16 +8737,19 @@ func_80006CD4:
 /*----------------------------------------------------------------------------*/
 # another function related to character width?
 
+# Params:
+# $a0 - 
+
 func_80006D50:
 /* 007950 80006D50 90830000 */  lbu   $v1, ($a0)
 /* 007954 80006D54 1060001A */  beqz  $v1, .L80006DC0
 /* 007958 80006D58 24050001 */   li    $a1, 1
 
-/* 00795C 80006D5C 24090090 */  li    $t1, 0x90
-/* 007960 80006D60 24080080 */  li    $t0, 0x80
-/* 007964 80006D64 240700E0 */  li    $a3, 0xE0
-/* 007968 80006D68 240600F0 */  li    $a2, 0xF0
-/* 00796C 80006D6C 3862000A */  xori  $v0, $v1, 0x0A
+/* 00795C 80006D5C 24090090 */  li    $t1, 0x90 # JIS X 0208 characters (2 bytes)
+/* 007960 80006D60 24080080 */  li    $t0, 0x80 # could be Shift-JIS if 0x80, or JIS X 0208 if greater than 0x80
+/* 007964 80006D64 240700E0 */  li    $a3, 0xE0 # JIS X 0208 characters (2 bytes)
+/* 007968 80006D68 240600F0 */  li    $a2, 0xF0 # Shift-JIS specific (2 bytes)
+/* 00796C 80006D6C 3862000A */  xori  $v0, $v1, 0x0A # '\n'
 
 .L80006D70:
 /* 007970 80006D70 2C420001 */  sltiu $v0, $v0, 1
@@ -76798,30 +76808,31 @@ tbl_StableDefs:
 
 # 8003FD44: related to unlockable wrestlers
 # Z64 0x40944 to 0x40974; data01 bin offset: 0x5A00
+# first value is wrestler ID2, second value is the unlock ID for the wrestler
 tbl_WrestlerUnlockData:
-	.byte 0x0C, 0x00
-	.byte 0x48, 0x01
-	.byte 0x42, 0x02
-	.byte 0x0D, 0x02
-	.byte 0x17, 0x03
-	.byte 0x18, 0x03
-	.byte 0x16, 0x04
-	.byte 0x62, 0x05
-	.byte 0x4E, 0x06
-	.byte 0x4F, 0x07
-	.byte 0x5F, 0x08
-	.byte 0x5E, 0x09
-	.byte 0x5A, 0x0A
-	.byte 0x27, 0x0B
-	.byte 0x2E, 0x0C
-	.byte 0x25, 0x0D
-	.byte 0x36, 0x0E
-	.byte 0x24, 0x0F
-	.byte 0x26, 0x10
-	.byte 0x41, 0x11
-	.byte 0x54, 0x12
-	.byte 0x61, 0x13
-	.byte 0x60, 0x14
+	.byte 0x0C, 0x00 # Jumbo Tsuruta
+	.byte 0x48, 0x01 # Mil Mascaras
+	.byte 0x42, 0x02 # Terry Funk
+	.byte 0x0D, 0x02 # Dory Funk Jr.
+	.byte 0x17, 0x03 # Terry Gordy
+	.byte 0x18, 0x03 # Dr. Death
+	.byte 0x16, 0x04 # Bruiser Brody
+	.byte 0x62, 0x05 # Abdullah the Butcher
+	.byte 0x4E, 0x06 # Akira Maeda
+	.byte 0x4F, 0x07 # Aleksandr Karelin
+	.byte 0x5F, 0x08 # R. Gracie
+	.byte 0x5E, 0x09 # Mark Kerr
+	.byte 0x5A, 0x0A # Bas Rutten
+	.byte 0x27, 0x0B # Don Frye
+	.byte 0x2E, 0x0C # Great Muta
+	.byte 0x25, 0x0D # Antonio Inoki
+	.byte 0x36, 0x0E # Tiger Mask
+	.byte 0x24, 0x0F # Naoya Ogawa
+	.byte 0x26, 0x10 # Riki Choshu
+	.byte 0x41, 0x11 # Atsushi Onita
+	.byte 0x54, 0x12 # Yoshiaki Fujiwara
+	.byte 0x61, 0x13 # Ultimo Dragon
+	.byte 0x60, 0x14 # Andre the Giant
 	.byte 0x00, 0x00
 
 # 8003FD74 (Z64 0x40974 to 0x40988; data01 bin offset: 0x5A30)
@@ -84511,6 +84522,15 @@ bssMain_800B5D15: .byte 0
 # 0x0B - [b] human/CPU status wrestler 4
 # 0x0C - [b] match type
 # 0x0D - [b] ?????
+
+# match type
+# 0x00 - single
+# 0x01 - tag
+# 0x02 - battle royal
+# 0x03 - 3 way
+# 0x1* - Triple Crown Championship match
+# 0x2* - World Tag Championship match (only makes sense as 0x21)
+# 0x3* - Asia Tag Championship match (only makes sense as 0x31)
 
 # 800B5D20 [b] match 1 text
 bssMain_800B5D20: .byte 0
