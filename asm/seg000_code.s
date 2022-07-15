@@ -591,6 +591,9 @@ func_800E70FC:
 /* 04C5FC 800E71AC 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+
 func_800E71B0:
 /* 04C600 800E71B0 27BDFFF8 */  addiu $sp, $sp, -8
 /* 04C604 800E71B4 00006021 */  addu  $t4, $zero, $zero
@@ -17539,9 +17542,9 @@ func_800F461C:
 # known values for unlock item:
 # 0x35 - WM2K moves
 # 0x36 - Revenge moves
-# 0x37 - ??
-# 0x3A - ??
-# 0x3B - ??
+# 0x37 - Dome Road
+# 0x3A - Johnny H (referee)
+# 0x3B - Monochrome mode
 
 func_800F4668:
 /* 059AB8 800F4668 00801821 */  addu  $v1, $a0, $zero
@@ -23858,6 +23861,10 @@ func_800F9134:
 /* 05E6F8 800F92A8 27BD0038 */   addiu $sp, $sp, 0x38
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+# $a1 - Pointer to Event Mode slot data
+
 func_800F92AC:
 /* 05E6FC 800F92AC 27BDFFC0 */  addiu $sp, $sp, -0x40
 /* 05E700 800F92B0 AFB1001C */  sw    $s1, 0x1c($sp)
@@ -23884,6 +23891,7 @@ func_800F92AC:
 /* 05E754 800F9304 0C00C950 */  jal   bzero
 /* 05E758 800F9308 02002021 */   addu  $a0, $s0, $zero
 
+# handle Event Name
 /* 05E75C 800F930C 26040002 */  addiu $a0, $s0, 2
 /* 05E760 800F9310 02202821 */  addu  $a1, $s1, $zero
 /* 05E764 800F9314 0C001C87 */  jal   encdec_Wrapper1
@@ -23892,26 +23900,30 @@ func_800F92AC:
 /* 05E76C 800F931C 9622001C */  lhu   $v0, 0x1c($s1)
 /* 05E770 800F9320 0000B821 */  addu  $s7, $zero, $zero
 /* 05E774 800F9324 A202010E */  sb    $v0, 0x10e($s0)
+
 /* 05E778 800F9328 9622001C */  lhu   $v0, 0x1c($s1)
 /* 05E77C 800F932C 3C16800B */  lui   $s6, %hi(bssMain_800B5D20) # $s6, 0x800b
 /* 05E780 800F9330 26D65D20 */  addiu $s6, %lo(bssMain_800B5D20) # addiu $s6, $s6, 0x5d20
 /* 05E784 800F9334 241E00FF */  li    $fp, 255
 /* 05E788 800F9338 00021202 */  srl   $v0, $v0, 8
 /* 05E78C 800F933C A202010F */  sb    $v0, 0x10f($s0)
+
 /* 05E790 800F9340 9222001E */  lbu   $v0, 0x1e($s1)
 /* 05E794 800F9344 26D3001F */  addiu $s3, $s6, 0x1f
 /* 05E798 800F9348 26150014 */  addiu $s5, $s0, 0x14
 /* 05E79C 800F934C A2020110 */  sb    $v0, 0x110($s0)
 
-/* 05E7A0 800F9350 9623001A */  lhu   $v1, 0x1a($s1) # audience count
+# handle Audience/Attendance
+/* 05E7A0 800F9350 9623001A */  lhu   $v1, 0x1a($s1)
 /* 05E7A4 800F9354 9222001F */  lbu   $v0, 0x1f($s1)
 /* 05E7A8 800F9358 26140020 */  addiu $s4, $s0, 0x20
-/* 05E7AC 800F935C 30630FFF */  andi  $v1, $v1, 0xFFF # change this to 0x1FFF to fix bug with larger arenas
+/* 05E7AC 800F935C 30630FFF */  andi  $v1, $v1, 0xFFF # BUGFIX: change this to 0x1FFF to fix bug with larger arenas
 /* 05E7B0 800F9360 3042000F */  andi  $v0, $v0, 0xF
 /* 05E7B4 800F9364 00021300 */  sll   $v0, $v0, 0xC
 /* 05E7B8 800F9368 00621825 */  or    $v1, $v1, $v0
 /* 05E7BC 800F936C A6030000 */  sh    $v1, ($s0)
 
+#loop{
 .L800F9370:
 /* 05E7C0 800F9370 92C20000 */  lbu   $v0, ($s6)
 /* 05E7C4 800F9374 145E0006 */  bne   $v0, $fp, .L800F9390
@@ -23924,6 +23936,7 @@ func_800F92AC:
 /* 05E7DC 800F938C A282FFF6 */   sb    $v0, -0xa($s4)
 
 .L800F9390:
+# handle Match text
 /* 05E7E0 800F9390 02C02821 */  addu  $a1, $s6, $zero
 /* 05E7E4 800F9394 0C001C87 */  jal   encdec_Wrapper1
 /* 05E7E8 800F9398 24060010 */   li    $a2, 16
@@ -24006,6 +24019,8 @@ func_800F92AC:
 /* 05E8C4 800F9474 2AE2000A */  slti  $v0, $s7, 0xa
 /* 05E8C8 800F9478 1440FFBD */  bnez  $v0, .L800F9370
 /* 05E8CC 800F947C 26D6003A */   addiu $s6, $s6, 0x3a
+#}
+
 
 /* 05E8D0 800F9480 3C028011 */  lui   $v0, %hi(D_80108CC4) # $v0, 0x8011
 /* 05E8D4 800F9484 8C428CC4 */  lw    $v0, %lo(D_80108CC4)($v0)
@@ -29777,6 +29792,7 @@ func_800FD8F4:
 /* 062E10 800FD9C0 14500006 */  bne   $v0, $s0, .L800FD9DC
 /* 062E14 800FD9C4 24630004 */   addiu $v1, $v1, 4
 
+# check unlock status
 /* 062E18 800FD9C8 90840000 */  lbu   $a0, ($a0)
 /* 062E1C 800FD9CC 0C03D19A */  jal   func_800F4668
 /* 062E20 800FD9D0 00000000 */   nop   
@@ -29847,6 +29863,7 @@ func_800FD8F4:
 /* 062ECC 800FDA7C 14450006 */  bne   $v0, $a1, .L800FDA98
 /* 062ED0 800FDA80 24630004 */   addiu $v1, $v1, 4
 
+# check unlock status
 /* 062ED4 800FDA84 90840000 */  lbu   $a0, ($a0)
 /* 062ED8 800FDA88 0C03D19A */  jal   func_800F4668
 /* 062EDC 800FDA8C 00000000 */   nop   
@@ -32109,6 +32126,7 @@ func_800FF40C:
 /* 064974 800FF524 14450007 */  bne   $v0, $a1, .L800FF544
 /* 064978 800FF528 24630004 */   addiu $v1, $v1, 4
 
+# check unlock status
 /* 06497C 800FF52C 94840000 */  lhu   $a0, ($a0)
 /* 064980 800FF530 0C03D19A */  jal   func_800F4668
 /* 064984 800FF534 00000000 */   nop   
@@ -36687,7 +36705,7 @@ func_80102824:
 /* 067D34 801028E4 24120007 */   li    $s2, 7
 
 /* 067D38 801028E8 0C03A7BA */  jal   func_800E9EE8
-/* 067D3C 801028EC 3404F4E9 */   li    $a0, 0xF4E9
+/* 067D3C 801028EC 3404F4E9 */   li    $a0, 0xF4E9 # RRS bulletin board index 1
 
 /* 067D40 801028F0 00408021 */  addu  $s0, $v0, $zero
 /* 067D44 801028F4 1200001B */  beqz  $s0, .L80102964
@@ -36731,6 +36749,7 @@ func_80102824:
 /* 067DB0 80102960 001310C0 */  sll   $v0, $s3, 3
 
 .L80102964:
+# unlock messages table
 /* 067DB4 80102964 3C048010 */  lui   $a0, %hi(tbl0_8010588E)
 /* 067DB8 80102968 00822021 */  addu  $a0, $a0, $v0
 /* 067DBC 8010296C 9484588E */  lhu   $a0, %lo(tbl0_8010588E)($a0)
@@ -39124,42 +39143,88 @@ tbl0_8010587C:
 	.byte 0x3F, 0x3F, 0x3F, 0x2C, 0x3F, 0x3F, 0x3F, 0x90, 0x6C, 0x00, 0x00, 0x00
 
 # 80105888 [h?] (offset 0x16F8)
+# related to unlock messages (file ID 0006)
 tbl0_80105888:
-	.short 0xF44B, 0xF438, 0xF43A
+	.short 0xF44B # index 0x13/19
+	.short 0xF438 # index 0
+	.short 0xF43A # index 2
 
 # 8010588E [h] (offset 0x16FE)
+# unlock-related messages.
+# 0x00 [h] RRS bulletin board message
+# the next three values (offsets 0x02, 0x04, 0x06) are for the unlock sequence text.
+# the last value is optional, and is used when unlocking multiple items at
+# once (e.g. costume items or belt designs)
 tbl0_8010588E:
-	.short 0xF4FB, 0xF44C, 0xF438, 0x0000, 0xF4FC, 0xF44D, 0xF438, 0xF43A
-	.short 0xF4FD, 0xF44E, 0xF438, 0x0000, 0xF4FE, 0xF44F, 0xF438, 0xF43A
-	.short 0xF4FF, 0xF450, 0xF438, 0xF43A, 0xF500, 0xF451, 0xF438, 0xF43B
-	.short 0xF501, 0xF452, 0xF438, 0xF43A, 0xF502, 0xF453, 0xF438, 0xF43A
-	.short 0xF503, 0xF454, 0xF438, 0x0000, 0xF504, 0xF455, 0xF438, 0xF43A
-	.short 0xF505, 0xF456, 0xF438, 0xF43B, 0xF506, 0xF457, 0xF438, 0xF43A
-	.short 0xF507, 0xF458, 0xF438, 0xF43A, 0xF508, 0xF459, 0xF438, 0xF43A
-	.short 0xF509, 0xF45A, 0xF438, 0xF43A, 0xF50A, 0xF45B, 0xF438, 0xF43B
-	.short 0xF50B, 0xF45C, 0xF438, 0xF43A, 0xF50C, 0xF45D, 0xF438, 0xF43A
-	.short 0xF50D, 0xF45E, 0xF438, 0x0000, 0xF50E, 0xF45F, 0xF438, 0xF43A
-	.short 0xF50F, 0xF460, 0xF43C, 0x0000, 0xF510, 0xF460, 0xF43C, 0x0000
-	.short 0xF511, 0xF460, 0xF43C, 0x0000, 0xF512, 0xF460, 0xF43C, 0x0000
-	.short 0xF513, 0xF460, 0xF43C, 0x0000, 0xF514, 0xF460, 0xF43C, 0x0000
-	.short 0xF515, 0xF460, 0xF43C, 0x0000, 0xF516, 0xF460, 0xF43C, 0x0000
-	.short 0xF517, 0xF460, 0xF43C, 0x0000, 0xF518, 0xF460, 0xF43C, 0x0000
-	.short 0xF519, 0xF460, 0xF43C, 0x0000, 0xF51A, 0xF460, 0xF43C, 0x0000
-	.short 0xF51B, 0xF460, 0xF43C, 0x0000, 0xF51C, 0xF460, 0xF43C, 0x0000
-	.short 0xF51D, 0xF460, 0xF43C, 0x0000, 0xF51E, 0xF460, 0xF43C, 0x0000
-	.short 0xF51F, 0xF460, 0xF43C, 0x0000, 0xF520, 0xF460, 0xF43C, 0x0000
-	.short 0xF521, 0xF460, 0xF43C, 0x0000, 0xF522, 0xF460, 0xF43C, 0x0000
-	.short 0xF523, 0xF460, 0xF43C, 0x0000, 0xF524, 0xF460, 0xF43C, 0x0000
-	.short 0xF525, 0xF460, 0xF43C, 0x0000, 0xF526, 0xF461, 0xF43D, 0x0000
-	.short 0xF52C, 0xF461, 0xF43D, 0x0000, 0xF52D, 0xF461, 0xF43D, 0x0000
-	.short 0xF52E, 0xF461, 0xF43D, 0x0000, 0xF52F, 0xF461, 0xF43D, 0x0000
-	.short 0xF530, 0xF461, 0xF43D, 0x0000, 0xF531, 0xF461, 0xF43D, 0x0000
-	.short 0xF532, 0xF461, 0xF43D, 0x0000, 0xF533, 0xF461, 0xF43D, 0x0000
-	.short 0xF534, 0xF462, 0xF43E, 0x0000, 0xF535, 0xF463, 0xF43F, 0x0000
-	.short 0xF536, 0xF464, 0xF440, 0x0000, 0xF537, 0xF460, 0xF43C, 0x0000
-	.short 0xF527, 0xF460, 0xF43C, 0x0000, 0xF528, 0xF465, 0xF441, 0x0000
-	.short 0xF528, 0xF466, 0xF442, 0x0000, 0xF539, 0xF460, 0xF43C, 0x0000
-	.short 0xF529, 0xF460, 0xF43C, 0x0000, 0xF52A, 0xF460, 0xF43C, 0x0000
+	# wrestlers (0xF43A = moves also added; 0xF43B = moves and belt added)
+	.short 0xF4FB, 0xF44C, 0xF438, 0x0000
+	.short 0xF4FC, 0xF44D, 0xF438, 0xF43A
+	.short 0xF4FD, 0xF44E, 0xF438, 0x0000
+	.short 0xF4FE, 0xF44F, 0xF438, 0xF43A
+	.short 0xF4FF, 0xF450, 0xF438, 0xF43A
+	.short 0xF500, 0xF451, 0xF438, 0xF43B
+	.short 0xF501, 0xF452, 0xF438, 0xF43A
+	.short 0xF502, 0xF453, 0xF438, 0xF43A
+	.short 0xF503, 0xF454, 0xF438, 0x0000
+	.short 0xF504, 0xF455, 0xF438, 0xF43A
+	.short 0xF505, 0xF456, 0xF438, 0xF43B
+	.short 0xF506, 0xF457, 0xF438, 0xF43A
+	.short 0xF507, 0xF458, 0xF438, 0xF43A
+	.short 0xF508, 0xF459, 0xF438, 0xF43A
+	.short 0xF509, 0xF45A, 0xF438, 0xF43A
+	.short 0xF50A, 0xF45B, 0xF438, 0xF43B
+	.short 0xF50B, 0xF45C, 0xF438, 0xF43A
+	.short 0xF50C, 0xF45D, 0xF438, 0xF43A
+	.short 0xF50D, 0xF45E, 0xF438, 0x0000
+	.short 0xF50E, 0xF45F, 0xF438, 0xF43A
+	#------------------------------------#
+	# costume items
+	.short 0xF50F, 0xF460, 0xF43C, 0x0000
+	.short 0xF510, 0xF460, 0xF43C, 0x0000
+	.short 0xF511, 0xF460, 0xF43C, 0x0000
+	.short 0xF512, 0xF460, 0xF43C, 0x0000
+	.short 0xF513, 0xF460, 0xF43C, 0x0000
+	.short 0xF514, 0xF460, 0xF43C, 0x0000
+	.short 0xF515, 0xF460, 0xF43C, 0x0000
+	.short 0xF516, 0xF460, 0xF43C, 0x0000
+	.short 0xF517, 0xF460, 0xF43C, 0x0000
+	.short 0xF518, 0xF460, 0xF43C, 0x0000
+	.short 0xF519, 0xF460, 0xF43C, 0x0000
+	.short 0xF51A, 0xF460, 0xF43C, 0x0000
+	.short 0xF51B, 0xF460, 0xF43C, 0x0000
+	.short 0xF51C, 0xF460, 0xF43C, 0x0000
+	.short 0xF51D, 0xF460, 0xF43C, 0x0000
+	.short 0xF51E, 0xF460, 0xF43C, 0x0000
+	.short 0xF51F, 0xF460, 0xF43C, 0x0000
+	.short 0xF520, 0xF460, 0xF43C, 0x0000
+	.short 0xF521, 0xF460, 0xF43C, 0x0000
+	.short 0xF522, 0xF460, 0xF43C, 0x0000
+	.short 0xF523, 0xF460, 0xF43C, 0x0000
+	.short 0xF524, 0xF460, 0xF43C, 0x0000
+	.short 0xF525, 0xF460, 0xF43C, 0x0000
+	#------------------------------------#
+	# belts
+	.short 0xF526, 0xF461, 0xF43D, 0x0000
+	.short 0xF52C, 0xF461, 0xF43D, 0x0000
+	.short 0xF52D, 0xF461, 0xF43D, 0x0000
+	.short 0xF52E, 0xF461, 0xF43D, 0x0000
+	.short 0xF52F, 0xF461, 0xF43D, 0x0000
+	.short 0xF530, 0xF461, 0xF43D, 0x0000
+	.short 0xF531, 0xF461, 0xF43D, 0x0000
+	.short 0xF532, 0xF461, 0xF43D, 0x0000
+	.short 0xF533, 0xF461, 0xF43D, 0x0000
+	#------------------------------------#
+	# others/etc.
+	.short 0xF534, 0xF462, 0xF43E, 0x0000 # wm2000 moves
+	.short 0xF535, 0xF463, 0xF43F, 0x0000 # revenge moves
+	.short 0xF536, 0xF464, 0xF440, 0x0000 # dome road
+	.short 0xF537, 0xF460, 0xF43C, 0x0000 # (costume item)
+	.short 0xF527, 0xF460, 0xF43C, 0x0000 # (costume item)
+	.short 0xF528, 0xF465, 0xF441, 0x0000 # Johnny H referee
+	.short 0xF528, 0xF466, 0xF442, 0x0000 # Monochrome mode
+	.short 0xF539, 0xF460, 0xF43C, 0x0000 # (costume item)
+	.short 0xF529, 0xF460, 0xF43C, 0x0000 # (costume item)
+	.short 0xF52A, 0xF460, 0xF43C, 0x0000 # (costume item)
 	.short 0xF52B
 
 /*----------------------------------------------------------------------------*/
@@ -45728,7 +45793,7 @@ bss0_80119278: .word 0
 # 80119280 [w]
 bss0_80119280: .word 0
 
-# 80119284 [h]
+# 80119284 [h] related to player input in menus?
 bss0_80119284: .short 0
 
 # 80119286 [h] related to player input in menus
