@@ -2411,7 +2411,7 @@ func_8011AFF8:
 # check for holding Start button and launch the Controller Pak menu if so
 /* 0736C8 8011B088 3C028012 */  lui   $v0, %hi(bss0_80119284) # $v0, 0x8012
 /* 0736CC 8011B08C 94429284 */  lhu   $v0, %lo(bss0_80119284)($v0)
-/* 0736D0 8011B090 30421000 */  andi  $v0, $v0, 0x1000
+/* 0736D0 8011B090 30421000 */  andi  $v0, $v0, 0x1000 # Start button
 /* 0736D4 8011B094 10400008 */  beqz  $v0, .L8011B0B8
 /* 0736D8 8011B098 24020046 */   li    $v0, 0x46
 
@@ -2432,7 +2432,7 @@ func_8011AFF8:
 # increment number of game boots
 /* 073708 8011B0C8 3C038004 */  lui   $v1, %hi(NumGameBoots) # $v1, 0x8004
 /* 07370C 8011B0CC 9063ED42 */  lbu   $v1, %lo(NumGameBoots)($v1)
-/* 073710 8011B0D0 2C6200FF */  sltiu $v0, $v1, 0xff
+/* 073710 8011B0D0 2C6200FF */  sltiu $v0, $v1, 0xFF # don't let the value roll over to 0
 /* 073714 8011B0D4 10400003 */  beqz  $v0, .L8011B0E4
 /* 073718 8011B0D8 24620001 */   addiu $v0, $v1, 1
 
@@ -2454,7 +2454,7 @@ func_8011AFF8:
 /* 073740 8011B100 14400003 */  bnez  $v0, .L8011B110
 /* 073744 8011B104 24040036 */   li    $a0, 0x36
 
-/* 073748 8011B108 08046C4E */  j     .L8011B138
+/* 073748 8011B108 08046C4E */  j     .L8011B138 # skip the 40 boots check
 /* 07374C 8011B10C 24020036 */   li    $v0, 0x36
 
 .L8011B110:
