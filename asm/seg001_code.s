@@ -7623,7 +7623,7 @@ func_8011F010:
 .L8011F0AC:
 /* 0776EC 8011F0AC 3C02800A */  lui   $v0, %hi(bssMain_800A44D8) # $v0, 0x800a
 /* 0776F0 8011F0B0 8C4244D8 */  lw    $v0, %lo(bssMain_800A44D8)($v0)
-/* 0776F4 8011F0B4 3C030001 */  lui   $v1, 1
+/* 0776F4 8011F0B4 3C030001 */  lui   $v1, 1 # Martial Arts match ruleset
 /* 0776F8 8011F0B8 00431024 */  and   $v0, $v0, $v1
 /* 0776FC 8011F0BC 10400007 */  beqz  $v0, .L8011F0DC
 /* 077700 8011F0C0 00000000 */   nop   
