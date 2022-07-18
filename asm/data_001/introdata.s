@@ -1623,6 +1623,19 @@ D_80125A38:
 # back to the good stuff
 # each entry is 0x1C bytes
 
+# offset 0x00: [b] sequence number?
+# offset 0x01: [b] sub-sequence number?
+# offset 0x02: [b] flags 1
+# offset 0x03: [b] transition type? (08 fade to white, 20 fade from white?)
+# offset 0x04: [s] time to show scene
+# offset 0x06: [s] camera motion?
+# offset 0x08: [s] ? (related to overlays?)
+# offset 0x0A: [s] stage number
+# offset 0x0C: [w] "pointer or data" slot 1
+# offset 0x10: [w] "pointer or data" slot 2
+# offset 0x14: [w] "pointer or data" slot 3
+# offset 0x18: [w] "pointer or data" slot 4
+
 # splash screens entry
 D_80125A58:
 	.byte 0, 0, 0, 8
