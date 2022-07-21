@@ -9,6 +9,8 @@
 .include "globals.inc"
 .include "macros.inc"
 
+.include "include/filetableid.inc"
+
 #==============================================================================#
 .section .header, "a"
 .include "asm/header.s"
