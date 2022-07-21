@@ -35779,7 +35779,7 @@ func_8001AB84:
 /* 01B9F8 8001ADF8 8E420248 */  lw    $v0, 0x248($s2)
 /* 01B9FC 8001ADFC 30420800 */  andi  $v0, $v0, 0x800
 /* 01BA00 8001AE00 1440000E */  bnez  $v0, .L8001AE3C
-/* 01BA04 8001AE04 24050E52 */   li    $a1, 3666 # file ID?
+/* 01BA04 8001AE04 24050E52 */   li    $a1, 0x0E52 # file ID?
 
 /* 01BA08 8001AE08 3C04800A */  lui   $a0, %hi(bssMain_800A07DC) # $a0, 0x800a
 /* 01BA0C 8001AE0C 248407DC */  addiu $a0, %lo(bssMain_800A07DC) # addiu $a0, $a0, 0x7dc
@@ -35787,7 +35787,7 @@ func_8001AB84:
 /* 01BA14 8001AE14 24020004 */  li    $v0, 4
 /* 01BA18 8001AE18 AFA20010 */  sw    $v0, 0x10($sp)
 /* 01BA1C 8001AE1C 8242024F */  lb    $v0, 0x24f($s2)
-/* 01BA20 8001AE20 24060E51 */  li    $a2, 3665 # file ID?
+/* 01BA20 8001AE20 24060E51 */  li    $a2, 0x0E51 # file ID?
 /* 01BA24 8001AE24 24070007 */  li    $a3, 7
 /* 01BA28 8001AE28 AFA00018 */  sw    $zero, 0x18($sp)
 /* 01BA2C 8001AE2C 00021100 */  sll   $v0, $v0, 4
@@ -35799,7 +35799,7 @@ func_8001AB84:
 /* 01BA3C 8001AE3C 3C04800A */  lui   $a0, %hi(bssMain_800A07DC) # $a0, 0x800a
 /* 01BA40 8001AE40 248407DC */  addiu $a0, %lo(bssMain_800A07DC) # addiu $a0, $a0, 0x7dc
 /* 01BA44 8001AE44 00E42021 */  addu  $a0, $a3, $a0
-/* 01BA48 8001AE48 24061749 */  li    $a2, 5961 # file ID?
+/* 01BA48 8001AE48 24061749 */  li    $a2, 0x1749 # file ID?
 /* 01BA4C 8001AE4C 24070007 */  li    $a3, 7
 /* 01BA50 8001AE50 24020004 */  li    $v0, 4
 /* 01BA54 8001AE54 AFA20010 */  sw    $v0, 0x10($sp)
@@ -35828,7 +35828,7 @@ func_8001AB84:
 /* 01BA9C 8001AE9C 8E420248 */  lw    $v0, 0x248($s2)
 /* 01BAA0 8001AEA0 30420800 */  andi  $v0, $v0, 0x800
 /* 01BAA4 8001AEA4 1440000E */  bnez  $v0, .L8001AEE0
-/* 01BAA8 8001AEA8 24050E54 */   li    $a1, 3668 # file ID?
+/* 01BAA8 8001AEA8 24050E54 */   li    $a1, 0x0E54 # file ID?
 
 /* 01BAAC 8001AEAC 3C04800A */  lui   $a0, %hi(bssMain_800A07A8) # $a0, 0x800a
 /* 01BAB0 8001AEB0 248407A8 */  addiu $a0, %lo(bssMain_800A07A8) # addiu $a0, $a0, 0x7a8
@@ -35836,7 +35836,7 @@ func_8001AB84:
 /* 01BAB8 8001AEB8 24020004 */  li    $v0, 4
 /* 01BABC 8001AEBC AFA20010 */  sw    $v0, 0x10($sp)
 /* 01BAC0 8001AEC0 8242024F */  lb    $v0, 0x24f($s2)
-/* 01BAC4 8001AEC4 24060E53 */  li    $a2, 3667 # file ID?
+/* 01BAC4 8001AEC4 24060E53 */  li    $a2, 0x0E53 # file ID?
 /* 01BAC8 8001AEC8 24070007 */  li    $a3, 7
 /* 01BACC 8001AECC AFA00018 */  sw    $zero, 0x18($sp)
 /* 01BAD0 8001AED0 00021100 */  sll   $v0, $v0, 4
@@ -35848,7 +35848,7 @@ func_8001AB84:
 /* 01BAE0 8001AEE0 3C04800A */  lui   $a0, %hi(bssMain_800A07A8) # $a0, 0x800a
 /* 01BAE4 8001AEE4 248407A8 */  addiu $a0, %lo(bssMain_800A07A8) # addiu $a0, $a0, 0x7a8
 /* 01BAE8 8001AEE8 00642021 */  addu  $a0, $v1, $a0
-/* 01BAEC 8001AEEC 24061749 */  li    $a2, 5961 # file ID?
+/* 01BAEC 8001AEEC 24061749 */  li    $a2, 0x1749 # file ID?
 /* 01BAF0 8001AEF0 24070007 */  li    $a3, 7
 /* 01BAF4 8001AEF4 08006C07 */  j     .L8001B01C
 /* 01BAF8 8001AEF8 24020004 */   li    $v0, 4
@@ -35864,7 +35864,7 @@ func_8001AB84:
 /* 01BB14 8001AF14 8E420248 */  lw    $v0, 0x248($s2)
 /* 01BB18 8001AF18 30420800 */  andi  $v0, $v0, 0x800
 /* 01BB1C 8001AF1C 1440000F */  bnez  $v0, .L8001AF5C
-/* 01BB20 8001AF20 24061749 */   li    $a2, 5961 # file ID?
+/* 01BB20 8001AF20 24061749 */   li    $a2, 0x1749 # file ID?
 
 /* 01BB24 8001AF24 8645001A */  lh    $a1, 0x1a($s2)
 /* 01BB28 8001AF28 8646001C */  lh    $a2, 0x1c($s2)
@@ -35914,7 +35914,7 @@ func_8001AB84:
 /* 01BBBC 8001AFBC 8E420248 */  lw    $v0, 0x248($s2)
 /* 01BBC0 8001AFC0 30420800 */  andi  $v0, $v0, 0x800
 /* 01BBC4 8001AFC4 1440000F */  bnez  $v0, .L8001B004
-/* 01BBC8 8001AFC8 24061749 */   li    $a2, 5961 # file ID?
+/* 01BBC8 8001AFC8 24061749 */   li    $a2, 0x1749 # file ID?
 
 /* 01BBCC 8001AFCC 86450012 */  lh    $a1, 0x12($s2)
 /* 01BBD0 8001AFD0 86460014 */  lh    $a2, 0x14($s2)
@@ -43708,7 +43708,7 @@ func_8002122C:
 
 .L800214F4:
 /* 0220F4 800214F4 00112C03 */  sra   $a1, $s1, 0x10
-/* 0220F8 800214F8 240608DD */  li    $a2, 2269 # file ID 0x08DD: green palette
+/* 0220F8 800214F8 240608DD */  li    $a2, 0x08DD # file ID 0x08DD: green palette
 
 .L800214FC:
 /* 0220FC 800214FC 0C003DF0 */  jal   func_8000F7C0
@@ -44318,7 +44318,7 @@ func_80021A74:
 
 .L80021CF4:
 /* 0228F4 80021CF4 00112C03 */  sra   $a1, $s1, 0x10
-/* 0228F8 80021CF8 240608DD */  li    $a2, 2269 # file ID 0x08DD: green palette
+/* 0228F8 80021CF8 240608DD */  li    $a2, 0x08DD # file ID 0x08DD: green palette
 
 .L80021CFC:
 /* 0228FC 80021CFC 0C003DF0 */  jal   func_8000F7C0
