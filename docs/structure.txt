@@ -20,6 +20,9 @@ Split out data for segment 1 (cutscene).
 - asm/data_003/
 Split out data for segment 3 (gameplay).
 
+- asm/data_main/
+Split out data for main segment.
+
 --------------------------------------------------------------------------------
 assets/
 This directory is meant to hold human-editable assets (e.g. graphics, text,
@@ -35,6 +38,7 @@ Planned sub-directories:
 - assets/ci8/    - CI8 textures and palettes
 - assets/fonts/  - Font-related files
 - assets/i4/     - I4 textures
+- assets/menubg/ - Menu backgrounds
 - assets/meshes/ - Mesh files (VPW Studio exports as ".model" file)
 - assets/text/   - Text files (both AkiText and otherwise)
 
@@ -55,8 +59,12 @@ Directory generated as a part of the build process. Holds various output files.
 --------------------------------------------------------------------------------
 docs/
 This project is poorly documented! Also, all of the extant knowledge about this
-game primarily lies on random forums and some guy's archive that's still around
-after all this time.
+game primarily lies on random forums[1,2] and some guy's archive[3] that's still
+around after all this time.
+
+[1] https://www.tapatalk.com/groups/vpw2dojo/
+[2] https://www.tapatalk.com/groups/wldfbarchiveforum/
+[3] https://vpw.ajworld.net/
 
 --------------------------------------------------------------------------------
 include/

@@ -32,13 +32,17 @@ A tool needs to be created to handle this. The preferred way would be to have
 said tool generate a header file consisting of #defines of file IDs.
 
 The tool would take a file with entries like this:
-identifier,filepath,compressed,exportfilesize
+filepath,compressed,exportfilesize,identifier
 
 where...
-identifier is the define name to be put in the header.
 filepath is the path to the file to include.
 compressed is either 0 for false or 1 for true. data is compressed with LZSS.
-exportfilesize is either 0 for false or 1 for true. xxx: what does the game expect, compressed or uncompressed size?
+exportfilesize is either 0 for false or 1 for true.
+identifier is the define name to be put in the header.
 
-The generated header file will use "FILEID_identifier" as the symbol format.
+Since file IDs can be used as-is or as the first entry in a series, we can't
+automatically generate the identifiers. Most file ID identifiers will start with
+"FILE_ID_*", while sequential base file IDs will be defined as "FILE_ID_FIRST_*".
+
 If a filesize export is requested, the symbol would be "FILESIZE_identifier".
+I am still unsure if the game expects the compressed or uncompressed size.
