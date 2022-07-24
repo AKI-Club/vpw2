@@ -1,12 +1,13 @@
 # tools makefile
 CFLAGS := -Wall -s
 
-BUILD_PROGRAMS := extract_filetable aki_lzss akiarc akitext
+BUILD_PROGRAMS := extract_filetable aki_lzss akiarc akitext menubg
 
 extract_filetable_SOURCES := extract_filetable.c
 aki_lzss_SOURCES := aki_lzss.c
 akiarc_SOURCES := akiarc.c
 akitext_SOURCES := akitext.c
+menubg_SOURCES := menubg.c
 
 .phony: all, clean
 
