@@ -4067,7 +4067,7 @@ thread_800033D4:
 /* 0040EC 800034EC 0C000E69 */  jal   func_800039A4
 /* 0040F0 800034F0 26520040 */   addiu $s2, $s2, 0x40
 
-/* 0040F4 800034F4 0C000DAD */  jal   func_800036B4
+/* 0040F4 800034F4 0C000DAD */  jal   ClearFramebuffers
 /* 0040F8 800034F8 26520040 */   addiu $s2, $s2, 0x40
 
 /* 0040FC 800034FC 08000D22 */  j     .L80003488
@@ -4181,7 +4181,7 @@ thread_800033D4:
 /* 004248 80003648 0C000E69 */  jal   func_800039A4
 /* 00424C 8000364C 00000000 */   nop   
 
-/* 004250 80003650 0C000DAD */  jal   func_800036B4
+/* 004250 80003650 0C000DAD */  jal   ClearFramebuffers
 /* 004254 80003654 00000000 */   nop   
 
 .L80003658:
@@ -4213,9 +4213,9 @@ thread_800033D4:
 /* 0042B0 800036B0 27BD0048 */   addiu $sp, $sp, 0x48
 
 /*----------------------------------------------------------------------------*/
-# clear out areas at 803C7C00 and 8038F800
+# clears framebuffer areas at 803C7C00 and 8038F800
 
-func_800036B4:
+ClearFramebuffers:
 /* 0042B4 800036B4 3C04803C */  lui   $a0, %hi(framebuffer_803C7C00) # $a0, 0x803c
 /* 0042B8 800036B8 24847C00 */  addiu $a0, %lo(framebuffer_803C7C00) # addiu $a0, $a0, 0x7c00
 /* 0042BC 800036BC 00001821 */  addu  $v1, $zero, $zero
@@ -5770,6 +5770,12 @@ func_80004BB4:
 
 # pack wrestler moves and params
 
+# Params:
+# $a0 - WrestlerMoves_Pack $a0 arg
+# $a1 - WrestlerMoves_Pack $a1 arg
+# $a2 - WrestlerParams_Pack $a0 arg
+# $a3 - WrestlerParams_Pack $a1 arg
+
 func_80004CD0:
 /* 0058D0 80004CD0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 0058D4 80004CD4 AFB00010 */  sw    $s0, 0x10($sp)
@@ -5793,10 +5799,10 @@ func_80004CD0:
 # unpack wrestler params and moves?
 
 # Params:
-# $a0 - 
-# $a1 - 
-# $a2 - 
-# $a3 - 
+# $a0 - WrestlerMoves_Unpack $a0 arg
+# $a1 - WrestlerMoves_Unpack $a1 arg
+# $a2 - func_80006608 $a0 arg
+# $a3 - func_80006608 $a1 arg
 
 func_80004D0C:
 /* 00590C 80004D0C 27BDFFE0 */  addiu $sp, $sp, -0x20
