@@ -31337,6 +31337,7 @@ func_800FE884:
 /* 064020 800FEBD0 1440FFBD */  bnez  $v0, .L800FEAC8
 /* 064024 800FEBD4 02802021 */   addu  $a0, $s4, $zero
 
+# pack wrestler moves and params
 /* 064028 800FEBD8 8FAD0174 */  lw    $t5, 0x174($sp)
 /* 06402C 800FEBDC 02C03021 */  addu  $a2, $s6, $zero
 /* 064030 800FEBE0 25A50004 */  addiu $a1, $t5, 4
