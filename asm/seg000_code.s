@@ -17569,7 +17569,7 @@ func_800F4668:
 /* 059AF0 800F46A0 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
-# related to unlocks
+# Unlocks an item?
 
 # Params:
 # $a0 - unlock item
@@ -17580,6 +17580,7 @@ func_800F46A4:
 /* 059AFC 800F46AC 14400003 */  bnez  $v0, .L800F46BC
 /* 059B00 800F46B0 24040001 */   li    $a0, 1
 
+# return 0 if unlock ID is invalid
 /* 059B04 800F46B4 0803D1BA */  j     .L800F46E8
 /* 059B08 800F46B8 00001021 */   addu  $v0, $zero, $zero
 
@@ -18729,7 +18730,7 @@ func_800F5438:
 /* 05A888 800F5438 3C048011 */  lui   $a0, %hi(bss0_80115ED0) # $a0, 0x8011
 /* 05A88C 800F543C 8C845ED0 */  lw    $a0, %lo(bss0_80115ED0)($a0)
 /* 05A890 800F5440 27BDFEA0 */  addiu $sp, $sp, -0x160
-/* 05A894 800F5444 24051D00 */  li    $a1, 7424
+/* 05A894 800F5444 24051D00 */  li    $a1, 7424 # controller pak save size
 /* 05A898 800F5448 AFB40148 */  sw    $s4, 0x148($sp)
 /* 05A89C 800F544C 0000A021 */  addu  $s4, $zero, $zero
 /* 05A8A0 800F5450 AFB20140 */  sw    $s2, 0x140($sp)
@@ -19103,7 +19104,7 @@ func_800F5808:
 /* 05AD40 800F58F0 24E78A38 */  addiu $a3, %lo(str0_80108A38) # addiu $a3, $a3, -0x75c8
 /* 05AD44 800F58F4 3C028011 */  lui   $v0, %hi(tbl0_80108A48) # $v0, 0x8011
 /* 05AD48 800F58F8 24428A48 */  addiu $v0, %lo(tbl0_80108A48) # addiu $v0, $v0, -0x75b8
-/* 05AD4C 800F58FC 24101D00 */  li    $s0, 7424
+/* 05AD4C 800F58FC 24101D00 */  li    $s0, 7424 # controller pak save size
 /* 05AD50 800F5900 AFA20010 */  sw    $v0, 0x10($sp)
 /* 05AD54 800F5904 3C028011 */  lui   $v0, %hi(bss0_80115ECC) # $v0, 0x8011
 /* 05AD58 800F5908 24425ECC */  addiu $v0, %lo(bss0_80115ECC) # addiu $v0, $v0, 0x5ecc
@@ -19168,7 +19169,7 @@ func_800F5990:
 /* 05AE0C 800F59BC 3C038011 */  lui   $v1, %hi(bss0_80115ED0) # $v1, 0x8011
 /* 05AE10 800F59C0 8C635ED0 */  lw    $v1, %lo(bss0_80115ED0)($v1)
 /* 05AE14 800F59C4 00003821 */  addu  $a3, $zero, $zero
-/* 05AE18 800F59C8 24021D00 */  li    $v0, 7424
+/* 05AE18 800F59C8 24021D00 */  li    $v0, 7424 # controller pak save size
 /* 05AE1C 800F59CC AFA20010 */  sw    $v0, 0x10($sp)
 /* 05AE20 800F59D0 0C00D41C */  jal   osPfsReadWriteFile
 /* 05AE24 800F59D4 AFA30014 */   sw    $v1, 0x14($sp)
@@ -19243,7 +19244,7 @@ func_800F5990:
 /* 05AF00 800F5AB0 3C038011 */  lui   $v1, %hi(bss0_80115ED0) # $v1, 0x8011
 /* 05AF04 800F5AB4 8C635ED0 */  lw    $v1, %lo(bss0_80115ED0)($v1)
 /* 05AF08 800F5AB8 00003821 */  addu  $a3, $zero, $zero
-/* 05AF0C 800F5ABC 24021D00 */  li    $v0, 7424
+/* 05AF0C 800F5ABC 24021D00 */  li    $v0, 7424 # controller pak save size
 /* 05AF10 800F5AC0 AFA20010 */  sw    $v0, 0x10($sp)
 /* 05AF14 800F5AC4 0C00D41C */  jal   osPfsReadWriteFile
 /* 05AF18 800F5AC8 AFA30014 */   sw    $v1, 0x14($sp)
@@ -19324,14 +19325,24 @@ func_800F5AE8:
 
 /* 05B000 800F5BB0 3C028011 */  lui   $v0, %hi(bss0_80115F08) # $v0, 0x8011
 /* 05B004 800F5BB4 24425F08 */  addiu $v0, %lo(bss0_80115F08) # addiu $v0, $v0, 0x5f08
+
+# OSMesgQueue pointer for SRAM?
 /* 05B008 800F5BB8 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 05B00C 800F5BBC AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
+
+# message priority
 /* 05B010 800F5BC0 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
 /* 05B014 800F5BC4 A0205EEA */  sb    $zero, %lo(bss0_80115EE8+2)($at)
+
+# SRAM device buffer address (a.k.a. "real sram address")
 /* 05B018 800F5BC8 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 05B01C 800F5BCC AC315EF4 */  sw    $s1, %lo(bss0_80115EF4)($at)
+
+# RDRAM buffer address for SRAM
 /* 05B020 800F5BD0 3C018011 */  lui   $at, %hi(bss0_80115EF0) # $at, 0x8011
 /* 05B024 800F5BD4 AC305EF0 */  sw    $s0, %lo(bss0_80115EF0)($at)
+
+# SRAM transfer size
 /* 05B028 800F5BD8 3C018011 */  lui   $at, %hi(bss0_80115EF8) # $at, 0x8011
 /* 05B02C 800F5BDC AC325EF8 */  sw    $s2, %lo(bss0_80115EF8)($at)
 
@@ -19362,6 +19373,9 @@ func_800F5AE8:
 /* 05B078 800F5C28 27BD0030 */   addiu $sp, $sp, 0x30
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+
 func_800F5C2C:
 /* 05B07C 800F5C2C 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 05B080 800F5C30 000420C0 */  sll   $a0, $a0, 3
@@ -19385,14 +19399,24 @@ func_800F5C2C:
 
 /* 05B0C8 800F5C78 3C028011 */  lui   $v0, %hi(bss0_80115F08) # $v0, 0x8011
 /* 05B0CC 800F5C7C 24425F08 */  addiu $v0, %lo(bss0_80115F08) # addiu $v0, $v0, 0x5f08
+
+# OSMesgQueue pointer for SRAM?
 /* 05B0D0 800F5C80 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 05B0D4 800F5C84 AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
+
+# message priority
 /* 05B0D8 800F5C88 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
 /* 05B0DC 800F5C8C A0205EEA */  sb    $zero, %lo(bss0_80115EE8+2)($at)
+
+# SRAM device buffer address (a.k.a. "real sram address")
 /* 05B0E0 800F5C90 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 05B0E4 800F5C94 AC305EF4 */  sw    $s0, %lo(bss0_80115EF4)($at)
+
+# RDRAM buffer address for SRAM
 /* 05B0E8 800F5C98 3C018011 */  lui   $at, %hi(bss0_80115EF0) # $at, 0x8011
 /* 05B0EC 800F5C9C AC315EF0 */  sw    $s1, %lo(bss0_80115EF0)($at)
+
+# SRAM transfer size
 /* 05B0F0 800F5CA0 3C018011 */  lui   $at, %hi(bss0_80115EF8) # $at, 0x8011
 /* 05B0F4 800F5CA4 AC325EF8 */  sw    $s2, %lo(bss0_80115EF8)($at)
 
@@ -19423,6 +19447,9 @@ func_800F5C2C:
 /* 05B140 800F5CF0 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+
 func_800F5CF4:
 /* 05B144 800F5CF4 3C028011 */  lui   $v0, %hi(D_80108CC4) # $v0, 0x8011
 /* 05B148 800F5CF8 8C428CC4 */  lw    $v0, %lo(D_80108CC4)($v0)
@@ -20517,6 +20544,7 @@ func_800F6970:
 /* 05BDE0 800F6990 A022ED42 */  sb    $v0, %lo(NumGameBoots)($at)
 
 .L800F6994:
+# update unlock status
 /* 05BDE4 800F6994 3C028011 */  lui   $v0, %hi(D_80108CC0) # $v0, 0x8011
 /* 05BDE8 800F6998 8C428CC0 */  lw    $v0, %lo(D_80108CC0)($v0)
 /* 05BDEC 800F699C 00431021 */  addu  $v0, $v0, $v1
@@ -22009,7 +22037,7 @@ func_800F7B0C:
 /* 05CF84 800F7B34 2C82003F */   sltiu $v0, $a0, 0x3F # total number of unlocks
 
 /* 05CF88 800F7B38 14400003 */  bnez  $v0, .L800F7B48
-/* 05CF8C 800F7B3C 000316C3 */   sra   $v0, $v1, 0x1b
+/* 05CF8C 800F7B3C 000316C3 */   sra   $v0, $v1, 0x1B
 
 /* 05CF90 800F7B40 0803DED8 */  j     .L800F7B60
 /* 05CF94 800F7B44 00001821 */   addu  $v1, $zero, $zero
@@ -22033,7 +22061,7 @@ func_800F7B0C:
 /* 05CFC0 800F7B70 24A50001 */  addiu $a1, $a1, 1
 
 .L800F7B74:
-/* 05CFC4 800F7B74 28A20017 */  slti  $v0, $a1, 0x17
+/* 05CFC4 800F7B74 28A20017 */  slti  $v0, $a1, 0x17 # number of available belt designs?
 /* 05CFC8 800F7B78 1440FFE8 */  bnez  $v0, .L800F7B1C
 /* 05CFCC 800F7B7C 24C60004 */   addiu $a2, $a2, 4
 
@@ -27150,7 +27178,7 @@ func_800FB7F0:
 /* 060FC8 800FBB78 3C038011 */  lui   $v1, %hi(bss0_80115ED0) # $v1, 0x8011
 /* 060FCC 800FBB7C 8C635ED0 */  lw    $v1, %lo(bss0_80115ED0)($v1)
 /* 060FD0 800FBB80 24060001 */  li    $a2, 1 # PFS_WRITE
-/* 060FD4 800FBB84 24021D00 */  li    $v0, 7424
+/* 060FD4 800FBB84 24021D00 */  li    $v0, 7424 # controller pak save size
 /* 060FD8 800FBB88 00003821 */  addu  $a3, $zero, $zero
 /* 060FDC 800FBB8C AFA20010 */  sw    $v0, 0x10($sp)
 /* 060FE0 800FBB90 0C00D41C */  jal   osPfsReadWriteFile
@@ -27361,7 +27389,7 @@ func_800FBC9C:
 # OSPfs handle
 /* 061270 800FBE20 3C048011 */  lui   $a0, %hi(bss0_80115E60) # $a0, 0x8011
 /* 061274 800FBE24 24845E60 */  addiu $a0, %lo(bss0_80115E60) # addiu $a0, $a0, 0x5e60
-/* 061278 800FBE28 24021D00 */  li    $v0, 7424
+/* 061278 800FBE28 24021D00 */  li    $v0, 7424 # controller pak save size
 /* 06127C 800FBE2C 24060001 */  li    $a2, 1 # PFS_WRITE
 /* 061280 800FBE30 00003821 */  addu  $a3, $zero, $zero
 /* 061284 800FBE34 AFA20010 */  sw    $v0, 0x10($sp)
@@ -27402,15 +27430,26 @@ func_800FBE70:
 
 /* 0612E8 800FBE98 3C028011 */  lui   $v0, %hi(bss0_80115F08) # $v0, 0x8011
 /* 0612EC 800FBE9C 24425F08 */  addiu $v0, %lo(bss0_80115F08) # addiu $v0, $v0, 0x5f08
+
+# OSMesgQueue pointer for SRAM?
 /* 0612F0 800FBEA0 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 0612F4 800FBEA4 AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
+
 /* 0612F8 800FBEA8 24020020 */  li    $v0, 32
+
+# message priority
 /* 0612FC 800FBEAC 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
 /* 061300 800FBEB0 A0205EEA */  sb    $zero, %lo(bss0_80115EE8+2)($at)
+
+# SRAM device buffer address (a.k.a. "real sram address")
 /* 061304 800FBEB4 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 061308 800FBEB8 AC205EF4 */  sw    $zero, %lo(bss0_80115EF4)($at)
+
+# RDRAM buffer address for SRAM
 /* 06130C 800FBEBC 3C018011 */  lui   $at, %hi(bss0_80115EF0) # $at, 0x8011
 /* 061310 800FBEC0 AC315EF0 */  sw    $s1, %lo(bss0_80115EF0)($at)
+
+# SRAM transfer size
 /* 061314 800FBEC4 3C018011 */  lui   $at, %hi(bss0_80115EF8) # $at, 0x8011
 /* 061318 800FBEC8 AC225EF8 */  sw    $v0, %lo(bss0_80115EF8)($at)
 
@@ -27482,16 +27521,27 @@ func_800FBE70:
 
 /* 0613D4 800FBF84 3C028011 */  lui   $v0, %hi(bss0_80115F08) # $v0, 0x8011
 /* 0613D8 800FBF88 24425F08 */  addiu $v0, %lo(bss0_80115F08) # addiu $v0, $v0, 0x5f08
+
+# OSMesgQueue pointer for SRAM?
 /* 0613DC 800FBF8C 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 0613E0 800FBF90 AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
+
+# SRAM device buffer address (a.k.a. "real sram address")
 /* 0613E4 800FBF94 24020020 */  li    $v0, 32
 /* 0613E8 800FBF98 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 0613EC 800FBF9C AC225EF4 */  sw    $v0, %lo(bss0_80115EF4)($at)
+
 /* 0613F0 800FBFA0 34028000 */  li    $v0, 32768
+
+# message priority
 /* 0613F4 800FBFA4 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
 /* 0613F8 800FBFA8 A0205EEA */  sb    $zero, %lo(bss0_80115EE8+2)($at)
+
+# RDRAM buffer address for SRAM
 /* 0613FC 800FBFAC 3C018011 */  lui   $at, %hi(bss0_80115EF0) # $at, 0x8011
 /* 061400 800FBFB0 AC305EF0 */  sw    $s0, %lo(bss0_80115EF0)($at)
+
+# SRAM transfer size
 /* 061404 800FBFB4 3C018011 */  lui   $at, %hi(bss0_80115EF8) # $at, 0x8011
 /* 061408 800FBFB8 AC225EF8 */  sw    $v0, %lo(bss0_80115EF8)($at)
 
@@ -27590,15 +27640,26 @@ func_800FC054:
 
 /* 061510 800FC0C0 3C028011 */  lui   $v0, %hi(bss0_80115F08) # $v0, 0x8011
 /* 061514 800FC0C4 24425F08 */  addiu $v0, %lo(bss0_80115F08) # addiu $v0, $v0, 0x5f08
+
+# OSMesgQueue pointer for SRAM?
 /* 061518 800FC0C8 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 06151C 800FC0CC AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
+
 /* 061520 800FC0D0 24020020 */  li    $v0, 32
+
+# message priority
 /* 061524 800FC0D4 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
 /* 061528 800FC0D8 A0205EEA */  sb    $zero, %lo(bss0_80115EE8+2)($at)
+
+# SRAM device buffer address (a.k.a. "real sram address")
 /* 06152C 800FC0DC 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 061530 800FC0E0 AC205EF4 */  sw    $zero, %lo(bss0_80115EF4)($at)
+
+# RDRAM buffer address for SRAM
 /* 061534 800FC0E4 3C018011 */  lui   $at, %hi(bss0_80115EF0) # $at, 0x8011
 /* 061538 800FC0E8 AC315EF0 */  sw    $s1, %lo(bss0_80115EF0)($at)
+
+# SRAM transfer size
 /* 06153C 800FC0EC 3C018011 */  lui   $at, %hi(bss0_80115EF8) # $at, 0x8011
 /* 061540 800FC0F0 AC225EF8 */  sw    $v0, %lo(bss0_80115EF8)($at)
 
@@ -27678,7 +27739,7 @@ func_800FC1B0:
 /* 061614 800FC1C4 3C018004 */  lui   $at, %hi(D_8003ED4C) # $at, 0x8004
 /* 061618 800FC1C8 A022ED4C */  sb    $v0, %lo(D_8003ED4C)($at)
 /* 06161C 800FC1CC 0C000226 */  jal   aki_malloc
-/* 061620 800FC1D0 34049D00 */   li    $a0, 40192
+/* 061620 800FC1D0 34049D00 */   li    $a0, 40192 # 0x8000 (sram) + 0x1D00 (controller pak)
 
 /* 061624 800FC1D4 34038000 */  li    $v1, 32768
 /* 061628 800FC1D8 3C018004 */  lui   $at, %hi(D_8003ED48) # $at, 0x8004
@@ -41580,7 +41641,9 @@ D_801089C0:
 
 # 801089C2 [h]
 D_801089C2:
-	.short 0x6B50, 0x6B3E, 0
+	.short 0x6B50
+	.short 0x6B3E
+	.short 0
 
 # 801089C8 [h]
 D_801089C8:
@@ -41588,7 +41651,9 @@ D_801089C8:
 
 # 801089CA [h]
 D_801089CA:
-	.short 0x0380, 0x036E, 0
+	.short 0x0380
+	.short 0x036E
+	.short 0
 
 # 801089D0 [h]
 D_801089D0:
@@ -41596,7 +41661,9 @@ D_801089D0:
 
 # 801089D2 [h]
 D_801089D2:
-	.short 0x0370, 0x0360, 0
+	.short 0x0370
+	.short 0x0360
+	.short 0
 
 # 801089D8 [h]
 D_801089D8:
@@ -41604,7 +41671,9 @@ D_801089D8:
 
 # 801089DA [h]
 D_801089DA:
-	.short 0x0150, 0x0140, 0
+	.short 0x0150
+	.short 0x0140
+	.short 0
 
 # 801089E0 [h]
 D_801089E0:
@@ -41612,7 +41681,9 @@ D_801089E0:
 
 # 801089E2 [h]
 D_801089E2:
-	.short 0x0340, 0x0336, 0
+	.short 0x0340
+	.short 0x0336
+	.short 0
 
 # 801089E8 [h]
 D_801089E8:
@@ -41620,7 +41691,9 @@ D_801089E8:
 
 # 801089EA [h]
 D_801089EA:
-	.short 0x0160, 0x0157, 0
+	.short 0x0160
+	.short 0x0157
+	.short 0
 
 # 801089F0 [h]
 D_801089F0:
@@ -41628,7 +41701,9 @@ D_801089F0:
 
 # 801089F2 [h]
 D_801089F2:
-	.short 0x0170, 0x0167, 0
+	.short 0x0170
+	.short 0x0167
+	.short 0
 
 # 801089F8 [h]
 D_801089F8:
@@ -41636,7 +41711,9 @@ D_801089F8:
 
 # 801089FA [h]
 D_801089FA:
-	.short 0x0140, 0x0132, 0
+	.short 0x0140
+	.short 0x0132
+	.short 0
 
 /*----------------------------------------------------------------------------*/
 # 80108A00 [h] (0x4870)
@@ -45130,21 +45207,25 @@ bss0_80115EDC: .word 0
 # 80115EE0 [w] SRAM OSPiHandle*
 bss0_80115EE0: .word 0, 0
 
-# 80115EE8 [w]
-# (80115EEA [b])
+#{
+# 80115EE8 [w] SRAM OSIoMesg
+# (80115EEA [b]) message priority
 bss0_80115EE8: .word 0
 
-# 80115EEC [w]
+# 80115EEC [w] OSMesgQueue*
 bss0_80115EEC: .word 0
 
-# 80115EF0 [w]
+# 80115EF0 [w] RDRAM buffer address (DMA; pointer)
 bss0_80115EF0: .word 0
 
-# 80115EF4 [w]
+# 80115EF4 [w] Device buffer address (DMA)
 bss0_80115EF4: .word 0
 
 # 80115EF8 [w]
-bss0_80115EF8: .word 0, 0
+bss0_80115EF8:
+	.word 0 # transfer size?
+	.word 0 # pi device handle pointer?
+#}
 
 /*----------------------------------------------------------------------------*/
 # 80115F00 [w] OSMesg

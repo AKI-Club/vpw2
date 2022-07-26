@@ -688,36 +688,36 @@ GetPiHandle_SRAM:
 /* 00175C 80000B5C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 001760 80000B60 8E020000 */  lw    $v0, ($s0)
 /* 001764 80000B64 3C03A800 */  lui   $v1, 0xA800
-/* 001768 80000B68 1043001B */  beq   $v0, $v1, .L80000BD8
+/* 001768 80000B68 1043001B */  beq   $v0, $v1, .L80000BD8 # jump to end
 /* 00176C 80000B6C 24020003 */   li    $v0, 3 # DEVICE_TYPE_SRAM
 
 # load SRAM EPi handle
 /* 001770 80000B70 26040008 */  addiu $a0, $s0, 8
-/* 001774 80000B74 3C018005 */  lui   $at, %hi(bssMain_8004BD8C) # $at, 0x8005
-/* 001778 80000B78 A022BD8C */  sb    $v0, %lo(bssMain_8004BD8C)($at)
+/* 001774 80000B74 3C018005 */  lui   $at, %hi(SramHandle_Type) # $at, 0x8005
+/* 001778 80000B78 A022BD8C */  sb    $v0, %lo(SramHandle_Type)($at)
 
 /* 00177C 80000B7C 24020005 */  li    $v0, 5 # SRAM_latency
 /* 001780 80000B80 AE030000 */  sw    $v1, ($s0) # store 0xA800 for later detection
-/* 001784 80000B84 3C018005 */  lui   $at, %hi(bssMain_8004BD8D) # $at, 0x8005
-/* 001788 80000B88 A022BD8D */  sb    $v0, %lo(bssMain_8004BD8D)($at)
+/* 001784 80000B84 3C018005 */  lui   $at, %hi(SramHandle_Latency) # $at, 0x8005
+/* 001788 80000B88 A022BD8D */  sb    $v0, %lo(SramHandle_Latency)($at)
 
 /* 00178C 80000B8C 2402000C */  li    $v0, 0xC # SRAM_pulse
-/* 001790 80000B90 3C018005 */  lui   $at, %hi(bssMain_8004BD90) # $at, 0x8005
-/* 001794 80000B94 A022BD90 */  sb    $v0, %lo(bssMain_8004BD90)($at)
+/* 001790 80000B90 3C018005 */  lui   $at, %hi(SramHandle_Pulse) # $at, 0x8005
+/* 001794 80000B94 A022BD90 */  sb    $v0, %lo(SramHandle_Pulse)($at)
 
 /* 001798 80000B98 2402000D */  li    $v0, 0xD # SRAM_pageSize
-/* 00179C 80000B9C 3C018005 */  lui   $at, %hi(bssMain_8004BD8E) # $at, 0x8005
-/* 0017A0 80000BA0 A022BD8E */  sb    $v0, %lo(bssMain_8004BD8E)($at)
+/* 00179C 80000B9C 3C018005 */  lui   $at, %hi(SramHandle_PageSize) # $at, 0x8005
+/* 0017A0 80000BA0 A022BD8E */  sb    $v0, %lo(SramHandle_PageSize)($at)
 
 /* 0017A4 80000BA4 24020002 */  li    $v0, 2 # SRAM_relDuration
-/* 0017A8 80000BA8 3C018005 */  lui   $at, %hi(bssMain_8004BD8F) # $at, 0x8005
-/* 0017AC 80000BAC A022BD8F */  sb    $v0, %lo(bssMain_8004BD8F)($at)
+/* 0017A8 80000BA8 3C018005 */  lui   $at, %hi(SramHandle_RelDuration) # $at, 0x8005
+/* 0017AC 80000BAC A022BD8F */  sb    $v0, %lo(SramHandle_RelDuration)($at)
 
 /* 0017B0 80000BB0 24020001 */  li    $v0, 1 # PI_DOMAIN2
-/* 0017B4 80000BB4 3C018005 */  lui   $at, %hi(bssMain_8004BD91) # $at, 0x8005
-/* 0017B8 80000BB8 A022BD91 */  sb    $v0, %lo(bssMain_8004BD91)($at)
-/* 0017BC 80000BBC 3C018005 */  lui   $at, %hi(bssMain_8004BD98) # $at, 0x8005
-/* 0017C0 80000BC0 AC20BD98 */  sw    $zero, %lo(bssMain_8004BD98)($at)
+/* 0017B4 80000BB4 3C018005 */  lui   $at, %hi(SramHandle_Domain) # $at, 0x8005
+/* 0017B8 80000BB8 A022BD91 */  sb    $v0, %lo(SramHandle_Domain)($at)
+/* 0017BC 80000BBC 3C018005 */  lui   $at, %hi(SramHandle_Speed) # $at, 0x8005
+/* 0017C0 80000BC0 AC20BD98 */  sw    $zero, %lo(SramHandle_Speed)($at)
 /* 0017C4 80000BC4 0C00C950 */  jal   bzero
 /* 0017C8 80000BC8 24050060 */   li    $a1, 96
 
@@ -726,8 +726,8 @@ GetPiHandle_SRAM:
 /* 0017D4 80000BD4 02002021 */   addu  $a0, $s0, $zero # OSPiHandle *EPiHandle
 
 .L80000BD8:
-/* 0017D8 80000BD8 3C028005 */  lui   $v0, %hi(bssMain_8004BD88) # $v0, 0x8005
-/* 0017DC 80000BDC 2442BD88 */  addiu $v0, %lo(bssMain_8004BD88) # addiu $v0, $v0, -0x4278
+/* 0017D8 80000BD8 3C028005 */  lui   $v0, %hi(SramHandle) # $v0, 0x8005
+/* 0017DC 80000BDC 2442BD88 */  addiu $v0, %lo(SramHandle) # addiu $v0, $v0, -0x4278
 /* 0017E0 80000BE0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0017E4 80000BE4 8FB00010 */  lw    $s0, 0x10($sp)
 /* 0017E8 80000BE8 03E00008 */  jr    $ra
@@ -81326,7 +81326,7 @@ bssMain_8004BC50: .word 0
 bssMain_8004BD50: .word 0
 	.skip 0x14
 
-# 8004BD68 [w] OSPiHandle*
+# 8004BD68 [w] OSPiHandle* for LoadDataDMA and LoadCodeDMA
 bssMain_8004BD68: .word 0
 	.skip 4
 
@@ -81353,32 +81353,32 @@ bssMain_8004BD80: .word 0
 
 # SRAM OSPiHandle{
 # 8004BD88 [w] *next OSPiHandle
-bssMain_8004BD88: .word 0
+SramHandle: .word 0
 
 # 8004BD8C [b] sram type
-bssMain_8004BD8C: .byte 0
+SramHandle_Type: .byte 0
 
 # 8004BD8D [b] sram latency
-bssMain_8004BD8D: .byte 0
+SramHandle_Latency: .byte 0
 
 # 8004BD8E [b] sram page size
-bssMain_8004BD8E: .byte 0
+SramHandle_PageSize: .byte 0
 
 # 8004BD8F [b] sram relDuration
-bssMain_8004BD8F: .byte 0
+SramHandle_RelDuration: .byte 0
 
 # 8004BD90 [b] sram pulse
-bssMain_8004BD90: .byte 0
+SramHandle_Pulse: .byte 0
 
 # 8004BD91 [b] sram PI_DOMAIN2
-bssMain_8004BD91: .byte 0
+SramHandle_Domain: .byte 0
 	.skip 2
 
 # 8004BD94 [w] sram base address
 bssMain_8004BD94: .word 0
 
 # 8004BD98 [w] speed ("for roms only")
-bssMain_8004BD98: .word 0
+SramHandle_Speed: .word 0
 #}
 	.skip 0x64
 
