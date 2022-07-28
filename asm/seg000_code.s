@@ -27505,7 +27505,7 @@ func_800FBE70:
 
 .L800FBF5C:
 /* 0613AC 800FBF5C 14A00005 */  bnez  $a1, .L800FBF74
-/* 0613B0 800FBF60 34058000 */   li    $a1, 32768
+/* 0613B0 800FBF60 34058000 */   li    $a1, 0x8000
 
 /* 0613B4 800FBF64 0C03F015 */  jal   func_800FC054
 /* 0613B8 800FBF68 00000000 */   nop   
@@ -27531,7 +27531,7 @@ func_800FBE70:
 /* 0613E8 800FBF98 3C018011 */  lui   $at, %hi(bss0_80115EF4) # $at, 0x8011
 /* 0613EC 800FBF9C AC225EF4 */  sw    $v0, %lo(bss0_80115EF4)($at)
 
-/* 0613F0 800FBFA0 34028000 */  li    $v0, 32768
+/* 0613F0 800FBFA0 34028000 */  li    $v0, 0x8000 # SRAM size
 
 # message priority
 /* 0613F4 800FBFA4 3C018011 */  lui   $at, %hi(bss0_80115EE8+2) # $at, 0x8011
@@ -45228,10 +45228,10 @@ bss0_80115EF8:
 #}
 
 /*----------------------------------------------------------------------------*/
-# 80115F00 [w] OSMesg
+# 80115F00 [w] OSMesg for SRAM?
 bss0_80115F00: .word 0,0
 
-# 80115F08 [w]
+# 80115F08 [w] OSMesgQueue for SRAM?
 bss0_80115F08: .word 0
 	.skip 0x14
 
