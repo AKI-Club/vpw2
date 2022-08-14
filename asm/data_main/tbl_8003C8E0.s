@@ -24,7 +24,7 @@
 # to determine how many 'bits' are required to properly record/document
 # the move in question."
 
-# 8003C8E0 (0x259C offset) 153 entries (wrestler?)
+# 8003C8E0 (Z64 0x3D4E0; 0x259C offset) 153 entries (wrestler?)
 tbl_8003C8E0:
 	.short 0x0001, 0x0001, 0x0000, 0x0000, 0x0000
 	.short 0x0002, 0x0001, 0x0000, 0x0000, 0x0000
@@ -181,7 +181,7 @@ tbl_8003C8E0:
 	.short 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 	.short 0 # alignment
 
-# 8003CEDC (0x2B98 offset) 155 entries (combo?)
+# 8003CEDC (Z64 0x3DADC; 0x2B98 offset) 155 entries (combo?)
 tbl_8003CEDC:
 	.short 0x0001, 0x0001, 0x0000, 0x0000, 0x0000
 	.short 0x0002, 0x0001, 0x0000, 0x0000, 0x0000
@@ -340,7 +340,7 @@ tbl_8003CEDC:
 	.short 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 	.short 0 # alignment
 
-# 8003D4EC (0x31A8 offset) 108 entries (shootfighter?)
+# 8003D4EC (Z64 0x3E0EC; 0x31A8 offset) 108 entries (shootfighter?)
 tbl_8003D4EC:
 	.short 0x0019, 0x0002, 0x0083, 0x0000, 0x0000
 	.short 0x001E, 0x0002, 0x0083, 0x0000, 0x0000
@@ -452,7 +452,7 @@ tbl_8003D4EC:
 	.short 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 
 /*----------------------------------------------------------------------------*/
-# 8003D924 (0x35E0 offset)
+# 8003D924 (Z64 0x3E524; 0x35E0 offset)
 ptr_8003D924:
 	.word tbl_8003C8E0
 
