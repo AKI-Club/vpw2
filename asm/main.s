@@ -7756,6 +7756,7 @@ WrestlerMoves_Unpack:
 /* 007014 80006414 10400002 */  beqz  $v0, .L80006420
 /* 007018 80006418 00602021 */   addu  $a0, $v1, $zero
 
+# save highest seen "num bits" value
 /* 00701C 8000641C 00809021 */  addu  $s2, $a0, $zero
 
 .L80006420:
@@ -76412,7 +76413,7 @@ D_8003C8D0:
 .include "asm/data_main/tbl_8003C8E0.s"
 
 /*----------------------------------------------------------------------------*/
-# 8003D930 (0x35EC offset into data01) [h]
+# 8003D930 (Z64 addr 0x3E530) (0x35EC offset into data01) [h]
 # related to moveset bit packing/unpacking
 
 # "Whatever value you get from this table, add 5 to it (you always need at
