@@ -11924,10 +11924,10 @@ func_80008C88:
 func_80008EBC:
 /* 009ABC 80008EBC 27BDFF90 */  addiu $sp, $sp, -0x70
 /* 009AC0 80008EC0 AFB40060 */  sw    $s4, 0x60($sp)
-/* 009AC4 80008EC4 0080A021 */  addu  $s4, $a0, $zero
+/* 009AC4 80008EC4 0080A021 */  addu  $s4, $a0, $zero # a0 in s4
 /* 009AC8 80008EC8 02803821 */  addu  $a3, $s4, $zero
 /* 009ACC 80008ECC AFB50064 */  sw    $s5, 0x64($sp)
-/* 009AD0 80008ED0 00A0A821 */  addu  $s5, $a1, $zero
+/* 009AD0 80008ED0 00A0A821 */  addu  $s5, $a1, $zero # a1 in s5
 /* 009AD4 80008ED4 32A8FFFF */  andi  $t0, $s5, 0xffff
 /* 009AD8 80008ED8 27A60030 */  addiu $a2, $sp, 0x30
 /* 009ADC 80008EDC 3C024000 */  lui   $v0, 0x4000
