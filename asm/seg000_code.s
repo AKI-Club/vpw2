@@ -41833,17 +41833,55 @@ tbl0_80108A48:
 /*----------------------------------------------------------------------------*/
 # 0x48CC
 
-# 80108A5C
+# 80108A5C - default match rules
 tbl0_80108A5C:
-	.byte 0x00, 0x05, 0x07, 0x04, 0x00, 0x00, 0x01, 0x00, 0x01, 0x02
-	.byte 0x01, 0x01, 0x01, 0x00, 0x02, 0x01, 0x00, 0x03, 0x09, 0x00
+	# wrestling
+	.byte 0x00 # ruleset (0=wrestling)
+	.byte 0x05 # time limit
+	.byte 0x07 # round length
+	.byte 0x04 # outside count
+	.byte 0x00 # fall
+	.byte 0x00 # give up
+	.byte 0x01 # tko
+	.byte 0x00 # rope break
+	.byte 0x01 # quick match
+	.byte 0x02 # blood
+	.byte 0x01 # change title on ring out
+	.byte 0x01 # time limit decision
+	.byte 0x01 # interference
+	.byte 0x00 # tag help timer
+	.byte 0x02 # [mma] starting num. points
+	.byte 0x01 # [mma] rope escape
+	.byte 0x00 # [mma] down
+	.byte 0x03 # [mma] suplex
+	.byte 0x09 # [mma] number of rounds
+	.byte 0x00
 
-	.byte 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02
-	.byte 0x00, 0x01, 0x01, 0x00, 0x02, 0x01, 0x00, 0x03, 0x09, 0x00
+	# martial arts
+	.byte 0x01 # ruleset (1=martial arts)
+	.byte 0x00 # time limit
+	.byte 0x00 # round length
+	.byte 0x00 # outside count
+	.byte 0x00 # fall
+	.byte 0x00 # give up
+	.byte 0x00 # tko
+	.byte 0x00 # rope break
+	.byte 0x00 # quick match
+	.byte 0x02 # blood
+	.byte 0x00 # change title on ring out
+	.byte 0x01 # time limit decision
+	.byte 0x01 # interference
+	.byte 0x00 # tag help timer
+	.byte 0x02 # [mma] starting num. points
+	.byte 0x01 # [mma] rope escape
+	.byte 0x00 # [mma] down
+	.byte 0x03 # [mma] suplex
+	.byte 0x09 # [mma] number of rounds
+	.byte 0x00
 
 /*----------------------------------------------------------------------------*/
-# 80108A84 (0x48F4 offset): start of match rulesets for RRS/KRS mode?
-# each ruleset is 0x14 bytes
+# 80108A84 (0x48F4 offset): start of match rulesets for RRS/KRS mode
+# each ruleset is 0x14 bytes and follows the same ordering as above.
 
 tbl0_80108A84:
 	.byte 0x02, 0x05, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x02
