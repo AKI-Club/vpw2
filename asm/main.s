@@ -105,7 +105,7 @@ MainThread:
 /* 00111C 8000051C 3C018005 */  lui   $at, %hi(bssMain_8004BD94) # $at, 0x8005
 /* 001120 80000520 AC20BD94 */  sw    $zero, %lo(bssMain_8004BD94)($at)
 /* 001124 80000524 14830009 */  bne   $a0, $v1, .L8000054C
-/* 001128 80000528 24020002 */   li    $v0, 2
+/* 001128 80000528 24020002 */   li    $v0, 2 # OS_TV_MPAL
 
 /* 00112C 8000052C AFA30010 */  sw    $v1, 0x10($sp)
 /* 001130 80000530 3C048005 */  lui   $a0, %hi(bssMain_8004BE00) # $a0, 0x8005
@@ -114,7 +114,7 @@ MainThread:
 /* 00113C 8000053C 24A5E090 */  addiu $a1, %lo(bssMain_8004E090) # addiu $a1, $a1, -0x1f70
 /* 001140 80000540 24060078 */  li    $a2, 120
 /* 001144 80000544 08000162 */  j     .L80000588
-/* 001148 80000548 24070002 */   li    $a3, 2
+/* 001148 80000548 24070002 */   li    $a3, 2 # OS_VI_NTSC_LAN1?
 
 .L8000054C:
 /* 00114C 8000054C 14820008 */  bne   $a0, $v0, .L80000570
@@ -126,7 +126,7 @@ MainThread:
 /* 001160 80000560 24A5E090 */  addiu $a1, %lo(bssMain_8004E090) # addiu $a1, $a1, -0x1f70
 /* 001164 80000564 24060078 */  li    $a2, 120
 /* 001168 80000568 08000162 */  j     .L80000588
-/* 00116C 8000056C 2407001E */   li    $a3, 30
+/* 00116C 8000056C 2407001E */   li    $a3, 30 # OS_VI_MPAL_LAN1?
 
 .L80000570:
 /* 001170 80000570 3C048005 */  lui   $a0, %hi(bssMain_8004BE00) # $a0, 0x8005
@@ -134,7 +134,7 @@ MainThread:
 /* 001178 80000578 3C058005 */  lui   $a1, %hi(bssMain_8004E090) # $a1, 0x8005
 /* 00117C 8000057C 24A5E090 */  addiu $a1, %lo(bssMain_8004E090) # addiu $a1, $a1, -0x1f70
 /* 001180 80000580 24060078 */  li    $a2, 120
-/* 001184 80000584 2407002C */  li    $a3, 44
+/* 001184 80000584 2407002C */  li    $a3, 44 # OS_VI_FPAL_LAN1?
 
 .L80000588:
 /* 001188 80000588 0C0002FC */  jal   func_80000BF0
@@ -740,9 +740,9 @@ GetPiHandle_SRAM:
 
 # Params:
 # $a0 - pointer to ??
-# $a1 - 
-# $a2 - ???
-# $a3 - used for VI modes?
+# $a1 - pointer to ??
+# $a2 - always called with 120 here; unused?
+# $a3 - VI mode type
 
 func_80000BF0:
 /* 0017F0 80000BF0 27BDFFC0 */  addiu $sp, $sp, -0x40
@@ -778,7 +778,7 @@ func_80000BF0:
 /* 001868 80000C68 3C018005 */  lui   $at, %hi(bssMain_80052554) # $at, 0x8005
 /* 00186C 80000C6C A4202554 */  sh    $zero, %lo(bssMain_80052554)($at)
 /* 001870 80000C70 14400003 */  bnez  $v0, .L80000C80 # branch if NTSC or MPAL
-/* 001874 80000C74 00E0B821 */   addu  $s7, $a3, $zero
+/* 001874 80000C74 00E0B821 */   addu  $s7, $a3, $zero # VI mode type in $s7
 
 /* 001878 80000C78 08000321 */  j     .L80000C84
 /* 00187C 80000C7C 24020019 */   li    $v0, 25 # 25hz (50hz/2)
@@ -856,6 +856,7 @@ func_80000BF0:
 /* 001958 80000D58 0C00CE58 */  jal   osCreateViManager
 /* 00195C 80000D5C 240400FE */   li    $a0, 254 # OS_PRIORITY_VIMGR
 
+# mask for valid mode type and use as index into table
 /* 001960 80000D60 32E200FF */  andi  $v0, $s7, 0xff
 /* 001964 80000D64 00022080 */  sll   $a0, $v0, 2
 /* 001968 80000D68 00822021 */  addu  $a0, $a0, $v0
@@ -1371,8 +1372,8 @@ thread_80001240:
 /* 001F08 80001308 0C00AC2C */  jal   osSetIntMask
 /* 001F0C 8000130C AC222548 */   sw    $v0, %lo(bssMain_80052548)($at)
 
-/* 001F10 80001310 260400A8 */  addiu $a0, $s0, 0xa8
-/* 001F14 80001314 27A5001C */  addiu $a1, $sp, 0x1c
+/* 001F10 80001310 260400A8 */  addiu $a0, $s0, 0xa8 # OSMesgQueue *mq
+/* 001F14 80001314 27A5001C */  addiu $a1, $sp, 0x1c # OSMesg *msg
 /* 001F18 80001318 0C00C9E0 */  jal   osRecvMesg
 /* 001F1C 8000131C 24060001 */   li    $a2, 1 # flag: OS_MESG_BLOCK
 
@@ -1404,8 +1405,8 @@ thread_80001240:
 /* 001F68 80001368 0C00CB27 */  jal   osSpTaskStartGo
 /* 001F6C 8000136C 24840010 */   addiu $a0, $a0, 0x10
 
-/* 001F70 80001370 26040038 */  addiu $a0, $s0, 0x38
-/* 001F74 80001374 02202821 */  addu  $a1, $s1, $zero
+/* 001F70 80001370 26040038 */  addiu $a0, $s0, 0x38 # OSMesgQueue *mq
+/* 001F74 80001374 02202821 */  addu  $a1, $s1, $zero # NULL
 /* 001F78 80001378 0C00C9E0 */  jal   osRecvMesg
 /* 001F7C 8000137C 24060001 */   li    $a2, 1 # flag: OS_MESG_BLOCK
 
@@ -1417,8 +1418,8 @@ thread_80001240:
 /* 001F90 80001390 0C00AC2C */  jal   osSetIntMask
 /* 001F94 80001394 00402021 */   addu  $a0, $v0, $zero
 
-/* 001F98 80001398 26040070 */  addiu $a0, $s0, 0x70
-/* 001F9C 8000139C 02202821 */  addu  $a1, $s1, $zero
+/* 001F98 80001398 26040070 */  addiu $a0, $s0, 0x70 # OSMesgQueue *mq
+/* 001F9C 8000139C 02202821 */  addu  $a1, $s1, $zero # NULL
 /* 001FA0 800013A0 0C00C9E0 */  jal   osRecvMesg
 /* 001FA4 800013A4 24060001 */   li    $a2, 1 # flag: OS_MESG_BLOCK
 
@@ -1492,6 +1493,7 @@ func_80001440:
 /* 002054 80001454 2411FFFF */  li    $s1, -1
 
 .L80001458:
+ # OSMesgQueue *mq
 /* 002058 80001458 3C048005 */  lui   $a0, %hi(bssMain_800521A8) # $a0, 0x8005
 /* 00205C 8000145C 248421A8 */  addiu $a0, %lo(bssMain_800521A8) # addiu $a0, $a0, 0x21a8
 /* 002060 80001460 00002821 */  addu  $a1, $zero, $zero
@@ -9399,6 +9401,9 @@ func_80007254:
 # Params:
 # $a0 - read address?
 
+# Returns:
+# $v0 - Wrestler ID4?
+
 func_80007390:
 /* 007F90 80007390 90850000 */  lbu   $a1, ($a0)
 /* 007F94 80007394 30A600FF */  andi  $a2, $a1, 0xFF
@@ -9524,7 +9529,7 @@ func_800074B8:
 /* 0080D8 800074D8 AFB20018 */   sw    $s2, 0x18($sp)
 
 /* 0080DC 800074DC 92030000 */  lbu   $v1, ($s0)
-/* 0080E0 800074E0 00403021 */  addu  $a2, $v0, $zero
+/* 0080E0 800074E0 00403021 */  addu  $a2, $v0, $zero # wrestler ID4
 /* 0080E4 800074E4 38620070 */  xori  $v0, $v1, 0x70
 /* 0080E8 800074E8 2C420001 */  sltiu $v0, $v0, 1
 /* 0080EC 800074EC 38630050 */  xori  $v1, $v1, 0x50
@@ -10297,6 +10302,10 @@ func_800078DC:
 /* 008940 80007D40 27BD0048 */   addiu $sp, $sp, 0x48
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - ??? address
+# $a1 - some sort of flags
+
 func_80007D44:
 /* 008944 80007D44 27BDFF98 */  addiu $sp, $sp, -0x68
 /* 008948 80007D48 AFB40050 */  sw    $s4, 0x50($sp)
@@ -13062,10 +13071,12 @@ func_80009A7C:
 /* 00A70C 80009B0C 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
-# related to wrestler short name and battle royals?
+# related to wrestler short name
+# (possibly used in battle royals?)
 
 # Params:
 # $a0 - Wrestler ID4
+# $a1 - Wrestler costume number?
 
 func_80009B10:
 /* 00A710 80009B10 3C028004 */  lui   $v0, %hi(dynPtr_DefaultAppearance) # $v0, 0x8004
@@ -14819,6 +14830,7 @@ func_8000AC4C:
 
 # Params:
 # $a0 - Wrestler ID4
+# $a1 - Costume number
 
 func_8000ACB4:
 /* 00B8B4 8000ACB4 30830F00 */  andi  $v1, $a0, 0xF00
@@ -15736,7 +15748,7 @@ func_8000B628:
 /*----------------------------------------------------------------------------*/
 # Params:
 # $a0 - Wrestler ID4
-# $a1 - ?
+# $a1 - costume number
 # $a2 - ?? address
 
 func_8000B748:
@@ -28836,6 +28848,11 @@ func_800159A8:
 /* 016674 80015A74 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 -
+# $a1 - wrestler ID4
+# $a2 - costume number
+
 func_80015A78:
 /* 016678 80015A78 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 01667C 80015A7C 00041400 */  sll   $v0, $a0, 0x10
@@ -77960,6 +77977,7 @@ D_800486EC:
 	.word 0
 
 # 800486F0 [w] (0xE3AC)
+# probably VI mode type table
 tbl_800486F0:
 	.word 0x00000000
 	.word 0x0000320E
