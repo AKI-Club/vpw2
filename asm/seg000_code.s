@@ -23975,7 +23975,7 @@ func_800F92AC:
 /* 05E7A0 800F9350 9623001A */  lhu   $v1, 0x1a($s1)
 /* 05E7A4 800F9354 9222001F */  lbu   $v0, 0x1f($s1)
 /* 05E7A8 800F9358 26140020 */  addiu $s4, $s0, 0x20
-/* 05E7AC 800F935C 30630FFF */  andi  $v1, $v1, 0xFFF # BUGFIX: change this to 0x1FFF to fix bug with larger arenas
+/* 05E7AC 800F935C 30630FFF */  andi  $v1, $v1, 0xFFF # BUGFIX: change this to 0x3FFF to fix bug with larger arenas
 /* 05E7B0 800F9360 3042000F */  andi  $v0, $v0, 0xF
 /* 05E7B4 800F9364 00021300 */  sll   $v0, $v0, 0xC
 /* 05E7B8 800F9368 00621825 */  or    $v1, $v1, $v0
@@ -24206,7 +24206,7 @@ func_800F9564:
 /* 05EA60 800F9610 241700FF */  li    $s7, 255
 /* 05EA64 800F9614 3C1E8011 */  lui   $fp, %hi(ptrTbl0_80108970) # $fp, 0x8011
 /* 05EA68 800F9618 27DE8970 */  addiu $fp, %lo(ptrTbl0_80108970) # addiu $fp, $fp, -0x7690
-/* 05EA6C 800F961C 30420FFF */  andi  $v0, $v0, 0xFFF # change this to 0x1FFF to fix bug with larger arenas
+/* 05EA6C 800F961C 30420FFF */  andi  $v0, $v0, 0xFFF # BUGFIX: change this to 0x3FFF to fix bug with larger arenas
 /* 05EA70 800F9620 A622001A */  sh    $v0, 0x1a($s1) # update audience count?
 /* 05EA74 800F9624 96020000 */  lhu   $v0, ($s0)
 /* 05EA78 800F9628 26140014 */  addiu $s4, $s0, 0x14
