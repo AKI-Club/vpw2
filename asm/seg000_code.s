@@ -39348,7 +39348,8 @@ tbl0_8010588E:
 # 0x01 - event location, arena type, player participation
 # 76543210
 # |__|||||
-#   | ||++-- Player Participation
+#   | |||+-- Player has singles match on this card
+#   | ||+--- Player has tag match on this card
 #   | ++---- Arena type
 #   +------- Event Location lower bits
 
