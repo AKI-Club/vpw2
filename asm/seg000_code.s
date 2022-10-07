@@ -4803,6 +4803,7 @@ func_800EA4A4:
 /* 04F914 800EA4C4 16300004 */  bne   $s1, $s0, .L800EA4D8
 /* 04F918 800EA4C8 AFB20018 */   sw    $s2, 0x18($sp)
 
+# unset event time string
 /* 04F91C 800EA4CC 3C028010 */  lui   $v0, %hi(tbl0_80105870) # $v0, 0x8010
 /* 04F920 800EA4D0 0803A97E */  j     .L800EA5F8
 /* 04F924 800EA4D4 24425870 */   addiu $v0, %lo(tbl0_80105870) # addiu $v0, $v0, 0x5870

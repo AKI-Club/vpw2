@@ -11927,8 +11927,8 @@ func_80008C88:
 # related to global text loading?
 
 # Params:
-# $a0 -
-# $a1 -
+# $a0 - load address?
+# $a1 - flags??
 
 func_80008EBC:
 /* 009ABC 80008EBC 27BDFF90 */  addiu $sp, $sp, -0x70
@@ -21077,7 +21077,7 @@ func_8000F7C0:
 # $a0 - ? address
 # $a1 - ?
 # $a2 - ? (floating point value?)
-# $a3 - ? (floating point value?)
+# $a3 - Y position? (floating point value?)
 
 func_8000F8D0:
 /* 0104D0 8000F8D0 27BDFFA0 */  addiu $sp, $sp, -0x60
