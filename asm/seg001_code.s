@@ -20662,7 +20662,7 @@ tbl1_8012B1AE:
 	.byte 0x12, 0x14, 0x13, 0x15
 
 /*----------------------------------------------*/
-# 8012B1B8 "ramp entrance"
+# 8012B1B8 Dome Road ramp entrance
 	# ? ? Mgr Mgr
 	.byte 0x08, 0x08, 0x0D, 0x0D
 

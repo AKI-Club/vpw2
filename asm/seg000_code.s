@@ -45337,7 +45337,7 @@ bss0_80115EC8: .word 0
 # 80115ECC [w]
 bss0_80115ECC: .word 0
 
-# 80115ED0 [w]
+# 80115ED0 [w] pointer to controller pak data buffer?
 bss0_80115ED0: .word 0
 
 # 80115ED4 [w] number of bytes free on controller pak
