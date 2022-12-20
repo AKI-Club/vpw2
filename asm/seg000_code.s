@@ -27517,8 +27517,9 @@ func_800FBE70:
 /* 061358 800FBF08 24060001 */  li    $a2, 1
 /* 06135C 800FBF0C 00002821 */  addu  $a1, $zero, $zero
 /* 061360 800FBF10 02201821 */  addu  $v1, $s1, $zero
-/* 061364 800FBF14 26240020 */  addiu $a0, $s1, 0x20
+/* 061364 800FBF14 26240020 */  addiu $a0, $s1, 0x20 # check 32 bytes
 
+# sram watermark check loop
 .L800FBF18:
 /* 061368 800FBF18 90620000 */  lbu   $v0, ($v1)
 /* 06136C 800FBF1C 1449000F */  bne   $v0, $t1, .L800FBF5C
@@ -27543,6 +27544,7 @@ func_800FBE70:
 
 /* 0613A8 800FBF58 2405FFFF */  li    $a1, -1
 
+# if the 0x19991101 sram watermark did not pass...
 .L800FBF5C:
 /* 0613AC 800FBF5C 14A00005 */  bnez  $a1, .L800FBF74
 /* 0613B0 800FBF60 34058000 */   li    $a1, 0x8000
@@ -27550,9 +27552,11 @@ func_800FBE70:
 /* 0613B4 800FBF64 0C03F015 */  jal   func_800FC054
 /* 0613B8 800FBF68 00000000 */   nop   
 
+# free memory and exit routine
 /* 0613BC 800FBF6C 0803EFFD */  j     .L800FBFF4
 /* 0613C0 800FBF70 00000000 */   nop   
 
+# success; read remaining SRAM
 .L800FBF74:
 /* 0613C4 800FBF74 3C108011 */  lui   $s0, %hi(D_80108CC0) # $s0, 0x8011
 /* 0613C8 800FBF78 8E108CC0 */  lw    $s0, %lo(D_80108CC0)($s0)
@@ -27657,14 +27661,17 @@ func_800FC054:
 /* 0614C4 800FC074 0C00C950 */  jal   bzero
 /* 0614C8 800FC078 24050020 */   li    $a1, 32
 
+# 0x19991101 sram watermark
+# see also: (06134C/800FBEFC in this file)
 /* 0614CC 800FC07C 24080019 */  li    $t0, 25
 /* 0614D0 800FC080 24070099 */  li    $a3, 153
 /* 0614D4 800FC084 24060011 */  li    $a2, 17
 /* 0614D8 800FC088 24050001 */  li    $a1, 1
 /* 0614DC 800FC08C 02201821 */  addu  $v1, $s1, $zero
-/* 0614E0 800FC090 26240020 */  addiu $a0, $s1, 0x20
+/* 0614E0 800FC090 26240020 */  addiu $a0, $s1, 0x20 # 32 bytes of watermark
 /* 0614E4 800FC094 A0680000 */  sb    $t0, ($v1)
 
+# write watermark loop
 .L800FC098:
 /* 0614E8 800FC098 A0670001 */  sb    $a3, 1($v1)
 /* 0614EC 800FC09C A0660002 */  sb    $a2, 2($v1)
