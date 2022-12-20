@@ -19407,7 +19407,7 @@ func_800F5AE8:
 
 func_800F5C2C:
 /* 05B07C 800F5C2C 27BDFFD8 */  addiu $sp, $sp, -0x28
-/* 05B080 800F5C30 000420C0 */  sll   $a0, $a0, 3
+/* 05B080 800F5C30 000420C0 */  sll   $a0, $a0, 3 # $a0 <<= 3
 /* 05B084 800F5C34 AFBF0024 */  sw    $ra, 0x24($sp)
 /* 05B088 800F5C38 AFB20020 */  sw    $s2, 0x20($sp)
 /* 05B08C 800F5C3C AFB1001C */  sw    $s1, 0x1c($sp)
@@ -19417,6 +19417,8 @@ func_800F5C2C:
 /* 05B09C 800F5C4C 961089C0 */  lhu   $s0, %lo(D_801089C0)($s0)
 /* 05B0A0 800F5C50 3C118011 */  lui   $s1, %hi(D_80108CC0) # $s1, 0x8011
 /* 05B0A4 800F5C54 8E318CC0 */  lw    $s1, %lo(D_80108CC0)($s1)
+
+# get sram transfer byte count
 /* 05B0A8 800F5C58 3C128011 */  lui   $s2, %hi(D_801089C2)
 /* 05B0AC 800F5C5C 02449021 */  addu  $s2, $s2, $a0
 /* 05B0B0 800F5C60 965289C2 */  lhu   $s2, %lo(D_801089C2)($s2)
@@ -27470,6 +27472,7 @@ func_800FBE70:
 /* 0612F0 800FBEA0 3C018011 */  lui   $at, %hi(bss0_80115EEC) # $at, 0x8011
 /* 0612F4 800FBEA4 AC225EEC */  sw    $v0, %lo(bss0_80115EEC)($at)
 
+# byte read count
 /* 0612F8 800FBEA8 24020020 */  li    $v0, 32
 
 # message priority
@@ -27506,6 +27509,8 @@ func_800FBE70:
 /* 061344 800FBEF4 0C00C9E0 */  jal   osRecvMesg
 /* 061348 800FBEF8 24060001 */   li    $a2, 1 # flag: OS_MESG_BLOCK
 
+# 0x19991101 sram watermark
+# (this value was 0x19971021 in VPW64 and Revenge; 0x19990901 in WM2000)
 /* 06134C 800FBEFC 24090019 */  li    $t1, 25
 /* 061350 800FBF00 24080099 */  li    $t0, 153
 /* 061354 800FBF04 24070011 */  li    $a3, 17
@@ -41722,8 +41727,8 @@ D_801089C0:
 
 # 801089C2 [h]
 D_801089C2:
-	.short 0x6B50
-	.short 0x6B3E
+	.short 0x6B50 # (27472)
+	.short 0x6B3E # (27454)
 	.short 0
 
 # 801089C8 [h]
@@ -45368,7 +45373,7 @@ bss0_80115EF4: .word 0
 
 # 80115EF8 [w]
 bss0_80115EF8:
-	.word 0 # transfer size?
+	.word 0 # SRAM transfer size
 	.word 0 # pi device handle pointer?
 #}
 
