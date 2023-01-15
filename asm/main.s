@@ -76706,7 +76706,7 @@ NumGameBoots:
 D_8003ED44:
 	.word 0
 
-# 8003ED48 - [word] pointer to malloc'd data
+# 8003ED48 - [word] pointer to malloc'd data for SRAM and Controller Pak data area
 D_8003ED48:
 	.word 0
 

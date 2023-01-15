@@ -105,6 +105,7 @@ func_800E6BA0:
 /* 04C040 800E6BF0 0C0025B8 */  jal   func_800096E0
 /* 04C044 800E6BF4 00002021 */   addu  $a0, $zero, $zero
 
+# allocate and load SRAM and Controller Pak data
 /* 04C048 800E6BF8 0C03F06C */  jal   func_800FC1B0
 /* 04C04C 800E6BFC 00000000 */   nop   
 
@@ -26946,6 +26947,8 @@ func_800FB458:
 /* 060C3C 800FB7EC 27BD0068 */   addiu $sp, $sp, 0x68
 
 /*----------------------------------------------------------------------------*/
+# related to controller pak writing
+
 func_800FB7F0:
 /* 060C40 800FB7F0 27BDFF98 */  addiu $sp, $sp, -0x68
 /* 060C44 800FB7F4 AFB60058 */  sw    $s6, 0x58($sp)
@@ -27305,6 +27308,8 @@ func_800FBBE8:
 /* 0610E8 800FBC98 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# related to controller pak writing
+
 func_800FBC9C:
 /* 0610EC 800FBC9C 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 0610F0 800FBCA0 AFB00020 */  sw    $s0, 0x20($sp)
@@ -27777,6 +27782,8 @@ func_800FC054:
 /* 0615FC 800FC1AC 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
+# allocate main memory space for SRAM and Controller Pak save data
+
 func_800FC1B0:
 /* 061600 800FC1B0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 061604 800FC1B4 240200FF */  li    $v0, 255
@@ -27824,6 +27831,7 @@ func_800FC1B0:
 /* 061688 800FC238 0C00C984 */  jal   osCreateMesgQueue
 /* 06168C 800FC23C 24060001 */   li    $a2, 1 # count
 
+# load SRAM data
 /* 061690 800FC240 0C03EF9C */  jal   func_800FBE70
 /* 061694 800FC244 00000000 */   nop   
 
@@ -27832,6 +27840,8 @@ func_800FC1B0:
 /* 0616A0 800FC250 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# free main memory space allocated for SRAM and Controller Pak save data
+
 func_800FC254:
 /* 0616A4 800FC254 3C048004 */  lui   $a0, %hi(D_8003ED48) # $a0, 0x8004
 /* 0616A8 800FC258 8C84ED48 */  lw    $a0, %lo(D_8003ED48)($a0)
