@@ -1559,10 +1559,12 @@ func_8011A5AC:
 /* 072C54 8011A614 AE16FFFC */   sw    $s6, -4($s0)
 
 .L8011A618:
-/* 072C58 8011A618 0480000A */  bltz  $a0, .L8011A644
-/* 072C5C 8011A61C 30820FFF */   andi  $v0, $a0, 0xfff
+/* 072C58 8011A618 0480000A */  bltz  $a0, .L8011A644 # bltz acts as "branch if pointer"
+/* 072C5C 8011A61C 30820FFF */   andi  $v0, $a0, 0xfff # mask for wrestler ID
 
+# "pointer or data" has "data" (Wrestler ID4 value to preload)
 /* 072C60 8011A620 A602FF60 */  sh    $v0, -0xa0($s0)
+# get costume number from top nibble
 /* 072C64 8011A624 00041302 */  srl   $v0, $a0, 0xc
 /* 072C68 8011A628 3042000F */  andi  $v0, $v0, 0xf
 /* 072C6C 8011A62C A602FF66 */  sh    $v0, -0x9a($s0)
@@ -1573,6 +1575,7 @@ func_8011A5AC:
 /* 072C80 8011A640 AE16FFFC */   sw    $s6, -4($s0)
 
 .L8011A644:
+# "pointer or data" has pointer to data sequence
 /* 072C84 8011A644 94830010 */  lhu   $v1, 0x10($a0)
 /* 072C88 8011A648 94820012 */  lhu   $v0, 0x12($a0)
 /* 072C8C 8011A64C 30630070 */  andi  $v1, $v1, 0x70
