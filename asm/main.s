@@ -29745,7 +29745,7 @@ func_80016478:
 # related to playing music
 
 # Params:
-# $a0 - ?
+# $a0 - song number?
 # $a1 - ?
 # $a2 - ?
 
@@ -76925,28 +76925,28 @@ D_8003FDC0: .float 0.017453292 #0x3C8EFA35
 /*----------------------------------------------------------------------------*/
 # 800403B0 (Z64 0x40FB0; data01 bin offset: 0x606C): music file IDs
 tbl_MusicFileIDs:
-	.short 0xFFFF # (no music)
-	.short 0x359 # in-match music 1
-	.short 0x35A # in-match music 2
-	.short 0x35B # in-match music 3
-	.short 0x35C # in-match music 4
-	.short 0x35D # in-match music 5
-	.short 0x35E # in-match music 6
-	.short 0x350 # game intro music
-	.short 0x351 # credits music
-	.short 0x34C # main menu music
-	.short 0x34D # edit mode music
-	.short 0x34E # options menu music
-	.short 0x34F # organ music
-	.short 0x352 # Original Song A
-	.short 0x353 # Original Song B
-	.short 0x356 # unlock song
-	.short 0x357 # (same as WCW/nWo Revenge file ID 0x220)
-	.short 0x358 # ???? I honestly have no clue.
-	.short 0x354 # post-match replay music
-	.short 0xFFFF # (no music)
-	.short 0x352 # Original Song A
-	.short 0x353 # Original Song B
+	.short 0xFFFF # 0x00 (no music)
+	.short 0x359  # 0x01 in-match music 1
+	.short 0x35A  # 0x02 in-match music 2
+	.short 0x35B  # 0x03 in-match music 3
+	.short 0x35C  # 0x04 in-match music 4
+	.short 0x35D  # 0x05 in-match music 5
+	.short 0x35E  # 0x06 in-match music 6
+	.short 0x350  # 0x07 game intro music
+	.short 0x351  # 0x08 credits music
+	.short 0x34C  # 0x09 main menu music
+	.short 0x34D  # 0x0A edit mode music
+	.short 0x34E  # 0x0B options menu music
+	.short 0x34F  # 0x0C organ music
+	.short 0x352  # 0x0D Original Song A
+	.short 0x353  # 0x0E Original Song B
+	.short 0x356  # 0x0F unlock song
+	.short 0x357  # 0x10 (same as WCW/nWo Revenge file ID 0x220)
+	.short 0x358  # 0x11 ???? I honestly have no clue.
+	.short 0x354  # 0x12 post-match replay music
+	.short 0xFFFF # 0x13 (no music)
+	.short 0x352  # 0x14 Original Song A
+	.short 0x353  # 0x15 Original Song B
 	.short 0 # [streamed theme] Giant Baba
 	.short 1 # [streamed theme] Mitsuharu Misawa
 	.short 2 # [streamed theme] Yoshinari Ogawa
