@@ -7,8 +7,14 @@
 # each entry is 0x14 bytes long
 
 # IntroScriptEntry struct (also used for the ending):
-# WrestlerID4 (short), TimingA (short), AnimID (short), TimingB (short),
-# Position1 (word), Position2 (word), Unknown1 (short), Unknown2 (short)
+# 0x00: WrestlerID4 (short)
+# 0x02: TimingA (short)
+# 0x04: AnimID (short)
+# 0x06: TimingB (short)
+# 0x08: Position1 [X, Y] (word)
+# 0x0C: Position2 [Z, Rotation] (word)
+# 0x10: Unknown1 [Flags, Move Speed] (short)
+# 0x12: Unknown2 [Unknown, Costume] (short)
 
 D_801240D0:
 	.short 0x0000, 0xFFFF, 0x0000, 0x0000
