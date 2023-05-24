@@ -724,6 +724,9 @@ func_80119C4C:
 /* 0722BC 80119C7C 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - [w]
+
 func_80119C80:
 /* 0722C0 80119C80 3C038013 */  lui   $v1, %hi(bss1_8012C8D0) # $v1, 0x8013
 /* 0722C4 80119C84 8C63C8D0 */  lw    $v1, %lo(bss1_8012C8D0)($v1)
@@ -971,6 +974,8 @@ func_80119F14:
 /* 0725A0 80119F60 00021080 */  sll   $v0, $v0, 2
 /* 0725A4 80119F64 00446021 */  addu  $t4, $v0, $a0
 /* 0725A8 80119F68 00031940 */  sll   $v1, $v1, 5
+
+# start of intro sequence image data
 /* 0725AC 80119F6C 3C028012 */  lui   $v0, %hi(D_80125928) # $v0, 0x8012
 /* 0725B0 80119F70 24425928 */  addiu $v0, %lo(D_80125928) # addiu $v0, $v0, 0x5928
 /* 0725B4 80119F74 00621821 */  addu  $v1, $v1, $v0
@@ -1088,6 +1093,8 @@ func_8011A098:
 /* 0726D8 8011A098 3C048013 */  lui   $a0, %hi(bss1_8012C8E0) # $a0, 0x8013
 /* 0726DC 8011A09C 8C84C8E0 */  lw    $a0, %lo(bss1_8012C8E0)($a0)
 /* 0726E0 8011A0A0 27BDFFE8 */  addiu $sp, $sp, -0x18
+
+# start of intro sequence image data
 /* 0726E4 8011A0A4 3C028012 */  lui   $v0, %hi(D_80125928) # $v0, 0x8012
 /* 0726E8 8011A0A8 24425928 */  addiu $v0, %lo(D_80125928) # addiu $v0, $v0, 0x5928
 /* 0726EC 8011A0AC AFBF0010 */  sw    $ra, 0x10($sp)
@@ -1458,6 +1465,8 @@ func_8011A370:
 /* 072B50 8011A510 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 072B54 8011A514 AFB00010 */  sw    $s0, 0x10($sp)
 /* 072B58 8011A518 00808021 */  addu  $s0, $a0, $zero
+
+# start of intro sequence image data
 /* 072B5C 8011A51C 3C038012 */  lui   $v1, %hi(D_80125928) # $v1, 0x8012
 /* 072B60 8011A520 24635928 */  addiu $v1, %lo(D_80125928) # addiu $v1, $v1, 0x5928
 /* 072B64 8011A524 AFBF0018 */  sw    $ra, 0x18($sp)
@@ -1663,6 +1672,9 @@ func_8011A728:
 /* 072DD0 8011A790 27BD0030 */   addiu $sp, $sp, 0x30
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - [w]
+
 func_8011A794:
 /* 072DD4 8011A794 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 072DD8 8011A798 AFB00010 */  sw    $s0, 0x10($sp)
@@ -1670,8 +1682,11 @@ func_8011A794:
 /* 072DE0 8011A7A0 001010C0 */  sll   $v0, $s0, 3
 /* 072DE4 8011A7A4 00501023 */  subu  $v0, $v0, $s0
 /* 072DE8 8011A7A8 00021080 */  sll   $v0, $v0, 2
+
+# beginning of intro-related stuff
 /* 072DEC 8011A7AC 3C038012 */  lui   $v1, %hi(D_80125A58) # $v1, 0x8012
 /* 072DF0 8011A7B0 24635A58 */  addiu $v1, %lo(D_80125A58) # addiu $v1, $v1, 0x5a58
+
 /* 072DF4 8011A7B4 00431021 */  addu  $v0, $v0, $v1
 /* 072DF8 8011A7B8 00403021 */  addu  $a2, $v0, $zero
 /* 072DFC 8011A7BC 3C028013 */  lui   $v0, %hi(bss1_8012C510) # $v0, 0x8013
@@ -1940,7 +1955,7 @@ func_8011A9F0:
 
 /* 073120 8011AAE0 3C028013 */  lui   $v0, %hi(bss1_8012C924) # $v0, 0x8013
 /* 073124 8011AAE4 8C42C924 */  lw    $v0, %lo(bss1_8012C924)($v0)
-/* 073128 8011AAE8 94450006 */  lhu   $a1, 6($v0)
+/* 073128 8011AAE8 94450006 */  lhu   $a1, 6($v0) # camera value?
 /* 07312C 8011AAEC 10A00003 */  beqz  $a1, .L8011AAFC
 /* 073130 8011AAF0 00000000 */   nop   
 
@@ -2041,6 +2056,8 @@ func_8011AB64:
 /* 073260 8011AC20 24A40016 */  addiu $a0, $a1, 0x16
 /* 073264 8011AC24 00431023 */  subu  $v0, $v0, $v1
 /* 073268 8011AC28 00021080 */  sll   $v0, $v0, 2
+
+# beginning of intro-related stuff
 /* 07326C 8011AC2C 3C038012 */  lui   $v1, %hi(D_80125A58) # $v1, 0x8012
 /* 073270 8011AC30 24635A58 */  addiu $v1, %lo(D_80125A58) # addiu $v1, $v1, 0x5a58
 /* 073274 8011AC34 00431821 */  addu  $v1, $v0, $v1
@@ -2117,6 +2134,8 @@ func_8011AC40:
 
 /* 07332C 8011ACEC 3C028013 */  lui   $v0, %hi(bss1_8012C8E0) # $v0, 0x8013
 /* 073330 8011ACF0 8C42C8E0 */  lw    $v0, %lo(bss1_8012C8E0)($v0)
+
+# start of intro sequence image data
 /* 073334 8011ACF4 3C038012 */  lui   $v1, %hi(D_80125928) # $v1, 0x8012
 
 func_8011ACF8:
@@ -2273,6 +2292,7 @@ func_8011AD88:
 /* 073520 8011AEE0 1040001C */  beqz  $v0, .L8011AF54
 /* 073524 8011AEE4 24040081 */   li    $a0, 129
 
+# beginning of intro-related stuff
 /* 073528 8011AEE8 3C058012 */  lui   $a1, %hi(D_80125A58) # $a1, 0x8012
 /* 07352C 8011AEEC 24A55A58 */  addiu $a1, %lo(D_80125A58) # addiu $a1, $a1, 0x5a58
 
@@ -2307,8 +2327,10 @@ func_8011AD88:
 /* 073590 8011AF50 24040080 */   li    $a0, 128
 
 .L8011AF54:
+# beginning of intro-related stuff
 /* 073594 8011AF54 3C028012 */  lui   $v0, %hi(D_80125A58) # $v0, 0x8012
 /* 073598 8011AF58 24425A58 */  addiu $v0, %lo(D_80125A58) # addiu $v0, $v0, 0x5a58
+
 /* 07359C 8011AF5C 3C018013 */  lui   $at, %hi(bss1_8012C924) # $at, 0x8013
 /* 0735A0 8011AF60 AC22C924 */  sw    $v0, %lo(bss1_8012C924)($at)
 /* 0735A4 8011AF64 3C018013 */  lui   $at, %hi(bss1_8012C8DC) # $at, 0x8013
@@ -21642,7 +21664,10 @@ bss1_8012C0DC: .word 0
 bss1_8012C0E0: .word 0
 bss1_8012C0E4: .word 0
 bss1_8012C0E8: .word 0
+
+# pointer to ???
 bss1_8012C0EC: .word 0
+
 bss1_8012C0F0: .word 0
 bss1_8012C0F4: .word 0
 bss1_8012C0F8: .word 0
@@ -21797,6 +21822,7 @@ bss1_8012C500: .word 0
 bss1_8012C504: .word 0, 0, 0
 
 # 8012C510 [w]
+# intro-related timer for when to move on to the next part
 bss1_8012C510: .word 0, 0
 
 # 8012C518 [w]
@@ -21829,6 +21855,7 @@ bss1_8012C8D8: .word 0
 bss1_8012C8DC: .word 0
 
 # 8012C8E0 [w]
+# somehow related to intro sequence data
 bss1_8012C8E0: .word 0, 0
 
 # 8012C8E8 [w]
@@ -21851,6 +21878,7 @@ bss1_8012C910: .word 0, 0
 bss1_8012C918: .word 0, 0, 0
 
 # 8012C924 [w]
+# pointer to current intro/ending block?
 bss1_8012C924: .word 0
 	.align 4
 
