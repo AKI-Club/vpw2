@@ -1509,6 +1509,7 @@ D_80125818:
 	.word 0x00000000, 0x00000800
 	.short 0x0000, 0x0004
 
+# these three are unused (or at least unreferenced)
 D_8012582C:
 	.short 0x0009, 0x0000, 0x31B9, 0xFFFF
 	.word 0x00000000, 0x00000800
@@ -1581,14 +1582,17 @@ D_80125928:
 # 80125938 (Z64 0x7DF78; seg001 data offset: 0x1868)
 # a.k.a. the one with the 4 words/pointers at the end
 
+# Asmik, AKI, and AJPW splash screens
 D_80125938:
 	.short 0, 0, 0, 0, 0, 0, 0, 0
 	.word D_80125878, D_80125888, D_80125868, 0
 
+# "ALL JAPAN" 1 and "PRO WRESTLING" 1
 D_80125958:
 	.short 1, 1, 1, 0, 0, 0x168, 0, 0
 	.word D_801258B8, D_801258C8, 0, 0
 
+# "PRO WRESTLING" 2 and "ALL JAPAN" 2
 D_80125978:
 	.short 1, 1, 0, 0, 0, 0, 0, 0
 	.word D_801258D8, D_801258E8, 0, 0
@@ -1601,10 +1605,12 @@ D_801259B8:
 	.short 0, 0, 0, 0, 0, 0, 0, 0
 	.word D_801258A8, 0, 0, 0
 
+# "VIRTUAL" and "PRO WRESTLING" 3
 D_801259D8:
 	.short 1, 0, 0, 0, 0, 0, 0, 0
 	.word D_801258F8, D_80125908, 0, 0
 
+# Screen burn
 D_801259F8:
 	.short 1, 1, 0, 0, 0, 0, 0, 0
 	.word D_80125918, 0, 0, 0
@@ -1620,6 +1626,7 @@ D_80125A38:
 	.byte 0xFF, 0xFF, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
 	.byte 0xFF, 0xFF, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00
 
+/*----------------------------------------------------------------------------*/
 # back to the good stuff
 # each entry is 0x1C bytes
 
@@ -1992,6 +1999,7 @@ D_80126200:
 	.short 0x003C, 0x00C9, 0, 1
 	.word D_801250E8, 0x0001, D_801250FC, 0
 
+# begin "Misawa in burning locker room" scenes
 D_8012621C:
 	.byte 0x44, 0, 0x7B, 0
 	.short 0x0064, 0x00CA, 4, 2
@@ -2007,16 +2015,20 @@ D_80126254:
 	.short 0x003C, 0x00CC, 4, 2
 	.word 0, D_80125138, 0, 0
 
+# preload most of the next screen's participants
 D_80126270:
 	.byte 0x47, 0, 0x73, 3
 	.short 0x003C, 0x00CD, 5, 2
 	.word 0x0005, D_8012514C, 0x0003, 0x0004
 
+# preload the other participant that was in Misawa's slot
 D_8012628C:
 	.byte 0x48, 0, 0x80, 0
 	.short 0x0014, 0x00CE, 0, 3
 	.word 0, 0x0006, 0, 0
 
+# beginning of "VIRTUAL PRO-WRESTLING" sequence with Akiyama, Kobashi, Taue,
+# and Kawada walking on the VPW2 entrance ramp
 D_801262A8:
 	.byte 0x48, 1, 0, 0x80
 	.short 0x005A, 0x0000, 6, 3
@@ -2073,6 +2085,8 @@ D_801263C0:
 	.word D_801251C4, D_801251C4, D_801251C4, D_801251C4
 
 /*----------------------------------------------------------------------------*/
+# ending sequence definitions
+
 D_801263DC:
 	.byte 0x83, 0, 0, 35
 	.short 0x00FA, 0, 0, 3
