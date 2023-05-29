@@ -11694,6 +11694,7 @@ func_801211A0:
 /* 07A6C4 80122084 54400006 */  bnezl $v0, .L801220A0
 /* 07A6C8 80122088 00021080 */   sll   $v0, $v0, 2
 
+# announcer call name value
 /* 07A6CC 8012208C 3C028010 */  lui   $v0, %hi(tbl_80105FDA) # $v0, 0x8010
 /* 07A6D0 80122090 94425FDA */  lhu   $v0, %lo(tbl_80105FDA)($v0)
 /* 07A6D4 80122094 24100028 */  li    $s0, 40
@@ -11701,6 +11702,7 @@ func_801211A0:
 /* 07A6DC 8012209C 00511021 */   addu  $v0, $v0, $s1
 
 .L801220A0:
+# announcer call name value
 /* 07A6E0 801220A0 3C018010 */  lui   $at, %hi(tbl_80105FDA)
 /* 07A6E4 801220A4 00220821 */  addu  $at, $at, $v0
 /* 07A6E8 801220A8 94225FDA */  lhu   $v0, %lo(tbl_80105FDA)($at)
