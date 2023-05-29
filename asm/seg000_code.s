@@ -9869,6 +9869,9 @@ func_800EE4D8:
 /* 053A88 800EE638 27BD0020 */   addiu $sp, $sp, 0x20
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - 
+
 func_800EE63C:
 /* 053A8C 800EE63C 27BDFF78 */  addiu $sp, $sp, -0x88
 /* 053A90 800EE640 AFB3006C */  sw    $s3, 0x6c($sp)
@@ -39649,6 +39652,8 @@ tbl_80105F7C:
 
 /*----------------------------------------------------------------------------*/
 # 80105FC8 [b] (0x1E38 offset)
+# Edit Mode Theme Music Entries
+
 tbl0_80105FC8:
 	.byte 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0xA, 0xB, 0xC
 
@@ -39665,39 +39670,40 @@ tbl_80105FD8:
 tbl_80105FDA:
 	.short 0x00AC
 
-	.short 0xF1F7, 0x0089
-	.short 0xF1F8, 0x008A
-	.short 0xF1F9, 0x008B
-	.short 0xF1FA, 0x008C
-	.short 0xF1FB, 0x008D
-	.short 0xF1FC, 0x008E
-	.short 0xF1FD, 0x008F
-	.short 0xF1FE, 0x0090
-	.short 0xF1FF, 0x0091
-	.short 0xF200, 0x0092
-	.short 0xF201, 0x0093
-	.short 0xF202, 0x0094
-	.short 0xF203, 0x0095
-	.short 0xF204, 0x0096
-	.short 0xF205, 0x0097
-	.short 0xF206, 0x0098
-	.short 0xF207, 0x0099
-	.short 0xF208, 0x009A
-	.short 0xF209, 0x009B
-	.short 0xF20A, 0x009C
-	.short 0xF20B, 0x009D
-	.short 0xF20C, 0x009E
-	.short 0xF20D, 0x009F
-	.short 0xF20E, 0x00A0
-	.short 0xF20F, 0x00A1
-	.short 0xF210, 0x00A2
-	.short 0xF211, 0x00A3
-	.short 0xF212, 0x00A4
-	.short 0xF213, 0x00A5
-	.short 0xF215, 0x00A7
-	.short 0xF216, 0x00A8
-	.short 0xF217, 0x00A9
-	.short 0xF218, 0x00AA
+	.short 0xF1F7, 0x0089 # Giant Baba
+	.short 0xF1F8, 0x008A # Misawa Mitsuharu
+	.short 0xF1F9, 0x008B # Kawada Toshiaki
+	.short 0xF1FA, 0x008C # Taue Akira
+	.short 0xF1FB, 0x008D # Kobashi Kenta
+	.short 0xF1FC, 0x008E # Akiyama Jun
+	.short 0xF1FD, 0x008F # Hase Hiroshi
+	.short 0xF1FE, 0x0090 # Omori Takao
+	.short 0xF1FF, 0x0091 # Takayama Yoshihiro
+	.short 0xF200, 0x0092 # Honda Tamon
+	.short 0xF201, 0x0093 # Izumida Jun
+	.short 0xF202, 0x0094 # Inoue Masao
+	.short 0xF203, 0x0095 # Ogawa Yoshinari
+	.short 0xF204, 0x0096 # Asako Satoru
+	.short 0xF205, 0x0097 # Shiga Kentaro
+	.short 0xF206, 0x0098 # Kakihara Masahito
+	.short 0xF207, 0x0099 # Kanemaru Yoshinobu
+	.short 0xF208, 0x009A # Marufuji Naomichi
+	.short 0xF209, 0x009B # Eigen Haruka
+	.short 0xF20A, 0x009C # Rusher Kimura
+	.short 0xF20B, 0x009D # Momota Mitsuo
+	.short 0xF20C, 0x009E # Fuchi Masanobu
+	.short 0xF20D, 0x009F # Kikuchi Tsuyoshi
+	.short 0xF20E, 0x00A0 # Hashi Makoto
+	.short 0xF20F, 0x00A1 # Morishima Takeshi
+	.short 0xF210, 0x00A2 # Vader
+	.short 0xF211, 0x00A3 # Stan Hansen
+	.short 0xF212, 0x00A4 # Johnny Ace
+	.short 0xF213, 0x00A5 # Mike Barton
+	.short 0xF215, 0x00A7 # Gary Albright
+	.short 0xF216, 0x00A8 # Giant Kimala
+	.short 0xF217, 0x00A9 # Johnny Smith
+	.short 0xF218, 0x00AA # Maunakea Mossman
+	# missing 0xF214, 0x00A6 is "Bart Gunn"
 
 /*----------------------------------------------------------------------------*/
 # 80106060 [h?]
@@ -40213,6 +40219,7 @@ tbl0_80106810:
 	.short 0x0020, 0x0080, 0x0005, 0x0007, 0x0B00, 0x0000
 
 # 80106828
+# budokan arena select model related
 ptrTbl_80106828:
 	.word tbl0_80106638
 	.word tbl0_80106654
@@ -40237,6 +40244,7 @@ ptrTbl_80106828:
 
 /*----------------------------------------------------------------------------*/
 # 80106878 (0x26E8)
+# budokan arena select model related
 tbl0_80106878:
 	.short 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0101, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -40358,6 +40366,7 @@ tbl0_80106C24:
 	.short 0x0080, 0x0020, 0x0007, 0x0005, 0x0C00, 0x0000
 
 # 80106C3C
+# TKO Dome arena select model related
 ptrTbl_80106C3C:
 	.word tbl0_80106AB8
 	.word tbl0_80106AD0
@@ -40377,6 +40386,7 @@ ptrTbl_80106C3C:
 
 /*----------------------------------------------------------------------------*/
 # 80106C78
+# TKO Dome arena select model related
 tbl0_80106C78:
 	.short 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0101, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -40502,6 +40512,7 @@ tbl0_80106F5C:
 	.short 0x0020, 0x0080, 0x0005, 0x0007, 0x0800, 0x0000
 
 # 80106F74
+# AKI Hall arena select model related
 ptrTbl_80106F74:
 	.word tbl0_80106E80
 	.word tbl0_80106D90
@@ -40527,6 +40538,7 @@ ptrTbl_80106F74:
 
 /*----------------------------------------------------------------------------*/
 # 80106FC8
+# AKI Hall arena select model related
 tbl0_80106FC8:
 	.short 0x0004, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0405, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -40632,6 +40644,7 @@ tbl0_801071EC:
 	.short 0x0000, 0x0000
 
 # 80107208
+# Stadium arena select model related
 ptrTbl_80107208:
 	.word tbl0_80107048
 	.word tbl0_8010712C
@@ -40654,6 +40667,7 @@ ptrTbl_80107208:
 
 /*----------------------------------------------------------------------------*/
 # 80107250
+# Stadium arena select model related
 tbl0_80107250:
 	.short 0x0004, 0x0800, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0402, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -40744,6 +40758,7 @@ tbl0_801074E4:
 	.short 0x0040, 0x0040, 0x0006, 0x0006, 0x1C00, 0x0000
 
 # 801074FC
+# Dome Road stage model related
 ptrTbl_801074FC:
 	.word tbl0_801073EC
 	.word tbl0_801073D0
@@ -40760,6 +40775,7 @@ ptrTbl_801074FC:
 
 /*----------------------------------------------------------------------------*/
 # 8010752C
+# Dome Road stage model related
 tbl0_8010752C:
 	.short 0x0002, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0401, 0x0800, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -40931,6 +40947,7 @@ tbl0_80107A54:
 	.short 0x0040, 0x0040, 0x0006, 0x0006, 0x0400, 0x0000
 
 # 80107A6C
+# Game Intro VPW2 stage model related
 ptrTbl_80107A6C:
 	.word tbl0_8010782C
 	.word tbl0_80107844
@@ -40959,6 +40976,7 @@ ptrTbl_80107A6C:
 
 /*----------------------------------------------------------------------------*/
 # 80107ACC
+# Game Intro VPW2 stage model related
 tbl0_80107ACC:
 	.short 0x0010, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0201, 0x0000, 0x0000, 0x00CC, 0xFECE, 0x0000, 0x0000, 0x0000
@@ -41079,6 +41097,7 @@ tbl0_80107E18:
 	.short 0x0000, 0x0000
 
 # 80107E34
+# related to checks and trophy stuff
 ptrTbl_80107E34:
 	.word tbl0_80107CD8
 	.word tbl0_80107CBC
@@ -41100,6 +41119,7 @@ ptrTbl_80107E34:
 
 /*----------------------------------------------------------------------------*/
 # 80107E78
+# related to checks and trophy stuff
 tbl0_80107E78:
 	.short 0x0004, 0x2001, 0x0000, 0x012C, 0x010E, 0x01C2, 0x00B4, 0x0000
 	.short 0x0403, 0x2002, 0x0000, 0x0168, 0x010E, 0x01C2, 0x00B4, 0x0000
@@ -41240,6 +41260,7 @@ tbl0_80108198:
 	.short 0x0040, 0x0020, 0x0006, 0x0005, 0x0400, 0x0000
 
 # 801081B0
+# Game Intro Locker Room model related
 ptrTbl_801081B0:
 	.word tbl0_80107F68
 	.word tbl0_80107F80
@@ -41268,6 +41289,7 @@ ptrTbl_801081B0:
 
 /*----------------------------------------------------------------------------*/
 # 80108210
+# Game Intro Locker Room model related
 tbl0_80108210:
 	.short 0x0006, 0x0800, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0601, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -41417,6 +41439,7 @@ tbl0_80108590:
 	.short 0x0040, 0x0020, 0x0006, 0x0005, 0x1300, 0x0000
 
 # 801085A8
+# Match Intro Locker Room model related
 ptrTbl_801085A8:
 	.word tbl0_80108340
 	.word tbl0_80108358
@@ -41445,6 +41468,7 @@ ptrTbl_801085A8:
 
 /*----------------------------------------------------------------------------*/
 # 80108608
+# Match Intro Locker Room model related
 tbl0_80108608:
 	.short 0x0006, 0x0800, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0601, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
@@ -41468,60 +41492,167 @@ tbl0_80108608:
 
 /*----------------------------------------------------------------------------*/
 # 80108738 [some halfs, then some words] (0x45A8)
+
+# 0x00 [s] Model archive file ID
+# 0x02 [s] starting Texture archive file ID
+# 0x04 [s] number of texture archives (top byte/0x__00); ??? flags (bottom byte/0x00__)
+# 0x06 [s] number of model elements?
+# 0x08 [w] Pointer to base model info
+# 0x0C [w] Pointer to individual mesh data
+# 0x10 [s] ?
+# 0x12 [s] ?
+# 0x14 [s] ?
+# 0x16 [s] ?
+# 0x18 [s] ?
+# 0x1A [s] scale value
+
+# ??? flags values:
+# 00 = arena select model
+# nonzero = used in match introductions?
+# some models need this set to 01 to render properly (anything with transparency)
+
 tbl0_80108738:
-	.short 0x0088, 0x0089, 0x0400, 0x0014
+	# Budokan arena select model
+	.short 0x0088
+	.short 0x0089
+	.short 0x0400
+	.short 0x0014
 	.word ptrTbl_80106828
 	.word tbl0_80106878
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x1000, 0x008D, 0x008E, 0x0200, 0x000F
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x1000
+	#------------------------------------#
+	# TKO Dome arena select model
+	.short 0x008D
+	.short 0x008E
+	.short 0x0200
+	.short 0x000F
 	.word ptrTbl_80106C3C
 	.word tbl0_80106C78
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x1000, 0x0090, 0x0091, 0x0400, 0x0015
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x1000
+	#------------------------------------#
+	# AKI Hall arena select model
+	.short 0x0090
+	.short 0x0091
+	.short 0x0400
+	.short 0x0015
 	.word ptrTbl_80106F74
 	.word tbl0_80106FC8
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x1000, 0x0095, 0x0096, 0x0500, 0x0012
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x1000
+	#------------------------------------#
+	# Stadium arena select model
+	.short 0x0095
+	.short 0x0096
+	.short 0x0500
+	.short 0x0012
 	.word ptrTbl_80107208
 	.word tbl0_80107250
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x1000, 0x008D, 0x008E, 0x0200, 0x000F
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x1000
+	#------------------------------------#
+	# Dome Road arena select model (reuses TKO Dome values)
+	.short 0x008D
+	.short 0x008E
+	.short 0x0200
+	.short 0x000F
 	.word ptrTbl_80106C3C
 	.word tbl0_80106C78
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x1000, 0x009B, 0x009C, 0x0501, 0x000C
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x1000
+	#------------------------------------#
+	# Dome Road Stage?
+	.short 0x009B
+	.short 0x009C
+	.short 0x0501
+	.short 0x000C
 	.word ptrTbl_801074FC
 	.word tbl0_8010752C
 
-	.short 0x000C, 0x00C8, 0x0000, 0x0060, 0x0000
-	.short 0x0800, 0x00A6, 0x00A7, 0x0300, 0x0018
+	.short 0x000C, 0x00C8
+	.short 0x0000, 0x0060
+	.short 0x0000
+	.short 0x0800
+	#------------------------------------#
+	# game intro VPW2 stage
+	.short 0x00A6
+	.short 0x00A7
+	.short 0x0300
+	.short 0x0018
 	.word ptrTbl_80107A6C
 	.word tbl0_80107ACC
 
-	.short 0x000C, 0x00C8, 0x0000, 0x0060, 0x0000
-	.short 0x0800, 0x00A1, 0x00A2, 0x0401, 0x0011
+	.short 0x000C, 0x00C8
+	.short 0x0000, 0x0060
+	.short 0x0000
+	.short 0x0800
+	#------------------------------------#
+	# checks and trophy stuff
+	.short 0x00A1
+	.short 0x00A2
+	.short 0x0401
+	.short 0x0011
 	.word ptrTbl_80107E34
 	.word tbl0_80107E78
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x0800, 0x00AA, 0x00AB, 0x0600, 0x0018
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x0800
+	#------------------------------------#
+	# Game Intro Locker Room
+	.short 0x00AA
+	.short 0x00AB
+	.short 0x0600
+	.short 0x0018
 	.word ptrTbl_801081B0
 	.word tbl0_80108210
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x0800, 0x00B1, 0x00B2, 0x0701, 0x0018
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x0800
+	#------------------------------------#
+	# Match Intro Locker Room
+	.short 0x00B1
+	.short 0x00B2
+	.short 0x0701
+	.short 0x0018
 	.word ptrTbl_801085A8
 	.word tbl0_80108608
 
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x0800, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
-	.short 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x0800
+	#------------------------------------#
+	.short 0x0000
+	.short 0x0000
+	.short 0x0000
+	.short 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+
+	.short 0x0000, 0x0000
+	.short 0x0000, 0x0000
+	.short 0x0000
+	.short 0x0000
 
 /*----------------------------------------------------------------------------*/
 # 8010886C [w] (0x46DC)
@@ -42871,9 +43002,9 @@ tbl0_8010937E:
 	.word tbl0_80109224
 
 # data for these entries
-# +00: ?
-# +01: number of items
-# +02: text/string ID
+# +00: [b] ?
+# +01: [b] number of items
+# +02: [s] text/string ID
 
 # 80109384 [b]
 tbl0_80109384:
@@ -45166,6 +45297,7 @@ bss0_80114F74: .word 0
 bss0_80114F78: .word 0
 
 # 80114F7C [w]
+# also related to stadium select model
 bss0_80114F7C: .word 0
 
 # 80114F80 [w]
