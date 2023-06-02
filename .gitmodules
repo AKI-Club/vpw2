@@ -1,3 +1,9 @@
 [submodule "tools/sm64tools"]
 	path = tools/sm64tools
 	url = https://github.com/queueRAM/sm64tools.git
+[submodule "tools/asm-processor"]
+	path = tools/asm-processor
+	url = https://github.com/farisawan-2000/asm-processor
+[submodule "tools/kmc-gcc-wrapper"]
+	path = tools/kmc-gcc-wrapper
+	url = https://github.com/Mr-Wiseguy/kmc-gcc-wrapper.git
