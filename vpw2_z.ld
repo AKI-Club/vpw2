@@ -124,8 +124,8 @@ SECTIONS
 	/* -- header and boot --------------------------------------------------- */
 	/*.boot 0x0 : AT(0x0) {*/
 	BEGIN_SEG(boot,0) {
-		* (.header);
-		* (.boot);
+		BUILD_DIR/vpw2_z.o(.header);
+		BUILD_DIR/vpw2_z.o(.boot);
 	}
 	END_SEG(boot)
 
@@ -133,7 +133,8 @@ SECTIONS
 	/* 0x80000400 001000-03A730 [39730] */
 	/*.textmain 0x80000400 : AT(0x001000) {*/
 	BEGIN_SEG(textmain, 0x80000400) {
-		* (.textmain);
+		BUILD_DIR/src/textmain.o(.text);
+		BUILD_DIR/vpw2_z.o(.othertextmain);
 	}
 	END_SEG(textmain)
 
