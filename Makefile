@@ -75,7 +75,7 @@ LDFLAGS = -T undefined_syms.txt -T $(BUILD_DIR)/$(LD_SCRIPT) -Map $(BUILD_DIR)/v
 # Other Tools 
 ################################################################################
 # general tools
-SHA1SUM = sha1sum
+SHA1SUM := sha1sum
 
 # N64 tools
 TOOLS_DIR = tools
