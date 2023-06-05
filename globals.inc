@@ -3,6 +3,9 @@
 
 # routines currently living in main.s:
 .global start
+.global func_80000460
+.global base_dl
+.global bssMain_8009C190
 .global MainThread
 .global MainThread_idle
 .global LoadDataDMA
