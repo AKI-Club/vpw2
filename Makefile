@@ -22,7 +22,7 @@ LD_SCRIPT := $(TARGET).ld
 
 # Code directories
 SRC_DIR := src
-SRC_DIRS := src src/menu1 src/cutscene src/menu2 src/game
+SRC_DIRS := src src/seg0_menu1 src/seg1_cutscene src/seg2_menu2 src/seg3_game
 ASM_DIRS := asm
 
 # Binary Directories
