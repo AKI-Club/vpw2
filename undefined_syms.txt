@@ -15,6 +15,13 @@ func_8400193C = 0x8400193C;
 func_84001BE4 = 0x84001BE4;
 func_84001BB0 = 0x84001BB0;
 
+/* ----- [needed for C stuff] ----- */
+
+/* main/textmain.s */
 func_80000460 = 0x80000460;
 base_dl = 0x8004B2A0;
 bssMain_8009C190 = 0x8009C190;
+
+/* main/func_80000460.s */
+bssMain_8004BC50 = 0x8004BC50;
+__osInitialize_common = 0x80037278;

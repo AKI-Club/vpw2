@@ -1,6 +1,7 @@
 #include "common.h"
 #include "ultra64.h"
 
+/*============================================================================*/
 GLOBAL_ASM("asm/textmain/textmain.s")
 
 // I AINT GOT A FUCKING CLUE WHAT THIS EVEN IS
@@ -25,3 +26,6 @@ void start(void) {
     }
 }
 */
+
+/*============================================================================*/
+GLOBAL_ASM("asm/textmain/func_80000460.s")
