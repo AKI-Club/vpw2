@@ -25,3 +25,17 @@ bssMain_8009C190 = 0x8009C190;
 /* main/func_80000460.s */
 bssMain_8004BC50 = 0x8004BC50;
 __osInitialize_common = 0x80037278;
+
+/* main/func_800004d0.s */
+bssMain_8004BD50 = 0x8004BD50;
+osCartRomInit = 0x8002B5C0;
+func_80023310 = 0x80023310;
+bssMain_8004BD68 = 0x8004BD68;
+bssMain_8004BD94 = 0x8004BD94;
+bssMain_8004BE00 = 0x8004BE00;
+bssMain_8004E090 = 0x8004E090;
+func_80000BF0 = 0x80000BF0;
+func_80023050 = 0x80023050;
+
+/* main/func_800005c4.s */
+func_80000E98 = 0x80000E98;

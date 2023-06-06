@@ -29,3 +29,5 @@ void start(void) {
 
 /*============================================================================*/
 GLOBAL_ASM("asm/textmain/func_80000460.s")
+GLOBAL_ASM("asm/textmain/func_800004d0.s")
+GLOBAL_ASM("asm/textmain/func_800005c4.s")
