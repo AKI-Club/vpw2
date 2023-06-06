@@ -61,3 +61,7 @@ GLOBAL_ASM("asm/textmain/func_80000654.s")
 GLOBAL_ASM("asm/textmain/LoadDataDMA_80000660.s")
 
 GLOBAL_ASM("asm/textmain/LoadCodeDMA_80000744.s")
+
+GLOBAL_ASM("asm/textmain/func_80000870.s")
+
+GLOBAL_ASM("asm/textmain/aki_malloc_80000898.s")
