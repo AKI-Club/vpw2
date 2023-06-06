@@ -9,7 +9,7 @@ Holds various assembly files.
 Split out code for segment 3 (gameplay).
 
 - asm/code_main/
-Split out code for main segment.
+Split out code for main segment. Semi-deprecated as of 2023/06/06 (which date format? yes).
 
 - asm/data_000/
 Split out data for segment 0 (menu 1).
@@ -22,6 +22,9 @@ Split out data for segment 3 (gameplay).
 
 - asm/data_main/
 Split out data for main segment.
+
+- asm/textmain/
+Split out routines used in C code for the main segment.
 
 --------------------------------------------------------------------------------
 assets/
@@ -72,23 +75,20 @@ include/
 
 --------------------------------------------------------------------------------
 src/
-This directory doesn't have much use right now because the conversion to C is
-only planned to happen AFTER shiftability and filetable extract/rebuild is
-finished.
+C language source code goes here.
+The root is meant to hold code that appears in the main/shared segment.
 
-The root is meant to hold code that appears in the main segment.
+- src/seg0_menu1/
+Code from segment 0, the first menu segment.
 
-- src/cutscene/
-Code from segment 1.
+- src/seg1_cutscene/
+Code from segment 1, the "cutscene" segment.
 
-- src/game/
-Code from segment 3.
+- src/seg2_menu2/
+Code from segment 2, the second menu segment.
 
-- src/menu1/
-Code from segment 0.
-
-- src/menu2/
-Code from segment 2.
+- src/seg3_game/
+Code from segment 3, the gameplay segment.
 
 --------------------------------------------------------------------------------
 tools/
