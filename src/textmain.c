@@ -65,3 +65,6 @@ GLOBAL_ASM("asm/textmain/LoadCodeDMA_80000744.s")
 GLOBAL_ASM("asm/textmain/func_80000870.s")
 
 GLOBAL_ASM("asm/textmain/aki_malloc_80000898.s")
+GLOBAL_ASM("asm/textmain/aki_free_80000a00.s")
+
+GLOBAL_ASM("asm/textmain/GetPiHandle_SRAM_80000b4c.s")

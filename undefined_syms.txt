@@ -70,3 +70,13 @@ malloc_80179204 = 0x80179204;
 malloc_80179208 = 0x80179208;
 malloc_8017920C = 0x8017920C;
 bssMain_800A404C = 0x800A404C;
+
+/* main/GetPiHandle_SRAM_80000b4c.s */
+SramHandle_Type = 0x8004BD8C;
+SramHandle_Latency = 0x8004BD8D;
+SramHandle_Pulse = 0x8004BD90;
+SramHandle_PageSize = 0x8004BD8E;
+SramHandle_RelDuration = 0x8004BD8F;
+SramHandle_Domain = 0x8004BD91;
+SramHandle_Speed = 0x8004BD98;
+SramHandle = 0x8004BD88;
