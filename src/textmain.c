@@ -69,6 +69,7 @@ GLOBAL_ASM("asm/textmain/aki_free_80000a00.s")
 
 GLOBAL_ASM("asm/textmain/GetPiHandle_SRAM_80000b4c.s")
 
+/*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80000bf0.s")
 
 GLOBAL_ASM("asm/textmain/func_80000e98.s")
@@ -86,3 +87,8 @@ GLOBAL_ASM("asm/textmain/thread_80001240.s")
 GLOBAL_ASM("asm/textmain/func_80001440.s")
 
 /*============================================================================*/
+
+GLOBAL_ASM("asm/textmain/func_800014d0.s")
+GLOBAL_ASM("asm/textmain/func_80001768.s")
+GLOBAL_ASM("asm/textmain/func_8000178c.s")
+GLOBAL_ASM("asm/textmain/func_8000179c.s")
