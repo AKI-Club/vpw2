@@ -39,3 +39,13 @@ func_80023050 = 0x80023050;
 
 /* main/func_800005c4.s */
 func_80000E98 = 0x80000E98;
+
+/* main/func_800005f0.s */
+func_80000F10 = 0x80000F10;
+
+/* main/func_80000614.s */
+func_800010D8 = 0x800010D8;
+osSendMesg = 0x800328B0;
+
+/* main/func_80000648.s */
+bssMain_8004C07C = 0x8004C07C;

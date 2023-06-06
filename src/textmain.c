@@ -31,3 +31,9 @@ void start(void) {
 GLOBAL_ASM("asm/textmain/func_80000460.s")
 GLOBAL_ASM("asm/textmain/func_800004d0.s")
 GLOBAL_ASM("asm/textmain/func_800005c4.s")
+GLOBAL_ASM("asm/textmain/func_800005f0.s")
+GLOBAL_ASM("asm/textmain/func_80000614.s")
+GLOBAL_ASM("asm/textmain/func_80000648.s")
+GLOBAL_ASM("asm/textmain/func_80000654.s")
+
+/*============================================================================*/
