@@ -72,3 +72,11 @@ GLOBAL_ASM("asm/textmain/GetPiHandle_SRAM_80000b4c.s")
 GLOBAL_ASM("asm/textmain/func_80000bf0.s")
 
 GLOBAL_ASM("asm/textmain/func_80000e98.s")
+
+GLOBAL_ASM("asm/textmain/func_80000f90.s")
+
+GLOBAL_ASM("asm/textmain/thread_80000f9c.s")
+
+GLOBAL_ASM("asm/textmain/func_800010d8.s")
+
+GLOBAL_ASM("asm/textmain/thread_800010e4.s")
