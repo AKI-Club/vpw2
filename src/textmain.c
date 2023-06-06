@@ -80,3 +80,9 @@ GLOBAL_ASM("asm/textmain/thread_80000f9c.s")
 GLOBAL_ASM("asm/textmain/func_800010d8.s")
 
 GLOBAL_ASM("asm/textmain/thread_800010e4.s")
+
+GLOBAL_ASM("asm/textmain/thread_80001240.s")
+
+GLOBAL_ASM("asm/textmain/func_80001440.s")
+
+/*============================================================================*/

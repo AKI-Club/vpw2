@@ -18,7 +18,6 @@ func_84001BB0 = 0x84001BB0;
 /* ----- [needed for C stuff] ----- */
 
 /* main/textmain.s */
-func_80000460 = 0x80000460;
 base_dl = 0x8004B2A0;
 bssMain_8009C190 = 0x8009C190;
 
@@ -34,7 +33,6 @@ bssMain_8004BD68 = 0x8004BD68;
 bssMain_8004BD94 = 0x8004BD94;
 bssMain_8004BE00 = 0x8004BE00;
 bssMain_8004E090 = 0x8004E090;
-func_80000BF0 = 0x80000BF0;
 func_80023050 = 0x80023050;
 
 /* main/func_800005c4.s */
@@ -100,3 +98,11 @@ bssMain_80052090 = 0x80052090;
 
 /* main/thread_80000f9c.s */
 osAfterPreNMI = 0x800371A0;
+
+/* main/thread_80001240.s */
+bssMain_800521A8 = 0x800521A8;
+D_8003C8A0 = 0x8003C8A0;
+
+/* main/func_80001440.s */
+osViGetCurrentFramebuffer = 0x800338E0;
+osViGetCurrentMode = 0x80033920;
