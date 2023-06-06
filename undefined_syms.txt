@@ -80,3 +80,20 @@ SramHandle_RelDuration = 0x8004BD8F;
 SramHandle_Domain = 0x8004BD91;
 SramHandle_Speed = 0x8004BD98;
 SramHandle = 0x8004BD88;
+
+/* main/func_80000bf0.s */
+bssMain_80052550 = 0x80052550;
+bssMain_80052540 = 0x80052540;
+bssMain_80052544 = 0x80052544;
+bssMain_80052548 = 0x80052548;
+bssMain_80052554 = 0x80052554;
+bssMain_80052556 = 0x80052556;
+bssMain_800520C8 = 0x800520C8;
+osCreateViManager = 0x80033960;
+tbl_800486F0 = 0x800486F0;
+osSetEventMesg = 0x800329E0;
+thread_80000F9C = 0x80000F9C;
+thread_800010E4 = 0x800010E4;
+bssMain_80050090 = 0x80050090;
+thread_80001240 = 0x80001240;
+bssMain_80052090 = 0x80052090;
