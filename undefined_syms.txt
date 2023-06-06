@@ -49,3 +49,13 @@ osSendMesg = 0x800328B0;
 
 /* main/func_80000648.s */
 bssMain_8004C07C = 0x8004C07C;
+
+/* main/LoadDataDMA_80000660.s */
+bssMain_8004BD74 = 0x8004BD74;
+bssMain_8004BD70 = 0x8004BD70;
+
+/* main/LoadCodeDMA_80000744.s */
+bssMain_8004BD72 = 0x8004BD72;
+bssMain_8004BD78 = 0x8004BD78;
+bssMain_8004BD7C = 0x8004BD7C;
+bssMain_8004BD80 = 0x8004BD80;

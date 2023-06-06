@@ -58,3 +58,6 @@ s32 func_80000648(void) {
 GLOBAL_ASM("asm/textmain/func_80000654.s")
 
 /*============================================================================*/
+GLOBAL_ASM("asm/textmain/LoadDataDMA_80000660.s")
+
+GLOBAL_ASM("asm/textmain/LoadCodeDMA_80000744.s")
