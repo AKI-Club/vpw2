@@ -47,7 +47,7 @@ For Debian (and Debian-based systems), this should handle most of it:
 
 ```bash
 sudo apt-get update
-sudo apt-get install binutils-mips-linux-gnu make git
+sudo apt-get install binutils-mips-linux-gnu gcc-mips-linux-gnu gcc-multilib make git
 ```
 
 If you don't already have host/native development tools set up, you'll also
