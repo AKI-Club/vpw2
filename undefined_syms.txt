@@ -90,10 +90,7 @@ bssMain_800520C8 = 0x800520C8;
 osCreateViManager = 0x80033960;
 tbl_800486F0 = 0x800486F0;
 osSetEventMesg = 0x800329E0;
-thread_80000F9C = 0x80000F9C;
-thread_800010E4 = 0x800010E4;
 bssMain_80050090 = 0x80050090;
-thread_80001240 = 0x80001240;
 bssMain_80052090 = 0x80052090;
 
 /* main/thread_80000f9c.s */
