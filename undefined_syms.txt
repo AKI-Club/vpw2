@@ -127,7 +127,6 @@ bssMain_800559DC = 0x800559DC;
 bssMain_80052560 = 0x80052560;
 bssMain_800559F0 = 0x800559F0;
 bssMain_800557C0 = 0x800557C0;
-func_80001B0C = 0x80001B0C; /* temp; forward declaration */
 bssMain_80056360 = 0x80056360;
 bssMain_80056362 = 0x80056362;
 bssMain_80056364 = 0x80056364;
@@ -144,10 +143,6 @@ guMtxIdentF = 0x800342E0;
 
 /* main/func_8000186c.s */
 bssMain_80055A00 = 0x80055A00;
-
-/* main/func_800018d4.s */
-func_80001A1C = 0x80001A1C; /* temp; forward declaration */
-func_800019BC = 0x800019BC; /* temp; forward declaration */
 
 /* main/func_80001a1c.s */
 D_8004A620 = 0x8004A620;
