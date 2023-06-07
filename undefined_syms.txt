@@ -138,3 +138,23 @@ bssMain_80056F78 = 0x80056F78;
 /* main/func_8000179c.s */
 D_8004A610 = 0x8004A610;
 D_8004A618 = 0x8004A618;
+
+/* main/func_80001800.s */
+guMtxIdentF = 0x800342E0;
+
+/* main/func_8000186c.s */
+bssMain_80055A00 = 0x80055A00;
+
+/* main/func_800018d4.s */
+func_80001A1C = 0x80001A1C; /* temp; forward declaration */
+func_800019BC = 0x800019BC; /* temp; forward declaration */
+
+/* main/func_80001a1c.s */
+D_8004A620 = 0x8004A620;
+D_8004A628 = 0x8004A628;
+
+/* main/func_80001b0c.s */
+bssMain_80056F38 = 0x80056F38;
+bssMain_80056F3B = 0x80056F3B;
+bssMain_80056F58 = 0x80056F58;
+bssMain_80056F5B = 0x80056F5B;
