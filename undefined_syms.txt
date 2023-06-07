@@ -23,11 +23,11 @@ bssMain_8009C190 = 0x8009C190;
 
 /* main/func_80000460.s */
 bssMain_8004BC50 = 0x8004BC50;
-__osInitialize_common = 0x80037278;
+__osInitialize_common = 0x80037278; /* todo: libultra */
 
 /* main/func_800004d0.s */
 bssMain_8004BD50 = 0x8004BD50;
-osCartRomInit = 0x8002B5C0;
+osCartRomInit = 0x8002B5C0; /* todo: libultra */
 func_80023310 = 0x80023310;
 bssMain_8004BD68 = 0x8004BD68;
 bssMain_8004BD94 = 0x8004BD94;
@@ -43,7 +43,7 @@ func_80000F10 = 0x80000F10;
 
 /* main/func_80000614.s */
 func_800010D8 = 0x800010D8;
-osSendMesg = 0x800328B0;
+osSendMesg = 0x800328B0; /* todo: libultra */
 
 /* main/func_80000648.s */
 bssMain_8004C07C = 0x8004C07C;
@@ -87,22 +87,22 @@ bssMain_80052548 = 0x80052548;
 bssMain_80052554 = 0x80052554;
 bssMain_80052556 = 0x80052556;
 bssMain_800520C8 = 0x800520C8;
-osCreateViManager = 0x80033960;
+osCreateViManager = 0x80033960; /* todo: libultra */
 tbl_800486F0 = 0x800486F0;
-osSetEventMesg = 0x800329E0;
+osSetEventMesg = 0x800329E0; /* todo: libultra */
 bssMain_80050090 = 0x80050090;
 bssMain_80052090 = 0x80052090;
 
 /* main/thread_80000f9c.s */
-osAfterPreNMI = 0x800371A0;
+osAfterPreNMI = 0x800371A0; /* todo: libultra */
 
 /* main/thread_80001240.s */
 bssMain_800521A8 = 0x800521A8;
 D_8003C8A0 = 0x8003C8A0;
 
 /* main/func_80001440.s */
-osViGetCurrentFramebuffer = 0x800338E0;
-osViGetCurrentMode = 0x80033920;
+osViGetCurrentFramebuffer = 0x800338E0; /* todo: libultra */
+osViGetCurrentMode = 0x80033920; /* todo: libultra */
 
 /* main/func_800014d0.s */
 D_8003C8B4 = 0x8003C8B4;
@@ -139,7 +139,7 @@ D_8004A610 = 0x8004A610;
 D_8004A618 = 0x8004A618;
 
 /* main/func_80001800.s */
-guMtxIdentF = 0x800342E0;
+guMtxIdentF = 0x800342E0; /* todo: libultra */
 
 /* main/func_8000186c.s */
 bssMain_80055A00 = 0x80055A00;
@@ -169,8 +169,8 @@ bssMain_80056F2C = 0x80056F2C;
 bssMain_80056F30 = 0x80056F30;
 
 /* main/func_80001e10.s */
-guMtxXFMF = 0x800345E0;
-guNormalize = 0x80034520;
+guMtxXFMF = 0x800345E0; /* todo: libultra */
+guNormalize = 0x80034520; /* todo: libultra */
 D_8004A630 = 0x8004A630;
 
 /* main/func_8000244c.s */
@@ -185,3 +185,9 @@ D_8004A638 = 0x8004A638;
 
 /* main/func_800025d8.s */
 D_8004A640 = 0x8004A640;
+
+/* main/func_800027f8.s */
+bssMain_800565C0 = 0x800565C0;
+D_8004A648 = 0x8004A648;
+bssMain_80056368 = 0x80056368;
+guMtxF2L = 0x80034340; /* todo: libultra */
