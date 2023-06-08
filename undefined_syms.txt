@@ -191,3 +191,19 @@ bssMain_800565C0 = 0x800565C0;
 D_8004A648 = 0x8004A648;
 bssMain_80056368 = 0x80056368;
 guMtxF2L = 0x80034340; /* todo: libultra */
+
+/* main/func_80002a00.s */
+D_8003C8B8 = 0x8003C8B8;
+
+/* main/func_80003120.s */
+D_80039620 = 0x80039620;
+D_800396F0 = 0x800396F0;
+bssMain_80052970 = 0x80052970;
+ucode_f3dex2_xbus = 0x8003A350;
+D_80049DE0 = 0x80049DE0;
+ucode_f3dlx2_rej_xbus = 0x8003B6F0;
+D_8004A200 = 0x8004A200;
+bssMain_80052570 = 0x80052570;
+
+/* main/func_800032e0.s */
+bssMain_800557BC = 0x800557BC;
