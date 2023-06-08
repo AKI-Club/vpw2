@@ -130,4 +130,15 @@ GLOBAL_ASM("asm/textmain/thread_800033d4.s")
 GLOBAL_ASM("asm/textmain/ClearFramebuffers_800036b4.s")
 
 /*============================================================================*/
-/* 80003720 */
+GLOBAL_ASM("asm/textmain/SetupSoundTable_123_80003720.s")
+GLOBAL_ASM("asm/textmain/func_80003944.s")
+GLOBAL_ASM("asm/textmain/func_80003964.s")
+GLOBAL_ASM("asm/textmain/func_800039a4.s")
+GLOBAL_ASM("asm/textmain/func_800039d4.s")
+GLOBAL_ASM("asm/textmain/func_800039f4.s")
+GLOBAL_ASM("asm/textmain/func_80003a14.s")
+GLOBAL_ASM("asm/textmain/func_80003a64.s")
+GLOBAL_ASM("asm/textmain/func_80003a94.s")
+GLOBAL_ASM("asm/textmain/func_80003ae8.s")
+GLOBAL_ASM("asm/textmain/func_80003b9c.s")
+GLOBAL_ASM("asm/textmain/func_80003bd4.s")

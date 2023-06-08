@@ -211,4 +211,45 @@ bssMain_800557BC = 0x800557BC;
 framebuffer_803C7C00 = 0x803C7C00;
 framebuffer_8038F800 = 0x8038F800;
 D_8003C8B2 = 0x8003C8B2;
-func_800039A4 = 0x800039A4; /* temp; forward declaration */
+
+/* main/SetupSoundTable_123_80003720.s */
+bssMain_80056FC0 = 0x80056FC0;
+bssMain_80056FC4 = 0x80056FC4;
+bssMain_80056FC8 = 0x80056FC8;
+bssMain_80056FCC = 0x80056FCC;
+bssMain_80056FD0 = 0x80056FD0;
+bss_main_end = 0x800B62F0; /* temp; requires BSS to be working from C */
+func_80023690 = 0x80023690; /* temp; forward declaration */
+func_80023918 = 0x80023918; /* temp; forward declaration */
+func_80024208 = 0x80024208; /* temp; forward declaration */
+func_80024480 = 0x80024480; /* temp; forward declaration */
+func_800243D0 = 0x800243D0; /* temp; forward declaration */
+
+/* main/func_80003944.s */
+func_80023BC4 = 0x80023BC4; /* temp; forward declaration */
+
+/* main/func_80003964.s */
+func_80023C44 = 0x80023C44; /* temp; forward declaration */
+
+/* main/func_800039a4.s */
+func_80023E28 = 0x80023E28; /* temp; forward declaration */
+
+/* main/func_800039d4.s */
+func_800263F4 = 0x800263F4; /* temp; forward declaration */
+
+/* main/func_800039f4.s */
+func_80023F5C = 0x80023F5C; /* temp; forward declaration */
+
+/* main/func_80003a14.s */
+func_80023944 = 0x80023944; /* temp; forward declaration */
+D_8003C8C0 = 0x8003C8C0;
+D_8003C8C4 = 0x8003C8C4;
+
+/* main/func_80003a64.s */
+func_80023EA8 = 0x80023EA8; /* temp; forward declaration */
+
+/* main/func_80003a94.s */
+func_80024468 = 0x80024468; /* temp; forward declaration */
+
+/* main/func_80003ae8.s */
+bssMain_80056FD4 = 0x80056FD4;
