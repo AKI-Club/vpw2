@@ -1,4 +1,4 @@
-/* Virtual Pro-Wrestling 2 decompilation project - Main C file...
+/* Virtual Pro-Wrestling 2 decompilation project - Main segment main C file...
  * yes, I know this is going to be a nightmare.
  */
 /*============================================================================*/
@@ -9,6 +9,7 @@
 GLOBAL_ASM("asm/textmain/textmain.s")
 
 // I AINT GOT A FUCKING CLUE WHAT THIS EVEN IS
+/* hilariously enough, that comment isn't me (for once) -f */
 
 /*
 struct UnkStruct_base_dl {
@@ -122,3 +123,11 @@ GLOBAL_ASM("asm/textmain/func_80002e40.s")
 GLOBAL_ASM("asm/textmain/func_80003120.s")
 GLOBAL_ASM("asm/textmain/func_800032e0.s")
 GLOBAL_ASM("asm/textmain/func_800032ec.s")
+GLOBAL_ASM("asm/textmain/func_80003330.s")
+GLOBAL_ASM("asm/textmain/func_80003374.s")
+GLOBAL_ASM("asm/textmain/func_80003390.s")
+GLOBAL_ASM("asm/textmain/thread_800033d4.s")
+GLOBAL_ASM("asm/textmain/ClearFramebuffers_800036b4.s")
+
+/*============================================================================*/
+/* 80003720 */

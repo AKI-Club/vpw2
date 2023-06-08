@@ -111,7 +111,6 @@ bssMain_80055728 = 0x80055728;
 bssMain_80055740 = 0x80055740;
 bssMain_80055720 = 0x80055720;
 bssMain_80053570 = 0x80053570;
-thread_800033D4 = 0x800033D4; /* temp; forward declaration */
 bssMain_80055780 = 0x80055780;
 bssMain_80055798 = 0x80055798;
 bssMain_800557A0 = 0x800557A0;
@@ -207,3 +206,9 @@ bssMain_80052570 = 0x80052570;
 
 /* main/func_800032e0.s */
 bssMain_800557BC = 0x800557BC;
+
+/* main/thread_800033d4.s */
+framebuffer_803C7C00 = 0x803C7C00;
+framebuffer_8038F800 = 0x8038F800;
+D_8003C8B2 = 0x8003C8B2;
+func_800039A4 = 0x800039A4; /* temp; forward declaration */
