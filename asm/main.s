@@ -5,11 +5,6 @@
 
 /*============================================================================*/
 /* --- file break --- */
-/* this section contains filetable functionality + LZSS decompression code */
-.include "asm/code_main/filetable.s"
-
-/*============================================================================*/
-/* --- file break --- */
 
 /* 004D30 80004130 3C018005 */  lui   $at, %hi(D_8004A650)
 /* 004D34 80004134 D424A650 */  ldc1  $f4, %lo(D_8004A650)($at)

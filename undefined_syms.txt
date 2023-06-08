@@ -247,3 +247,7 @@ func_80024468 = 0x80024468; /* temp; forward declaration */
 
 /* main/func_80003ae8.s */
 bssMain_80056FD4 = 0x80056FD4;
+
+/* main/SetupFiletable_80003cb0.s */
+bssMain_80056FE0 = 0x80056FE0;
+bssMain_80056FE4 = 0x80056FE4;

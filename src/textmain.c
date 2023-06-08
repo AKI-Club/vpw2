@@ -149,4 +149,12 @@ GLOBAL_ASM("asm/textmain/func_80003c34.s")
 GLOBAL_ASM("asm/textmain/func_80003c98.s")
 
 /*============================================================================*/
-/* 80003CB0 */
+/* formerly in asm/code_main/filetable.s */
+/* this section contains filetable functionality + LZSS decompression code */
+
+GLOBAL_ASM("asm/textmain/SetupFiletable_80003cb0.s")
+GLOBAL_ASM("asm/textmain/GetFileLoc_80003dc4.s")
+GLOBAL_ASM("asm/textmain/LoadFile_80003e88.s")
+GLOBAL_ASM("asm/textmain/DecompressLZSS_80004008.s")
+
+/*============================================================================*/
