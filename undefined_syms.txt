@@ -35,12 +35,6 @@ bssMain_8004BE00 = 0x8004BE00;
 bssMain_8004E090 = 0x8004E090;
 func_80023050 = 0x80023050;
 
-/* main/func_800005c4.s */
-func_80000E98 = 0x80000E98;
-
-/* main/func_800005f0.s */
-func_80000F10 = 0x80000F10;
-
 /* main/func_80000614.s */
 func_800010D8 = 0x800010D8;
 osSendMesg = 0x800328B0; /* todo: libultra */
