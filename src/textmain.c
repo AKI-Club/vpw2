@@ -190,3 +190,9 @@ GLOBAL_ASM("asm/textmain/func_80006608.s")
 
 /*============================================================================*/
 /* --- file break: string/text related code? --- */
+GLOBAL_ASM("asm/textmain/func_80006b80.s")
+GLOBAL_ASM("asm/textmain/func_80006c18.s")
+GLOBAL_ASM("asm/textmain/func_80006c64.s")
+GLOBAL_ASM("asm/textmain/func_80006c78.s")
+GLOBAL_ASM("asm/textmain/func_80006c9c.s")
+GLOBAL_ASM("asm/textmain/func_80006cd4.s")

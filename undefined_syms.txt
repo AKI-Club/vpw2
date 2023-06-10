@@ -335,4 +335,11 @@ D_8003ED14 = 0x8003ED14;
 D_8003ED1C = 0x8003ED1C;
 ptrTbl_8004A800 = 0x8004A800;
 
+/* main/func_80006b80.s */
+bssMain_8006E300 = 0x8006E300;
+D_8003ED50 = 0x8003ED50;
+
+/* main/func_80006c64.s */
+D_8003EF9C = 0x8003EF9C;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
