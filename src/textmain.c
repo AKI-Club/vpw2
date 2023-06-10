@@ -129,7 +129,15 @@ GLOBAL_ASM("asm/textmain/func_80002a00.s")
 GLOBAL_ASM("asm/textmain/func_80002b84.s")
 GLOBAL_ASM("asm/textmain/func_80002e40.s")
 GLOBAL_ASM("asm/textmain/func_80003120.s")
-GLOBAL_ASM("asm/textmain/func_800032e0.s")
+
+/*----------------------------------------------------------------------------*/
+extern s32 bssMain_800557BC;
+
+void func_800032E0(void) {
+    bssMain_800557BC = 0;
+}
+
+/*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_800032ec.s")
 GLOBAL_ASM("asm/textmain/func_80003330.s")
 GLOBAL_ASM("asm/textmain/func_80003374.s")
