@@ -28,6 +28,8 @@ This repository has two main purposes:
 - a Linux environment (native, virtual machine, WSL2 on Windows 10)
 - GNU `make` (and probably the other stuff from `build-essential` if your distro has that)
 - `binutils-mips-linux-gnu`
+- `gcc-mips-linux-gnu`
+- `gcc-multilib`
 - an **unmodified** Virtual Pro-Wrestling 2 ROM in **Z64 format**, legally obtained
 
 While [`qemu-irix`](https://github.com/n64decomp/qemu-irix/releases) was previously
