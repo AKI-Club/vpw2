@@ -169,7 +169,15 @@ GLOBAL_ASM("asm/textmain/func_80003a94.s")
 GLOBAL_ASM("asm/textmain/func_80003ae8.s")
 GLOBAL_ASM("asm/textmain/func_80003b9c.s")
 GLOBAL_ASM("asm/textmain/func_80003bd4.s")
-GLOBAL_ASM("asm/textmain/func_80003c20.s")
+
+/*----------------------------------------------------------------------------*/
+extern u16 bssMain_80056FD4;
+
+s32 func_80003C20(void) {
+    return (s32) (bssMain_80056FD4 << 0x10) >> 0x18;
+}
+
+/*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80003c34.s")
 GLOBAL_ASM("asm/textmain/func_80003c98.s")
 
@@ -188,8 +196,6 @@ GLOBAL_ASM("asm/textmain/func_80004228.s")
 GLOBAL_ASM("asm/textmain/func_80004494.s")
 
 /*----------------------------------------------------------------------------*/
-//GLOBAL_ASM("asm/textmain/func_800044bc.s")
-
 s32 func_800044BC(s32 arg0) {
     s32 var_v0;
 
