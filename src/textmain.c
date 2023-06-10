@@ -196,6 +196,7 @@ GLOBAL_ASM("asm/textmain/func_80004228.s")
 GLOBAL_ASM("asm/textmain/func_80004494.s")
 
 /*----------------------------------------------------------------------------*/
+/* get absolute value of arg0 */
 s32 func_800044BC(s32 arg0) {
     s32 var_v0;
 
@@ -261,3 +262,6 @@ GLOBAL_ASM("asm/textmain/func_80007254.s")
 
 /*============================================================================*/
 /* --- possible file break?? --- */
+GLOBAL_ASM("asm/textmain/func_80007390.s")
+GLOBAL_ASM("asm/textmain/func_800074b8.s")
+GLOBAL_ASM("asm/textmain/func_80007660.s")

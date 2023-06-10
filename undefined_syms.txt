@@ -351,4 +351,14 @@ tbl_8003EEF8 = 0x8003EEF8;
 tbl_8003EEB8 = 0x8003EEB8;
 bssMain_80057E00 = 0x80057E00;
 
+/* main/func_80007390.s */
+D_8003EFB4 = 0x8003EFB4;
+bssMain_800A0730 = 0x800A0730;
+
+/* main/func_800074b8.s */
+bssMain_800A35B8 = 0x800A35B8;
+
+/* main/func_80007660.s */
+bssMain_8006FD01 = 0x8006FD01;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
