@@ -56,7 +56,12 @@ s32 func_80000648(void) {
 }
 
 /*----------------------------------------------------------------------------*/
-GLOBAL_ASM("asm/textmain/func_80000654.s")
+/* returns 8004BE00; called when setting up sound tables 1,2,3 */
+extern s16 bssMain_8004BE00;
+
+s16 *func_80000654(void) {
+    return &bssMain_8004BE00;
+}
 
 /*============================================================================*/
 GLOBAL_ASM("asm/textmain/LoadDataDMA_80000660.s")
