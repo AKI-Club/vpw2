@@ -342,4 +342,7 @@ D_8003ED50 = 0x8003ED50;
 /* main/func_80006c64.s */
 D_8003EF9C = 0x8003EF9C;
 
+/* main/func_80006e20.s */
+bssMain_8009B188 = 0x8009B188;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
