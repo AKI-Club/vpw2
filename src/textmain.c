@@ -186,7 +186,19 @@ GLOBAL_ASM("asm/textmain/DecompressLZSS_80004008.s")
 GLOBAL_ASM("asm/textmain/func_80004130.s")
 GLOBAL_ASM("asm/textmain/func_80004228.s")
 GLOBAL_ASM("asm/textmain/func_80004494.s")
-GLOBAL_ASM("asm/textmain/func_800044bc.s")
+
+/*----------------------------------------------------------------------------*/
+//GLOBAL_ASM("asm/textmain/func_800044bc.s")
+
+s32 func_800044BC(s32 arg0) {
+    s32 var_v0;
+
+    var_v0 = arg0;
+    if (var_v0 < 0) {
+        var_v0 = -var_v0;
+    }
+    return var_v0;
+}
 
 /*============================================================================*/
 /* --- possible file break: controller-related stuff --- */
