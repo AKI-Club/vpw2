@@ -181,7 +181,16 @@ GLOBAL_ASM("asm/textmain/func_800044bc.s")
 /* --- possible file break: controller-related stuff --- */
 GLOBAL_ASM("asm/textmain/func_800044d0.s")
 GLOBAL_ASM("asm/textmain/func_80004628.s")
-GLOBAL_ASM("asm/textmain/func_800049e8.s")
+
+/*----------------------------------------------------------------------------*/
+extern s8 bssMain_800571D9;
+
+void func_800049E8(s8 arg0) {
+    bssMain_800571D9 = arg0;
+}
+
+/*----------------------------------------------------------------------------*/
+
 GLOBAL_ASM("asm/textmain/func_800049f4.s")
 GLOBAL_ASM("asm/textmain/func_80004a38.s")
 GLOBAL_ASM("asm/textmain/func_80004a64.s")
