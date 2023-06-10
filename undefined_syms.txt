@@ -345,4 +345,10 @@ D_8003EF9C = 0x8003EF9C;
 /* main/func_80006e20.s */
 bssMain_8009B188 = 0x8009B188;
 
+/* main/func_80007254.s */
+D_8003EFB8 = 0x8003EFB8;
+tbl_8003EEF8 = 0x8003EEF8;
+tbl_8003EEB8 = 0x8003EEB8;
+bssMain_80057E00 = 0x80057E00;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
