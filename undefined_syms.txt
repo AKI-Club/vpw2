@@ -301,14 +301,6 @@ osPfsFindFile = 0x80035650; /* todo: libultra */
 osPfsReadWriteFile = 0x80035070; /* todo: libultra */
 osVoiceInit = 0x8002BBF0; /* todo: libultra */
 
-/* main/func_80004cd0.s */
-WrestlerMoves_Pack = 0x80005578; /* temp; forward declaration */
-WrestlerParams_Pack = 0x8000593C; /* temp; forward declaration */
-
-/* main/func_80004d0c.s */
-func_80006608 = 0x80006608; /* temp; forward declaration */
-WrestlerMoves_Unpack = 0x8000632C; /* temp; forward declaration */
-
 /* main/PackBits_80004d60.s */
 bssMain_800571F0 = 0x800571F0;
 bssMain_800571F2 = 0x800571F2;
