@@ -77,8 +77,14 @@ GLOBAL_ASM("asm/textmain/func_80000e98.s")
 
 GLOBAL_ASM("asm/textmain/func_80000f10.s")
 
-GLOBAL_ASM("asm/textmain/func_80000f90.s")
+/*----------------------------------------------------------------------------*/
+extern s32 bssMain_80052090;
 
+s32 *func_80000F90(void) {
+    return &bssMain_80052090;
+}
+
+/*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/thread_80000f9c.s")
 
 GLOBAL_ASM("asm/textmain/func_800010d8.s")
@@ -206,3 +212,6 @@ GLOBAL_ASM("asm/textmain/encode_decode_80007070.s")
 GLOBAL_ASM("asm/textmain/encdec_Wrapper1_8000721c.s")
 GLOBAL_ASM("asm/textmain/encdec_Wrapper0_80007238.s")
 GLOBAL_ASM("asm/textmain/func_80007254.s")
+
+/*============================================================================*/
+/* --- possible file break?? --- */
