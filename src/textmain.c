@@ -164,3 +164,14 @@ GLOBAL_ASM("asm/textmain/func_80004494.s")
 GLOBAL_ASM("asm/textmain/func_800044bc.s")
 
 /*============================================================================*/
+/* --- possible file break: controller-related stuff --- */
+GLOBAL_ASM("asm/textmain/func_800044d0.s")
+GLOBAL_ASM("asm/textmain/func_80004628.s")
+GLOBAL_ASM("asm/textmain/func_800049e8.s")
+GLOBAL_ASM("asm/textmain/func_800049f4.s")
+GLOBAL_ASM("asm/textmain/func_80004a38.s")
+GLOBAL_ASM("asm/textmain/func_80004a64.s")
+GLOBAL_ASM("asm/textmain/func_80004b44.s")
+GLOBAL_ASM("asm/textmain/func_80004b74.s")
+GLOBAL_ASM("asm/textmain/func_80004bb4.s")
+GLOBAL_ASM("asm/textmain/func_80004bf8.s")
