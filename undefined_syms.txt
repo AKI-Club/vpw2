@@ -361,4 +361,31 @@ bssMain_800A35B8 = 0x800A35B8;
 /* main/func_80007660.s */
 bssMain_8006FD01 = 0x8006FD01;
 
+/* main/func_800078c0.s */
+bssMain_80057200 = 0x80057200;
+
+/* main/func_800078dc.s */
+bssMain_8006FD04 = 0x8006FD04;
+
+/* main/func_80007d44.s */
+bssMain_8006FD02 = 0x8006FD02;
+bssMain_8006FD00 = 0x8006FD00;
+ptrTbl_8004A8C8 = 0x8004A8C8;
+
+/* main/func_80008424.s */
+D_8003EFAC = 0x8003EFAC;
+D_8004A9A8 = 0x8004A9A8;
+D_8004A9B0 = 0x8004A9B0;
+D_8004A9B4 = 0x8004A9B4;
+D_8004A9BC = 0x8004A9BC;
+D_8004A9C0 = 0x8004A9C0;
+D_8004A9C8 = 0x8004A9C8;
+D_8004A9D0 = 0x8004A9D0;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
+
+/* ----- [seg1 defines needed for C stuff] ----- */
+
+/* ----- [seg2 defines needed for C stuff] ----- */
+
+/* ----- [seg3 defines needed for C stuff] ----- */
