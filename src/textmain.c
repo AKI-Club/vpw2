@@ -175,3 +175,18 @@ GLOBAL_ASM("asm/textmain/func_80004b44.s")
 GLOBAL_ASM("asm/textmain/func_80004b74.s")
 GLOBAL_ASM("asm/textmain/func_80004bb4.s")
 GLOBAL_ASM("asm/textmain/func_80004bf8.s")
+
+/*============================================================================*/
+/* --- possible file break for bit packing/unpacking related stuff --- */
+GLOBAL_ASM("asm/textmain/func_80004cd0.s")
+GLOBAL_ASM("asm/textmain/func_80004d0c.s")
+GLOBAL_ASM("asm/textmain/PackBits_80004d60.s")
+GLOBAL_ASM("asm/textmain/UnpackBits_80004f64.s")
+GLOBAL_ASM("asm/textmain/WrestlerParams_Unpack_800051cc.s")
+GLOBAL_ASM("asm/textmain/WrestlerMoves_Pack_80005578.s")
+GLOBAL_ASM("asm/textmain/WrestlerParams_Pack_8000593c.s")
+GLOBAL_ASM("asm/textmain/WrestlerMoves_Unpack_8000632c.s")
+GLOBAL_ASM("asm/textmain/func_80006608.s")
+
+/*============================================================================*/
+/* --- file break: string/text related code? --- */

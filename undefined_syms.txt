@@ -278,7 +278,7 @@ bssMain_80057008 = 0x80057008;
 bssMain_80057020 = 0x80057020;
 bssMain_800571DB = 0x800571DB;
 bssMain_80057038 = 0x80057038;
-__osMotorAccess = 0x80034690;
+__osMotorAccess = 0x80034690; /* todo: libultra */
 bssMain_800571E4 = 0x800571E4;
 bssMain_800571DC = 0x800571DC;
 bssMain_800571E0 = 0x800571E0;
@@ -287,18 +287,60 @@ bssMain_800571DA = 0x800571DA;
 /* main/func_80004628.s */
 bssMain_80056FF0 = 0x80056FF0;
 bssMain_800571D9 = 0x800571D9;
-osMotorInit = 0x800347D4;
+osMotorInit = 0x800347D4; /* todo: libultra */
 D_8003C8D0 = 0x8003C8D0;
 bssMain_80056FF2 = 0x80056FF2;
 bssMain_80056FF3 = 0x80056FF3;
 bssMain_80056FF4 = 0x80056FF4;
 
 /* main/func_80004bf8.s */
-osPfsAllocateFile = 0x80034A20;
-osPfsDeleteFile = 0x80034E50;
-osPfsFileState = 0x800354B0;
-osPfsFindFile = 0x80035650;
-osPfsReadWriteFile = 0x80035070;
-osVoiceInit = 0x8002BBF0;
+osPfsAllocateFile = 0x80034A20; /* todo: libultra */
+osPfsDeleteFile = 0x80034E50; /* todo: libultra */
+osPfsFileState = 0x800354B0; /* todo: libultra */
+osPfsFindFile = 0x80035650; /* todo: libultra */
+osPfsReadWriteFile = 0x80035070; /* todo: libultra */
+osVoiceInit = 0x8002BBF0; /* todo: libultra */
+
+/* main/func_80004cd0.s */
+WrestlerMoves_Pack = 0x80005578; /* temp; forward declaration */
+WrestlerParams_Pack = 0x8000593C; /* temp; forward declaration */
+
+/* main/func_80004d0c.s */
+func_80006608 = 0x80006608; /* temp; forward declaration */
+WrestlerMoves_Unpack = 0x8000632C; /* temp; forward declaration */
+
+/* main/PackBits_80004d60.s */
+bssMain_800571F0 = 0x800571F0;
+bssMain_800571F2 = 0x800571F2;
+
+/* main/UnpackBits_80004f64.s */
+bssMain_800571F4 = 0x800571F4;
+bssMain_800571F6 = 0x800571F6;
+
+/* main/WrestlerMoves_Pack_80005578.s */
+str_8004A6C0 = 0x8004A6C0;
+func_800325E8 = 0x800325E8;
+ptr_8003D924 = 0x8003D924;
+tbl_8003DA3C = 0x8003DA3C;
+ptrTbl_MasterMoveMods = 0x8003EA8C;
+str_8004A6E0 = 0x8004A6E0;
+str_8004A70C = 0x8004A70C;
+tbl_8003D930 = 0x8003D930;
+
+/* main/WrestlerParams_Pack_8000593c.s */
+ptrTbl_8004A738 = 0x8004A738;
+D_8003ECA0 = 0x8003ECA0;
+D_8003ECAC = 0x8003ECAC;
+D_8003ECC0 = 0x8003ECC0;
+D_8003ECCC = 0x8003ECCC;
+D_8003ECD4 = 0x8003ECD4;
+D_8003ECE4 = 0x8003ECE4;
+D_8003ECFC = 0x8003ECFC;
+D_8003ECDC = 0x8003ECDC;
+D_8003ECE0 = 0x8003ECE0;
+D_8003ED0C = 0x8003ED0C;
+D_8003ED14 = 0x8003ED14;
+D_8003ED1C = 0x8003ED1C;
+ptrTbl_8004A800 = 0x8004A800;
 
 /* ----- [seg0 defines needed for C stuff] ----- */
