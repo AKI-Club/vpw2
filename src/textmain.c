@@ -158,3 +158,9 @@ GLOBAL_ASM("asm/textmain/LoadFile_80003e88.s")
 GLOBAL_ASM("asm/textmain/DecompressLZSS_80004008.s")
 
 /*============================================================================*/
+GLOBAL_ASM("asm/textmain/func_80004130.s")
+GLOBAL_ASM("asm/textmain/func_80004228.s")
+GLOBAL_ASM("asm/textmain/func_80004494.s")
+GLOBAL_ASM("asm/textmain/func_800044bc.s")
+
+/*============================================================================*/
