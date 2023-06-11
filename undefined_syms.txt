@@ -389,6 +389,15 @@ D_8003EFB0 = 0x8003EFB0;
 /* main/func_800096e0.s */
 bssMain_8009B180 = 0x8009B180;
 
+/* main/func_80009910.s */
+bssMain_800A4530 = 0x800A4530;
+bssMain_800A4510 = 0x800A4510;
+
+/* main/func_80009a7c.s */
+dynPtr_DefaultAppearance = 0x8003FD8C;
+bssMain_800B5CC0 = 0x800B5CC0;
+bssMain_800981C4 = 0x800981C4;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */

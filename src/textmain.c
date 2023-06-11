@@ -286,4 +286,7 @@ GLOBAL_ASM("asm/textmain/func_800096e0.s")
 GLOBAL_ASM("asm/textmain/func_800097f4.s")
 
 /*============================================================================*/
-
+GLOBAL_ASM("asm/textmain/func_80009910.s")
+GLOBAL_ASM("asm/textmain/func_8000998c.s")
+GLOBAL_ASM("asm/textmain/func_80009a04.s")
+GLOBAL_ASM("asm/textmain/func_80009a7c.s")
