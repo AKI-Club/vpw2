@@ -313,7 +313,16 @@ GLOBAL_ASM("asm/textmain/func_8000a354.s")
 GLOBAL_ASM("asm/textmain/func_8000a3ac.s")
 GLOBAL_ASM("asm/textmain/func_8000a440.s")
 GLOBAL_ASM("asm/textmain/func_8000a49c.s")
+
 GLOBAL_ASM("asm/textmain/GetWrestlerType_8000a524.s")
+
 GLOBAL_ASM("asm/textmain/func_8000a534.s")
 GLOBAL_ASM("asm/textmain/func_8000a564.s")
 GLOBAL_ASM("asm/textmain/func_8000a69c.s")
+GLOBAL_ASM("asm/textmain/func_8000a710.s")
+GLOBAL_ASM("asm/textmain/func_8000a820.s")
+GLOBAL_ASM("asm/textmain/func_8000a858.s")
+GLOBAL_ASM("asm/textmain/func_8000a8b4.s")
+
+GLOBAL_ASM("asm/textmain/LoadDefaultStrings_8000a8ec.s")
+GLOBAL_ASM("asm/textmain/UnloadDefaultStrings_8000a940.s")

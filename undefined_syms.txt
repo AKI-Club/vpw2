@@ -438,6 +438,12 @@ dynPtr_DefaultNames = 0x8003FDA0;
 /* main/func_8000a564.s */
 tbl_StableDefs = 0x8003FCBC;
 
+/* main/func_8000a820.s */
+bssMain_800A4532 = 0x800A4532;
+
+/* main/func_8000a858.s */
+dynPtr_DefaultCostumeData = 0x8003FD9C;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
