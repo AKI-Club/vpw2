@@ -314,7 +314,12 @@ GLOBAL_ASM("asm/textmain/func_8000a3ac.s")
 GLOBAL_ASM("asm/textmain/func_8000a440.s")
 GLOBAL_ASM("asm/textmain/func_8000a49c.s")
 
-GLOBAL_ASM("asm/textmain/GetWrestlerType_8000a524.s")
+/*----------------------------------------------------------------------------*/
+/* Checks if ID4 belongs to an edit wrestler */
+s32 GetWrestlerType(s32 id4) {
+    return (id4 & 0xF00) != 0xC00;
+}
+/*----------------------------------------------------------------------------*/
 
 GLOBAL_ASM("asm/textmain/func_8000a534.s")
 GLOBAL_ASM("asm/textmain/func_8000a564.s")
