@@ -423,6 +423,21 @@ func_800FE424 = 0x800FE424;
 /* main/func_8000a04c.s */
 func_800FE2C4 = 0x800FE2C4;
 
+/* main/func_8000a2fc.s */
+D_8003EFC0 = 0x8003EFC0;
+
+/* main/func_8000a3ac.s */
+tbl_WrestlerUnlockData = 0x8003FD44;
+
+/* main/func_8000a49c.s */
+tbl_EditWrestlerID2 = 0x8003FD74;
+
+/* main/func_8000a534.s */
+dynPtr_DefaultNames = 0x8003FDA0;
+
+/* main/func_8000a564.s */
+tbl_StableDefs = 0x8003FCBC;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
