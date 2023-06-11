@@ -405,6 +405,24 @@ bssMain_800981DD = 0x800981DD;
 bssMain_800A3FA0 = 0x800A3FA0;
 bssMain_800981EC = 0x800981EC;
 
+/* main/func_80009d50.s */
+dynPtr_DefaultMovesets = 0x8003FD90;
+bssMain_800980D3 = 0x800980D3;
+
+/* main/func_80009e90.s */
+bssMain_800980D2 = 0x800980D2;
+bssMain_800980D1 = 0x800980D1;
+
+/* main/func_80009f44.s */
+bssMain_800980D0 = 0x800980D0;
+tbl_80105F78 = 0x80105F78;
+
+/* main/func_8000a014.s */
+func_800FE424 = 0x800FE424;
+
+/* main/func_8000a04c.s */
+func_800FE2C4 = 0x800FE2C4;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
