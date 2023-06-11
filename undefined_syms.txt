@@ -471,6 +471,9 @@ func_800FE490 = 0x800FE490;
 /* main/func_8000b748.s */
 func_800FE884 = 0x800FE884;
 
+/* main/func_8000ba30.s */
+var_8003FDB4 = 0x8003FDB4;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */

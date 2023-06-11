@@ -347,3 +347,6 @@ GLOBAL_ASM("asm/textmain/func_8000b748.s")
 
 /*============================================================================*/
 /* --- probable file break; related to models and animations? --- */
+
+GLOBAL_ASM("asm/textmain/func_8000ba30.s")
+GLOBAL_ASM("asm/textmain/func_8000ba54.s")
