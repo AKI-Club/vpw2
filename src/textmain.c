@@ -335,3 +335,15 @@ GLOBAL_ASM("asm/textmain/func_8000ac4c.s")
 GLOBAL_ASM("asm/textmain/func_8000acb4.s")
 GLOBAL_ASM("asm/textmain/func_8000ad80.s")
 GLOBAL_ASM("asm/textmain/func_8000adec.s")
+
+GLOBAL_ASM("asm/textmain/LoadWrestlerCostume_8000aea0.s")
+
+GLOBAL_ASM("asm/textmain/func_8000b06c.s")
+GLOBAL_ASM("asm/textmain/func_8000b184.s")
+GLOBAL_ASM("asm/textmain/func_8000b1a4.s")
+GLOBAL_ASM("asm/textmain/func_8000b3e4.s")
+GLOBAL_ASM("asm/textmain/func_8000b628.s")
+GLOBAL_ASM("asm/textmain/func_8000b748.s")
+
+/*============================================================================*/
+/* --- probable file break; related to models and animations? --- */

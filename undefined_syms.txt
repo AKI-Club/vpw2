@@ -456,6 +456,21 @@ dynPtr_MempakMovesets = 0x8003FD98;
 /* main/func_8000ac4c.s */
 bssMain_8006FD10 = 0x8006FD10;
 
+/* main/LoadWrestlerCostume_8000aea0.s */
+func_800FDC40 = 0x800FDC40;
+
+/* main/func_8000b184.s */
+func_800FE224 = 0x800FE224;
+
+/* main/func_8000b1a4.s */
+func_800FE33C = 0x800FE33C;
+func_800FE188 = 0x800FE188;
+data_EditWrestlerFiles = 0x8003EFD8;
+func_800FE490 = 0x800FE490;
+
+/* main/func_8000b748.s */
+func_800FE884 = 0x800FE884;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
