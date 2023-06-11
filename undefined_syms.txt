@@ -398,6 +398,13 @@ dynPtr_DefaultAppearance = 0x8003FD8C;
 bssMain_800B5CC0 = 0x800B5CC0;
 bssMain_800981C4 = 0x800981C4;
 
+/* main/func_80009b10.s */
+bssMain_800981DD = 0x800981DD;
+
+/* main/func_80009ba8.s */
+bssMain_800A3FA0 = 0x800A3FA0;
+bssMain_800981EC = 0x800981EC;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
