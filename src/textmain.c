@@ -326,3 +326,10 @@ GLOBAL_ASM("asm/textmain/func_8000a8b4.s")
 
 GLOBAL_ASM("asm/textmain/LoadDefaultStrings_8000a8ec.s")
 GLOBAL_ASM("asm/textmain/UnloadDefaultStrings_8000a940.s")
+
+GLOBAL_ASM("asm/textmain/func_8000a970.s")
+GLOBAL_ASM("asm/textmain/func_8000aa6c.s")
+GLOBAL_ASM("asm/textmain/func_8000aaac.s")
+GLOBAL_ASM("asm/textmain/func_8000abfc.s")
+GLOBAL_ASM("asm/textmain/func_8000ac4c.s")
+GLOBAL_ASM("asm/textmain/func_8000acb4.s")

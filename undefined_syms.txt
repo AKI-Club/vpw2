@@ -444,6 +444,18 @@ bssMain_800A4532 = 0x800A4532;
 /* main/func_8000a858.s */
 dynPtr_DefaultCostumeData = 0x8003FD9C;
 
+/* main/func_8000a970.s */
+bssMain_8006FD10 = 0x8006FD10;
+bssMain_8006FD50 = 0x8006FD50;
+dword_8003FD88 = 0x8003FD88;
+
+/* main/func_8000aaac.s */
+dynPtr_MempakAppearance = 0x8003FD94;
+dynPtr_MempakMovesets = 0x8003FD98;
+
+/* main/func_8000ac4c.s */
+bssMain_8006FD10 = 0x8006FD10;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
