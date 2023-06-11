@@ -279,3 +279,11 @@ GLOBAL_ASM("asm/textmain/func_80008c88.s")
 GLOBAL_ASM("asm/textmain/func_80008ebc.s")
 GLOBAL_ASM("asm/textmain/func_80009278.s")
 GLOBAL_ASM("asm/textmain/func_800092dc.s")
+GLOBAL_ASM("asm/textmain/func_80009340.s")
+GLOBAL_ASM("asm/textmain/func_800094bc.s")
+GLOBAL_ASM("asm/textmain/func_80009628.s")
+GLOBAL_ASM("asm/textmain/func_800096e0.s")
+GLOBAL_ASM("asm/textmain/func_800097f4.s")
+
+/*============================================================================*/
+

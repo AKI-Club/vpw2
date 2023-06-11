@@ -386,6 +386,9 @@ D_8004A9D0 = 0x8004A9D0;
 bssMain_800928F8 = 0x800928F8;
 D_8003EFB0 = 0x8003EFB0;
 
+/* main/func_800096e0.s */
+bssMain_8009B180 = 0x8009B180;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
