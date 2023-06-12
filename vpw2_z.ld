@@ -151,7 +151,8 @@ SECTIONS
 	/* -- seg0: menus 1 ----------------------------------------------------- */
 	/*.seg00 0x800E6AF0 : AT(0x04BF40) {*/
 	BEGIN_SEG(seg00, 0x800E6AF0){
-		* (.text00);
+		BUILD_DIR/src/seg0_menu1/text_seg0.o(.text);
+		BUILD_DIR/vpw2_z.o(.othertext00);
 	}
 	END_SEG(seg00)
 

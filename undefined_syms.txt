@@ -522,6 +522,12 @@ var_8003FDB8 = 0x8003FDB8;
 
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
+/* text00/func_800e6b0c.s */
+func_800E6BA0 = 0x800E6BA0; /* temp; forward declaration */
+func_800E6D20 = 0x800E6D20; /* temp; forward declaration */
+func_800E7548 = 0x800E7548; /* temp; forward declaration */
+func_800E6DB4 = 0x800E6DB4; /* temp; forward declaration */
+
 /* -------------------------- [seg1 defines for C] -------------------------- */
 
 /* -------------------------- [seg2 defines for C] -------------------------- */
