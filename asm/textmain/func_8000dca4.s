@@ -1,0 +1,43 @@
+glabel func_8000DCA4
+/* 00E8A4 8000DCA4 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 00E8A8 8000DCA8 AFB00010 */  sw    $s0, 0x10($sp)
+/* 00E8AC 8000DCAC 00808021 */  addu  $s0, $a0, $zero
+/* 00E8B0 8000DCB0 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 00E8B4 8000DCB4 8E020004 */  lw    $v0, 4($s0)
+/* 00E8B8 8000DCB8 10400013 */  beqz  $v0, .L8000DD08
+/* 00E8BC 8000DCBC 00000000 */   nop   
+
+/* 00E8C0 8000DCC0 8E040008 */  lw    $a0, 8($s0)
+/* 00E8C4 8000DCC4 10800004 */  beqz  $a0, .L8000DCD8
+/* 00E8C8 8000DCC8 AE000004 */   sw    $zero, 4($s0)
+
+/* 00E8CC 8000DCCC 0C000280 */  jal   aki_free
+/* 00E8D0 8000DCD0 00000000 */   nop   
+
+/* 00E8D4 8000DCD4 AE000008 */  sw    $zero, 8($s0)
+
+.L8000DCD8:
+/* 00E8D8 8000DCD8 8E04000C */  lw    $a0, 0xc($s0)
+/* 00E8DC 8000DCDC 10800004 */  beqz  $a0, .L8000DCF0
+/* 00E8E0 8000DCE0 00000000 */   nop   
+
+/* 00E8E4 8000DCE4 0C000280 */  jal   aki_free
+/* 00E8E8 8000DCE8 00000000 */   nop   
+
+/* 00E8EC 8000DCEC AE00000C */  sw    $zero, 0xc($s0)
+
+.L8000DCF0:
+/* 00E8F0 8000DCF0 8E040010 */  lw    $a0, 0x10($s0)
+/* 00E8F4 8000DCF4 10800004 */  beqz  $a0, .L8000DD08
+/* 00E8F8 8000DCF8 00000000 */   nop   
+
+/* 00E8FC 8000DCFC 0C000280 */  jal   aki_free
+/* 00E900 8000DD00 00000000 */   nop   
+
+/* 00E904 8000DD04 AE000010 */  sw    $zero, 0x10($s0)
+
+.L8000DD08:
+/* 00E908 8000DD08 8FBF0014 */  lw    $ra, 0x14($sp)
+/* 00E90C 8000DD0C 8FB00010 */  lw    $s0, 0x10($sp)
+/* 00E910 8000DD10 03E00008 */  jr    $ra
+/* 00E914 8000DD14 27BD0018 */   addiu $sp, $sp, 0x18

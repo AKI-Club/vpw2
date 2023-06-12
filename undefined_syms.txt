@@ -494,6 +494,32 @@ D_8004AA00 = 0x8004AA00;
 D_8004AA08 = 0x8004AA08;
 D_8004AA10 = 0x8004AA10;
 
+/* main/func_8000c4f0.s */
+func_8000E674 = 0x8000E674; /* temp; forward declaration */
+
+/* main/func_8000d158.s */
+func_8000FFEC = 0x8000FFEC; /* temp; forward declaration */
+
+/* main/func_8000d5fc.s */
+var_8003FDB2 = 0x8003FDB2;
+D_80040004 = 0x80040004;
+
+/* main/func_8000df88.s */
+bssMain_8006FE10 = 0x8006FE10;
+bssMain_8006FE90 = 0x8006FE90;
+bssMain_8006FE94 = 0x8006FE94;
+bssMain_8006FE98 = 0x8006FE98;
+bssMain_8006FE9C = 0x8006FE9C;
+bssMain_8006FEA0 = 0x8006FEA0;
+bssMain_8006FEA4 = 0x8006FEA4;
+bssMain_8006FE50 = 0x8006FE50;
+
+/* main/func_8000e0c8.s */
+D_8004AA18 = 0x8004AA18;
+D_8004AA20 = 0x8004AA20;
+D_8004AA28 = 0x8004AA28;
+var_8003FDB8 = 0x8003FDB8;
+
 /* ----- [seg0 defines needed for C stuff] ----- */
 
 /* ----- [seg1 defines needed for C stuff] ----- */
