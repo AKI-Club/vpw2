@@ -192,7 +192,8 @@ SECTIONS
 	/* -- seg3: gameplay ---------------------------------------------------- */
 	/*.seg03 0x800E6AF0 : AT(0x0E11A0){*/
 	BEGIN_SEG(seg03, 0x800E6AF0) {
-		* (.text03);
+		BUILD_DIR/src/seg3_game/text_seg3.o(.text);
+		BUILD_DIR/vpw2_z.o(.othertext03);
 	}
 	END_SEG(seg03)
 

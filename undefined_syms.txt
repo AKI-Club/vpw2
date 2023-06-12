@@ -15,7 +15,7 @@ func_8400193C = 0x8400193C;
 func_84001BE4 = 0x84001BE4;
 func_84001BB0 = 0x84001BB0;
 
-/* ----- [needed for C stuff] ----- */
+/* ------------------------ [main seg defines for C] ------------------------ */
 
 /* main/textmain.s */
 base_dl = 0x8004B2A0;
@@ -520,10 +520,14 @@ D_8004AA20 = 0x8004AA20;
 D_8004AA28 = 0x8004AA28;
 var_8003FDB8 = 0x8003FDB8;
 
-/* ----- [seg0 defines needed for C stuff] ----- */
+/* -------------------------- [seg0 defines for C] -------------------------- */
 
-/* ----- [seg1 defines needed for C stuff] ----- */
+/* -------------------------- [seg1 defines for C] -------------------------- */
 
-/* ----- [seg2 defines needed for C stuff] ----- */
+/* -------------------------- [seg2 defines for C] -------------------------- */
 
-/* ----- [seg3 defines needed for C stuff] ----- */
+/* -------------------------- [seg3 defines for C] -------------------------- */
+
+/* text03/func3_800e6af0.s */
+func3_800E6B20 = 0x800E6B20; /* temp; forward declaration */
+bss3_80158740 = 0x80158740;
