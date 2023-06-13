@@ -517,6 +517,45 @@ D_8003FDC0 = 0x8003FDC0;
 /* main/func_80010d7c.s */
 D_8004AA40 = 0x8004AA40;
 
+/* main/func_80010f80.s */
+bssMain_800704D4 = 0x800704D4;
+bssMain_800704C2 = 0x800704C2;
+bssMain_800704C8 = 0x800704C8;
+bssMain_8007054C = 0x8007054C;
+bssMain_8007054A = 0x8007054A;
+bssMain_800704D0 = 0x800704D0;
+bssMain_80070554 = 0x80070554;
+bssMain_80070558 = 0x80070558;
+bssMain_80070550 = 0x80070550;
+bssMain_800704BC = 0x800704BC;
+bssMain_800704C3 = 0x800704C3;
+bssMain_80070518 = 0x80070518;
+
+/* main/func_80011164.s */
+D_8003FECC = 0x8003FECC;
+bssMain_80070808 = 0x80070808;
+
+/* main/func_80011190.s */
+D_8004AA50 = 0x8004AA50;
+D_8004AA58 = 0x8004AA58;
+func_80039520 = 0x80039520;
+
+/* main/func_80011598.s */
+bssMain_800704C4 = 0x800704C4;
+
+/* main/func_800115bc.s */
+bssMain_800704C6 = 0x800704C6;
+
+/* main/func_800115e0.s */
+D_8003FED8 = 0x8003FED8;
+bssMain_800707C0 = 0x800707C0;
+
+/* main/func_800116ac.s */
+D_8004AA60 = 0x8004AA60;
+
+/* main/func_8001170c.s */
+bssMain_800707C4 = 0x800707C4;
+
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
 /* text00/func_800e6b0c.s */
