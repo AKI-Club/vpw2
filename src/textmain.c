@@ -416,3 +416,13 @@ GLOBAL_ASM("asm/textmain/func_80010984.s")
 GLOBAL_ASM("asm/textmain/func_800109cc.s")
 GLOBAL_ASM("asm/textmain/func_80010a34.s")
 GLOBAL_ASM("asm/textmain/func_80010a9c.s")
+
+/*----------------------------------------------------------------------------*/
+/* possible file break? */
+
+GLOBAL_ASM("asm/textmain/func_80010b60.s")
+GLOBAL_ASM("asm/textmain/func_80010cd4.s")
+GLOBAL_ASM("asm/textmain/func_80010ce4.s")
+GLOBAL_ASM("asm/textmain/func_80010d7c.s")
+GLOBAL_ASM("asm/textmain/func_80010e58.s")
+GLOBAL_ASM("asm/textmain/func_80010f04.s")
