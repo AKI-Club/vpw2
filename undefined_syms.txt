@@ -478,9 +478,6 @@ bssMain_8006FEB0 = 0x8006FEB0;
 bssMain_8006FEB1 = 0x8006FEB1;
 bssMain_8006FEB2 = 0x8006FEB2;
 bssMain_8006FEB3 = 0x8006FEB3;
-func_800109CC = 0x800109CC; /* temp; forward declaration */
-func_80010A34 = 0x80010A34; /* temp; forward declaration */
-func_8000F0F4 = 0x8000F0F4; /* temp; forward declaration */
 
 /* main/func_8000c294.s */
 D_8004A9E0 = 0x8004A9E0;
@@ -493,12 +490,6 @@ var_8003FDB0 = 0x8003FDB0;
 D_8004AA00 = 0x8004AA00;
 D_8004AA08 = 0x8004AA08;
 D_8004AA10 = 0x8004AA10;
-
-/* main/func_8000c4f0.s */
-func_8000E674 = 0x8000E674; /* temp; forward declaration */
-
-/* main/func_8000d158.s */
-func_8000FFEC = 0x8000FFEC; /* temp; forward declaration */
 
 /* main/func_8000d5fc.s */
 var_8003FDB2 = 0x8003FDB2;
@@ -560,6 +551,9 @@ D_801041A8 = 0x801041A8;
 
 /* main/func_8000f22c.s */
 D_8004AA30 = 0x8004AA30;
+
+/* main/func_80010A9C.s */
+guScaleF = 0x800344C0; /* todo: libultra */
 
 /* -------------------------- [seg1 defines for C] -------------------------- */
 
