@@ -406,7 +406,12 @@ GLOBAL_ASM("asm/textmain/func_80010190.s")
 GLOBAL_ASM("asm/textmain/func_800103f8.s")
 GLOBAL_ASM("asm/textmain/func_80010670.s")
 GLOBAL_ASM("asm/textmain/func_800106cc.s")
-GLOBAL_ASM("asm/textmain/func_80010770.s")
+
+/*----------------------------------------------------------------------------*/
+/* possible debug functionality removed in final version */
+void func_80010770(void) {}
+
+/*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80010778.s")
 GLOBAL_ASM("asm/textmain/func_800107b8.s")
 GLOBAL_ASM("asm/textmain/func_8001084c.s")
