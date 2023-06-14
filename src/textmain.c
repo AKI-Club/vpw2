@@ -47,7 +47,7 @@ GLOBAL_ASM("asm/textmain/func_800005f0.s")
 /*----------------------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80000614.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 /* dead code? */
 extern s32 bssMain_8004C07C;
 
@@ -55,7 +55,7 @@ s32 func_80000648(void) {
     return bssMain_8004C07C;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 /* returns 8004BE00; called when setting up sound tables 1,2,3 */
 extern s16 bssMain_8004BE00;
 
@@ -75,31 +75,31 @@ GLOBAL_ASM("asm/textmain/aki_free_80000a00.s")
 
 GLOBAL_ASM("asm/textmain/GetPiHandle_SRAM_80000b4c.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80000bf0.s")
 
 GLOBAL_ASM("asm/textmain/func_80000e98.s")
 
 GLOBAL_ASM("asm/textmain/func_80000f10.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 extern s32 bssMain_80052090;
 
 s32 *func_80000F90(void) {
     return &bssMain_80052090;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/thread_80000f9c.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 extern s32 bssMain_800520C8;
 
 s32 *func_800010D8(void) {
     return &bssMain_800520C8;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/thread_800010e4.s")
 
 GLOBAL_ASM("asm/textmain/thread_80001240.s")
@@ -141,14 +141,14 @@ GLOBAL_ASM("asm/textmain/func_80002b84.s")
 GLOBAL_ASM("asm/textmain/func_80002e40.s")
 GLOBAL_ASM("asm/textmain/func_80003120.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 extern s32 bssMain_800557BC;
 
 void func_800032E0(void) {
     bssMain_800557BC = 0;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_800032ec.s")
 GLOBAL_ASM("asm/textmain/func_80003330.s")
 GLOBAL_ASM("asm/textmain/func_80003374.s")
@@ -170,14 +170,14 @@ GLOBAL_ASM("asm/textmain/func_80003ae8.s")
 GLOBAL_ASM("asm/textmain/func_80003b9c.s")
 GLOBAL_ASM("asm/textmain/func_80003bd4.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 extern u16 bssMain_80056FD4;
 
 s32 func_80003C20(void) {
     return (s32) (bssMain_80056FD4 << 0x10) >> 0x18;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80003c34.s")
 GLOBAL_ASM("asm/textmain/func_80003c98.s")
 
@@ -195,7 +195,7 @@ GLOBAL_ASM("asm/textmain/func_80004130.s")
 GLOBAL_ASM("asm/textmain/func_80004228.s")
 GLOBAL_ASM("asm/textmain/func_80004494.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 /* get absolute value of arg0 */
 s32 func_800044BC(s32 arg0) {
     s32 var_v0;
@@ -212,14 +212,14 @@ s32 func_800044BC(s32 arg0) {
 GLOBAL_ASM("asm/textmain/func_800044d0.s")
 GLOBAL_ASM("asm/textmain/func_80004628.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 extern s8 bssMain_800571D9;
 
 void func_800049E8(s8 arg0) {
     bssMain_800571D9 = arg0;
 }
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 
 GLOBAL_ASM("asm/textmain/func_800049f4.s")
 GLOBAL_ASM("asm/textmain/func_80004a38.s")
@@ -314,7 +314,7 @@ GLOBAL_ASM("asm/textmain/func_8000a3ac.s")
 GLOBAL_ASM("asm/textmain/func_8000a440.s")
 GLOBAL_ASM("asm/textmain/func_8000a49c.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 /* Checks if ID4 belongs to an edit wrestler */
 s32 GetWrestlerType(s32 id4) {
     return (id4 & 0xF00) != 0xC00;
@@ -407,11 +407,11 @@ GLOBAL_ASM("asm/textmain/func_800103f8.s")
 GLOBAL_ASM("asm/textmain/func_80010670.s")
 GLOBAL_ASM("asm/textmain/func_800106cc.s")
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 /* possible debug functionality removed in final version */
 void func_80010770(void) {}
 
-/*----------------------------------------------------------------------------*/
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80010778.s")
 GLOBAL_ASM("asm/textmain/func_800107b8.s")
 GLOBAL_ASM("asm/textmain/func_8001084c.s")
@@ -466,3 +466,9 @@ GLOBAL_ASM("asm/textmain/func_800124f4.s")
 GLOBAL_ASM("asm/textmain/func_8001258c.s")
 GLOBAL_ASM("asm/textmain/func_80012648.s")
 GLOBAL_ASM("asm/textmain/func_800129c4.s")
+GLOBAL_ASM("asm/textmain/func_80012f90.s")
+GLOBAL_ASM("asm/textmain/func_80013034.s")
+GLOBAL_ASM("asm/textmain/func_8001366c.s")
+GLOBAL_ASM("asm/textmain/func_800138fc.s")
+GLOBAL_ASM("asm/textmain/func_80013f20.s")
+GLOBAL_ASM("asm/textmain/func_80013f90.s")

@@ -593,8 +593,6 @@ func_80013F90 = 0x80013F90; /* temp; forward declaration */
 bssMain_8009D6F0 = 0x8009D6F0;
 bssMain_8009D6F4 = 0x8009D6F4;
 bssMain_8009D6F8 = 0x8009D6F8;
-func_80012F90 = 0x80012F90; /* temp; forward declaration */
-func_80013034 = 0x80013034; /* temp; forward declaration */
 D_8004AA70 = 0x8004AA70;
 bssMain_8009D88C = 0x8009D88C;
 bssMain_8009D894 = 0x8009D894;
@@ -608,7 +606,6 @@ bssMain_8009291C = 0x8009291C;
 bssMain_8009D698 = 0x8009D698;
 bssMain_8009D624 = 0x8009D624;
 bssMain_8009D698 = 0x8009D698;
-func_800138FC = 0x800138FC; /* temp; forward declaration */
 
 /* main/func_80012648.s */
 tbl_BodyPartDisplacement = 0x8003FDD0;
@@ -633,6 +630,35 @@ D_8004AA80 = 0x8004AA80;
 D_8004AA88 = 0x8004AA88;
 D_8004AA90 = 0x8004AA90;
 D_8004AA90 = 0x8004AA90;
+
+/* main/func_80013034.s */
+D_8003FEF0 = 0x8003FEF0;
+D_8004AA98 = 0x8004AA98;
+D_8004AAA0 = 0x8004AAA0;
+D_8004AAA8 = 0x8004AAA8;
+D_8004AAB0 = 0x8004AAB0;
+
+/* main/func_8001366c.s */
+D_8004AAB8 = 0x8004AAB8;
+D_8004AAC0 = 0x8004AAC0;
+bssMain_800704B0 = 0x800704B0;
+bssMain_800704B4 = 0x800704B4;
+bssMain_800704B8 = 0x800704B8;
+
+/* main/func_800138fc.s */
+func_80016478 = 0x80016478; /* temp; forward declaration */
+D_8003FE20 = 0x8003FE20;
+D_8004AAC8 = 0x8004AAC8;
+D_8004AAD0 = 0x8004AAD0;
+D_8004AAD8 = 0x8004AAD8;
+D_8003FE20 = 0x8003FE20;
+func_80013F20 = 0x80013F20; /* temp; forward declaration */
+D_8004AAE0 = 0x8004AAE0;
+D_8004AAE8 = 0x8004AAE8;
+D_8003FE38 = 0x8003FE38;
+bssMain_8009D674 = 0x8009D674;
+bssMain_8009D67C = 0x8009D67C;
+func_8001F4FC = 0x8001F4FC; /* temp; forward declaration */
 
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
