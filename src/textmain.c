@@ -436,7 +436,16 @@ GLOBAL_ASM("asm/textmain/func_80010f04.s")
 /* possible file break? 2 */
 
 GLOBAL_ASM("asm/textmain/func_80010f80.s")
-GLOBAL_ASM("asm/textmain/func_80011164.s")
+
+/*------------------------------------------------------------*/
+extern u8 D_8003FECC;
+extern u8 bssMain_80070808;
+
+void func_80011164(s16 arg0, s8 arg1) {
+    (&bssMain_80070808)[arg0] = (&D_8003FECC)[arg1];
+}
+
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/func_80011190.s")
 GLOBAL_ASM("asm/textmain/func_80011598.s")
 GLOBAL_ASM("asm/textmain/func_800115bc.s")
