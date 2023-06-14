@@ -164,6 +164,7 @@ SECTIONS
 	/* -- seg1: cutscenes --------------------------------------------------- */
 	/*.seg01 0x80119450 : AT(0x071A90){*/
 	BEGIN_SEG(seg01, 0x80119450){
+		/* BUILD_DIR/src/seg1_cutscene/text_seg1.o (.text); */
 		* (.text01);
 	}
 	END_SEG(seg01)
@@ -176,6 +177,7 @@ SECTIONS
 	/* -- seg2: menus 2 ----------------------------------------------------- */
 	/*.seg02 0x80119450 : AT(0x084710){*/
 	BEGIN_SEG(seg02, 0x80119450) {
+		/* BUILD_DIR/src/seg2_menu2/text_seg2.o (.text); */
 		* (.text02);
 	}
 	END_SEG(seg02)
