@@ -644,7 +644,6 @@ bssMain_800704B4 = 0x800704B4;
 bssMain_800704B8 = 0x800704B8;
 
 /* main/func_800138fc.s */
-func_80016478 = 0x80016478; /* temp; forward declaration */
 D_8003FE20 = 0x8003FE20;
 D_8004AAC8 = 0x8004AAC8;
 D_8004AAD0 = 0x8004AAD0;
@@ -699,9 +698,6 @@ bssMain_80079F30 = 0x80079F30;
 /* main/func_80014a40.s */
 func_800154F0 = 0x800154F0;
 
-/* main/func_80014aac.s */
-func_80015490 = 0x80015490; /* temp; forward declaration */
-
 /* main/func_80014c70.s */
 D_8004AB00 = 0x8004AB00;
 
@@ -753,6 +749,49 @@ bssMain_800929F4 = 0x800929F4;
 /* main/func_80015d3c.s */
 tbl_80040438 = 0x80040438;
 tbl_800404D4 = 0x800404D4;
+
+/* main/func_80015eac.s */
+D_8004087C = 0x8004087C;
+D_8004088E = 0x8004088E;
+bssMain_80070810 = 0x80070810;
+bssMain_8007F6A0 = 0x8007F6A0;
+D_80040878 = 0x80040878;
+
+/* main/func_8001606c.s */
+D_8004054B = 0x8004054B;
+bssMain_8009B0CC = 0x8009B0CC;
+tbl_80040544 = 0x80040544;
+bssMain_800A24B0 = 0x800A24B0;
+tbl_80040534 = 0x80040534;
+tbl_8004053C = 0x8004053C;
+func_8001743C = 0x8001743C; /* temp; forward declaration */
+D_8004AB40 = 0x8004AB40;
+D_8004AB48 = 0x8004AB48;
+func_8001D280 = 0x8001D280; /* temp; forward declaration */
+D_8004AB50 = 0x8004AB50;
+D_8004AB58 = 0x8004AB58;
+D_8004AB60 = 0x8004AB60;
+D_8004AB68 = 0x8004AB68;
+bssMain_8007FA04 = 0x8007FA04;
+bssMain_8007F9FC = 0x8007F9FC;
+
+/* main/func_800164fc.s */
+D_80040892 = 0x80040892;
+D_80040890 = 0x80040890;
+tbl_MusicFileIDs = 0x800403B0;
+bssMain_8007082F = 0x8007082F;
+bssMain_80079EA0 = 0x80079EA0;
+tbl_TrackVolumes = 0x800403F8;
+bssMain_800A4058 = 0x800A4058;
+tbl_MusicVolumeValues = 0x800403F0;
+
+/* main/SetupSoundTable_45_800166cc.s */
+D_80040880 = 0x80040880;
+bssMain_8007FA30 = 0x8007FA30;
+bssMain_8007FA2C = 0x8007FA2C;
+bssMain_8007FA38 = 0x8007FA38;
+bssMain_8007FA34 = 0x8007FA34;
+D_80040880 = 0x80040880;
 
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
