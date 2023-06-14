@@ -680,6 +680,32 @@ bssMain_8009D5E0 = 0x8009D5E0;
 D_800402B0 = 0x800402B0;
 D_800401B0 = 0x800401B0;
 
+/* main/func_80014730.s */
+D_8004088C = 0x8004088C;
+bssMain_80079EBC = 0x80079EBC;
+bssMain_8007F690 = 0x8007F690;
+bssMain_8007F698 = 0x8007F698;
+bssMain_800A3178 = 0x800A3178;
+bssMain_80079EC8 = 0x80079EC8;
+bssMain_80079ED0 = 0x80079ED0;
+bssMain_800A0740 = 0x800A0740;
+func_8001C210 = 0x8001C210; /* temp; forward declaration */
+bssMain_800A35D0 = 0x800A35D0;
+func_8001A89C = 0x8001A89C; /* temp; forward declaration */
+func_80017C68 = 0x80017C68; /* temp; forward declaration */
+bssMain_8007AF70 = 0x8007AF70;
+bssMain_80079F30 = 0x80079F30;
+func_8001533C = 0x8001533C; /* temp; forward declaration */
+
+/* main/func_80014a40.s */
+func_800154F0 = 0x800154F0;
+
+/* main/func_80014aac.s */
+func_80015490 = 0x80015490;
+
+/* main/func_80014c70.s */
+D_8004AB00 = 0x8004AB00;
+
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
