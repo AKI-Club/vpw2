@@ -907,5 +907,28 @@ func_800F30D4 = 0x800F30D4; /* temp; forward declaration */
 /* -------------------------- [seg3 defines for C] -------------------------- */
 
 /* text03/func3_800e6af0.s */
-func3_800E6B20 = 0x800E6B20; /* temp; forward declaration */
 bss3_80158740 = 0x80158740;
+
+/* text03/func3_800e6b20.s */
+/* just assume any function here is temporary + forward declaration */
+bssMain_8009D5E8 = 0x8009D5E8;
+bssMain_8009D5D4 = 0x8009D5D4;
+func3_801275C0 = 0x801275C0;
+func3_800EFC10 = 0x800EFC10;
+func3_800E7D20 = 0x800E7D20;
+bssMain_800980A0 = 0x800980A0;
+func3_800F3978 = 0x800F3978;
+bss3_80175791 = 0x80175791;
+func3_800F38D4 = 0x800F38D4;
+func3_80127AA0 = 0x80127AA0;
+func3_800E8078 = 0x800E8078;
+bss3_8016C014 = 0x8016C014;
+func3_800F0054 = 0x800F0054;
+bss3_8016C010 = 0x8016C010;
+func3_80142BA0 = 0x80142BA0;
+func3_800E8A08 = 0x800E8A08;
+func3_800F051C = 0x800F051C;
+func3_8012C36C = 0x8012C36C;
+bssMain_8009D5DC = 0x8009D5DC;
+func3_800E7FFC = 0x800E7FFC;
+func3_800F032C = 0x800F032C;
