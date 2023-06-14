@@ -839,6 +839,27 @@ func_800FC454 = 0x800FC454; /* temp; forward declaration */
 D_801041D0 = 0x801041D0;
 D_801041D4 = 0x801041D4;
 
+/* text00/func_800e6e60.s */
+D_801041E0 = 0x801041E0;
+func_800F39AC = 0x800F39AC; /* temp; forward declaration */
+bss0_80118BC0 = 0x80118BC0;
+func_800EBF6C = 0x800EBF6C; /* temp; forward declaration */
+func_800FC9C8 = 0x800FC9C8; /* temp; forward declaration */
+func_800F0548 = 0x800F0548; /* temp; forward declaration */
+bssMain_800A4162 = 0x800A4162;
+D_801041D8 = 0x801041D8;
+D_801041DC = 0x801041DC;
+func_800FD3A4 = 0x800FD3A4; /* temp; forward declaration */
+bss0_80119128 = 0x80119128;
+func_800F10C8 = 0x800F10C8; /* temp; forward declaration */
+D_801041E4 = 0x801041E4;
+bss0_8011917C = 0x8011917C;
+
+/* text00/func_800e70fc.s */
+D_801041E8 = 0x801041E8;
+D_801041EC = 0x801041EC;
+D_801041E8 = 0x801041E8;
+
 /*============================================================================*/
 /* -------------------------- [seg1 defines for C] -------------------------- */
 

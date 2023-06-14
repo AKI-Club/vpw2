@@ -1,0 +1,20 @@
+glabel func_800E70C4
+/* 04C514 800E70C4 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 04C518 800E70C8 04800009 */  bltz  $a0, .L800E70F0
+/* 04C51C 800E70CC AFBF0010 */   sw    $ra, 0x10($sp)
+
+/* 04C520 800E70D0 00051027 */  nor   $v0, $zero, $a1
+/* 04C524 800E70D4 000217C3 */  sra   $v0, $v0, 0x1f
+/* 04C528 800E70D8 00A22824 */  and   $a1, $a1, $v0
+/* 04C52C 800E70DC 28A2007F */  slti  $v0, $a1, 0x7f
+/* 04C530 800E70E0 50400001 */  beql  $v0, $zero, .L800E70E8
+/* 04C534 800E70E4 2405007F */   li    $a1, 127
+
+.L800E70E8:
+/* 04C538 800E70E8 0C008FED */  jal   func_80023FB4
+/* 04C53C 800E70EC 00000000 */   nop   
+
+.L800E70F0:
+/* 04C540 800E70F0 8FBF0010 */  lw    $ra, 0x10($sp)
+/* 04C544 800E70F4 03E00008 */  jr    $ra
+/* 04C548 800E70F8 27BD0018 */   addiu $sp, $sp, 0x18
