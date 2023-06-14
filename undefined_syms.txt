@@ -797,9 +797,7 @@ D_80040880 = 0x80040880;
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
 /* text00/func_800e6b0c.s */
-func_800E6D20 = 0x800E6D20; /* temp; forward declaration */
 func_800E7548 = 0x800E7548; /* temp; forward declaration */
-func_800E6DB4 = 0x800E6DB4; /* temp; forward declaration */
 
 /* text00/func_800e6ba0.s */
 func_800FDD2C = 0x800FDD2C; /* temp; forward declaration */
@@ -810,7 +808,6 @@ func_800F303C = 0x800F303C; /* temp; forward declaration */
 func_800EED7C = 0x800EED7C; /* temp; forward declaration */
 func_800E9878 = 0x800E9878; /* temp; forward declaration */
 func_80119450 = 0x80119450; /* temp; forward declaration */
-func_800E6E18 = 0x800E6E18; /* temp; forward declaration */
 bss0_8010C648 = 0x8010C648;
 bss0_8010C740 = 0x8010C740;
 bss0_8010C658 = 0x8010C658;
@@ -831,6 +828,16 @@ bss0_801181A0 = 0x801181A0;
 bss0_801192B8 = 0x801192B8;
 bss0_80118CA0 = 0x80118CA0;
 D_801041A8 = 0x801041A8;
+
+/* text00/func_800e6d20.s */
+func_800FC3B0 = 0x800FC3B0; /* temp; forward declaration */
+
+/* text00/func_800e6db4.s */
+func_800FC454 = 0x800FC454; /* temp; forward declaration */
+
+/* text00/func_800e6e18.s */
+D_801041D0 = 0x801041D0;
+D_801041D4 = 0x801041D4;
 
 /*============================================================================*/
 /* -------------------------- [seg1 defines for C] -------------------------- */

@@ -13,3 +13,6 @@ GLOBAL_ASM("asm/text00/func_800e6b0c.s")
 /* file break */
 
 GLOBAL_ASM("asm/text00/func_800e6ba0.s")
+GLOBAL_ASM("asm/text00/func_800e6d20.s")
+GLOBAL_ASM("asm/text00/func_800e6db4.s")
+GLOBAL_ASM("asm/text00/func_800e6e18.s")
