@@ -796,9 +796,6 @@ D_80040880 = 0x80040880;
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
-/* text00/func_800e6b0c.s */
-func_800E7548 = 0x800E7548; /* temp; forward declaration */
-
 /* text00/func_800e6ba0.s */
 func_800FDD2C = 0x800FDD2C; /* temp; forward declaration */
 func_800F0C40 = 0x800F0C40; /* temp; forward declaration */
@@ -859,6 +856,46 @@ bss0_8011917C = 0x8011917C;
 D_801041E8 = 0x801041E8;
 D_801041EC = 0x801041EC;
 D_801041E8 = 0x801041E8;
+
+/* text00/func_800e71b0.s */
+bss0_80119288 = 0x80119288;
+bss0_80119286 = 0x80119286;
+bss0_80119284 = 0x80119284;
+D_801041AC = 0x801041AC;
+bss0_8011928C = 0x8011928C;
+bssMain_8009B154 = 0x8009B154;
+bssMain_8009B156 = 0x8009B156;
+bssMain_8009B15A = 0x8009B15A;
+bssMain_8009B15B = 0x8009B15B;
+bss0_8011928A = 0x8011928A;
+bss0_8011928B = 0x8011928B;
+bss0_8011928B = 0x8011928B;
+
+/* text00/func_800e7318.s */
+bss0_801181C0 = 0x801181C0;
+D_801041AC = 0x801041AC;
+bss0_8011928C = 0x8011928C;
+bssMain_8009B156 = 0x8009B156;
+bssMain_8009B154 = 0x8009B154;
+bss0_80119280 = 0x80119280;
+bss0_80119288 = 0x80119288;
+bss0_80119284 = 0x80119284;
+bss0_80119286 = 0x80119286;
+bss0_80119100 = 0x80119100;
+bss0_80119288 = 0x80119288;
+
+/* text00/func_800e7548.s */
+bss0_80119090 = 0x80119090;
+func_800E9E5C = 0x800E9E5C; /* temp; forward declaration */
+func_8011946C = 0x8011946C; /* temp; forward declaration */
+func_80119488 = 0x80119488; /* temp; forward declaration */
+func_800F0F0C = 0x800F0F0C; /* temp; forward declaration */
+func_800FC254 = 0x800FC254; /* temp; forward declaration */
+func_800E9920 = 0x800E9920; /* temp; forward declaration */
+func_800EF040 = 0x800EF040; /* temp; forward declaration */
+func_800FDEA8 = 0x800FDEA8; /* temp; forward declaration */
+func_800EFCE8 = 0x800EFCE8; /* temp; forward declaration */
+func_800F30D4 = 0x800F30D4; /* temp; forward declaration */
 
 /*============================================================================*/
 /* -------------------------- [seg1 defines for C] -------------------------- */

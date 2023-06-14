@@ -19,3 +19,10 @@ GLOBAL_ASM("asm/text00/func_800e6e18.s")
 GLOBAL_ASM("asm/text00/func_800e6e60.s")
 GLOBAL_ASM("asm/text00/func_800e70c4.s")
 GLOBAL_ASM("asm/text00/func_800e70fc.s")
+GLOBAL_ASM("asm/text00/func_800e71b0.s")
+GLOBAL_ASM("asm/text00/func_800e7318.s")
+GLOBAL_ASM("asm/text00/func_800e7548.s")
+
+/*============================================================================*/
+/* --- file break --- */
+// func_800E7650
