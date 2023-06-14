@@ -15,6 +15,7 @@ func_8400193C = 0x8400193C;
 func_84001BE4 = 0x84001BE4;
 func_84001BB0 = 0x84001BB0;
 
+/*============================================================================*/
 /* ------------------------ [main seg defines for C] ------------------------ */
 
 /* main/textmain.s */
@@ -511,6 +512,12 @@ D_8004AA20 = 0x8004AA20;
 D_8004AA28 = 0x8004AA28;
 var_8003FDB8 = 0x8003FDB8;
 
+/* main/func_8000f22c.s */
+D_8004AA30 = 0x8004AA30;
+
+/* main/func_80010a9C.s */
+guScaleF = 0x800344C0; /* todo: libultra */
+
 /* main/func_80010b60.s */
 D_8003FDC0 = 0x8003FDC0;
 
@@ -556,6 +563,81 @@ D_8004AA60 = 0x8004AA60;
 /* main/func_8001170c.s */
 bssMain_800707C4 = 0x800707C4;
 
+/* main/func_800118f4.s */
+bssMain_800707E8 = 0x800707E8;
+bssMain_800707C8 = 0x800707C8;
+bssMain_800704CC = 0x800704CC;
+bssMain_800704C0 = 0x800704C0;
+bssMain_800704C1 = 0x800704C1;
+bssMain_8009B184 = 0x8009B184;
+bssMain_800A44A0 = 0x800A44A0;
+
+/* main/func_80011b84.s */
+bssMain_80092900 = 0x80092900;
+bssMain_8009D620 = 0x8009D620;
+bssMain_8009D668 = 0x8009D668;
+bssMain_8009D654 = 0x8009D654;
+bssMain_8009D670 = 0x8009D670;
+bssMain_8009D680 = 0x8009D680;
+bssMain_8009D684 = 0x8009D684;
+bssMain_8009D688 = 0x8009D688;
+
+/* main/func_80011ca8.s */
+func_80014040 = 0x80014040; /* temp; forward declaration */
+bssMain_800704D8 = 0x800704D8;
+
+/* main/func_80011cfc.s */
+D_8004AA68 = 0x8004AA68;
+func_80018568 = 0x80018568; /* temp; forward declaration */
+func_80013F90 = 0x80013F90; /* temp; forward declaration */
+bssMain_8009D6F0 = 0x8009D6F0;
+bssMain_8009D6F4 = 0x8009D6F4;
+bssMain_8009D6F8 = 0x8009D6F8;
+func_80012F90 = 0x80012F90; /* temp; forward declaration */
+func_8001258C = 0x8001258C; /* temp; forward declaration */
+func_80013034 = 0x80013034; /* temp; forward declaration */
+func_800129C4 = 0x800129C4; /* temp; forward declaration */
+D_8004AA70 = 0x8004AA70;
+bssMain_8009D88C = 0x8009D88C;
+bssMain_8009D894 = 0x8009D894;
+bssMain_8009D890 = 0x8009D890;
+func_80012648 = 0x80012648; /* temp; forward declaration */
+bssMain_800929DC = 0x800929DC;
+bssMain_8009D69C = 0x8009D69C;
+bssMain_8009D62C = 0x8009D62C;
+bssMain_8009D630 = 0x8009D630;
+bssMain_8009D634 = 0x8009D634;
+bssMain_8009291C = 0x8009291C;
+bssMain_8009D698 = 0x8009D698;
+bssMain_8009D624 = 0x8009D624;
+bssMain_8009D698 = 0x8009D698;
+func_800138FC = 0x800138FC; /* temp; forward declaration */
+
+/* main/func_80012648.s */
+tbl_BodyPartDisplacement = 0x8003FDD0;
+D_8003FDF8 = 0x8003FDF8;
+D_8003FE0C = 0x8003FE0C;
+D_8003FE40 = 0x8003FE40;
+tbl_8003FE54 = 0x8003FE54;
+tbl_8003FE64 = 0x8003FE64;
+tbl_8003FE74 = 0x8003FE74;
+tbl_8003FEA4 = 0x8003FEA4;
+ptrTbl_8003FEC4 = 0x8003FEC4;
+tbl_8003FEB4 = 0x8003FEB4;
+tbl_8003FEB4 = 0x8003FEB4;
+
+/* main/func_800129c4.s */
+bssMain_8009D6C0 = 0x8009D6C0;
+bssMain_8009D6C8 = 0x8009D6C8;
+bssMain_8009D6C4 = 0x8009D6C4;
+D_8003FEDC = 0x8003FEDC;
+D_8004AA78 = 0x8004AA78;
+D_8004AA80 = 0x8004AA80;
+D_8004AA88 = 0x8004AA88;
+D_8004AA90 = 0x8004AA90;
+D_8004AA90 = 0x8004AA90;
+
+/*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
 
 /* text00/func_800e6b0c.s */
@@ -594,16 +676,13 @@ bss0_801192B8 = 0x801192B8;
 bss0_80118CA0 = 0x80118CA0;
 D_801041A8 = 0x801041A8;
 
-/* main/func_8000f22c.s */
-D_8004AA30 = 0x8004AA30;
-
-/* main/func_80010A9C.s */
-guScaleF = 0x800344C0; /* todo: libultra */
-
+/*============================================================================*/
 /* -------------------------- [seg1 defines for C] -------------------------- */
 
+/*============================================================================*/
 /* -------------------------- [seg2 defines for C] -------------------------- */
 
+/*============================================================================*/
 /* -------------------------- [seg3 defines for C] -------------------------- */
 
 /* text03/func3_800e6af0.s */
