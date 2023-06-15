@@ -691,7 +691,6 @@ bssMain_800A0740 = 0x800A0740;
 func_8001C210 = 0x8001C210; /* temp; forward declaration */
 bssMain_800A35D0 = 0x800A35D0;
 func_8001A89C = 0x8001A89C; /* temp; forward declaration */
-func_80017C68 = 0x80017C68; /* temp; forward declaration */
 bssMain_8007AF70 = 0x8007AF70;
 bssMain_80079F30 = 0x80079F30;
 
@@ -703,7 +702,6 @@ D_8004AB00 = 0x8004AB00;
 
 /* main/func_80014ce0.s */
 func_8001A858 = 0x8001A858; /* temp; forward declaration */
-func_800174B8 = 0x800174B8; /* temp; forward declaration */
 
 /* main/func_80014f24.s */
 bssMain_80092918 = 0x80092918;
@@ -764,7 +762,6 @@ tbl_80040544 = 0x80040544;
 bssMain_800A24B0 = 0x800A24B0;
 tbl_80040534 = 0x80040534;
 tbl_8004053C = 0x8004053C;
-func_8001743C = 0x8001743C; /* temp; forward declaration */
 D_8004AB40 = 0x8004AB40;
 D_8004AB48 = 0x8004AB48;
 func_8001D280 = 0x8001D280; /* temp; forward declaration */
@@ -792,6 +789,63 @@ bssMain_8007FA2C = 0x8007FA2C;
 bssMain_8007FA38 = 0x8007FA38;
 bssMain_8007FA34 = 0x8007FA34;
 D_80040880 = 0x80040880;
+
+/* main/func_800169c8.s */
+D_80040898 = 0x80040898;
+D_80040894 = 0x80040894;
+
+/* main/SetupSoundTable_6_80016b54.s */
+D_80040882 = 0x80040882;
+bssMain_8007FA40 = 0x8007FA40;
+bssMain_8007FA3C = 0x8007FA3C;
+
+/* main/func_80016c88.s */
+D_800408A0 = 0x800408A0;
+D_8004089C = 0x8004089C;
+
+/* main/SetupSoundTable_78_80016dc4.s */
+D_80040884 = 0x80040884;
+bssMain_8007FA48 = 0x8007FA48;
+bssMain_8007FA44 = 0x8007FA44;
+bssMain_8007FA50 = 0x8007FA50;
+bssMain_8007FA4C = 0x8007FA4C;
+
+/* main/func_8001707c.s */
+D_800408A8 = 0x800408A8;
+D_800408A4 = 0x800408A4;
+
+/* main/func_800171dc.s */
+bssMain_8007FA58 = 0x8007FA58;
+bssMain_8007FA59 = 0x8007FA59;
+bssMain_8007FA5A = 0x8007FA5A;
+bssMain_8007FA5B = 0x8007FA5B;
+bssMain_8009D5C8 = 0x8009D5C8;
+
+/* main/func_800172bc.s */
+bssMain_80079EA4 = 0x80079EA4;
+
+/* main/func_80017c68.s */
+D_8003FF0C = 0x8003FF0C;
+func_8001AB84 = 0x8001AB84; /* temp; forward declaration */
+func_80018590 = 0x80018590; /* temp; forward declaration */
+bssMain_80079F28 = 0x80079F28;
+func_8001B5B4 = 0x8001B5B4; /* temp; forward declaration */
+
+/* main/func_80017ef4.s */
+D_80040888 = 0x80040888;
+bssMain_8007FA68 = 0x8007FA68;
+bssMain_8007FF90 = 0x8007FF90;
+ptrTbl_80040604 = 0x80040604;
+ptrTbl_8004066C = 0x8004066C;
+bssMain_8007FE10 = 0x8007FE10;
+bssMain_8007FCD0 = 0x8007FCD0;
+tbl_HandTextureFiles = 0x80040674;
+bssMain_8007FA90 = 0x8007FA90;
+
+/* main/func_800174b8.s */
+func_800186D0 = 0x800186D0; /* temp; forward declaration */
+func_8001870C = 0x8001870C; /* temp; forward declaration */
+func_8001871C = 0x8001871C; /* temp; forward declaration */
 
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
