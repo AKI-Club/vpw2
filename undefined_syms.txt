@@ -847,6 +847,22 @@ func_800186D0 = 0x800186D0; /* temp; forward declaration */
 func_8001870C = 0x8001870C; /* temp; forward declaration */
 func_8001871C = 0x8001871C; /* temp; forward declaration */
 
+/* main/func_800182f0.s */
+bssMain_800A3818 = 0x800A3818;
+bssMain_8007FA78 = 0x8007FA78;
+D_800406E8 = 0x800406E8;
+bssMain_8007FA80 = 0x8007FA80;
+ptrTbl_800406D8 = 0x800406D8;
+D_8004067C = 0x8004067C;
+D_800406EC = 0x800406EC;
+
+/* main/func_80018590.s */
+bssMain_8007FCDC = 0x8007FCDC;
+bssMain_8007FCD4 = 0x8007FCD4;
+bssMain_800A0760 = 0x800A0760;
+bssMain_8007FCE0 = 0x8007FCE0;
+bssMain_800A0764 = 0x800A0764;
+
 /*============================================================================*/
 /* -------------------------- [seg0 defines for C] -------------------------- */
 

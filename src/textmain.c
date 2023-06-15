@@ -525,3 +525,10 @@ GLOBAL_ASM("asm/textmain/func_800174b8.s")
 GLOBAL_ASM("asm/textmain/func_80017c68.s")
 GLOBAL_ASM("asm/textmain/func_80017ef4.s")
 GLOBAL_ASM("asm/textmain/func_80018158.s")
+GLOBAL_ASM("asm/textmain/func_800182f0.s")
+GLOBAL_ASM("asm/textmain/func_80018550.s")
+GLOBAL_ASM("asm/textmain/func_80018568.s")
+GLOBAL_ASM("asm/textmain/func_80018590.s")
+
+/*============================================================================*/
+/* --- file break? --- */
