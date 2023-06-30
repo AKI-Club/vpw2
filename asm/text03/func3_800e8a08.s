@@ -1,0 +1,55 @@
+glabel func3_800E8A08
+/* 0E30B8 800E8A08 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 0E30BC 800E8A0C 2404FFFF */  li    $a0, -1
+/* 0E30C0 800E8A10 3C05800A */  lui   $a1, %hi(bssMain_8009D5DC) # $a1, 0x800a
+/* 0E30C4 800E8A14 8CA5D5DC */  lw    $a1, %lo(bssMain_8009D5DC)($a1)
+/* 0E30C8 800E8A18 00001821 */  addu  $v1, $zero, $zero
+/* 0E30CC 800E8A1C 24060001 */  li    $a2, 1
+/* 0E30D0 800E8A20 AFBF0010 */  sw    $ra, 0x10($sp)
+/* 0E30D4 800E8A24 00661004 */  sllv  $v0, $a2, $v1
+
+.L3_800E8A28:
+/* 0E30D8 800E8A28 00A21024 */  and   $v0, $a1, $v0
+/* 0E30DC 800E8A2C 54400001 */  bnezl $v0, .L3_800E8A34
+/* 0E30E0 800E8A30 00602021 */   addu  $a0, $v1, $zero
+
+.L3_800E8A34:
+/* 0E30E4 800E8A34 24630001 */  addiu $v1, $v1, 1
+/* 0E30E8 800E8A38 2C620004 */  sltiu $v0, $v1, 4
+/* 0E30EC 800E8A3C 1440FFFA */  bnez  $v0, .L3_800E8A28
+/* 0E30F0 800E8A40 00661004 */   sllv  $v0, $a2, $v1
+
+/* 0E30F4 800E8A44 00041400 */  sll   $v0, $a0, 0x10
+/* 0E30F8 800E8A48 00022403 */  sra   $a0, $v0, 0x10
+/* 0E30FC 800E8A4C 04820004 */  bltzl $a0, .L3_800E8A60
+/* 0E3100 800E8A50 00002021 */   addu  $a0, $zero, $zero
+
+/* 0E3104 800E8A54 0C005033 */  jal   func_800140CC
+/* 0E3108 800E8A58 00000000 */   nop   
+
+/* 0E310C 800E8A5C 00402021 */  addu  $a0, $v0, $zero
+
+.L3_800E8A60:
+/* 0E3110 800E8A60 00041400 */  sll   $v0, $a0, 0x10
+/* 0E3114 800E8A64 00022403 */  sra   $a0, $v0, 0x10
+/* 0E3118 800E8A68 1880000B */  blez  $a0, .L3_800E8A98
+/* 0E311C 800E8A6C 24020012 */   li    $v0, 18
+
+/* 0E3120 800E8A70 0C0027D1 */  jal   func_80009F44
+/* 0E3124 800E8A74 00000000 */   nop   
+
+/* 0E3128 800E8A78 00401821 */  addu  $v1, $v0, $zero
+/* 0E312C 800E8A7C 2442FFEA */  addiu $v0, $v0, -0x16
+/* 0E3130 800E8A80 3042FFFF */  andi  $v0, $v0, 0xffff
+/* 0E3134 800E8A84 2C42000A */  sltiu $v0, $v0, 0xa
+/* 0E3138 800E8A88 50400001 */  beql  $v0, $zero, .L3_800E8A90
+/* 0E313C 800E8A8C 24030012 */   li    $v1, 18
+
+.L3_800E8A90:
+/* 0E3140 800E8A90 00031400 */  sll   $v0, $v1, 0x10
+/* 0E3144 800E8A94 00021403 */  sra   $v0, $v0, 0x10
+
+.L3_800E8A98:
+/* 0E3148 800E8A98 8FBF0010 */  lw    $ra, 0x10($sp)
+/* 0E314C 800E8A9C 03E00008 */  jr    $ra
+/* 0E3150 800E8AA0 27BD0018 */   addiu $sp, $sp, 0x18

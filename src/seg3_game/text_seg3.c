@@ -20,4 +20,15 @@ GLOBAL_ASM("asm/text03/pausemenu/func3_800e8544.s")
 
 /*============================================================================*/
 /* --- file break --- */
-// func3_800E8690
+GLOBAL_ASM("asm/text03/func3_800e8690.s")
+GLOBAL_ASM("asm/text03/func3_800e8948.s")
+GLOBAL_ASM("asm/text03/func3_800e8a08.s")
+GLOBAL_ASM("asm/text03/func3_800e8aa4.s")
+GLOBAL_ASM("asm/text03/func3_800e8aac.s")
+GLOBAL_ASM("asm/text03/func3_800e8cac.s")
+GLOBAL_ASM("asm/text03/func3_800e8cfc.s")
+GLOBAL_ASM("asm/text03/func3_800e8e4c.s")
+
+/*============================================================================*/
+/* --- file break --- */
+// func3_800E90F0
