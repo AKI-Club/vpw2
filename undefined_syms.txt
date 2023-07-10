@@ -827,7 +827,6 @@ bssMain_80079EA4 = 0x80079EA4;
 /* main/func_80017c68.s */
 D_8003FF0C = 0x8003FF0C;
 func_8001AB84 = 0x8001AB84; /* temp; forward declaration */
-func_80018590 = 0x80018590; /* temp; forward declaration */
 bssMain_80079F28 = 0x80079F28;
 func_8001B5B4 = 0x8001B5B4; /* temp; forward declaration */
 
@@ -994,7 +993,6 @@ bss3_8016C014 = 0x8016C014;
 func3_800F0054 = 0x800F0054;
 bss3_8016C010 = 0x8016C010;
 func3_80142BA0 = 0x80142BA0;
-func3_800E8A08 = 0x800E8A08;
 func3_800F051C = 0x800F051C;
 func3_8012C36C = 0x8012C36C;
 bssMain_8009D5DC = 0x8009D5DC;
