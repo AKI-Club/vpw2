@@ -44774,7 +44774,7 @@ tbl_80047C94:
 ptrTbl_80047C98:
 	.word bssMain_80087530
 	.word bssMain_80087600
-	.word 0x800874F8
+	.word bssMain_800874F8
 	.word bssMain_80087598
 	.word bssMain_80087638
 	.word bssMain_800873B8
@@ -45423,7 +45423,7 @@ D_800486B4:
 
 # 800486C0 [w]
 D_800486C0:
-	.word 0x800A33E8
+	.word bssMain_800A33E8
 	.word 0
 	.word 0
 	.word 0
@@ -51463,9 +51463,15 @@ bssMain_800A33C0: .byte 0
 /*----------------------------------------------------------------------------*/
 # 800A33E4 [h] ?
 bssMain_800A33E4: .short 0
-	.skip 0x22
 
-# todo: 800A33E8
+# 800A33E6
+	.skip 2
+
+# 800A33E8 [?]
+bssMain_800A33E8: .short 0 # guessing here
+
+	.skip 0x1E
+
 
 # 800A3408 [b] ?
 bssMain_800A3408: .byte 0
