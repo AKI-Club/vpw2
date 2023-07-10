@@ -966,6 +966,16 @@ func_800FDEA8 = 0x800FDEA8; /* temp; forward declaration */
 func_800EFCE8 = 0x800EFCE8; /* temp; forward declaration */
 func_800F30D4 = 0x800F30D4; /* temp; forward declaration */
 
+/* text00/func_800e7650.s */
+tbl0_80105B48 = 0x80105B48;
+
+func_800E7768 = 0x800E7768;
+func2_80128620 = 0x80128620;
+
+/* text00/func_800e76d0.s */
+D0_8010C140 = 0x8010C140;
+func_800F2C58 = 0x800F2C58;
+
 /*============================================================================*/
 /* -------------------------- [seg1 defines for C] -------------------------- */
 

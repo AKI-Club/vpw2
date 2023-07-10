@@ -25,4 +25,5 @@ GLOBAL_ASM("asm/text00/func_800e7548.s")
 
 /*============================================================================*/
 /* --- file break --- */
-// func_800E7650
+GLOBAL_ASM("asm/text00/func_800e7650.s")
+GLOBAL_ASM("asm/text00/func_800e76d0.s")
