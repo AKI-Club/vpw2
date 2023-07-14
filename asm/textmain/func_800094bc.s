@@ -3,6 +3,10 @@
 # strings then linked to display. Only one image is made for each unique string,
 # so hashes are created from the string and assigned to each image."
 
+# Params:
+# $a0 - 
+# $a1 - 
+
 glabel func_800094BC
 /* 00A0BC 800094BC 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00A0C0 800094C0 00804021 */  addu  $t0, $a0, $zero
