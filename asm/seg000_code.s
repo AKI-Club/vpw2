@@ -41970,6 +41970,7 @@ bss0_801189E0: .word 0
 	.skip 0x1E
 
 # 80118A02 [b]
+# related to text entry buffer
 bss0_80118A02: .byte 0
 	.skip 0x65
 
