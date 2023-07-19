@@ -1641,7 +1641,7 @@ D_80125A38:
 # offset 0x00: [b] sequence number?
 # offset 0x01: [b] sub-sequence number?
 # offset 0x02: [b] flags 1
-# offset 0x03: [b] transition type? (08 fade to white, 20 fade from white?)
+# offset 0x03: [b] transition type? (0x08 fade to white, 0x20 fade from white?)
 # offset 0x04: [s] time to show scene
 # offset 0x06: [s] camera motion?
 # offset 0x08: [s] ? (related to overlays?)
