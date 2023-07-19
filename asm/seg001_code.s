@@ -1687,9 +1687,10 @@ func_8011A794:
 /* 072DD4 8011A794 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 072DD8 8011A798 AFB00010 */  sw    $s0, 0x10($sp)
 /* 072DDC 8011A79C 00808021 */  addu  $s0, $a0, $zero # store seqnum in s0
-/* 072DE0 8011A7A0 001010C0 */  sll   $v0, $s0, 3
-/* 072DE4 8011A7A4 00501023 */  subu  $v0, $v0, $s0
-/* 072DE8 8011A7A8 00021080 */  sll   $v0, $v0, 2
+# a seqnum of 1 becomes 28; seqnum 2 becomes 56, etc.
+/* 072DE0 8011A7A0 001010C0 */  sll   $v0, $s0, 3 # v0 = s0 << 3
+/* 072DE4 8011A7A4 00501023 */  subu  $v0, $v0, $s0 # v0 -= s0
+/* 072DE8 8011A7A8 00021080 */  sll   $v0, $v0, 2 # v <<= 2
 
 # beginning of intro-related stuff
 /* 072DEC 8011A7AC 3C038012 */  lui   $v1, %hi(D_80125A58) # $v1, 0x8012
@@ -1702,7 +1703,7 @@ func_8011A794:
 /* 072E04 8011A7C4 00003821 */  addu  $a3, $zero, $zero
 /* 072E08 8011A7C8 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 072E0C 8011A7CC F7B40018 */  sdc1  $f20, 0x18($sp)
-/* 072E10 8011A7D0 94C30004 */  lhu   $v1, 4($a2)
+/* 072E10 8011A7D0 94C30004 */  lhu   $v1, 4($a2) # load scene time
 /* 072E14 8011A7D4 84C40008 */  lh    $a0, 8($a2)
 /* 072E18 8011A7D8 24080100 */  li    $t0, 256
 /* 072E1C 8011A7DC 00002821 */  addu  $a1, $zero, $zero
@@ -5816,6 +5817,7 @@ func_8011DA9C:
 /* 076114 8011DAD4 90425D14 */  lbu   $v0, %lo(bssMain_800B5D14)($v0)
 /* 076118 8011DAD8 00021840 */  sll   $v1, $v0, 1
 /* 07611C 8011DADC 00621821 */  addu  $v1, $v1, $v0
+# arena entrance type offset
 /* 076120 8011DAE0 3C028013 */  lui   $v0, %hi(tbl1_8012B199)
 /* 076124 8011DAE4 00431021 */  addu  $v0, $v0, $v1
 /* 076128 8011DAE8 9042B199 */  lbu   $v0, %lo(tbl1_8012B199)($v0)
@@ -5876,6 +5878,7 @@ func_8011DA9C:
 /* 0761DC 8011DB9C 90635D14 */  lbu   $v1, %lo(bssMain_800B5D14)($v1)
 /* 0761E0 8011DBA0 00031040 */  sll   $v0, $v1, 1
 
+# arena entrance type offset
 /* 0761E4 8011DBA4 00431021 */  addu  $v0, $v0, $v1
 /* 0761E8 8011DBA8 3C038013 */  lui   $v1, %hi(tbl1_8012B199)
 /* 0761EC 8011DBAC 00621821 */  addu  $v1, $v1, $v0
@@ -6912,6 +6915,7 @@ func_8011E738:
 /* 076E38 8011E7F8 10400065 */  beqz  $v0, .L8011E990
 /* 076E3C 8011E7FC 2402FFFF */   li    $v0, -1
 
+# arena entrance information
 /* 076E40 8011E800 3C108013 */  lui   $s0, %hi(tbl1_8012B198) # $s0, 0x8013
 /* 076E44 8011E804 2610B198 */  addiu $s0, %lo(tbl1_8012B198) # addiu $s0, $s0, -0x4e68
 /* 076E48 8011E808 24020003 */  li    $v0, 3
@@ -7167,6 +7171,7 @@ func_8011E738:
 /* 077150 8011EB10 90635D14 */  lbu   $v1, %lo(bssMain_800B5D14)($v1)
 /* 077154 8011EB14 00031040 */  sll   $v0, $v1, 1
 /* 077158 8011EB18 00431021 */  addu  $v0, $v0, $v1
+# arena entrance camera pan
 /* 07715C 8011EB1C 3C058013 */  lui   $a1, %hi(tbl1_8012B19A)
 /* 077160 8011EB20 00A22821 */  addu  $a1, $a1, $v0
 /* 077164 8011EB24 90A5B19A */  lbu   $a1, %lo(tbl1_8012B19A)($a1)
@@ -7284,6 +7289,7 @@ func_8011E738:
 /* 0772B0 8011EC70 00002021 */  addu  $a0, $zero, $zero
 /* 0772B4 8011EC74 00031040 */  sll   $v0, $v1, 1
 /* 0772B8 8011EC78 00431021 */  addu  $v0, $v0, $v1
+# arena entrance information
 /* 0772BC 8011EC7C 3C038013 */  lui   $v1, %hi(tbl1_8012B198)
 /* 0772C0 8011EC80 00621821 */  addu  $v1, $v1, $v0
 /* 0772C4 8011EC84 9063B198 */  lbu   $v1, %lo(tbl1_8012B198)($v1)
@@ -20669,7 +20675,7 @@ tbl1_8012B19A:
 
 /*----------------------------------------------------------------------------*/
 # for these next values...
-# first four bytes is singles entrance, next four is tag entrance.
+# first four bytes are for the singles entrance, next four are for tag entrance.
 
 # 8012B1A8 [b] "corners entrance"
 tbl1_8012B1A8:
