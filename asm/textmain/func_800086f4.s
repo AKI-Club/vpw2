@@ -100,6 +100,7 @@ glabel func_800086F4
 /* 009414 80008814 10400012 */  beqz  $v0, .L80008860
 /* 009418 80008818 30A20004 */   andi  $v0, $a1, 4
 
+# check if large font is loaded
 /* 00941C 8000881C 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 009420 80008820 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 009424 80008824 1040000E */  beqz  $v0, .L80008860
@@ -159,6 +160,7 @@ glabel func_800086F4
 /* 0094B0 800088B0 10400012 */  beqz  $v0, .L800088FC
 /* 0094B4 800088B4 30A20004 */   andi  $v0, $a1, 4
 
+# check if large font is loaded
 /* 0094B8 800088B8 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 0094BC 800088BC 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 0094C0 800088C0 1040000E */  beqz  $v0, .L800088FC

@@ -31,6 +31,7 @@ glabel func_80007660
 /* 0082CC 800076CC 1040003F */  beqz  $v0, .L800077CC
 /* 0082D0 800076D0 32020004 */   andi  $v0, $s0, 4
 
+# check if large font is loaded
 /* 0082D4 800076D4 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 0082D8 800076D8 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 0082DC 800076DC 1040003B */  beqz  $v0, .L800077CC

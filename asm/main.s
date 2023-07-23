@@ -44284,7 +44284,7 @@ D_8003EFB0:
 D_8003EFB4:
 	.word 0
 
-# 8003EFB8 - [word] location of 24x21 font in RAM?
+# 8003EFB8 - [word] location of large (24x21px) font in RAM?
 D_8003EFB8:
 	.word 0
 

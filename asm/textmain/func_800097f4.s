@@ -64,6 +64,7 @@ glabel func_800097F4
 /* 00A4A8 800098A8 1440FFE9 */  bnez  $v0, .L80009850
 /* 00A4AC 800098AC 2631001C */   addiu $s1, $s1, 0x1c
 
+# check if large font is loaded, and if so, free the memory
 /* 00A4B0 800098B0 3C048004 */  lui   $a0, %hi(D_8003EFB8) # $a0, 0x8004
 /* 00A4B4 800098B4 8C84EFB8 */  lw    $a0, %lo(D_8003EFB8)($a0)
 /* 00A4B8 800098B8 10800005 */  beqz  $a0, .L800098D0

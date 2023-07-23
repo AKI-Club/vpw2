@@ -25,6 +25,7 @@ glabel func_800078DC
 /* 008520 80007920 10400008 */  beqz  $v0, .L80007944
 /* 008524 80007924 0000B821 */   addu  $s7, $zero, $zero
 
+# check if large font is loaded
 /* 008528 80007928 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 00852C 8000792C 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 008530 80007930 10400004 */  beqz  $v0, .L80007944
@@ -106,6 +107,7 @@ glabel func_800078DC
 /* 0085EC 800079EC 12A00023 */  beqz  $s5, .L80007A7C
 /* 0085F0 800079F0 00000000 */   nop   
 
+# check if large font is loaded
 /* 0085F4 800079F4 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 0085F8 800079F8 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 0085FC 800079FC 1040001F */  beqz  $v0, .L80007A7C
@@ -148,6 +150,7 @@ glabel func_800078DC
 /* 008654 80007A54 12A00009 */  beqz  $s5, .L80007A7C
 /* 008658 80007A58 00000000 */   nop   
 
+# check if large font is loaded
 /* 00865C 80007A5C 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 008660 80007A60 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 008664 80007A64 10400005 */  beqz  $v0, .L80007A7C
@@ -209,6 +212,7 @@ glabel func_800078DC
 /* 0086EC 80007AEC 12A00013 */  beqz  $s5, .L80007B3C
 /* 0086F0 80007AF0 00000000 */   nop   
 
+# check if large font is loaded
 /* 0086F4 80007AF4 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 0086F8 80007AF8 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 0086FC 80007AFC 1040000F */  beqz  $v0, .L80007B3C
@@ -271,6 +275,7 @@ glabel func_800078DC
 /* 008784 80007B84 12A00013 */  beqz  $s5, .L80007BD4
 /* 008788 80007B88 00000000 */   nop   
 
+# check if large font is loaded
 /* 00878C 80007B8C 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 008790 80007B90 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 008794 80007B94 1040000F */  beqz  $v0, .L80007BD4
@@ -384,6 +389,7 @@ glabel func_800078DC
 /* 0088C4 80007CC4 10400006 */  beqz  $v0, .L80007CE0
 /* 0088C8 80007CC8 24620008 */   addiu $v0, $v1, 8
 
+# check if large font is loaded
 /* 0088CC 80007CCC 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 0088D0 80007CD0 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 0088D4 80007CD4 14400002 */  bnez  $v0, .L80007CE0

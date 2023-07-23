@@ -170,6 +170,7 @@ glabel func_80007D44
 /* 008B00 80007F00 10400007 */  beqz  $v0, .L80007F20
 /* 008B04 80007F04 AFAC001C */   sw    $t4, 0x1c($sp)
 
+# check if large font is loaded
 /* 008B08 80007F08 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 008B0C 80007F0C 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 008B10 80007F10 10400003 */  beqz  $v0, .L80007F20

@@ -3,6 +3,7 @@ glabel func_80008A08
 /* 00960C 80008A0C 10A00005 */  beqz  $a1, .L80008A24
 /* 009610 80008A10 240E000E */   li    $t6, 14
 
+# check if large font is loaded
 /* 009614 80008A14 3C028004 */  lui   $v0, %hi(D_8003EFB8) # $v0, 0x8004
 /* 009618 80008A18 8C42EFB8 */  lw    $v0, %lo(D_8003EFB8)($v0)
 /* 00961C 80008A1C 54400001 */  bnezl $v0, .L80008A24
