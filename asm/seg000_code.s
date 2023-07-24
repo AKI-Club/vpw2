@@ -35425,6 +35425,7 @@ tbl0_80105570:
 
 	.byte 0x08, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00, 0x7F
 
+# todo: this is probably a display list
 tbl0_801055B0:
 	.byte 0xE7, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 
@@ -35498,23 +35499,16 @@ tbl0_801055B0:
 	.byte 0xDF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 
 # 80105728 (offset 0x1598) [w]
+# todo: more display list stuff
 tbl0_80105728:
-	.word 0xE7000000
-	.word 0
-	.word 0xD7000002
-	.word 0xFFFFFFFF
-	.word 0xD9FFF9FE
-	.word 0
-	.word 0xD9FFFFFF
-	.word 0x00200204
-	.word 0xE3000A01
-	.word 0
-	.word 0xE200001C
-	.word 0x005041C8
-	.word 0xE3000C00
-	.word 0x00080000
-	.word 0xE3001001
-	.word 0x00008000
+	.word 0xE7000000,0
+	.word 0xD7000002,0xFFFFFFFF
+	.word 0xD9FFF9FE,0
+	.word 0xD9FFFFFF,0x00200204
+	.word 0xE3000A01,0
+	.word 0xE200001C,0x005041C8
+	.word 0xE3000C00,0x00080000
+	.word 0xE3001001,0x00008000
 	.word 0xE2001E01
 	.word 0
 	.word 0xE3001801
@@ -35566,6 +35560,7 @@ tbl0_80105818:
 	.word 0xE0000000
 	.word 0
 
+/*----------------------------------------------------------------------------*/
 # 80105820 (offset 0x1690)
 # mappings of global text index ranges to file IDs?
 tbl0_80105820:
@@ -35925,30 +35920,48 @@ tbl0_80105C90:
 	.word 0xFF77FF66, 0xFF55FF44, 0xFF33FF22, 0xFF110000
 
 /*----------------------------------------------------------------------------*/
-# 80105E60 [w] (offset 0x1CD0)
+# 80105E60 [q] (offset 0x1CD0)
 tbl0_80105E60:
-	.word 0xE7000000, 0x00000000, 0xE200001C, 0x00504240
-	.word 0xD9FFF9FF, 0x00000000, 0xD9FFFFFF, 0x00200004
-	.word 0xFC30B261, 0xFF67FFFF, 0xE3001A01, 0x00000000
-	.word 0xE2001E01, 0x00000000, 0xE3001801, 0x00000080
-	.word 0xE3000A01, 0x00000000, 0xE3001001, 0x0000C000
-	.word 0xFD100000, 0x00105E40, 0xE8000000, 0x00000000
-	.word 0xF5000100, 0x07000000, 0xE6000000, 0x00000000
-	.word 0xF0000000, 0x0703C000, 0xE7000000, 0x00000000
-	.word 0xFD500000, 0x00105DC0, 0xF5500000, 0x07010040
-	.word 0xE6000000, 0x00000000, 0xF3000000, 0x0703F800
-	.word 0xE7000000, 0x00000000, 0xF5400200, 0x00010040
-	.word 0xF2000000, 0x0003C03C, 0xDF000000, 0x00000000
-	.word 0xDE000000, tbl0_80105E60, 0x07000206, 0x00000604
-	.word 0xE7000000, 0x00000000, 0xDF000000, 0x00000000
+	.quad 0xE700000000000000 # G_RDPPIPESYNC
+	.quad 0xE200001C00504240 # G_SetOtherMode_L
+	.quad 0xD9FFF9FF00000000 # G_GEOMETRYMODE
+	.quad 0xD9FFFFFF00200004 # G_GEOMETRYMODE
+	.quad 0xFC30B261FF67FFFF # G_SETCOMBINE
+	.quad 0xE3001A0100000000 # G_SetOtherMode_H
+	.quad 0xE2001E0100000000 # G_SetOtherMode_L
+	.quad 0xE300180100000080 # G_SetOtherMode_H
+	.quad 0xE3000A0100000000 # G_SetOtherMode_H
+	.quad 0xE30010010000C000 # G_SetOtherMode_H
+	.quad 0xFD10000000105E40 # 
+	.quad 0xE800000000000000 # 
+	.quad 0xF500010007000000 # 
+	.quad 0xE600000000000000 # 
+	.quad 0xF00000000703C000 # 
+	.quad 0xE700000000000000 # 
+	.quad 0xFD50000000105DC0 # 
+	.quad 0xF550000007010040 # 
+	.quad 0xE600000000000000 # 
+	.quad 0xF30000000703F800 # 
+	.quad 0xE700000000000000 # 
+	.quad 0xF540020000010040 # 
+	.quad 0xF20000000003C03C # 
+	.quad 0xDF00000000000000 # G_ENDDL
+
+	.word 0xDE000000, tbl0_80105E60
+	.word 0x07000206, 0x00000604
+	.word 0xE7000000, 0x00000000
+	.word 0xDF000000, 0x00000000
 
 /*----------------------------------------------------------------------------*/
-# 80105F40 [w] (offset 0x1DB0)
+# 80105F40 [q] (offset 0x1DB0)
 tbl0_80105F40:
-	.word 0xE7000000, 0x00000000, 0xD9FFF9FF, 0x00000000
-	.word 0xE2001E01, 0x00000000, 0xD7000002, 0xFFFFFFFF
-	.word 0xE3001001, 0x00008000, 0xE200001C, 0x00504240
-	.word 0xDF000000, 0x00000000
+	.quad 0xE700000000000000 # G_RDPPIPESYNC
+	.quad 0xD9FFF9FF00000000 # G_GEOMETRYMODE
+	.quad 0xE2001E0100000000 # G_SetOtherMode_L
+	.quad 0xD7000002FFFFFFFF # G_TEXTURE
+	.quad 0xE300100100008000 # G_SetOtherMode_H
+	.quad 0xE200001C00504240 # G_SetOtherMode_L
+	.quad 0xDF00000000000000 # G_ENDDL
 
 /*----------------------------------------------------------------------------*/
 # 80105F78 (0x1DE8 offset): entrance theme values
@@ -36046,12 +36059,16 @@ tbl0_80106066:
 	.short 0x0000, 0x00A8
 
 /*----------------------------------------------------------------------------*/
-# 80106078 [w]
+# 80106078 [q]
 tbl0_80106078:
-	.word 0xE7000000, 0x00000000
-	.word 0xE3001001, 0x00008000, 0xDF000000, 0x00000000
-	.word 0xE5E5D0D0, 0xBBBBA8A8, 0x95958282, 0x71716060
-	.word 0x51514242, 0x35352828, 0x1D1D1212, 0x09090000
+	.quad 0xE700000000000000 # G_RDPPIPESYNC
+	.quad 0xE300100100008000 # G_SetOtherMode_H
+	.quad 0xDF00000000000000 # G_ENDDL
+
+	.quad 0xE5E5D0D0BBBBA8A8 # 
+	.quad 0x9595828271716060 # 
+	.quad 0x5151424235352828 # 
+	.quad 0x1D1D121209090000 # 
 
 /*----------------------------------------------------------------------------*/
 # 801060B0 [w] display list
@@ -38805,13 +38822,62 @@ D_80108F50:
 # 80108F60 [h] animation IDs?
 
 tbl_80108F60:
-	.short 0x1A95, 0x1A90, 0x1D92, 0x1EBD, 0x1EB7, 0x1B4D, 0x1B5E, 0x1C58
-	.short 0x1C59, 0x1CDB, 0x1C89, 0x1FFF, 0x1AEF, 0x1AEF, 0x1AEF, 0x1AEF
-	.short 0x1F1F, 0x1F42, 0x1F20, 0x1F43, 0x1FCB, 0x1FCC, 0x1FCD, 0x1FCE
-	.short 0x1FCF, 0x1FD0, 0x1FD1, 0x1FD2, 0x1FD3, 0x1FD4, 0x1FD5, 0x1FD6
-	.short 0x1FD7, 0x1FD8, 0x1FD9, 0x1FDA, 0x1FDB, 0x1FDC, 0x1FDD, 0x1FDE
-	.short 0x1FDF, 0x1FE0, 0x1FE1, 0x1FE2, 0x1DB1, 0x1DCA, 0x1E93, 0x1E94
-	.short 0x0000, 0x1A96, 0x1F66, 0x1F61, 0x1F62, 0x1F63, 0x1F64, 0x1F64
+	.short 0x1A95
+	.short 0x1A90
+	.short 0x1D92
+	.short 0x1EBD
+	.short 0x1EB7 # standing dizzy
+	.short 0x1B4D
+	.short 0x1B5E
+	.short 0x1C58 # slumped in corner, back to turnbuckles
+	.short 0x1C59 # slumped in corner, back to ring
+	.short 0x1CDB # perched on top turnbuckle
+	.short 0x1C89 # tree of woe
+	.short 0x1FFF
+	.short 0x1AEF # running
+	.short 0x1AEF # running
+	.short 0x1AEF # running
+	.short 0x1AEF # running
+	.short 0x1F1F # mount top front?
+	.short 0x1F42 # mount top back?
+	.short 0x1F20 # mount bottom front?
+	.short 0x1F43 # mount bottom back?
+	.short 0x1FCB # downed face up
+	.short 0x1FCC # downed face down
+	.short 0x1FCD
+	.short 0x1FCE
+	.short 0x1FCF
+	.short 0x1FD0
+	.short 0x1FD1
+	.short 0x1FD2
+	.short 0x1FD3
+	.short 0x1FD4
+	.short 0x1FD5
+	.short 0x1FD6
+	.short 0x1FD7
+	.short 0x1FD8
+	.short 0x1FD9
+	.short 0x1FDA
+	.short 0x1FDB # downed face up, holding groin
+	.short 0x1FDC # downed face down, holding groin
+	.short 0x1FDD # downed face up
+	.short 0x1FDE # downed face down
+	.short 0x1FDF # downed face up, holding face
+	.short 0x1FE0 # downed face down, holding face
+	.short 0x1FE1 # downed face up, holding throat
+	.short 0x1FE2 # downed face down, holding throat
+	.short 0x1DB1 # downed, sitting up
+	.short 0x1DCA # on hands and knees, face down
+	.short 0x1E93 # downed, face up
+	.short 0x1E94 # downed, face down
+	.short 0x0000
+	.short 0x1A96
+	.short 0x1F66
+	.short 0x1F61
+	.short 0x1F62
+	.short 0x1F63
+	.short 0x1F64
+	.short 0x1F64
 
 /*----------------------------------------------------------------------------*/
 # 80108FD0 [b]
