@@ -20074,7 +20074,10 @@ ptrTbl_8012AA08:
 /*----------------------------------------------------------------------------*/
 # 8012AA6C (0x699C offset) more text IDs?
 D_8012AA6C:
-	.short 0xF692, 0xF693, 0xF690, 0xF691
+	.short 0xF692
+	.short 0xF693
+	.short 0xF690
+	.short 0xF691
 
 /*----------------------------------------------------------------------------*/
 # 8012AA74 (0x69A4 offset) beginning of credits sequence stuff according to below table
@@ -20454,6 +20457,13 @@ tbl1_8012AE5D:
 	.word 0
 
 /*----------------------------------------------------------------------------*/
+# various messages; each entry is 5 shorts
+# offset 0x00 - text ID
+# offset 0x02 - ?
+# offset 0x04 - ?
+# offset 0x06 - ?
+# offset 0x08 - ?
+
 # 8012AE70 (0x6DA0 offset)
 D_8012AE70:
 	.short 0xF5C9, 0x00F0, 0x0078, 0x0030, 0x0C20
