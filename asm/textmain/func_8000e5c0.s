@@ -1,3 +1,9 @@
+# Params:
+# $a0 - [b] ?
+# $a1 - [b] ?
+# $a2 - [b] ?
+# $a3 - [b] ?
+
 glabel func_8000E5C0
 /* 00F1C0 8000E5C0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00F1C4 8000E5C4 A3A40010 */  sb    $a0, 0x10($sp)

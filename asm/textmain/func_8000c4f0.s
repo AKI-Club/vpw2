@@ -1,5 +1,5 @@
 # Params:
-# $a0 - ?
+# $a0 - [w] pointer to ?
 # $a1 - file ID 1
 # $a2 - file ID 2
 
@@ -107,7 +107,7 @@ glabel func_8000C4F0
 /* 00D1EC 8000C5EC 0C000FA2 */  jal   LoadFile
 /* 00D1F0 8000C5F0 3225FFFF */   andi  $a1, $s1, 0xffff
 
-
+# check for monochrome mode
 /* 00D1F4 8000C5F4 3C038004 */  lui   $v1, %hi(var_8003FDB0) # $v1, 0x8004
 /* 00D1F8 8000C5F8 9463FDB0 */  lhu   $v1, %lo(var_8003FDB0)($v1)
 /* 00D1FC 8000C5FC 24020001 */  li    $v0, 1

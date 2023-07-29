@@ -7953,7 +7953,7 @@ func_8011F280:
 /* 077A6C 8011F42C 2402FFB0 */  li    $v0, -80
 /* 077A70 8011F430 3C018012 */  lui   $at, %hi(bss0_80118F8C) # $at, 0x8012
 /* 077A74 8011F434 AC228F8C */  sw    $v0, %lo(bss0_80118F8C)($at)
-/* 077A78 8011F438 3402F43E */  li    $v0, 62526
+/* 077A78 8011F438 3402F43E */  li    $v0, 0xF43E
 /* 077A7C 8011F43C 54620006 */  bnel  $v1, $v0, .L8011F458
 /* 077A80 8011F440 24022700 */   li    $v0, 0x2700 # animation ID for jackhammer
 
@@ -7994,9 +7994,11 @@ func_8011F280:
 
 /*----------------------------------------------*/
 .L8011F4A0:
+# set monochrome mode
 /* 077AE0 8011F4A0 24020001 */  li    $v0, 1
 /* 077AE4 8011F4A4 3C018004 */  lui   $at, %hi(var_8003FDB0) # $at, 0x8004
 /* 077AE8 8011F4A8 A422FDB0 */  sh    $v0, %lo(var_8003FDB0)($at)
+
 /* 077AEC 8011F4AC 24020002 */  li    $v0, 2
 /* 077AF0 8011F4B0 3C01800B */  lui   $at, %hi(bssMain_800B5D14) # $at, 0x800b
 /* 077AF4 8011F4B4 A0225D14 */  sb    $v0, %lo(bssMain_800B5D14)($at)

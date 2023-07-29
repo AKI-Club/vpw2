@@ -134,6 +134,7 @@ glabel func_8000C648
 /* 00D3A4 8000C7A4 0C000FA2 */  jal   LoadFile
 /* 00D3A8 8000C7A8 AE460004 */   sw    $a2, 4($s2)
 
+# check for monochrome mode
 /* 00D3AC 8000C7AC 3C038004 */  lui   $v1, %hi(var_8003FDB0) # $v1, 0x8004
 /* 00D3B0 8000C7B0 9463FDB0 */  lhu   $v1, %lo(var_8003FDB0)($v1)
 /* 00D3B4 8000C7B4 24020001 */  li    $v0, 1

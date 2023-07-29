@@ -4096,6 +4096,7 @@ func_8001B5B4:
 /* 01C484 8001B884 1440FFF8 */  bnez  $v0, .L8001B868
 /* 01C488 8001B888 00112403 */   sra   $a0, $s1, 0x10
 
+# check for monochrome mode
 /* 01C48C 8001B88C 3C038004 */  lui   $v1, %hi(var_8003FDB0) # $v1, 0x8004
 /* 01C490 8001B890 9463FDB0 */  lhu   $v1, %lo(var_8003FDB0)($v1)
 /* 01C494 8001B894 24020001 */  li    $v0, 1
@@ -10466,6 +10467,7 @@ func_800209C8:
 /* 02169C 80020A9C 10600080 */  beqz  $v1, .L80020CA0
 /* 0216A0 80020AA0 0044A021 */   addu  $s4, $v0, $a0
 
+# check for monochrome mode
 /* 0216A4 80020AA4 3C038004 */  lui   $v1, %hi(var_8003FDB0) # $v1, 0x8004
 /* 0216A8 80020AA8 9463FDB0 */  lhu   $v1, %lo(var_8003FDB0)($v1)
 /* 0216AC 80020AAC 24020001 */  li    $v0, 1
@@ -44390,7 +44392,9 @@ dynPtr_DefaultNames:       .word 0 # File ID 0x006C is loaded here
 
 .align 4 #(0xC bytes)
 
+# 8003FDB0: [s] related to monochrome mode?
 var_8003FDB0: .short 0
+
 var_8003FDB2: .short 0
 var_8003FDB4: .word 0
 

@@ -22,7 +22,7 @@ glabel func_8000E674
 /* 00F2C0 8000E6C0 25EF0008 */  addiu $t7, $t7, 8
 /* 00F2C4 8000E6C4 3C03E200 */  lui   $v1, (0xE200001C >> 16) # lui $v1, 0xe200
 /* 00F2C8 8000E6C8 3463001C */  ori   $v1, (0xE200001C & 0xFFFF) # ori $v1, $v1, 0x1c
-/* 00F2CC 8000E6CC 3C048004 */  lui   $a0, %hi(D_80040004) # $a0, 0x8004
+/* 00F2CC 8000E6CC 3C048004 */  lui   $a0, %hi(var_8003FDB2) # $a0, 0x8004
 /* 00F2D0 8000E6D0 9484FDB2 */  lhu   $a0, %lo(var_8003FDB2)($a0)
 /* 00F2D4 8000E6D4 3C020F0A */  lui   $v0, (0x0F0A7008 >> 16) # lui $v0, 0xf0a
 /* 00F2D8 8000E6D8 34427008 */  ori   $v0, (0x0F0A7008 & 0xFFFF) # ori $v0, $v0, 0x7008

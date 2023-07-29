@@ -246,6 +246,8 @@ glabel func_8000CE14
 /* 00DCE8 8000D0E8 322200FF */  andi  $v0, $s1, 0xff
 /* 00DCEC 8000D0EC 8E830024 */  lw    $v1, 0x24($s4)
 /* 00DCF0 8000D0F0 00021040 */  sll   $v0, $v0, 1
+
+# check for monochrome mode
 /* 00DCF4 8000D0F4 3C048004 */  lui   $a0, %hi(var_8003FDB0) # $a0, 0x8004
 /* 00DCF8 8000D0F8 9484FDB0 */  lhu   $a0, %lo(var_8003FDB0)($a0)
 /* 00DCFC 8000D0FC 00623021 */  addu  $a2, $v1, $v0

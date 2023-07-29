@@ -16,6 +16,7 @@ glabel func_8000FEB0
 
 /* 010AD8 8000FED8 0C000280 */  jal   aki_free
 /* 010ADC 8000FEDC 00000000 */   nop   
+
 /* 010AE0 8000FEE0 AE000010 */  sw    $zero, 0x10($s0)
 /* 010AE4 8000FEE4 AE000014 */  sw    $zero, 0x14($s0)
 /* 010AE8 8000FEE8 08003FD6 */  j     .L8000FF58

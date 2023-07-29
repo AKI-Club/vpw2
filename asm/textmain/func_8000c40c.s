@@ -1,4 +1,5 @@
 glabel func_8000C40C
+# check for monochrome mode
 /* 00D00C 8000C40C 3C038004 */  lui   $v1, %hi(var_8003FDB0) # $v1, 0x8004
 /* 00D010 8000C410 9463FDB0 */  lhu   $v1, %lo(var_8003FDB0)($v1)
 /* 00D014 8000C414 24020001 */  li    $v0, 1
