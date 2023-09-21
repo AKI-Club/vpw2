@@ -39574,8 +39574,8 @@ ptrTbl0_80109604:
 /*----------------------------------------------------------------------------*/
 # 80109610 (0x5480 offset) [b] related to costume unlocks
 # 0x00: unlock value
-# 0x01: ?
-# 0x02: ?
+# 0x01: attire section
+# 0x02: attire number
 
 tbl0_80109610:
 	.byte 0x15, 0x15
