@@ -1535,6 +1535,36 @@ D_80125854:
 # 80125868 (Z64 0x7DEA8; seg001 data offset: 0x1798)
 # static intro screens and other game intro graphics
 
+# format:
+# 0x00 - file ID
+# 0x02 - image width
+# 0x04 - image height
+# 0x06 - vertical displacement 1? (only for CI* textures?)
+# 0x08 - horizontal stretch
+# 0x0A - flags
+# 0x0C - horizontal displacement? (only for I4 textures?)
+# 0x0E - vertical displacement 2? (only for I4 textures?)
+
+# flags upper portion
+# part of this is related to image type.
+# 8xxx: i4texture/"4 color"
+# 9xxx: ci4texture/16 color
+# Axxx: ci8texture/256 color? (unofficial, doesn't appear in any game data)
+# Bxxx: ??? 16 color?
+# Cxxx: i4texture sequence; lower two bytes seem to change something related to shape?
+# Dxxx: invalid?
+# Exxx: invalid?
+# Fxxx: invalid?
+
+# x?xx: changes display priority? probably more than that
+
+# flags lower portion
+# xx00 = black bg
+# xx01 = white bg
+# xx02 = animated fire BG (does not handle fades well)
+# xx03 = animated fire foreground?
+# xx04 = used by screen burn but requires C0 as first byte?
+
 # All Japan Pro-Wrestling
 D_80125868:
 	.short 0x0013, 0x0140, 0x00F0, 0x0000, 0x01E0, 0x9200, 0x0000, 0x0000
@@ -1547,9 +1577,11 @@ D_80125878:
 D_80125888:
 	.short 0x0012, 0x0140, 0x00A0, 0x0028, 0x0140, 0x9201, 0x0000, 0x0000
 
+# revenge barrel flames 1
 D_80125898:
 	.short 0x00EB, 0x0040, 0x0040, 0x0000, 0x01E0, 0xC002, 0x0000, 0x0000
 
+# revenge barrel flames 2
 D_801258A8:
 	.short 0x00EB, 0x0040, 0x0040, 0x0000, 0x01E0, 0xC003, 0x0000, 0x0000
 
@@ -1605,10 +1637,12 @@ D_80125978:
 	.short 1, 1, 0, 0, 0, 0, 0, 0
 	.word D_801258D8, D_801258E8, 0, 0
 
+# revenge barrel fire frames 1
 D_80125998:
 	.short 1, 1, 0, 0, 0, 0, 0, 0
 	.word D_80125898, 0, 0, 0
 
+# revenge barrel fire frames 2
 D_801259B8:
 	.short 0, 0, 0, 0, 0, 0, 0, 0
 	.word D_801258A8, 0, 0, 0
