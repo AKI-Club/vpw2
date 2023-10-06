@@ -12755,6 +12755,8 @@ func_800F3594:
 # Params:
 # $a0 -
 # $a1 -
+# $a2 -
+# $a3 -
 
 func_800F3800:
 /* 058C50 800F3800 27BDFFE8 */  addiu $sp, $sp, -0x18
