@@ -1,0 +1,157 @@
+glabel func3_800EC684
+/* 0E6D34 800EC684 27BDFFE0 */  addiu $sp, $sp, -0x20
+/* 0E6D38 800EC688 AFB00018 */  sw    $s0, 0x18($sp)
+/* 0E6D3C 800EC68C 00808021 */  addu  $s0, $a0, $zero
+/* 0E6D40 800EC690 00042400 */  sll   $a0, $a0, 0x10
+/* 0E6D44 800EC694 1480001E */  bnez  $a0, .L3_800EC710
+/* 0E6D48 800EC698 AFBF001C */   sw    $ra, 0x1c($sp)
+
+/* 0E6D4C 800EC69C 3C028016 */  lui   $v0, %hi(bss3_8015D788) # $v0, 0x8016
+/* 0E6D50 800EC6A0 9442D788 */  lhu   $v0, %lo(bss3_8015D788)($v0)
+/* 0E6D54 800EC6A4 2C420003 */  sltiu $v0, $v0, 3
+/* 0E6D58 800EC6A8 10400003 */  beqz  $v0, .L3_800EC6B8
+/* 0E6D5C 800EC6AC 00000000 */   nop   
+
+/* 0E6D60 800EC6B0 0C03BCEF */  jal   func3_800EF3BC
+/* 0E6D64 800EC6B4 00000000 */   nop   
+
+.L3_800EC6B8:
+/* 0E6D68 800EC6B8 0C03BA55 */  jal   func3_800EE954
+/* 0E6D6C 800EC6BC 00000000 */   nop   
+
+/* 0E6D70 800EC6C0 3C028016 */  lui   $v0, %hi(bss3_8015B7D0) # $v0, 0x8016
+/* 0E6D74 800EC6C4 8442B7D0 */  lh    $v0, %lo(bss3_8015B7D0)($v0)
+/* 0E6D78 800EC6C8 04400011 */  bltz  $v0, .L3_800EC710
+/* 0E6D7C 800EC6CC 00401821 */   addu  $v1, $v0, $zero
+
+/* 0E6D80 800EC6D0 3C028016 */  lui   $v0, %hi(bss3_8015D780) # $v0, 0x8016
+/* 0E6D84 800EC6D4 8C42D780 */  lw    $v0, %lo(bss3_8015D780)($v0)
+/* 0E6D88 800EC6D8 24630001 */  addiu $v1, $v1, 1
+/* 0E6D8C 800EC6DC 3C018016 */  lui   $at, %hi(bss3_8015B7D0) # $at, 0x8016
+/* 0E6D90 800EC6E0 A423B7D0 */  sh    $v1, %lo(bss3_8015B7D0)($at)
+/* 0E6D94 800EC6E4 3C038015 */  lui   $v1, %hi(BigMessage_Fight) # $v1, 0x8015
+/* 0E6D98 800EC6E8 246317A0 */  addiu $v1, %lo(BigMessage_Fight) # addiu $v1, $v1, 0x17a0
+/* 0E6D9C 800EC6EC 10430008 */  beq   $v0, $v1, .L3_800EC710
+/* 0E6DA0 800EC6F0 2402FFFF */   li    $v0, -1
+
+/* 0E6DA4 800EC6F4 3C018016 */  lui   $at, %hi(bss3_8015B7D0) # $at, 0x8016
+/* 0E6DA8 800EC6F8 A422B7D0 */  sh    $v0, %lo(bss3_8015B7D0)($at)
+/* 0E6DAC 800EC6FC 24020001 */  li    $v0, 1
+/* 0E6DB0 800EC700 3C018017 */  lui   $at, %hi(bss3_8016C014) # $at, 0x8017
+/* 0E6DB4 800EC704 A420C014 */  sh    $zero, %lo(bss3_8016C014)($at)
+/* 0E6DB8 800EC708 3C018017 */  lui   $at, %hi(bss3_8016C018) # $at, 0x8017
+/* 0E6DBC 800EC70C A422C018 */  sh    $v0, %lo(bss3_8016C018)($at)
+
+.L3_800EC710:
+/* 0E6DC0 800EC710 3C028016 */  lui   $v0, %hi(bss3_8015C884) # $v0, 0x8016
+/* 0E6DC4 800EC714 8C42C884 */  lw    $v0, %lo(bss3_8015C884)($v0)
+/* 0E6DC8 800EC718 3C04800A */  lui   $a0, %hi(bssMain_800980A0) # $a0, 0x800a
+/* 0E6DCC 800EC71C 8C8480A0 */  lw    $a0, %lo(bssMain_800980A0)($a0)
+/* 0E6DD0 800EC720 8C430000 */  lw    $v1, ($v0)
+/* 0E6DD4 800EC724 30848000 */  andi  $a0, $a0, 0x8000 # attract mode/demo flag
+/* 0E6DD8 800EC728 34630080 */  ori   $v1, $v1, 0x80
+/* 0E6DDC 800EC72C 10800016 */  beqz  $a0, .L3_800EC788
+/* 0E6DE0 800EC730 AC430000 */   sw    $v1, ($v0)
+
+/* 0E6DE4 800EC734 0C03B8B6 */  jal   func3_800EE2D8
+/* 0E6DE8 800EC738 00000000 */   nop   
+
+/* 0E6DEC 800EC73C 3C028016 */  lui   $v0, %hi(bss3_80159CB4) # $v0, 0x8016
+/* 0E6DF0 800EC740 8C429CB4 */  lw    $v0, %lo(bss3_80159CB4)($v0)
+/* 0E6DF4 800EC744 8C420000 */  lw    $v0, ($v0)
+/* 0E6DF8 800EC748 30420080 */  andi  $v0, $v0, 0x80
+/* 0E6DFC 800EC74C 14400019 */  bnez  $v0, .L3_800EC7B4
+/* 0E6E00 800EC750 00002821 */   addu  $a1, $zero, $zero
+
+/* 0E6E04 800EC754 00002021 */  addu  $a0, $zero, $zero
+
+.L3_800EC758:
+/* 0E6E08 800EC758 3C038016 */  lui   $v1, %hi(bss3_80159CB4)
+/* 0E6E0C 800EC75C 00641821 */  addu  $v1, $v1, $a0
+/* 0E6E10 800EC760 8C639CB4 */  lw    $v1, %lo(bss3_80159CB4)($v1)
+/* 0E6E14 800EC764 8C620000 */  lw    $v0, ($v1)
+/* 0E6E18 800EC768 24A50001 */  addiu $a1, $a1, 1
+/* 0E6E1C 800EC76C 34420080 */  ori   $v0, $v0, 0x80
+/* 0E6E20 800EC770 AC620000 */  sw    $v0, ($v1)
+/* 0E6E24 800EC774 2CA20005 */  sltiu $v0, $a1, 5
+/* 0E6E28 800EC778 1440FFF7 */  bnez  $v0, .L3_800EC758
+/* 0E6E2C 800EC77C 248400DC */   addiu $a0, $a0, 0xdc
+
+/* 0E6E30 800EC780 0803B1ED */  j     .L3_800EC7B4
+/* 0E6E34 800EC784 00000000 */   nop   
+
+.L3_800EC788:
+/* 0E6E38 800EC788 0C050AE8 */  jal   func3_80142BA0
+/* 0E6E3C 800EC78C 00000000 */   nop   
+
+/* 0E6E40 800EC790 10400013 */  beqz  $v0, .L3_800EC7E0
+/* 0E6E44 800EC794 00000000 */   nop   
+
+/* 0E6E48 800EC798 0C03B8B6 */  jal   func3_800EE2D8
+/* 0E6E4C 800EC79C 00000000 */   nop   
+
+/* 0E6E50 800EC7A0 3C02800A */  lui   $v0, %hi(bssMain_800980A0) # $v0, 0x800a
+/* 0E6E54 800EC7A4 8C4280A0 */  lw    $v0, %lo(bssMain_800980A0)($v0)
+/* 0E6E58 800EC7A8 30428000 */  andi  $v0, $v0, 0x8000 # attract mode/demo flag
+/* 0E6E5C 800EC7AC 14400020 */  bnez  $v0, .L3_800EC830
+/* 0E6E60 800EC7B0 00000000 */   nop   
+
+.L3_800EC7B4:
+/* 0E6E64 800EC7B4 3C028016 */  lui   $v0, %hi(bss3_80159B00) # $v0, 0x8016
+/* 0E6E68 800EC7B8 94429B00 */  lhu   $v0, %lo(bss3_80159B00)($v0)
+/* 0E6E6C 800EC7BC 3042000C */  andi  $v0, $v0, 0xc
+/* 0E6E70 800EC7C0 1040001B */  beqz  $v0, .L3_800EC830
+/* 0E6E74 800EC7C4 2404FF7F */   li    $a0, -129
+
+/* 0E6E78 800EC7C8 3C028016 */  lui   $v0, %hi(bss3_8015C884) # $v0, 0x8016
+/* 0E6E7C 800EC7CC 8C42C884 */  lw    $v0, %lo(bss3_8015C884)($v0)
+/* 0E6E80 800EC7D0 8C430000 */  lw    $v1, ($v0)
+/* 0E6E84 800EC7D4 00641824 */  and   $v1, $v1, $a0
+/* 0E6E88 800EC7D8 0803B20C */  j     .L3_800EC830
+/* 0E6E8C 800EC7DC AC430000 */   sw    $v1, ($v0)
+
+# spirit meter display
+.L3_800EC7E0:
+/* 0E6E90 800EC7E0 3C02800A */  lui   $v0, %hi(bssMain_800A4052) # $v0, 0x800a
+/* 0E6E94 800EC7E4 90424052 */  lbu   $v0, %lo(bssMain_800A4052)($v0)
+/* 0E6E98 800EC7E8 1440000F */  bnez  $v0, .L3_800EC828
+/* 0E6E9C 800EC7EC 00000000 */   nop   
+
+/* 0E6EA0 800EC7F0 3C028017 */  lui   $v0, %hi(bss3_8016C018) # $v0, 0x8017
+/* 0E6EA4 800EC7F4 8442C018 */  lh    $v0, %lo(bss3_8016C018)($v0)
+/* 0E6EA8 800EC7F8 1040000B */  beqz  $v0, .L3_800EC828
+/* 0E6EAC 800EC7FC 00101400 */   sll   $v0, $s0, 0x10
+
+/* 0E6EB0 800EC800 14400005 */  bnez  $v0, .L3_800EC818
+/* 0E6EB4 800EC804 00000000 */   nop   
+
+/* 0E6EB8 800EC808 0C03B408 */  jal   func3_800ED020
+/* 0E6EBC 800EC80C 00002021 */   addu  $a0, $zero, $zero
+
+/* 0E6EC0 800EC810 0803B20C */  j     .L3_800EC830
+/* 0E6EC4 800EC814 00000000 */   nop   
+
+.L3_800EC818:
+/* 0E6EC8 800EC818 0C03B8A1 */  jal   func3_800EE284
+/* 0E6ECC 800EC81C 00000000 */   nop   
+
+/* 0E6ED0 800EC820 0803B20C */  j     .L3_800EC830
+/* 0E6ED4 800EC824 00000000 */   nop   
+
+.L3_800EC828:
+/* 0E6ED8 800EC828 0C03B8B6 */  jal   func3_800EE2D8
+/* 0E6EDC 800EC82C 00000000 */   nop   
+
+.L3_800EC830:
+/* 0E6EE0 800EC830 0C03A686 */  jal   func3_800E9A18
+/* 0E6EE4 800EC834 00000000 */   nop   
+
+/* 0E6EE8 800EC838 3C028016 */  lui   $v0, %hi(bss3_80159B00) # $v0, 0x8016
+/* 0E6EEC 800EC83C 94429B00 */  lhu   $v0, %lo(bss3_80159B00)($v0)
+/* 0E6EF0 800EC840 24420001 */  addiu $v0, $v0, 1
+/* 0E6EF4 800EC844 3C018016 */  lui   $at, %hi(bss3_80159B00) # $at, 0x8016
+/* 0E6EF8 800EC848 A4229B00 */  sh    $v0, %lo(bss3_80159B00)($at)
+/* 0E6EFC 800EC84C 8FBF001C */  lw    $ra, 0x1c($sp)
+/* 0E6F00 800EC850 8FB00018 */  lw    $s0, 0x18($sp)
+/* 0E6F04 800EC854 03E00008 */  jr    $ra
+/* 0E6F08 800EC858 27BD0020 */   addiu $sp, $sp, 0x20

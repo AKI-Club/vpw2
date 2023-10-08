@@ -41,4 +41,12 @@ GLOBAL_ASM("asm/text03/func3_800ea0bc.s")
 
 /*============================================================================*/
 /* --- file break --- */
+GLOBAL_ASM("asm/text03/func3_800ea370.s")
+GLOBAL_ASM("asm/text03/func3_800ea7f4.s")
+GLOBAL_ASM("asm/text03/func3_800eaa28.s")
+GLOBAL_ASM("asm/text03/func3_800ec684.s")
+GLOBAL_ASM("asm/text03/func3_800ec85c.s")
+GLOBAL_ASM("asm/text03/func3_800ecc58.s")
+GLOBAL_ASM("asm/text03/func3_800ecd08.s")
+
 // func3_800EFC10
