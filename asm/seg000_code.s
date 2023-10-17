@@ -28495,6 +28495,9 @@ func_800FF318:
 /* 064858 800FF408 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - moveset slot to edit (see tbl0_80109044)
+
 func_800FF40C:
 /* 06485C 800FF40C 27BDFFC0 */  addiu $sp, $sp, -0x40
 /* 064860 800FF410 AFB40028 */  sw    $s4, 0x28($sp)
@@ -28519,9 +28522,10 @@ func_800FF40C:
 
 .L800FF454:
 /* 0648A4 800FF454 26310001 */  addiu $s1, $s1, 1
-/* 0648A8 800FF458 2E220022 */  sltiu $v0, $s1, 0x22
+/* 0648A8 800FF458 2E220022 */  sltiu $v0, $s1, 0x22 # maximum amount of entries to check
 /* 0648AC 800FF45C 1440FFF8 */  bnez  $v0, .L800FF440
 /* 0648B0 800FF460 00009821 */   addu  $s3, $zero, $zero
+
 
 /* 0648B4 800FF464 3C018012 */  lui   $at, %hi(bss0_801190BC) # $at, 0x8012
 /* 0648B8 800FF468 A42090BC */  sh    $zero, %lo(bss0_801190BC)($at)
@@ -38916,13 +38920,23 @@ tbl_80109010:
 /*----------------------------------------------------------------------------*/
 # 80109044 (offset 0x4EB4)
 # Move selection categories for edit mode
+# (Names from this section come from VPW2 freem Edition)
 
-# unknown values
-# 4A, 4B
-# 5F
+# values with unknown purpose:
+# 2E, 2F, 4A, 4B, 4D, 4E, A7, A8
 
-# unlisted values?
-# 5B - Catch Throw <Kick> Counter Technique
+# unlisted values:
+# 3D - "Turnbuckle Grab Reversal (Back)"
+# 45 - "Apron Grapple Reversal"?? possibly for Dome Road ramp
+# 4F - [shootfighter only] related to double-team moves. it's complicated.
+# 5B - "Catch Throw <Kick> Counter Technique"
+# 78 - "Pin Save Attack"
+# 79 - "Running Pin Save Attack"
+# 7A - "Appeal <Ring In>"
+# 8E - [shootfighter only] "Mount Locking Technique (Face Up)"
+# 8F - [shootfighter only] "(Facing Up) Mount Joint Reversal"
+# 90 - [shootfighter only] "Mount Joint Technique (Face Down)"
+# 91 - [shootfighter only] "(Face Down) Mount Joint Reversal"
 
 tbl0_80109044:
 	# "All Moves"
@@ -38939,23 +38953,23 @@ tbl0_80109044:
 	.byte 0x66 # Strong Running Strike (C-Down+A+B)
 	.byte 0x54 # Corner Strike (B)
 	.byte 0x55 # Corner Strike (B+direction)
-	.byte 0x67 #
-	.byte 0x68 #
-	.byte 0x6B #
-	.byte 0x56 #
-	.byte 0x57 #
-	.byte 0x69 #
-	.byte 0x76 #
-	.byte 0x77 #
-	.byte 0x6A #
-	.byte 0x75 #
-	.byte 0x58 #
-	.byte 0x59 #
-	.byte 0x5A #
-	.byte 0x5C #
-	.byte 0x5D #
-	.byte 0x5E #
-	.byte 0x5F #
+	.byte 0x67 # Corner Running Strike (B)
+	.byte 0x68 # Corner Running Strike (A+B)
+	.byte 0x6B # Corner Stop Reversal
+	.byte 0x56 # Tree of Woe Strike (B)
+	.byte 0x57 # Tree of Woe Strike (B+direction)
+	.byte 0x69 # Running Tree of Woe Strike (B)
+	.byte 0x76 # Apron Strike (to Ring)
+	.byte 0x77 # Apron Strike (to Outside)
+	.byte 0x6A # Irish Whip Counter
+	.byte 0x75 # Ducking Strike
+	.byte 0x58 # Counter Punch
+	.byte 0x59 # Counter Punch (Special)
+	.byte 0x5A # Counter Punch (Special) [combo and shootfighter]
+	.byte 0x5C # Counter Kick (A)
+	.byte 0x5D # Counter Kick (B)
+	.byte 0x5E # Counter Kick (Special)
+	.byte 0x5F # Counter Kick (Special) [shootfighter only]
 	.byte 0x01 # Front Weak Grapple (A)
 	.byte 0x02 # Front Weak Grapple (A+Left/Right)
 	.byte 0x03 # Front Weak Grapple (A+Up)
@@ -38964,105 +38978,105 @@ tbl0_80109044:
 	.byte 0x06 # Front Weak Grapple (B+Left/Right)
 	.byte 0x07 # Front Weak Grapple (B+Up)
 	.byte 0x08 # Front Weak Grapple (B+Down)
-	.byte 0x09 #
-	.byte 0x0A #
-	.byte 0x0B #
-	.byte 0x0C #
-	.byte 0x0D #
-	.byte 0x0E #
-	.byte 0x0F #
-	.byte 0x10 #
-	.byte 0x11 #
-	.byte 0x12 #
-	.byte 0x13 #
-	.byte 0x14 #
-	.byte 0x15 #
-	.byte 0x16 #
-	.byte 0x17 #
-	.byte 0x18 #
-	.byte 0x19 #
-	.byte 0x1A #
-	.byte 0x1B #
-	.byte 0x1C #
-	.byte 0x1D #
-	.byte 0x1E #
-	.byte 0x1F #
-	.byte 0x20 #
-	.byte 0x21 #
-	.byte 0x22 #
-	.byte 0x23 #
+	.byte 0x09 # Front Strong Grapple (A)
+	.byte 0x0A # Front Strong Grapple (A+Left/Right)
+	.byte 0x0B # Front Strong Grapple (A+Up)
+	.byte 0x0C # Front Strong Grapple (A+Down)
+	.byte 0x0D # Front Strong Grapple (B)
+	.byte 0x0E # Front Strong Grapple (B+Left/Right)
+	.byte 0x0F # Front Strong Grapple (B+Up)
+	.byte 0x10 # Front Strong Grapple (B+Down)
+	.byte 0x11 # Combination Strike (B)
+	.byte 0x12 # Combination Strike (B+Up)
+	.byte 0x13 # Combination Strike (B+Down)
+	.byte 0x14 # Combination Strike (B+Left)
+	.byte 0x15 # Combination Strike (B+Right)
+	.byte 0x16 # Front Special Grapple
+	.byte 0x17 # Front Maximum Grapple
+	.byte 0x18 # Front Stolen Special Grapple
+	.byte 0x19 # Back Weak Grapple (A)
+	.byte 0x1A # Back Weak Grapple (A) [shootfighters only]
+	.byte 0x1B # Back Weak Grapple (A+direction)
+	.byte 0x1C # Back Weak Grapple (B)
+	.byte 0x1D # Back Weak Grapple (B+direction)
+	.byte 0x1E # Back Strong Grapple (A)
+	.byte 0x1F # Back Strong Grapple (A+direction)
+	.byte 0x20 # Back Strong Grapple (B)
+	.byte 0x21 # Back Strong Grapple (B+direction)
+	.byte 0x22 # Back Special Grapple
+	.byte 0x23 # Back Maximum Grapple
 	.byte 0x24 # Back Stolen Special Grapple (A+B)
-	.byte 0x25 #
-	.byte 0x26 #
-	.byte 0x27 #
-	.byte 0x28 #
-	.byte 0x29 #
-	.byte 0x2A #
-	.byte 0x2B #
-	.byte 0x2C #
-	.byte 0x2D #
-	.byte 0x30 #
-	.byte 0x31 #
-	.byte 0x32 #
-	.byte 0x33 #
-	.byte 0x34 #
-	.byte 0x35 #
-	.byte 0x36 #
-	.byte 0x37 #
-	.byte 0x38 #
-	.byte 0x39 #
-	.byte 0x3A #
-	.byte 0x3B #
-	.byte 0x3C #
-	.byte 0x3E #
-	.byte 0x3F #
-	.byte 0x40 #
-	.byte 0x41 #
-	.byte 0x42 #
-	.byte 0x43 #
-	.byte 0x44 #
-	.byte 0x46 #
-	.byte 0x47 #
-	.byte 0x48 #
-	.byte 0x49 #
-	.byte 0x4C #
-	.byte 0x86 #
-	.byte 0x87 #
-	.byte 0x88 #
-	.byte 0x89 #
-	.byte 0x8A #
-	.byte 0x8B #
-	.byte 0x8C #
-	.byte 0x8D #
-	.byte 0x6D #
-	.byte 0x6E #
-	.byte 0x6F #
-	.byte 0x70 #
-	.byte 0x71 #
-	.byte 0x72 #
-	.byte 0x73 #
-	.byte 0x74 #
-	.byte 0x92 #
-	.byte 0x93 #
-	.byte 0x96 #
-	.byte 0xA4 #
-	.byte 0xA5 #
-	.byte 0x94 #
-	.byte 0x95 #
-	.byte 0x97 #
-	.byte 0x98 #
-	.byte 0x99 #
-	.byte 0x9A #
-	.byte 0x9B #
-	.byte 0x9C #
-	.byte 0x9D #
-	.byte 0x9E #
-	.byte 0x9F #
-	.byte 0xA0 #
-	.byte 0xA1 #
-	.byte 0xA2 #
-	.byte 0xA6 #
-	.byte 0xA3 #
+	.byte 0x25 # Back Grapple Reversal (Weak)
+	.byte 0x26 # Back Grapple Reversal (Strong)
+	.byte 0x27 # Irish Whip Weak Grapple (A)
+	.byte 0x28 # Irish Whip Weak Grapple (A+direction)
+	.byte 0x29 # Irish Whip Strong Grapple (A)
+	.byte 0x2A # Irish Whip Strong Grapple (A+direction)
+	.byte 0x2B # Irish Whip Special Grapple
+	.byte 0x2C # Front Running Grapple
+	.byte 0x2D # Back Running Grapple
+	.byte 0x30 # Corner Weak Grapple (A)
+	.byte 0x31 # Corner Weak Grapple (B)
+	.byte 0x32 # Corner Strong Grapple (A)
+	.byte 0x33 # Corner Strong Grapple (B)
+	.byte 0x34 # Corner Special Grapple
+	.byte 0x35 # Corner Stolen Special Grapple
+	.byte 0x36 # Back Corner Weak Grapple (A)
+	.byte 0x37 # Back Corner Weak Grapple (B)
+	.byte 0x38 # Back Corner Strong Grapple (A)
+	.byte 0x39 # Back Corner Strong Grapple (B)
+	.byte 0x3A # Back Corner Special Grapple
+	.byte 0x3B # Back Corner Stolen Special Grapple
+	.byte 0x3C # Turnbuckle Grab Reversal (Front)
+	.byte 0x3E # Weak Grapple to Apron
+	.byte 0x3F # Strong Grapple to Apron
+	.byte 0x40 # Special Grapple to Apron
+	.byte 0x41 # Apron Grapple Reversal
+	.byte 0x42 # Weak Grapple from Apron
+	.byte 0x43 # Strong Grapple from Apron
+	.byte 0x44 # Special Grapple from Apron
+	.byte 0x46 # Test of Strength
+	.byte 0x47 # Double Team Front Grapple
+	.byte 0x48 # Double Team Back Grapple
+	.byte 0x49 # Double Team Sandwich Grapple
+	.byte 0x4C # Double Impact Reversal (Back)
+	.byte 0x86 # Downed Head Submission (Face Up)
+	.byte 0x87 # Downed Head Submission (Face Down)
+	.byte 0x88 # Downed Legs Submission (Face Up)
+	.byte 0x89 # Downed Legs Submission (Face Down)
+	.byte 0x8A # Sitting Head Submission (Face Up)
+	.byte 0x8B # Sitting Head Submission (Face Down)
+	.byte 0x8C # Sitting Legs Submission (Face Up)
+	.byte 0x8D # Sitting Legs Submission (Face Down)
+	.byte 0x6D # Downed Strike (Face Up)
+	.byte 0x6E # Downed Strike (Face Down)
+	.byte 0x6F # Running Downed Strike (Face Up)
+	.byte 0x70 # Running Downed Strike (Face Down)
+	.byte 0x71 # Sitting Strike (Face Up)
+	.byte 0x72 # Sitting Strike (Face Down)
+	.byte 0x73 # Running Sitting Strike (Face Up)
+	.byte 0x74 # Running Sitting Strike (Face Down)
+	.byte 0x92 # Turnbuckle Attack to Standing
+	.byte 0x93 # Special Turnbuckle Attack to Standing
+	.byte 0x96 # Turnbuckle Attack to Outside Standing
+	.byte 0xA4 # Double Impact Attack (in Ring)
+	.byte 0xA5 # Double Impact Attack (to Outside)
+	.byte 0x94 # Turnbuckle Attack to Ground
+	.byte 0x95 # Special Turnbuckle Attack to Ground
+	.byte 0x97 # Turnbuckle Attack to Outside Ground
+	.byte 0x98 # Running Tope (A)
+	.byte 0x99 # Running Tope (A+direction)
+	.byte 0x9A # Running Tope Feint
+	.byte 0x9B # Plancha
+	.byte 0x9C # Rope Splash Attack
+	.byte 0x9D # Corner Splash Attack
+	.byte 0x9E # Apron Dive
+	.byte 0x9F # Running Apron Dive
+	.byte 0xA0 # Springboard (Standing)
+	.byte 0xA1 # Springboard (Grounded)
+	.byte 0xA2 # Springboard (Standing Special)
+	.byte 0xA6 # Double Impact Springboard Attack
+	.byte 0xA3 # Rope Rebound Attack
 	.byte 0x7B # Waiting Stance
 	.byte 0x7C # Introduction Taunt
 	.byte 0x7D # Taunt 1 (Stick Up)
@@ -39075,7 +39089,7 @@ tbl0_80109044:
 	.byte 0x84 # Apron Taunt
 	.byte 0x85 # Victory Taunt
 	.byte 0x6C # Run Evasion
-	.byte 0xA9 # (Combo Stance?)
+	.byte 0xA9 # Combo Stance
 	.byte 0, 0
 
 # 801090DC (offset 0x4F4C)
@@ -39276,96 +39290,132 @@ tbl0_8010927E:
 tbl0_80109280:
 	.word tbl0_80109044
 
+	#---------------------#
+	# All Striking
 	.short 0xF2D4, 0x001E
 	.word tbl0_801090DC
 
+	# Weak Strikes
 	.short 0xF2D5, 0x0004
 	.word tbl0_801090FC
 
+	# Strong Strikes
 	.short 0xF2D6, 0x0003
 	.word tbl0_80109100
 
+	# Running Strikes
 	.short 0xF2D7, 0x0004
 	.word tbl0_80109104
 
+	# Corner Strikes
 	.short 0xF2D8, 0x0008
 	.word tbl0_80109108
 
+	# Apron Strikes
 	.short 0xF2D9, 0x0002
 	.word tbl0_80109110
 
+	# Irish Whip Counter
 	.short 0xF2DA, 0x0001
 	.word tbl0_80109114
 
+	# Ducking Strike
 	.short 0xF2DB, 0x0001
 	.word tbl0_80109118
 
+	# "Cut Strike" (unselectable; used for breaking up pins/submissions)
 	.short 0xF2DC, 0x0000
 	.word tbl0_8010911C
 
+	# Counter Attacks
 	.short 0xF2DD, 0x0007
 	.word tbl0_8010911C
 
+	#---------------------#
+	# All Grappling
 	.short 0xF2DE, 0x0046
 	.word tbl0_80109124
 
+	# Front Grapple
 	.short 0xF2DF, 0x0018
 	.word tbl0_8010916C
 
+	# Back Grapple
 	.short 0xF2E0, 0x000C
 	.word tbl0_80109184
 
+	# Back Counter
 	.short 0xF2E1, 0x0002
 	.word tbl0_80109190
 
+	# Irish Whip Grapple
 	.short 0xF2E2, 0x0005
 	.word tbl0_80109194
 
+	# Running Grapple
 	.short 0xF2E3, 0x0002
 	.word tbl0_8010919C
 
+	# Corner Grapples
 	.short 0xF2E4, 0x000D
 	.word tbl0_801091A0
 
+	# Apron Grapples
 	.short 0xF2E5, 0x0007
 	.word tbl0_801091B0
 
+	# Test of Strength
 	.short 0xF2E6, 0x0001
 	.word tbl0_801091B8
 
+	# Double Team
 	.short 0xF2E7, 0x0004
 	.word tbl0_801091BC
 
+	# Double Impact Grapple
 	.short 0xF2E8, 0x0000
 	.word tbl0_801091C0
 
+	#---------------------#
+	# All Ground
 	.short 0xF2EA, 0x0010
 	.word tbl0_801091C0
 
+	# Ground Holds
 	.short 0xF2EB, 0x0008
 	.word tbl0_801091D0
 
+	# Ground Strikes
 	.short 0xF2EC, 0x0008
 	.word tbl0_801091D8
 
+	#---------------------#
+	# All Flying
 	.short 0xF2ED, 0x0015
 	.word tbl0_801091E0
 
+	# Post (Standing)
 	.short 0xF2EE, 0x0005
 	.word tbl0_801091F8
 
+	# Post (Downed)
 	.short 0xF2EF, 0x0003
 	.word tbl0_80109200
 
+	# Tope, Plancha
 	.short 0xF2F0, 0x0008
 	.word tbl0_80109204
 
+	# Springboard
 	.short 0xF2F1, 0x0004
 	.word tbl0_8010920C
 
+	# Rebound
 	.short 0xF2F2, 0x0001
 	.word tbl0_80109210
 
+	#---------------------#
+	# Taunts (no label)
 	.short 0xF2F4, 0x000D
 	.word tbl0_80109214
 
@@ -39380,7 +39430,7 @@ tbl0_8010937E:
 	.word tbl0_80109224
 
 # data for these entries
-# +00: [b] ?
+# +00: [b] starting index
 # +01: [b] number of items
 # +02: [s] text/string ID
 
@@ -39397,56 +39447,107 @@ tbl0_80109386:
 	.short 0xF2D3
 
 	.byte 0x01, 0x0A
-	.short 0xF2D4
+	.short 0xF2D4 # file ID 0005, entry 222 ("All Striking")
 
 	.byte 0x0B, 0x0B
-	.short 0xF2DE
+	.short 0xF2DE # file ID 0005, entry 232 ("All Grappling")
 
 	.byte 0x16, 0x03
-	.short 0xF2EA
+	.short 0xF2EA # file ID 0005, entry 244 ("All Ground")
 
 	.byte 0x19, 0x06
-	.short 0xF2ED
+	.short 0xF2ED # file ID 0005, entry 247 ("All Flying")
 
 	.byte 0x1F, 0x01
-	.short 0xF2F4
+	.short 0xF2F4 # file ID 0005, entry 254 (blank string)
 
 	.byte 0x21, 0x00
 	.short 0x0000
 
 /*----------------------------------------------------------------------------*/
 # 801093A0 [b] (0x5210 data offset)
+# related to moveset slots to check
 tbl0_801093A0:
-	.byte 0x17, 0x23, 0x2B, 0x2C, 0x2D, 0x34, 0x3A, 0x40
-	.byte 0x44, 0x46, 0x8E, 0x90, 0x92, 0x93, 0x94, 0x95
-	.byte 0x96, 0x97, 0x98, 0x99, 0x9A, 0x9B, 0x9C, 0x9D
-	.byte 0x9E, 0x9F, 0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5
-	.byte 0xA6, 0, 0, 0
+	.byte 0x17 # Front Maximum Grapple
+	.byte 0x23 # Back Maximum Grapple
+	.byte 0x2B # Irish Whip Special Grapple
+	.byte 0x2C # Front Running Grapple
+	.byte 0x2D # Back Running Grapple
+	.byte 0x34 # Corner Special Grapple
+	.byte 0x3A # Back Corner Special Grapple
+	.byte 0x40 # Special Grapple to Apron
+	.byte 0x44 # Special Grapple from Apron
+	.byte 0x46 # Test of Strength
+	.byte 0x8E
+	.byte 0x90
+	.byte 0x92 # Turnbuckle Attack to Standing
+	.byte 0x93 # Special Turnbuckle Attack to Standing
+	.byte 0x94 # Turnbuckle Attack to Ground
+	.byte 0x95 # Special Turnbuckle Attack to Ground
+	.byte 0x96 # Turnbuckle Attack to Outside Standing
+	.byte 0x97 # Turnbuckle Attack to Outside Ground
+	.byte 0x98 # Running Tope (A)
+	.byte 0x99 # Running Tope (A+direction)
+	.byte 0x9A # Running Tope Feint
+	.byte 0x9B # Plancha
+	.byte 0x9C # Rope Splash Attack
+	.byte 0x9D # Corner Splash Attack
+	.byte 0x9E # Apron Dive
+	.byte 0x9F # Running Apron Dive
+	.byte 0xA0 # Springboard (Standing)
+	.byte 0xA1 # Springboard (Grounded)
+	.byte 0xA2 # Springboard (Standing Special)
+	.byte 0xA3 # Rope Rebound Attack
+	.byte 0xA4 # Double Impact Attack (in Ring)
+	.byte 0xA5 # Double Impact Attack (to Outside)
+	.byte 0xA6 # Double Impact Springboard Attack
+	.byte 0, 0, 0
 
 # 801093C4 [b]
 tbl0_801093C4:
-	.byte 0x01, 0x02, 0x03, 0x04, 0x00, 0x05, 0x06, 0x07
-	.byte 0x08, 0x00, 0x09, 0x0A, 0x0B, 0x0C, 0x00, 0x0D
-	.byte 0x0E, 0x0F, 0x10, 0x00, 0x11, 0x12, 0x13, 0x14
-	.byte 0x15, 0x00, 0x16, 0x17, 0x18, 0x00, 0x19, 0x1A
-	.byte 0x1B, 0x1C, 0x1D, 0x00, 0x1E, 0x1F, 0x20, 0x21
-	.byte 0x00, 0x22, 0x23, 0x24, 0x00, 0x25, 0x26, 0x00
-	.byte 0x27, 0x28, 0x00, 0x29, 0x2A, 0x2B, 0x00, 0x2C
-	.byte 0x2D, 0x00, 0x30, 0x31, 0x00, 0x32, 0x33, 0x34
-	.byte 0x35, 0x00, 0x36, 0x37, 0x00, 0x38, 0x39, 0x3A
-	.byte 0x3B, 0x00, 0x3E, 0x3F, 0x40, 0x00, 0x42, 0x43
-	.byte 0x44, 0x00, 0x47, 0x48, 0x49, 0x00, 0x50, 0x51
-	.byte 0x52, 0x53, 0x00, 0x54, 0x55, 0x00, 0x56, 0x57
-	.byte 0x00, 0x60, 0x61, 0x62, 0x00, 0x63, 0x64, 0x65
-	.byte 0x66, 0x00, 0x67, 0x68, 0x00, 0x69, 0x00, 0x6A
-	.byte 0x00, 0x6D, 0x6E, 0x6F, 0x70, 0x00, 0x71, 0x72
-	.byte 0x73, 0x74, 0x00, 0x75, 0x00, 0x7D, 0x7E, 0x7F
-	.byte 0x81, 0x00, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B
-	.byte 0x8C, 0x8D, 0x00, 0x92, 0x93, 0x96, 0x00, 0x94
-	.byte 0x95, 0x97, 0x00, 0x98, 0x99, 0x9A, 0x00, 0x9B
-	.byte 0x00, 0x9C, 0x00, 0x9D, 0x00, 0x9E, 0x9F, 0x00
-	.byte 0xA0, 0xA1, 0xA2, 0x00, 0xA6, 0x00, 0xA3, 0x00
-	.byte 0xFF, 0x00, 0x00, 0x00
+	.byte 0x01, 0x02, 0x03, 0x04, 0x00
+	.byte 0x05, 0x06, 0x07, 0x08, 0x00
+	.byte 0x09, 0x0A, 0x0B, 0x0C, 0x00
+	.byte 0x0D, 0x0E, 0x0F, 0x10, 0x00
+	.byte 0x11, 0x12, 0x13, 0x14, 0x15, 0x00
+	.byte 0x16, 0x17, 0x18, 0x00, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x00
+	.byte 0x1E, 0x1F, 0x20, 0x21, 0x00
+	.byte 0x22, 0x23, 0x24, 0x00
+	.byte 0x25, 0x26, 0x00
+	.byte 0x27, 0x28, 0x00
+	.byte 0x29, 0x2A, 0x2B, 0x00
+	.byte 0x2C, 0x2D, 0x00
+	.byte 0x30, 0x31, 0x00
+	.byte 0x32, 0x33, 0x34, 0x35, 0x00
+	.byte 0x36, 0x37, 0x00
+	.byte 0x38, 0x39, 0x3A, 0x3B, 0x00
+	.byte 0x3E, 0x3F, 0x40, 0x00
+	.byte 0x42, 0x43, 0x44, 0x00
+	.byte 0x47, 0x48, 0x49, 0x00
+	.byte 0x50, 0x51, 0x52, 0x53, 0x00
+	.byte 0x54, 0x55, 0x00
+	.byte 0x56, 0x57, 0x00
+	.byte 0x60, 0x61, 0x62, 0x00
+	.byte 0x63, 0x64, 0x65, 0x66, 0x00
+	.byte 0x67, 0x68, 0x00
+	.byte 0x69, 0x00, 0x6A, 0x00
+	.byte 0x6D, 0x6E, 0x6F, 0x70, 0x00
+	.byte 0x71, 0x72, 0x73, 0x74, 0x00
+	.byte 0x75, 0x00
+	.byte 0x7D, 0x7E, 0x7F, 0x81, 0x00
+	.byte 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x00
+	.byte 0x92, 0x93, 0x96, 0x00
+	.byte 0x94, 0x95, 0x97, 0x00
+	.byte 0x98, 0x99, 0x9A, 0x00
+	.byte 0x9B, 0x00
+	.byte 0x9C, 0x00
+	.byte 0x9D, 0x00
+	.byte 0x9E, 0x9F, 0x00
+	.byte 0xA0, 0xA1, 0xA2, 0x00
+	.byte 0xA6, 0x00
+	.byte 0xA3, 0x00
+	.byte 0xFF # list end
+	.byte 0x00, 0x00, 0x00
 
 /*----------------------------------------------------------------------------*/
 # 80109470 [b] (data offset 0x52E0)
@@ -40903,11 +41004,11 @@ D_8010BDAC:
 D_8010BDB0:
 	.word 0
 
-# 8010BDB4 [w]
+# 8010BDB4 [w] pointer to Edit Mode move damage
 D_8010BDB4:
 	.word 0
 
-# 8010BDB8 [w]
+# 8010BDB8 [w] pointer to Edit Mode moves
 D_8010BDB8:
 	.word 0
 
