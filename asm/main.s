@@ -49269,7 +49269,7 @@ bssMain_8006E300: .byte 0
 # 8006FD00: [b]
 bssMain_8006FD00: .byte 0
 
-# 8006FD01: [b]
+# 8006FD01: [b] related to font coloring
 bssMain_8006FD01: .byte 0
 
 # 8006FD02: [b]
