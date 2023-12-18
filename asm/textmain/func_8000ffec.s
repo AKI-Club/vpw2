@@ -1,5 +1,5 @@
 # Params:
-# $a0 -
+# $a0 - ? address
 
 glabel func_8000FFEC
 /* 010BEC 8000FFEC 27BDFFA8 */  addiu $sp, $sp, -0x58

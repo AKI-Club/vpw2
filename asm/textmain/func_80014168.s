@@ -26,6 +26,7 @@ glabel func_80014168
 
 /* 014DB0 800141B0 1200002B */  beqz  $s0, .L80014260
 /* 014DB4 800141B4 27A40010 */   addiu $a0, $sp, 0x10
+
 /* 014DB8 800141B8 3235FFFF */  andi  $s5, $s1, 0xffff
 
 /* 014DBC 800141BC 0C000F71 */  jal   GetFileLoc
