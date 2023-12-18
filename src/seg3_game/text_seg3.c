@@ -49,4 +49,6 @@ GLOBAL_ASM("asm/text03/func3_800ec85c.s")
 GLOBAL_ASM("asm/text03/func3_800ecc58.s")
 GLOBAL_ASM("asm/text03/func3_800ecd08.s")
 
+/*============================================================================*/
+/* upcoming file break */
 // func3_800EFC10
