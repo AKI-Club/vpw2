@@ -6,7 +6,8 @@ typedef struct {
 	char *outDataFilename; /* output filetable data */
 	char *outIndexFilename; /* output filetable index */
 	char *outHeaderFilename; /* output header filename */
-	bool verbose;
+	bool verbose; /* display extra output */
+	bool headerOnly; /* only update header file if true */
 } InputArgs;
 
 static const InputArgs defaultArgs = {
@@ -14,7 +15,8 @@ static const InputArgs defaultArgs = {
 	.outDataFilename = "filetable.bin",
 	.outIndexFilename = "filetable.idx",
 	.outHeaderFilename = "filetable.h",
-	.verbose = false
+	.verbose = false,
+	.headerOnly = false
 };
 
 typedef struct {

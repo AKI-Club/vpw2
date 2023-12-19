@@ -21,12 +21,13 @@
 
 /* print program usage */
 static void Usage(char* execName){
-	printf("usage: %s -l LIST_FILE [-o OUTPUT_FILETABLE] [-i OUTPUT_INDEX] [-h OUTPUT_HEADER] [-v]\n", execName);
+	printf("usage: %s -l LIST_FILE [-o OUTPUT_FILETABLE] [-i OUTPUT_INDEX] [-h OUTPUT_HEADER] [-v] [-d]\n", execName);
 	printf("  -l LIST_FILE         JSON filetable list (see docs for format info)\n");
-	printf("  -o OUTPUT_FILETABLE  output filetable binary (optional; default: %s)\n",defaultArgs.outDataFilename);
-	printf("  -i OUTPUT_INDEX      output filetable index (optional; default: %s)\n",defaultArgs.outIndexFilename);
-	printf("  -h OUTPUT_HEADER     output filetable symbol header (optional; default: %s)\n",defaultArgs.outHeaderFilename);
-	printf("  -v                   verbose mode\n");
+	printf("  -o OUTPUT_FILETABLE  output filetable binary filename (optional; default: %s)\n",defaultArgs.outDataFilename);
+	printf("  -i OUTPUT_INDEX      output filetable index filename (optional; default: %s)\n",defaultArgs.outIndexFilename);
+	printf("  -h OUTPUT_HEADER     output filetable symbol header filename (optional; default: %s)\n",defaultArgs.outHeaderFilename);
+	printf("  -v                   verbose mode (show info about each entry; likely inflates build times)\n");
+	printf("  -d                   output filetable symbol header only\n");
 }
 
 /* handle program arguments */
@@ -71,6 +72,10 @@ static int parseArgs(int argc, char* argv[], InputArgs* outArgs)
 					outArgs->verbose = true;
 					break;
 
+				case 'd': /* only generate header */
+					outArgs->headerOnly = true;
+					break;
+
 				default:
 					printf("Unrecognized option '%s'.\n", argv[i]);
 					return 0;
@@ -104,7 +109,7 @@ int main(int argc, char* argv[]){
 	int curFileLength;
 	int decodedFileLength;
 
-	printf("akifiletable - Filetable builder for N64 AKI wrestling games\n");
+	printf("akifiletable v1.1 - Filetable builder for N64 AKI wrestling games\n");
 
 	if(argc <= 1){
 		Usage(argv[0]);
@@ -122,18 +127,21 @@ int main(int argc, char* argv[]){
 		exit(EXIT_FAILURE);
 	}
 
-	outData = fopen(progArgs.outDataFilename,"wb");
-	if(outData == NULL){
-		printf("Error: Unable to create output filetable file '%s'.\n",progArgs.outDataFilename);
-		exit(EXIT_FAILURE);
-	}
+	if(!progArgs.headerOnly){
+		outData = fopen(progArgs.outDataFilename,"wb");
 
-	outIndex = fopen(progArgs.outIndexFilename,"wb");
-	if(outIndex == NULL){
-		printf("Error: Unable to create output index file '%s'.\n",progArgs.outIndexFilename);
-		exit(EXIT_FAILURE);
-	}
+		if(outData == NULL){
+			printf("Error: Unable to create output filetable file '%s'.\n",progArgs.outDataFilename);
+			exit(EXIT_FAILURE);
+		}
 
+		outIndex = fopen(progArgs.outIndexFilename,"wb");
+		if(outIndex == NULL){
+			printf("Error: Unable to create output index file '%s'.\n",progArgs.outIndexFilename);
+			exit(EXIT_FAILURE);
+		}
+	}
+	
 	outHeader = fopen(progArgs.outHeaderFilename,"w");
 	if(outHeader == NULL){
 		printf("Error: Unable to create output header file '%s'.\n",progArgs.outHeaderFilename);
@@ -212,7 +220,6 @@ int main(int argc, char* argv[]){
 		}
 		rewind(curFile);
 
-		/* read file and add to filetable */
 		char *curFileData = (char *)malloc(curFileLength);
 		if(curFileData == NULL){
 			printf("Error: Unable to allocate memory for file '%s'.\n",entry.file);
@@ -220,7 +227,10 @@ int main(int argc, char* argv[]){
 		}
 		// todo: check value of result
 		size_t result = fread(curFileData, 1, curFileLength, curFile);
-		fwrite(curFileData, 1, curFileLength, outData);
+
+		if(!progArgs.headerOnly){
+			fwrite(curFileData, 1, curFileLength, outData);
+		}
 
 		// if this is an LZSS'd file, we need to set decodedFileLength
 		// using the first four bytes of the file
@@ -238,7 +248,9 @@ int main(int argc, char* argv[]){
 
 		/* add padding if neccessary */
 		if(curFileLength % 2 != 0){
-			fputc('\0', outData);
+			if(!progArgs.headerOnly){
+				fputc('\0', outData);
+			}
 			++curFileLength;
 		}
 
@@ -247,14 +259,16 @@ int main(int argc, char* argv[]){
 		}
 
 		/* update filetable index */
-		fputc((curLocation & 0xFF000000) >> 24, outIndex);
-		fputc((curLocation & 0x00FF0000) >> 16, outIndex);
-		fputc((curLocation & 0x0000FF00) >> 8, outIndex);
-		if(entry.lzss){
-			fputc((curLocation & 0x000000FE) | 1, outIndex);
-		}
-		else{
-			fputc((curLocation & 0x000000FE), outIndex);
+		if(!progArgs.headerOnly){
+			fputc((curLocation & 0xFF000000) >> 24, outIndex);
+			fputc((curLocation & 0x00FF0000) >> 16, outIndex);
+			fputc((curLocation & 0x0000FF00) >> 8, outIndex);
+			if(entry.lzss){
+				fputc((curLocation & 0x000000FE) | 1, outIndex);
+			}
+			else{
+				fputc((curLocation & 0x000000FE), outIndex);
+			}
 		}
 
 		curLocation += curFileLength;
