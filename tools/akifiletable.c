@@ -109,7 +109,7 @@ int main(int argc, char* argv[]){
 	int curFileLength;
 	int decodedFileLength;
 
-	printf("akifiletable v1.1 - Filetable builder for N64 AKI wrestling games\n");
+	printf("akifiletable v1.2 - Filetable builder for N64 AKI wrestling games\n");
 
 	if(argc <= 1){
 		Usage(argv[0]);
@@ -305,6 +305,14 @@ int main(int argc, char* argv[]){
 		free(entry.file);
 		if(entry.symbol != NULL){ free(entry.symbol); }
 		if(progArgs.verbose){ printf("\n"); }
+	}
+
+	/* output offset for filetable index */
+	if(!progArgs.headerOnly){
+		fputc((curLocation & 0xFF000000) >> 24, outIndex);
+		fputc((curLocation & 0x00FF0000) >> 16, outIndex);
+		fputc((curLocation & 0x0000FF00) >> 8, outIndex);
+		fputc((curLocation & 0x000000FF), outIndex);
 	}
 
 	fprintf(outHeader, "\n#endif\n");
