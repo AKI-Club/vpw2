@@ -49,14 +49,14 @@ dd if=$BASEROM of=./bin/base_dl.bin skip="$((0x4BEA0))" count=160 iflag=count_by
 echo "[extract_baserom] bin/filedata.bin (just under 18 megabytes; this will take a moment...)"
 dd if=$BASEROM of=./bin/filedata.bin bs=4096 skip="$((0x152DF0))" count=18604368 iflag=count_bytes,skip_bytes status=none
 
-# 0x1310F40: filetable index (52368 bytes)
+# 0x1310F40: filetable index (52364 bytes)
 echo "[extract_baserom] bin/filetable.idx"
-dd if=$BASEROM of=./bin/filetable.idx skip="$((0x1310F40))" count=52368 iflag=count_bytes,skip_bytes status=none
+dd if=$BASEROM of=./bin/filetable.idx skip="$((0x1310F40))" count=52364 iflag=count_bytes,skip_bytes status=none
 
 #------------------------------------------------------------------------------#
 # 0x131DBD0: data with currently unknown purpose, a.k.a. "somejunk"
 echo "[extract_baserom] bin/somejunk.bin"
-dd if=$BASEROM of=./bin/somejunk.bin skip="$((0x131DBD0))" count=118960 iflag=count_bytes,skip_bytes status=none
+dd if=$BASEROM of=./bin/somejunk.bin skip="$((0x131DBCC))" count=118964 iflag=count_bytes,skip_bytes status=none
 
 #------------------------------------------------------------------------------#
 # [soundtable stuff]
