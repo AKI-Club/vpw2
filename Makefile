@@ -20,6 +20,8 @@ OUT_ROM := $(TARGET).z64
 OUT_ELF := $(BUILD_DIR)/$(TARGET).elf
 LD_SCRIPT := $(TARGET).ld
 
+INCLUDE_DIR := include
+
 # Code directories
 SRC_DIR := src
 SRC_DIRS := src src/seg0_menu1 src/seg1_cutscene src/seg2_menu2 src/seg3_game
@@ -58,7 +60,7 @@ O_FILES += $(BUILD_DIR)/$(TARGET).o
 CROSS = mips-linux-gnu-
 AS = $(CROSS)as
 CC = $(TOOLS_DIR)/kmc-gcc-wrapper/gcc
-CC_CHECK = gcc -fsyntax-only -fno-builtin -fsigned-char -std=gnu90 -m32 $(CHECK_WARNINGS) -I include
+CC_CHECK = gcc -fsyntax-only -fno-builtin -fsigned-char -std=gnu90 -m32 $(CHECK_WARNINGS) -I $(INCLUDE_DIR)
 CPP = cpp -P
 GREP = grep -rl
 LD = $(CROSS)ld
@@ -66,8 +68,8 @@ OBJDUMP = $(CROSS)objdump
 OBJCOPY = $(CROSS)objcopy --pad-to=0x2000000 --gap-fill=0xff
 STRIP	 = $(CROSS)strip
 
-ASFLAGS = -EB -mtune=vr4300 -mabi=32 -march=vr4300 -I include
-CFLAGS  = -c -G0 -mips3 -mgp32 -mfp32 -O2 -I include -nostdinc
+ASFLAGS = -EB -mtune=vr4300 -mabi=32 -march=vr4300 -I $(INCLUDE_DIR)
+CFLAGS  = -c -G0 -mips3 -mgp32 -mfp32 -O2 -I $(INCLUDE_DIR) -nostdinc
 CHECK_WARNINGS := -Wall -Wextra -Wno-format-security -Wno-unknown-pragmas -Wunused-function -Wno-unused-parameter -Wno-unused-variable -Wno-missing-braces -Wno-int-conversion
 LDFLAGS = -T undefined_syms.txt -T $(BUILD_DIR)/$(LD_SCRIPT) -Map $(BUILD_DIR)/vpw2.map
 
@@ -99,8 +101,9 @@ GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.
 ################################################################################
 # Filetable-related 
 ################################################################################
-FILETABLE_INDEX := $(MAIN_BIN_DIR)/filetable.idx
-FILETABLE_DATA  := $(MAIN_BIN_DIR)/filedata.bin
+FILETABLE_INDEX  := $(MAIN_BIN_DIR)/filetable.idx
+FILETABLE_DATA   := $(MAIN_BIN_DIR)/filedata.bin
+FILETABLE_HEADER := $(INCLUDE_DIR)/filetable.h
 
 ################################################################################
 # Targets 
@@ -179,7 +182,7 @@ $(BUILD_DIR)/%.o: %.c
 	$(STRIP) $@ -N $<
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
-	$(CPP) -MMD -MP -MT $@ -MF $@.d -I include/ -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
+	$(CPP) -MMD -MP -MT $@ -MF $@.d -I $(INCLUDE_DIR)/ -DBUILD_DIR=$(BUILD_DIR) -o $@ $<
 
 # assembly code
 $(BUILD_DIR)/$(TARGET).o: $(TARGET).s Makefile | $(BUILD_DIR)
