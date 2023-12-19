@@ -8,3 +8,5 @@ tools/akitext
 tools/extract_filetable
 tools/n64cksum
 tools/n64graphics
+/tools/akifiletable
+/tools/menubg
