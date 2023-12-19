@@ -24,14 +24,17 @@
   {
     "file":"./bin/filetable/0005.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_EDIT_MODE_STRINGS",
   },
   {
     "file":"./bin/filetable/0006.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_UNLOCK_MESSAGES",
   },
   {
     "file":"./bin/filetable/0007.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_RESULT_PHRASES",
   },
   {
     "file":"./bin/filetable/0008.lzss",
@@ -44,10 +47,12 @@
   {
     "file":"./bin/filetable/000A.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_OPTIONS_HELP",
   },
   {
     "file":"./bin/filetable/000B.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_PARAMS_HELP",
   },
   {
     "file":"./bin/filetable/000C.lzss",
@@ -56,6 +61,7 @@
   {
     "file":"./bin/filetable/000D.lzss",
     "lzss":true,
+	"symbol":"AKITEXT_RRS_BULLETIN_BOARD",
   },
   {
     "file":"./bin/filetable/000E.lzss",
@@ -74,14 +80,17 @@
   {
     "file":"./bin/filetable/0011.lzss",
     "lzss":true,
+	"symbol":"SPLASH_ASMIK",
   },
   {
     "file":"./bin/filetable/0012.lzss",
     "lzss":true,
+	"symbol":"SPLASH_AKI",
   },
   {
     "file":"./bin/filetable/0013.lzss",
     "lzss":true,
+	"symbol":"SPLASH_AJPW",
   },
   {
     "file":"./bin/filetable/0014.lzss",
@@ -90,6 +99,7 @@
   {
     "file":"./bin/filetable/0015.lzss",
     "lzss":true,
+	"symbol":"TITLE_LOGO",
   },
   {
     "file":"./bin/filetable/0016.lzss",
@@ -98,6 +108,7 @@
   {
     "file":"./bin/filetable/0017.lzss",
     "lzss":true,
+	"symbol":"PRESS_START",
   },
   {
     "file":"./bin/filetable/0018.lzss",
@@ -198,14 +209,17 @@
   {
     "file":"./bin/filetable/0030.lzss",
     "lzss":true,
+	"symbol":"WRESTLER_BAR_BLUE",
   },
   {
     "file":"./bin/filetable/0031.lzss",
     "lzss":true,
+	"symbol":"WRESTLER_BAR_NORMAL",
   },
   {
     "file":"./bin/filetable/0032.lzss",
     "lzss":true,
+	"symbol":"WRESTLER_BAR_EDIT",
   },
   {
     "file":"./bin/filetable/0033.bin",
@@ -456,90 +470,112 @@
   {
     "file":"./bin/filetable/006E.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_01",
   },
   {
     "file":"./bin/filetable/006F.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_02",
   },
   {
     "file":"./bin/filetable/0070.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_03",
   },
   {
     "file":"./bin/filetable/0071.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_04",
   },
   {
     "file":"./bin/filetable/0072.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_05",
   },
   {
     "file":"./bin/filetable/0073.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_06",
   },
   {
     "file":"./bin/filetable/0074.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_07",
   },
   {
     "file":"./bin/filetable/0075.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_08",
   },
   {
     "file":"./bin/filetable/0076.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_09",
   },
   {
     "file":"./bin/filetable/0077.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_10",
   },
   {
     "file":"./bin/filetable/0078.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_11",
   },
   {
     "file":"./bin/filetable/0079.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_12",
   },
   {
     "file":"./bin/filetable/007A.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_13",
   },
   {
     "file":"./bin/filetable/007B.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_14",
   },
   {
     "file":"./bin/filetable/007C.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_15",
   },
   {
     "file":"./bin/filetable/007D.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_16",
   },
   {
     "file":"./bin/filetable/007E.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_17",
   },
   {
     "file":"./bin/filetable/007F.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_18",
   },
   {
     "file":"./bin/filetable/0080.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_19",
   },
   {
     "file":"./bin/filetable/0081.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_20",
   },
   {
     "file":"./bin/filetable/0082.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_21",
   },
   {
     "file":"./bin/filetable/0083.lzss",
     "lzss":true,
+	"symbol":"MENU_BELT_22",
   },
   {
     "file":"./bin/filetable/0084.lzss",
@@ -1060,6 +1096,7 @@
   {
     "file":"./bin/filetable/0105.lzss",
     "lzss":true,
+	"symbol":"MENUBG_MAIN_START",
   },
   {
     "file":"./bin/filetable/0106.lzss",
@@ -1220,6 +1257,7 @@
   {
     "file":"./bin/filetable/012D.lzss",
     "lzss":true,
+	"symbol":"MENUBG_EVENT_START",
   },
   {
     "file":"./bin/filetable/012E.lzss",
@@ -1380,6 +1418,7 @@
   {
     "file":"./bin/filetable/0155.lzss",
     "lzss":true,
+	"symbol":"MENUBG_SECONDARY_START",
   },
   {
     "file":"./bin/filetable/0156.lzss",
@@ -1540,6 +1579,7 @@
   {
     "file":"./bin/filetable/017D.lzss",
     "lzss":true,
+	"symbol":"MENUBG_RRS_START",
   },
   {
     "file":"./bin/filetable/017E.lzss",
@@ -1700,6 +1740,7 @@
   {
     "file":"./bin/filetable/01A5.lzss",
     "lzss":true,
+	"symbol":"MENUBG_EDIT_START",
   },
   {
     "file":"./bin/filetable/01A6.lzss",
@@ -1860,6 +1901,7 @@
   {
     "file":"./bin/filetable/01CD.lzss",
     "lzss":true,
+	"symbol":"MENUBG_OPTIONS_START",
   },
   {
     "file":"./bin/filetable/01CE.lzss",
@@ -2020,6 +2062,7 @@
   {
     "file":"./bin/filetable/01F5.lzss",
     "lzss":true,
+	"symbol":"MENUBG_PREMATCH_START",
   },
   {
     "file":"./bin/filetable/01F6.lzss",
@@ -2180,6 +2223,7 @@
   {
     "file":"./bin/filetable/021D.lzss",
     "lzss":true,
+	"symbol":"MENUBG_POSTMATCH_START",
   },
   {
     "file":"./bin/filetable/021E.lzss",
@@ -2552,26 +2596,32 @@
   {
     "file":"./bin/filetable/027A.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_HEAVY",
   },
   {
     "file":"./bin/filetable/027B.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_HEAVY_SPECIAL",
   },
   {
     "file":"./bin/filetable/027C.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_JUNIOR",
   },
   {
     "file":"./bin/filetable/027D.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_JUNIOR_SPECIAL",
   },
   {
     "file":"./bin/filetable/027E.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_MARTIAL_ARTS",
   },
   {
     "file":"./bin/filetable/027F.lzss",
     "lzss":true,
+	"symbol":"REVERSALS_HEEL",
   },
   {
     "file":"./bin/filetable/0280.lzss",
@@ -2580,10 +2630,12 @@
   {
     "file":"./bin/filetable/0281.bin",
     "lzss":false,
+	"symbol":"WRES_PARAMS_0103",
   },
   {
     "file":"./bin/filetable/0282.bin",
     "lzss":false,
+	"symbol":"WRES_MOVES_0103",
   },
   {
     "file":"./bin/filetable/0283.bin",
@@ -3364,26 +3416,32 @@
   {
     "file":"./bin/filetable/0345.bin",
     "lzss":false,
+	"symbol":"WRES_PARAMS_EDIT_WRESTLING",
   },
   {
     "file":"./bin/filetable/0346.bin",
     "lzss":false,
+	"symbol":"WRES_MOVES_EDIT_WRESTLING",
   },
   {
     "file":"./bin/filetable/0347.bin",
     "lzss":false,
+	"symbol":"WRES_PARAMS_EDIT_COMBO",
   },
   {
     "file":"./bin/filetable/0348.bin",
     "lzss":false,
+	"symbol":"WRES_MOVES_EDIT_COMBO",
   },
   {
     "file":"./bin/filetable/0349.bin",
     "lzss":false,
+	"symbol":"WRES_PARAMS_EDIT_SHOOT",
   },
   {
     "file":"./bin/filetable/034A.bin",
     "lzss":false,
+	"symbol":"WRES_MOVES_EDIT_SHOOT",
   },
   {
     "file":"./bin/filetable/034B.lzss",
@@ -3393,14 +3451,17 @@
   {
     "file":"./bin/filetable/034C.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_MAINMENU",
   },
   {
     "file":"./bin/filetable/034D.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_EDITMODE",
   },
   {
     "file":"./bin/filetable/034E.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_OPTIONS",
   },
   {
     "file":"./bin/filetable/034F.lzss",
@@ -3409,18 +3470,22 @@
   {
     "file":"./bin/filetable/0350.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_INTRO",
   },
   {
     "file":"./bin/filetable/0351.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_CREDITS",
   },
   {
     "file":"./bin/filetable/0352.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_ORIGINAL_A",
   },
   {
     "file":"./bin/filetable/0353.lzss",
     "lzss":true,
+	"symbol":"MUSIC_SEQ_ORIGINAL_B",
   },
   {
     "file":"./bin/filetable/0354.lzss",
@@ -23994,6 +24059,7 @@
   {
     "file":"./bin/filetable/176A.lzss",
     "lzss":true,
+	"symbol":"FIRST_SIDE_HAIR_TEXTURE",
   },
   {
     "file":"./bin/filetable/176B.lzss",
@@ -27006,10 +27072,12 @@
   {
     "file":"./bin/filetable/1A58.lzss",
     "lzss":true,
+	"symbol":"BELT_01_PALETTE",
   },
   {
     "file":"./bin/filetable/1A59.lzss",
     "lzss":true,
+	"symbol":"BELT_01_TEXTURE",
   },
   {
     "file":"./bin/filetable/1A5A.lzss",
@@ -52391,10 +52459,6 @@
   },
   {
     "file":"./bin/filetable/3322.bin",
-    "lzss":false,
-  },
-  {
-    "file":"./bin/filetable/3323.bin",
     "lzss":false,
   }
 ]
