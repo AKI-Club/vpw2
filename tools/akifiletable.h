@@ -6,7 +6,7 @@ typedef struct {
 	char *outDataFilename; /* output filetable data */
 	char *outIndexFilename; /* output filetable index */
 	char *outHeaderFilename; /* output header filename */
-	char *outAsmIncludeFilename; /* output asm include filename */
+	char *outLinkerFilename; /* output asm include filename */
 	bool verbose; /* display extra output */
 	bool headerOnly; /* only update header file if true */
 } InputArgs;
@@ -16,7 +16,7 @@ static const InputArgs defaultArgs = {
 	.outDataFilename = "filetable.bin",
 	.outIndexFilename = "filetable.idx",
 	.outHeaderFilename = "filetable.h",
-	.outAsmIncludeFilename = "filetable.inc",
+	.outLinkerFilename = "filetable.txt",
 	.verbose = false,
 	.headerOnly = false
 };
