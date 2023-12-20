@@ -129,7 +129,7 @@ int main(int argc, char* argv[]){
 	int curFileLength;
 	int decodedFileLength;
 
-	printf("akifiletable v1.5 - Filetable builder for N64 AKI wrestling games\n");
+	printf("akifiletable v1.6 - Filetable builder for N64 AKI wrestling games\n");
 
 	if(argc <= 1){
 		Usage(argv[0]);
@@ -271,6 +271,7 @@ int main(int argc, char* argv[]){
 		if(!progArgs.headerOnly){
 			fwrite(curFileData, 1, curFileLength, outData);
 		}
+		fclose(curFile);
 
 		// if this is an LZSS'd file, we need to set decodedFileLength
 		// using the first four bytes of the file
@@ -281,7 +282,6 @@ int main(int argc, char* argv[]){
 			decodedFileLength += (curFileData[3] & 0xFF);
 		}
 
-		fclose(curFile);
 		if(curFileData != NULL){
 			free(curFileData);
 		}
@@ -367,8 +367,12 @@ int main(int argc, char* argv[]){
 	if(list != NULL){
 		free(list);
 	}
-	fclose(outData);
-	fclose(outIndex);
+
+	if(!progArgs.headerOnly){
+		fclose(outData);
+		fclose(outIndex);
+	}
+
 	fclose(outHeader);
 	fclose(outLinker);
 	fclose(outInclude);
