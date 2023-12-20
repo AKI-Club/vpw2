@@ -317,7 +317,7 @@ int main(int argc, char* argv[]){
 		if(entry.symbol != NULL){
 			fprintf(outHeader, "#define FILEID_%s 0x%04X\n", entry.symbol, i+1);
 			fprintf(outLinker, "FILEID_%s = 0x%04X;\n", entry.symbol, i+1);
-			fprintf(outInclude, ".def FILEID_%s, 0x%04X;\n", entry.symbol, i+1);
+			fprintf(outInclude, ".set FILEID_%s, 0x%04X;\n", entry.symbol, i+1);
 
 			if(entry.exportsize){
 				int outSize;
@@ -332,7 +332,7 @@ int main(int argc, char* argv[]){
 				}
 				fprintf(outHeader, "#define FILESIZE_%s %d\n", entry.symbol, outSize);
 				fprintf(outLinker, "FILESIZE_%s = %d;\n", entry.symbol, outSize);
-				fprintf(outInclude, ".def FILESIZE_%s,%d;\n", entry.symbol, outSize);
+				fprintf(outInclude, ".set FILESIZE_%s,%d;\n", entry.symbol, outSize);
 			}
 		}
 		else{
