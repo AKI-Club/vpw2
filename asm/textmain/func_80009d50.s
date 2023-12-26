@@ -25,7 +25,7 @@ glabel func_80009D50
 /* 00A980 80009D80 00A01821 */   addu  $v1, $a1, $zero
 
 /* 00A984 80009D84 24A50001 */  addiu $a1, $a1, 1
-/* 00A988 80009D88 28A20028 */  slti  $v0, $a1, 40
+/* 00A988 80009D88 28A20028 */  slti  $v0, $a1, 40 # max number of battle royal participants
 /* 00A98C 80009D8C 1440FFFA */  bnez  $v0, .L80009D78
 /* 00A990 80009D90 24630002 */   addiu $v1, $v1, 2
 
