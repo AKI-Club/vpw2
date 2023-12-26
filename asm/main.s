@@ -10499,29 +10499,29 @@ func_800209C8:
 /* 0216FC 80020AFC ACA20000 */  sw    $v0, ($a1)
 
 # mist red value
-/* 021700 80020B00 3C028004 */  lui   $v0, %hi(D_80047C60)
+/* 021700 80020B00 3C028004 */  lui   $v0, %hi(tbl_MistColor_Red)
 /* 021704 80020B04 00471021 */  addu  $v0, $v0, $a3
-/* 021708 80020B08 90427C60 */  lbu   $v0, %lo(D_80047C60)($v0)
+/* 021708 80020B08 90427C60 */  lbu   $v0, %lo(tbl_MistColor_Red)($v0)
 
 # mist green value
-/* 02170C 80020B0C 3C048004 */  lui   $a0, %hi(D_80047C68)
+/* 02170C 80020B0C 3C048004 */  lui   $a0, %hi(tbl_MistColor_Green)
 /* 021710 80020B10 00872021 */  addu  $a0, $a0, $a3
-/* 021714 80020B14 90847C68 */  lbu   $a0, %lo(D_80047C68)($a0)
+/* 021714 80020B14 90847C68 */  lbu   $a0, %lo(tbl_MistColor_Green)($a0)
 
 # mist blue value
 /* 021718 80020B18 26520008 */  addiu $s2, $s2, 8
-/* 02171C 80020B1C 3C038004 */  lui   $v1, %hi(D_80047C70)
+/* 02171C 80020B1C 3C038004 */  lui   $v1, %hi(tbl_MistColor_Blue)
 /* 021720 80020B20 00671821 */  addu  $v1, $v1, $a3
-/* 021724 80020B24 90637C70 */  lbu   $v1, %lo(D_80047C70)($v1)
+/* 021724 80020B24 90637C70 */  lbu   $v1, %lo(tbl_MistColor_Blue)($v1)
 
 /* 021728 80020B28 00021600 */  sll   $v0, $v0, 0x18
 /* 02172C 80020B2C 00042400 */  sll   $a0, $a0, 0x10
 /* 021730 80020B30 00441025 */  or    $v0, $v0, $a0
 
 # mist alpha value?
-/* 021734 80020B34 3C048004 */  lui   $a0, %hi(D_80047C78)
+/* 021734 80020B34 3C048004 */  lui   $a0, %hi(tbl_MistColor_Alpha)
 /* 021738 80020B38 00872021 */  addu  $a0, $a0, $a3
-/* 02173C 80020B3C 90847C78 */  lbu   $a0, %lo(D_80047C78)($a0)
+/* 02173C 80020B3C 90847C78 */  lbu   $a0, %lo(tbl_MistColor_Alpha)($a0)
 /* 021740 80020B40 00031A00 */  sll   $v1, $v1, 8
 /* 021744 80020B44 00431025 */  or    $v0, $v0, $v1
 /* 021748 80020B48 00441025 */  or    $v0, $v0, $a0
@@ -10708,27 +10708,27 @@ func_80020DB0:
 
 .L80020DE4:
 # mist red value
-/* 0219E4 80020DE4 3C028004 */  lui   $v0, %hi(D_80047C60)
+/* 0219E4 80020DE4 3C028004 */  lui   $v0, %hi(tbl_MistColor_Red)
 /* 0219E8 80020DE8 00441021 */  addu  $v0, $v0, $a0
-/* 0219EC 80020DEC 90427C60 */  lbu   $v0, %lo(D_80047C60)($v0)
+/* 0219EC 80020DEC 90427C60 */  lbu   $v0, %lo(tbl_MistColor_Red)($v0)
 /* 0219F0 80020DF0 00022842 */  srl   $a1, $v0, 1
 /* 0219F4 80020DF4 54A00001 */  bnezl $a1, .L80020DFC
 /* 0219F8 80020DF8 24A50040 */   addiu $a1, $a1, 0x40
 
 .L80020DFC:
 # mist green value
-/* 0219FC 80020DFC 3C028004 */  lui   $v0, %hi(D_80047C68)
+/* 0219FC 80020DFC 3C028004 */  lui   $v0, %hi(tbl_MistColor_Green)
 /* 021A00 80020E00 00441021 */  addu  $v0, $v0, $a0
-/* 021A04 80020E04 90427C68 */  lbu   $v0, %lo(D_80047C68)($v0)
+/* 021A04 80020E04 90427C68 */  lbu   $v0, %lo(tbl_MistColor_Green)($v0)
 /* 021A08 80020E08 00021842 */  srl   $v1, $v0, 1
 /* 021A0C 80020E0C 54600001 */  bnezl $v1, .L80020E14
 /* 021A10 80020E10 24630040 */   addiu $v1, $v1, 0x40
 
 .L80020E14:
 # mist blue value
-/* 021A14 80020E14 3C028004 */  lui   $v0, %hi(D_80047C70)
+/* 021A14 80020E14 3C028004 */  lui   $v0, %hi(tbl_MistColor_Blue)
 /* 021A18 80020E18 00441021 */  addu  $v0, $v0, $a0
-/* 021A1C 80020E1C 90427C70 */  lbu   $v0, %lo(D_80047C70)($v0)
+/* 021A1C 80020E1C 90427C70 */  lbu   $v0, %lo(tbl_MistColor_Blue)($v0)
 /* 021A20 80020E20 00022042 */  srl   $a0, $v0, 1
 /* 021A24 80020E24 54800001 */  bnezl $a0, .L80020E2C
 /* 021A28 80020E28 24840040 */   addiu $a0, $a0, 0x40
@@ -44742,19 +44742,19 @@ D_80047C58:
 # color order: green, blue, red, white, magenta, black, fireball (orange)
 
 # 80047C60: mist color value Red
-D_80047C60:
+tbl_MistColor_Red:
 	.byte 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0x1F, 0xFF, 0x00
 
 # 80047C68: mist color value Green
-D_80047C68:
+tbl_MistColor_Green:
 	.byte 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x1F, 0x60, 0x00
 
 # 80047C70: mist color value Blue
-D_80047C70:
+tbl_MistColor_Blue:
 	.byte 0x00, 0xFF, 0x00, 0xFF, 0xBF, 0x1F, 0x00, 0x00
 
 # 80047C78: possibly mist color alpha?
-D_80047C78:
+tbl_MistColor_Alpha:
 	.byte 0x7F, 0x7F, 0x7F, 0x7F, 0x7F, 0xBF, 0xBF, 0x00
 
 /*----------------------------------------------------------------------------*/
