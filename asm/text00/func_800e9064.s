@@ -1,3 +1,9 @@
+# Params:
+# $a0 - load/write address
+# $a1 - file ID?
+# $a2 - 
+# $a3 - 
+
 glabel func_800E9064
 /* 04E4B4 800E9064 27BDFFB0 */  addiu $sp, $sp, -0x50
 /* 04E4B8 800E9068 AFB50044 */  sw    $s5, 0x44($sp)
