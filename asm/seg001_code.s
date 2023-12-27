@@ -3284,6 +3284,8 @@ func_8011B9F8:
 /* 074068 8011BA28 00000000 */   nop   
 
 /*----------------------------------------------*/
+# Handles intro fire
+
 func_8011BA2C:
 /* 07406C 8011BA2C 3C048010 */  lui   $a0, %hi(D_801041A8) # $a0, 0x8010
 /* 074070 8011BA30 8C8441A8 */  lw    $a0, %lo(D_801041A8)($a0)
@@ -3300,7 +3302,7 @@ func_8011BA2C:
 /* 07409C 8011BA5C 00021080 */  sll   $v0, $v0, 2
 /* 0740A0 8011BA60 00828823 */  subu  $s1, $a0, $v0
 /* 0740A4 8011BA64 0C03C320 */  jal   func_800F0C80
-/* 0740A8 8011BA68 262400EB */   addiu $a0, $s1, 0xeb
+/* 0740A8 8011BA68 262400EB */   addiu $a0, $s1, 0xeb # start of Revenge barrel fire frames
 
 /* 0740AC 8011BA6C 00409821 */  addu  $s3, $v0, $zero
 /* 0740B0 8011BA70 12600090 */  beqz  $s3, .L8011BCB4
