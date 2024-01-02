@@ -24137,7 +24137,7 @@ func_800FC1B0:
 /* 061614 800FC1C4 3C018004 */  lui   $at, %hi(D_8003ED4C) # $at, 0x8004
 /* 061618 800FC1C8 A022ED4C */  sb    $v0, %lo(D_8003ED4C)($at)
 /* 06161C 800FC1CC 0C000226 */  jal   aki_malloc
-/* 061620 800FC1D0 34049D00 */   li    $a0, 40192 # 0x8000 (sram) + 0x1D00 (controller pak)
+/* 061620 800FC1D0 34049D00 */   li    $a0, 0x9D00 # 0x8000 (sram) + 0x1D00 (controller pak)
 
 /* 061624 800FC1D4 34038000 */  li    $v1, 32768
 /* 061628 800FC1D8 3C018004 */  lui   $at, %hi(D_8003ED48) # $at, 0x8004
