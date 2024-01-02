@@ -9742,8 +9742,13 @@ tbl_EntranceAttire_DefaultColors:
 # 800452A0: start of gloves data
 
 D_800452A0:
-	.short 0, 0, 0
-	.short 0, 0, 0
+	.short 0
+	.short 0
+	.short 0
+	#--------------#
+	.short 0
+	.short 0
+	.short 0
 
 ptrTbl_800452AC:
 	.word D_800452A0
@@ -9757,48 +9762,103 @@ ptrTbl_800452AC:
 	.word D_800452A0
 
 D_800452D0:
-	.short 0, 0, 0
-	.short 0, 0, 0
+	.short 0
+	.short 0
+	.short 0
+	#--------------#
+	.short 0
+	.short 0
+	.short 0
 
 D_800452DC:
-	.short 0x13E7, 0x13E9, 0x13EB
-	.short 0x13E7, 0x13E9, 0x13EB
+	.short 0x13E7
+	.short 0x13E9
+	.short 0x13EB
+	#--------------#
+	.short 0x13E7
+	.short 0x13E9
+	.short 0x13EB
 
 D_800452E8:
-	.short 0, 0x13ED, 0x13EF
-	.short 0, 0x13ED, 0x13EF
+	.short 0
+	.short 0x13ED
+	.short 0x13EF
+	#--------------#
+	.short 0
+	.short 0x13ED
+	.short 0x13EF
 
 D_800452F4:
-	.short 0, 0x13ED, 0x13EF
-	.short 0, 0, 0
+	.short 0
+	.short 0x13ED
+	.short 0x13EF
+	#--------------#
+	.short 0
+	.short 0
+	.short 0
 
 D_80045300:
-	.short 0, 0x13F1, 0x13F3
-	.short 0, 0x13F1, 0x13F3
+	.short 0
+	.short 0x13F1
+	.short 0x13F3
+	#--------------#
+	.short 0
+	.short 0x13F1
+	.short 0x13F3
 
 D_8004530C:
-	.short 0, 0x13F5, 0
-	.short 0, 0x13F5, 0
+	.short 0
+	.short 0x13F5
+	.short 0
+	#--------------#
+	.short 0
+	.short 0x13F5
+	.short 0
 
 D_80045318:
-	.short 0x13F7, 0x13F9, 0x13FB
-	.short 0x13F7, 0x13F9, 0x13FB
+	.short 0x13F7
+	.short 0x13F9
+	.short 0x13FB
+	#--------------#
+	.short 0x13F7
+	.short 0x13F9
+	.short 0x13FB
 
 D_80045324:
-	.short 0, 0x1A3E, 0x1A3C
-	.short 0, 0x1A3F, 0x1A3D
+	.short 0
+	.short 0x1A3E
+	.short 0x1A3C
+	#--------------#
+	.short 0
+	.short 0x1A3F
+	.short 0x1A3D
 
 D_80045330:
-	.short 0, 0x1A40, 0x1A3C
-	.short 0, 0x1A41, 0x1A3D
+	.short 0
+	.short 0x1A40
+	.short 0x1A3C
+	#--------------#
+	.short 0
+	.short 0x1A41
+	.short 0x1A3D
 
 D_8004533C:
-	.short 0, 0x1A42, 0x1A3C
-	.short 0, 0x1A43, 0x1A3D
+	.short 0
+	.short 0x1A42
+	.short 0x1A3C
+	#--------------#
+	.short 0
+	.short 0x1A43
+	.short 0x1A3D
 
 D_80045348:
-	.short 0, 0x1A44, 0x1A3C
-	.short 0, 0x1A45, 0x1A3D
+	.short 0
+	.short 0x1A44
+	.short 0x1A3C
+	#--------------#
+	.short 0
+	.short 0x1A45
+	.short 0x1A3D
 
 ptrTbl_80045354:
 	.word D_80045348
@@ -9812,8 +9872,13 @@ ptrTbl_80045354:
 	.word D_80045324
 
 D_80045378:
-	.short 0x13FD, 0x13FF, 0x1401
-	.short 0x13FD, 0x13FF, 0x1401
+	.short 0x13FD
+	.short 0x13FF
+	.short 0x1401
+	#--------------#
+	.short 0x13FD
+	.short 0x13FF
+	.short 0x1401
 
 ptrTbl_80045384:
 	.word ptrTbl_800452AC
@@ -9839,13 +9904,16 @@ ptrTbl_800453A4:
 # elbow pads at data01 offset 0xB080
 
 D_800453C4:
-	.short 0x12C7, 0x12C9
+	.short 0x12C7
+	.short 0x12C9
 
 D_800453C8:
-	.short 0x12CB, 0x12CD
+	.short 0x12CB
+	.short 0x12CD
 
 D_800453CC:
-	.short 0x12CF, 0x12D1
+	.short 0x12CF
+	.short 0x12D1
 
 ptrTbl_ElbowPadTextures:
 	.word 0
@@ -9857,43 +9925,56 @@ ptrTbl_ElbowPadTextures:
 # wristbands at data01 offset 0xB09C
 
 tbl_WristbandTextures01:
-	.short 0x12AB, 0
+	.short 0x12AB
+	.short 0
 
 tbl_WristbandTextures02:
-	.short 0x12AD, 0
+	.short 0x12AD
+	.short 0
 
 tbl_WristbandTextures03:
-	.short 0x12B1, 0
+	.short 0x12B1
+	.short 0
 
 tbl_WristbandTextures04:
-	.short 0x12B3, 0
+	.short 0x12B3
+	.short 0
 
 tbl_WristbandTextures05:
-	.short 0x12B5, 0
+	.short 0x12B5
+	.short 0
 
 tbl_WristbandTextures06:
-	.short 0x12B7, 0
+	.short 0x12B7
+	.short 0
 
 tbl_WristbandTextures07:
-	.short 0x12B9, 0
+	.short 0x12B9
+	.short 0
 
 tbl_WristbandTextures08:
-	.short 0x12BB, 0
+	.short 0x12BB
+	.short 0
 
 tbl_WristbandTextures09:
-	.short 0x12BD, 0
+	.short 0x12BD
+	.short 0
 
 tbl_WristbandTextures10:
-	.short 0x12BF, 0
+	.short 0x12BF
+	.short 0
 
 tbl_WristbandTextures11:
-	.short 0x12C1, 0
+	.short 0x12C1
+	.short 0
 
 tbl_WristbandTextures12:
-	.short 0x12C3, 0
+	.short 0x12C3
+	.short 0
 
 tbl_WristbandTextures13:
-	.short 0x12C5, 0
+	.short 0x12C5
+	.short 0
 
 # wristband pointers
 ptrTbl_WristbandTextures:
@@ -9933,49 +10014,64 @@ tbl_Wristband_DefaultColors:
 # kneepads at data01 offset 0xB124
 
 D_80045468:
-	.short 0x12D3, 0
+	.short 0x12D3
+	.short 0
 
 D_8004546C:
-	.short 0x12D5, 0x12D7
+	.short 0x12D5
+	.short 0x12D7
 
 D_80045470:
-	.short 0x12D9, 0x12DB
+	.short 0x12D9
+	.short 0x12DB
 
 D_80045474:
-	.short 0x12DD, 0
+	.short 0x12DD
+	.short 0
 
 D_80045478:
-	.short 0x12DF, 0x12E1
+	.short 0x12DF
+	.short 0x12E1
 
 D_8004547C:
-	.short 0x12E3, 0
+	.short 0x12E3
+	.short 0
 
 D_80045480:
-	.short 0x12E5, 0x12E7
+	.short 0x12E5
+	.short 0x12E7
 
 D_80045484:
-	.short 0x12E9, 0
+	.short 0x12E9
+	.short 0
 
 D_80045488:
-	.short 0x12EB, 0x12ED
+	.short 0x12EB
+	.short 0x12ED
 
 D_8004548C:
-	.short 0x12EF, 0
+	.short 0x12EF
+	.short 0
 
 D_80045490:
-	.short 0x12F1, 0x12F3
+	.short 0x12F1
+	.short 0x12F3
 
 D_80045494:
-	.short 0x12F5, 0
+	.short 0x12F5
+	.short 0
 
 D_80045498:
-	.short 0x12F9, 0x12FB
+	.short 0x12F9
+	.short 0x12FB
 
 D_8004549C:
-	.short 0x12FD, 0
+	.short 0x12FD
+	.short 0
 
 D_800454A0:
-	.short 0x12FF, 0x1301
+	.short 0x12FF
+	.short 0x1301
 
 ptrTbl_KneepadTextures:
 	.word 0
@@ -10019,173 +10115,341 @@ tbl_Kneepad_DefaultColors:
 
 # models start at 80045504
 D_80045504:
-	.short 0, 0x0922, 0, 0x0923
+	.short 0
+	.short 0x0922
+	.short 0
+	.short 0x0923
 
 D_8004550C:
-	.short 0, 0x0920, 0, 0x0921
+	.short 0
+	.short 0x0920
+	.short 0
+	.short 0x0921
 
 D_80045514:
-	.short 0, 0x091E, 0, 0x091F
+	.short 0
+	.short 0x091E
+	.short 0
+	.short 0x091F
 
 D_8004551C:
-	.short 0, 0x0928, 0, 0x0929
+	.short 0
+	.short 0x0928
+	.short 0
+	.short 0x0929
 
 # textures start at 80045524
 D_80045524:
-	.short 0, 0, 0, 0
+	.short 0
+	.short 0
+	.short 0
+	.short 0
 
 D_8004552C:
-	.short 0x1305, 0x1307, 0x1305, 0x1307
+	.short 0x1305
+	.short 0x1307
+	.short 0x1305
+	.short 0x1307
 
 D_80045534:
-	.short 0x1309, 0x130B, 0x1309, 0x130B
+	.short 0x1309
+	.short 0x130B
+	.short 0x1309
+	.short 0x130B
 
 D_8004553C:
-	.short 0x130D, 0x130F, 0x130D, 0x130F
+	.short 0x130D
+	.short 0x130F
+	.short 0x130D
+	.short 0x130F
 
 D_80045544:
-	.short 0x1311, 0x1313, 0x1311, 0x1313
+	.short 0x1311
+	.short 0x1313
+	.short 0x1311
+	.short 0x1313
 
 D_8004554C:
-	.short 0x1315, 0x1317, 0x1315, 0x1317
+	.short 0x1315
+	.short 0x1317
+	.short 0x1315
+	.short 0x1317
 
 D_80045554:
-	.short 0x1319, 0x131B, 0x1319, 0x131B
+	.short 0x1319
+	.short 0x131B
+	.short 0x1319
+	.short 0x131B
 
 D_8004555C:
-	.short 0x131D, 0x131F, 0x131D, 0x131F
+	.short 0x131D
+	.short 0x131F
+	.short 0x131D
+	.short 0x131F
 
 D_80045564:
-	.short 0x1321, 0x1323, 0x1321, 0x1323
+	.short 0x1321
+	.short 0x1323
+	.short 0x1321
+	.short 0x1323
 
 D_8004556C:
-	.short 0x1325, 0x1327, 0x1325, 0x1327
+	.short 0x1325
+	.short 0x1327
+	.short 0x1325
+	.short 0x1327
 
 D_80045574:
-	.short 0x1329, 0x132B, 0x1329, 0x132B
+	.short 0x1329
+	.short 0x132B
+	.short 0x1329
+	.short 0x132B
 
 D_8004557C:
-	.short 0x132D, 0x132F, 0x132D, 0x132F
+	.short 0x132D
+	.short 0x132F
+	.short 0x132D
+	.short 0x132F
 
 D_80045584:
-	.short 0x1331, 0x1333, 0x1331, 0x1333
+	.short 0x1331
+	.short 0x1333
+	.short 0x1331
+	.short 0x1333
 
 D_8004558C:
-	.short 0x1335, 0x1337, 0x1335, 0x1337
+	.short 0x1335
+	.short 0x1337
+	.short 0x1335
+	.short 0x1337
 
 D_80045594:
-	.short 0x1339, 0x133B, 0x1339, 0x133B
+	.short 0x1339
+	.short 0x133B
+	.short 0x1339
+	.short 0x133B
 
 D_8004559C:
-	.short 0x133D, 0x133F, 0x133D, 0x133F
+	.short 0x133D
+	.short 0x133F
+	.short 0x133D
+	.short 0x133F
 
 D_800455A4:
-	.short 0x1341, 0x1343, 0x1341, 0x1343
+	.short 0x1341
+	.short 0x1343
+	.short 0x1341
+	.short 0x1343
 
 D_800455AC:
-	.short 0x1345, 0x1347, 0x1345, 0x1347
+	.short 0x1345
+	.short 0x1347
+	.short 0x1345
+	.short 0x1347
 
 D_800455B4:
-	.short 0x1349, 0x134B, 0x134D, 0x134B
+	.short 0x1349
+	.short 0x134B
+	.short 0x134D
+	.short 0x134B
 
 D_800455BC:
-	.short 0x134F, 0x1351, 0x134F, 0x1351
+	.short 0x134F
+	.short 0x1351
+	.short 0x134F
+	.short 0x1351
 
 D_800455C4:
-	.short 0x1353, 0x1355, 0x1353, 0x1355
+	.short 0x1353
+	.short 0x1355
+	.short 0x1353
+	.short 0x1355
 
 D_800455CC:
-	.short 0x1357, 0x1359, 0x1357, 0x1359
+	.short 0x1357
+	.short 0x1359
+	.short 0x1357
+	.short 0x1359
 
 D_800455D4:
-	.short 0x135B, 0x135D, 0x135B, 0x135D
+	.short 0x135B
+	.short 0x135D
+	.short 0x135B
+	.short 0x135D
 
 D_800455DC:
-	.short 0x135F, 0x1361, 0x135F, 0x1361
+	.short 0x135F
+	.short 0x1361
+	.short 0x135F
+	.short 0x1361
 
 D_800455E4:
-	.short 0x1363, 0x1365, 0x1363, 0x1365
+	.short 0x1363
+	.short 0x1365
+	.short 0x1363
+	.short 0x1365
 
 D_800455EC:
-	.short 0x1367, 0x1369, 0x1367, 0x1369
+	.short 0x1367
+	.short 0x1369
+	.short 0x1367
+	.short 0x1369
 
 D_800455F4:
-	.short 0x136B, 0x136D, 0x136B, 0x136D
+	.short 0x136B
+	.short 0x136D
+	.short 0x136B
+	.short 0x136D
 
 D_800455FC:
-	.short 0x136F, 0x1371, 0x136F, 0x1371
+	.short 0x136F
+	.short 0x1371
+	.short 0x136F
+	.short 0x1371
 
 D_80045604:
-	.short 0x1373, 0x1375, 0x1373, 0x1375
+	.short 0x1373
+	.short 0x1375
+	.short 0x1373
+	.short 0x1375
 
 D_8004560C:
-	.short 0x1377, 0x1379, 0x137B, 0x1379
+	.short 0x1377
+	.short 0x1379
+	.short 0x137B
+	.short 0x1379
 
 D_80045614:
-	.short 0x137D, 0x137F, 0x137D, 0x137F
+	.short 0x137D
+	.short 0x137F
+	.short 0x137D
+	.short 0x137F
 
 D_8004561C:
-	.short 0x1381, 0x1383, 0x1381, 0x1383
+	.short 0x1381
+	.short 0x1383
+	.short 0x1381
+	.short 0x1383
 
 D_80045624:
-	.short 0x1385, 0x1387, 0x1385, 0x1387
+	.short 0x1385
+	.short 0x1387
+	.short 0x1385
+	.short 0x1387
 
 D_8004562C:
-	.short 0x1389, 0x138B, 0x1389, 0x138B
+	.short 0x1389
+	.short 0x138B
+	.short 0x1389
+	.short 0x138B
 
 D_80045634:
-	.short 0x138D, 0x138F, 0x138D, 0x138F
+	.short 0x138D
+	.short 0x138F
+	.short 0x138D
+	.short 0x138F
 
 D_8004563C:
-	.short 0x1391, 0x1393, 0x1391, 0x1393
+	.short 0x1391
+	.short 0x1393
+	.short 0x1391
+	.short 0x1393
 
 D_80045644:
-	.short 0x1395, 0x1397, 0x1395, 0x1397
+	.short 0x1395
+	.short 0x1397
+	.short 0x1395
+	.short 0x1397
 
 D_8004564C:
-	.short 0x1399, 0x139B, 0x1399, 0x139B
+	.short 0x1399
+	.short 0x139B
+	.short 0x1399
+	.short 0x139B
 
 D_80045654:
-	.short 0x139D, 0x139F, 0x139D, 0x139F
+	.short 0x139D
+	.short 0x139F
+	.short 0x139D
+	.short 0x139F
 
 D_8004565C:
-	.short 0x13A1, 0x13A3, 0x13A1, 0x13A3
+	.short 0x13A1
+	.short 0x13A3
+	.short 0x13A1
+	.short 0x13A3
 
 D_80045664:
-	.short 0x13A5, 0x13A7, 0x13A5, 0x13A7
+	.short 0x13A5
+	.short 0x13A7
+	.short 0x13A5
+	.short 0x13A7
 
 D_8004566C:
-	.short 0, 0x13A9, 0, 0x13A9
+	.short 0
+	.short 0x13A9
+	.short 0
+	.short 0x13A9
 
 D_80045674:
-	.short 0x13AB, 0x13AD, 0x13AB, 0x13AD
+	.short 0x13AB
+	.short 0x13AD
+	.short 0x13AB
+	.short 0x13AD
 
 D_8004567C:
-	.short 0, 0x13AF, 0, 0x13AF
+	.short 0
+	.short 0x13AF
+	.short 0
+	.short 0x13AF
 
 D_80045684:
-	.short 0, 0x13B1, 0, 0x13B1
+	.short 0
+	.short 0x13B1
+	.short 0
+	.short 0x13B1
 
 D_8004568C:
-	.short 0x13B3, 0x1463, 0x13B3, 0x1463
+	.short 0x13B3
+	.short 0x1463
+	.short 0x13B3
+	.short 0x1463
 
 D_80045694:
-	.short 0x13B5, 0x13B7, 0x13B5, 0x13B7
+	.short 0x13B5
+	.short 0x13B7
+	.short 0x13B5
+	.short 0x13B7
 
 D_8004569C:
-	.short 0x13B9, 0x13BB, 0x13B9, 0x13BB
+	.short 0x13B9
+	.short 0x13BB
+	.short 0x13B9
+	.short 0x13BB
 
 D_800456A4:
-	.short 0x13BD, 0x13BF, 0x13BD, 0x13BF
+	.short 0x13BD
+	.short 0x13BF
+	.short 0x13BD
+	.short 0x13BF
 
 D_800456AC:
-	.short 0x13C1, 0x13C3, 0x13C1, 0x13C3
+	.short 0x13C1
+	.short 0x13C3
+	.short 0x13C1
+	.short 0x13C3
 
 D_800456B4:
-	.short 0x13C5, 0x13C7, 0x13C5, 0x13C7
+	.short 0x13C5
+	.short 0x13C7
+	.short 0x13C5
+	.short 0x13C7
 
 D_800456BC:
-	.short 0x13C9, 0x146D, 0x13C9, 0x146D
+	.short 0x13C9
+	.short 0x146D
+	.short 0x13C9
+	.short 0x146D
 
 # pointers for boot models
 ptrTbl_BootModels:
@@ -10356,274 +10620,544 @@ tbl_Boot_DefaultColors:
 # 800458CC hair models (data01 offset 0xB588, z64 0x464CC)
 
 D_800458CC:
-	.short 0x16D3, 0x16D2, 0x16D1, 0
+	.short 0x16D3
+	.short 0x16D2
+	.short 0x16D1
+	.short 0
 
 D_800458D4:
-	.short 0x16D6, 0x16D5, 0x16D4, 0
+	.short 0x16D6
+	.short 0x16D5
+	.short 0x16D4
+	.short 0
 
 D_800458DC:
-	.short 0x16D9, 0x16D8, 0x16D7, 0
+	.short 0x16D9
+	.short 0x16D8
+	.short 0x16D7
+	.short 0
 
 D_800458E4:
-	.short 0x16DC, 0x16DB, 0x16DA, 0
+	.short 0x16DC
+	.short 0x16DB
+	.short 0x16DA
+	.short 0
 
 D_800458EC:
-	.short 0x16DF, 0x16DE, 0x16DD, 0
+	.short 0x16DF
+	.short 0x16DE
+	.short 0x16DD
+	.short 0
 
 D_800458F4:
-	.short 0x16E2, 0x16E1, 0x16E0, 0
+	.short 0x16E2
+	.short 0x16E1
+	.short 0x16E0
+	.short 0
 
 D_800458FC:
-	.short 0x16E5, 0x16E4, 0x16E3, 0
+	.short 0x16E5
+	.short 0x16E4
+	.short 0x16E3
+	.short 0
 
 D_80045904:
-	.short 0x16F1, 0x16F0, 0x16EF, 0
+	.short 0x16F1
+	.short 0x16F0
+	.short 0x16EF
+	.short 0
 
 D_8004590C:
-	.short 0x16F4, 0x16F3, 0x16F2, 0
+	.short 0x16F4
+	.short 0x16F3
+	.short 0x16F2
+	.short 0
 
 D_80045914:
-	.short 0x161F, 0x161E, 0x161D, 0
+	.short 0x161F
+	.short 0x161E
+	.short 0x161D
+	.short 0
 
 D_8004591C:
-	.short 0x1622, 0x1621, 0x1620, 0
+	.short 0x1622
+	.short 0x1621
+	.short 0x1620
+	.short 0
 
 D_80045924:
-	.short 0x1625, 0x1624, 0x1623, 0
+	.short 0x1625
+	.short 0x1624
+	.short 0x1623
+	.short 0
 
 D_8004592C:
-	.short 0x1628, 0x1627, 0x1626, 0
+	.short 0x1628
+	.short 0x1627
+	.short 0x1626
+	.short 0
 
 D_80045934:
-	.short 0x162B, 0x162A, 0x1629, 0
+	.short 0x162B
+	.short 0x162A
+	.short 0x1629
+	.short 0
 
 D_8004593C:
-	.short 0x162E, 0x162D, 0x162C, 0
+	.short 0x162E
+	.short 0x162D
+	.short 0x162C
+	.short 0
 
 D_80045944:
-	.short 0x1631, 0x1630, 0x162F, 0
+	.short 0x1631
+	.short 0x1630
+	.short 0x162F
+	.short 0
 
 D_8004594C:
-	.short 0x163D, 0x163C, 0x163B, 0
+	.short 0x163D
+	.short 0x163C
+	.short 0x163B
+	.short 0
 
 D_80045954:
-	.short 0x1640, 0x163F, 0x163E, 0
+	.short 0x1640
+	.short 0x163F
+	.short 0x163E
+	.short 0
 
 D_8004595C:
-	.short 0x171B, 0x171A, 0x1719, 0
+	.short 0x171B
+	.short 0x171A
+	.short 0x1719
+	.short 0
 
 D_80045964:
-	.short 0x171E, 0x171D, 0x171C, 0
+	.short 0x171E
+	.short 0x171D
+	.short 0x171C
+	.short 0
 
 D_8004596C:
-	.short 0x1721, 0x1720, 0x171F, 0
+	.short 0x1721
+	.short 0x1720
+	.short 0x171F
+	.short 0
 
 D_80045974:
-	.short 0x1724, 0x1723, 0x1722, 0
+	.short 0x1724
+	.short 0x1723
+	.short 0x1722
+	.short 0
 
 D_8004597C:
-	.short 0x1727, 0x1726, 0x1725, 0
+	.short 0x1727
+	.short 0x1726
+	.short 0x1725
+	.short 0
 
 D_80045984:
-	.short 0x172A, 0x1729, 0x1728, 0
+	.short 0x172A
+	.short 0x1729
+	.short 0x1728
+	.short 0
 
 D_8004598C:
-	.short 0x172D, 0x172C, 0x172B, 0
+	.short 0x172D
+	.short 0x172C
+	.short 0x172B
+	.short 0
 
 D_80045994:
-	.short 0x1739, 0x1738, 0x1737, 0
+	.short 0x1739
+	.short 0x1738
+	.short 0x1737
+	.short 0
 
 D_8004599C:
-	.short 0x173C, 0x173B, 0x173A, 0
+	.short 0x173C
+	.short 0x173B
+	.short 0x173A
+	.short 0
 
 D_800459A4:
-	.short 0x1667, 0x1666, 0x1665, 0
+	.short 0x1667
+	.short 0x1666
+	.short 0x1665
+	.short 0
 
 D_800459AC:
-	.short 0x166A, 0x1669, 0x1668, 0
+	.short 0x166A
+	.short 0x1669
+	.short 0x1668
+	.short 0
 
 D_800459B4:
-	.short 0x166D, 0x166C, 0x166B, 0
+	.short 0x166D
+	.short 0x166C
+	.short 0x166B
+	.short 0
 
 D_800459BC:
-	.short 0x1670, 0x166F, 0x166E, 0
+	.short 0x1670
+	.short 0x166F
+	.short 0x166E
+	.short 0
 
 D_800459C4:
-	.short 0x1673, 0x1672, 0x1671, 0
+	.short 0x1673
+	.short 0x1672
+	.short 0x1671
+	.short 0
 
 D_800459CC:
-	.short 0x1676, 0x1675, 0x1674, 0
+	.short 0x1676
+	.short 0x1675
+	.short 0x1674
+	.short 0
 
 D_800459D4:
-	.short 0x1679, 0x1678, 0x1677, 0
+	.short 0x1679
+	.short 0x1678
+	.short 0x1677
+	.short 0
 
 D_800459DC:
-	.short 0x1685, 0x1684, 0x1683, 0
+	.short 0x1685
+	.short 0x1684
+	.short 0x1683
+	.short 0
 
 D_800459E4:
-	.short 0x1688, 0x1687, 0x1686, 0
+	.short 0x1688
+	.short 0x1687
+	.short 0x1686
+	.short 0
 
 D_800459EC:
-	.short 0x16AF, 0x16AE, 0x16AD, 0
+	.short 0x16AF
+	.short 0x16AE
+	.short 0x16AD
+	.short 0
 
 D_800459F4:
-	.short 0x16B2, 0x16B1, 0x16B0, 0
+	.short 0x16B2
+	.short 0x16B1
+	.short 0x16B0
+	.short 0
 
 D_800459FC:
-	.short 0x16B5, 0x16B4, 0x16B3, 0
+	.short 0x16B5
+	.short 0x16B4
+	.short 0x16B3
+	.short 0
 
 D_80045A04:
-	.short 0x16B8, 0x16B7, 0x16B6, 0
+	.short 0x16B8
+	.short 0x16B7
+	.short 0x16B6
+	.short 0
 
 D_80045A0C:
-	.short 0x16BB, 0x16BA, 0x16B9, 0
+	.short 0x16BB
+	.short 0x16BA
+	.short 0x16B9
+	.short 0
 
 D_80045A14:
-	.short 0x16BE, 0x16BD, 0x16BC, 0
+	.short 0x16BE
+	.short 0x16BD
+	.short 0x16BC
+	.short 0
 
 D_80045A1C:
-	.short 0x16C1, 0x16C0, 0x16BF, 0
+	.short 0x16C1
+	.short 0x16C0
+	.short 0x16BF
+	.short 0
 
 D_80045A24:
-	.short 0x16CD, 0x16CC, 0x16CB, 0
+	.short 0x16CD
+	.short 0x16CC
+	.short 0x16CB
+	.short 0
 
 D_80045A2C:
-	.short 0x16D0, 0x16CF, 0x16CE, 0
+	.short 0x16D0
+	.short 0x16CF
+	.short 0x16CE
+	.short 0
 
 D_80045A34:
-	.short 0x15FB, 0x15FA, 0x15F9, 0
+	.short 0x15FB
+	.short 0x15FA
+	.short 0x15F9
+	.short 0
 
 D_80045A3C:
-	.short 0x15FE, 0x15FD, 0x15FC, 0
+	.short 0x15FE
+	.short 0x15FD
+	.short 0x15FC
+	.short 0
 
 D_80045A44:
-	.short 0x1601, 0x1600, 0x15FF, 0
+	.short 0x1601
+	.short 0x1600
+	.short 0x15FF
+	.short 0
 
 D_80045A4C:
-	.short 0x1604, 0x1603, 0x1602, 0
+	.short 0x1604
+	.short 0x1603
+	.short 0x1602
+	.short 0
 
 D_80045A54:
-	.short 0x1607, 0x1606, 0x1605, 0
+	.short 0x1607
+	.short 0x1606
+	.short 0x1605
+	.short 0
 
 D_80045A5C:
-	.short 0x160A, 0x1609, 0x1608, 0
+	.short 0x160A
+	.short 0x1609
+	.short 0x1608
+	.short 0
 
 D_80045A64:
-	.short 0x160D, 0x160C, 0x160B, 0
+	.short 0x160D
+	.short 0x160C
+	.short 0x160B
+	.short 0
 
 D_80045A6C:
-	.short 0x1619, 0x1618, 0x1617, 0
+	.short 0x1619
+	.short 0x1618
+	.short 0x1617
+	.short 0
 
 D_80045A74:
-	.short 0x161C, 0x161B, 0x161A, 0
+	.short 0x161C
+	.short 0x161B
+	.short 0x161A
+	.short 0
 
 D_80045A7C:
-	.short 0x16F7, 0x16F6, 0x16F5, 0
+	.short 0x16F7
+	.short 0x16F6
+	.short 0x16F5
+	.short 0
 
 D_80045A84:
-	.short 0x16FA, 0x16F9, 0x16F8, 0
+	.short 0x16FA
+	.short 0x16F9
+	.short 0x16F8
+	.short 0
 
 D_80045A8C:
-	.short 0x16FD, 0x16FC, 0x16FB, 0
+	.short 0x16FD
+	.short 0x16FC
+	.short 0x16FB
+	.short 0
 
 D_80045A94:
-	.short 0x1700, 0x16FF, 0x16FE, 0
+	.short 0x1700
+	.short 0x16FF
+	.short 0x16FE
+	.short 0
 
 D_80045A9C:
-	.short 0x1703, 0x1702, 0x1701, 0
+	.short 0x1703
+	.short 0x1702
+	.short 0x1701
+	.short 0
 
 D_80045AA4:
-	.short 0x1706, 0x1705, 0x1704, 0
+	.short 0x1706
+	.short 0x1705
+	.short 0x1704
+	.short 0
 
 D_80045AAC:
-	.short 0x1709, 0x1708, 0x1707, 0
+	.short 0x1709
+	.short 0x1708
+	.short 0x1707
+	.short 0
 
 D_80045AB4:
-	.short 0x1715, 0x1714, 0x1713, 0
+	.short 0x1715
+	.short 0x1714
+	.short 0x1713
+	.short 0
 
 D_80045ABC:
-	.short 0x1718, 0x1717, 0x1716, 0
+	.short 0x1718
+	.short 0x1717
+	.short 0x1716
+	.short 0
 
 D_80045AC4:
-	.short 0x1643, 0x1642, 0x1641, 0
+	.short 0x1643
+	.short 0x1642
+	.short 0x1641
+	.short 0
 
 D_80045ACC:
-	.short 0x1646, 0x1645, 0x1644, 0
+	.short 0x1646
+	.short 0x1645
+	.short 0x1644
+	.short 0
 
 D_80045AD4:
-	.short 0x1649, 0x1648, 0x1647, 0
+	.short 0x1649
+	.short 0x1648
+	.short 0x1647
+	.short 0
 
 D_80045ADC:
-	.short 0x164C, 0x164B, 0x164A, 0
+	.short 0x164C
+	.short 0x164B
+	.short 0x164A
+	.short 0
 
 D_80045AE4:
-	.short 0x164F, 0x164E, 0x164D, 0
+	.short 0x164F
+	.short 0x164E
+	.short 0x164D
+	.short 0
 
 D_80045AEC:
-	.short 0x1652, 0x1651, 0x1650, 0
+	.short 0x1652
+	.short 0x1651
+	.short 0x1650
+	.short 0
 
 D_80045AF4:
-	.short 0x1655, 0x1654, 0x1653, 0
+	.short 0x1655
+	.short 0x1654
+	.short 0x1653
+	.short 0
 
 D_80045AFC:
-	.short 0x1661, 0x1660, 0x165F, 0
+	.short 0x1661
+	.short 0x1660
+	.short 0x165F
+	.short 0
 
 D_80045B04:
-	.short 0x1664, 0x1663, 0x1662, 0
+	.short 0x1664
+	.short 0x1663
+	.short 0x1662
+	.short 0
 
 D_80045B0C:
-	.short 0x168B, 0x168A, 0x1689, 0
+	.short 0x168B
+	.short 0x168A
+	.short 0x1689
+	.short 0
 
 D_80045B14:
-	.short 0x168E, 0x168D, 0x168C, 0
+	.short 0x168E
+	.short 0x168D
+	.short 0x168C
+	.short 0
 
 D_80045B1C:
-	.short 0x1691, 0x1690, 0x168F, 0
+	.short 0x1691
+	.short 0x1690
+	.short 0x168F
+	.short 0
 
 D_80045B24:
-	.short 0x1694, 0x1693, 0x1692, 0
+	.short 0x1694
+	.short 0x1693
+	.short 0x1692
+	.short 0
 
 D_80045B2C:
-	.short 0x1697, 0x1696, 0x1695, 0
+	.short 0x1697
+	.short 0x1696
+	.short 0x1695
+	.short 0
 
 D_80045B34:
-	.short 0x169A, 0x1699, 0x1698, 0
+	.short 0x169A
+	.short 0x1699
+	.short 0x1698
+	.short 0
 
 D_80045B3C:
-	.short 0x169D, 0x169C, 0x169B, 0
+	.short 0x169D
+	.short 0x169C
+	.short 0x169B
+	.short 0
 
 D_80045B44:
-	.short 0x16A9, 0x16A8, 0x16A7, 0
+	.short 0x16A9
+	.short 0x16A8
+	.short 0x16A7
+	.short 0
 
 D_80045B4C:
-	.short 0x16AC, 0x16AB, 0x16AA, 0
+	.short 0x16AC
+	.short 0x16AB
+	.short 0x16AA
+	.short 0
 
 D_80045B54:
-	.short 0x15D7, 0x15D6, 0x15D5, 0
+	.short 0x15D7
+	.short 0x15D6
+	.short 0x15D5
+	.short 0
 
 D_80045B5C:
-	.short 0x15DA, 0x15D9, 0x15D8, 0
+	.short 0x15DA
+	.short 0x15D9
+	.short 0x15D8
+	.short 0
 
 D_80045B64:
-	.short 0x15DD, 0x15DC, 0x15DB, 0
+	.short 0x15DD
+	.short 0x15DC
+	.short 0x15DB
+	.short 0
 
 D_80045B6C:
-	.short 0x15E0, 0x15DF, 0x15DE, 0
+	.short 0x15E0
+	.short 0x15DF
+	.short 0x15DE
+	.short 0
 
 D_80045B74:
-	.short 0x15E3, 0x15E2, 0x15E1, 0
+	.short 0x15E3
+	.short 0x15E2
+	.short 0x15E1
+	.short 0
 
 D_80045B7C:
-	.short 0x15E6, 0x15E5, 0x15E4, 0
+	.short 0x15E6
+	.short 0x15E5
+	.short 0x15E4
+	.short 0
 
 D_80045B84:
-	.short 0x15E9, 0x15E8, 0x15E7, 0
+	.short 0x15E9
+	.short 0x15E8
+	.short 0x15E7
+	.short 0
 
 D_80045B8C:
-	.short 0x15F5, 0x15F4, 0x15F3, 0
+	.short 0x15F5
+	.short 0x15F4
+	.short 0x15F3
+	.short 0
 
 D_80045B94:
-	.short 0x15F8, 0x15F7, 0x15F6, 0
+	.short 0x15F8
+	.short 0x15F7
+	.short 0x15F6
+	.short 0
 
 /* ---------------------- */
 # 80045B9C: hair model pointers begin here
@@ -10825,15 +11359,24 @@ ptrTbl_80045D70:
 
 # face colors
 tbl_FacePalettes:
-	.short 0x1745, 0x1746, 0x1747, 0x1748
+	.short 0x1745
+	.short 0x1746
+	.short 0x1747
+	.short 0x1748
 
 # skin colors?
 D_80045D9C:
-	.short 0x173D, 0x173E, 0x173F, 0x1740
+	.short 0x173D
+	.short 0x173E
+	.short 0x173F
+	.short 0x1740
 
 # ? colors
 D_80045DA4:
-	.short 0x1741, 0x1742, 0x1743, 0x1744
+	.short 0x1741
+	.short 0x1742
+	.short 0x1743
+	.short 0x1744
 
 	.short 0,0
 
@@ -10882,11 +11425,34 @@ tbl_DefaultFace_PaintAccessory_VertDisplacement:
 # 80045E98 (Z64 0x46A98; data01 bin offset: 0xBB54) related to front hair colors
 
 D_80045E98:
-	.short 0x17E5, 0x17E6, 0x17E7, 0x17E8, 0x17E9, 0x17EA, 0x17EB, 0x17EC
+	.short 0x17E5
+	.short 0x17E6
+	.short 0x17E7
+	.short 0x17E8
+	.short 0x17E9
+	.short 0x17EA
+	.short 0x17EB
+	.short 0x17EC
+
 D_80045EA8:
-	.short 0x17DD, 0x17DE, 0x17DF, 0x17E0, 0x17E1, 0x17E2, 0x17E3, 0x17E4
+	.short 0x17DD
+	.short 0x17DE
+	.short 0x17DF
+	.short 0x17E0
+	.short 0x17E1
+	.short 0x17E2
+	.short 0x17E3
+	.short 0x17E4
+
 D_80045EB8:
-	.short 0x17D5, 0x17D6, 0x17D7, 0x17D8, 0x17D9, 0x17DA, 0x17DB, 0x17DC
+	.short 0x17D5
+	.short 0x17D6
+	.short 0x17D7
+	.short 0x17D8
+	.short 0x17D9
+	.short 0x17DA
+	.short 0x17DB
+	.short 0x17DC
 
  ptrTbl_80045EC8:
 	.word D_80045E98
@@ -10898,13 +11464,34 @@ D_80045EB8:
 # 80045ED8 (Z64 0x46AD8; data01 bin offset: 0xBB94) normal hair colors
 
 D_80045ED8:
-	.short 0x17AB, 0x17AC, 0x17AD, 0x17AE, 0x17AF, 0x17B0, 0x17B1, 0x17B2
+	.short 0x17AB
+	.short 0x17AC
+	.short 0x17AD
+	.short 0x17AE
+	.short 0x17AF
+	.short 0x17B0
+	.short 0x17B1
+	.short 0x17B2
 
 D_80045EE8:
-	.short 0x17A3, 0x17A4, 0x17A5, 0x17A6, 0x17A7, 0x17A8, 0x17A9, 0x17AA
+	.short 0x17A3
+	.short 0x17A4
+	.short 0x17A5
+	.short 0x17A6
+	.short 0x17A7
+	.short 0x17A8
+	.short 0x17A9
+	.short 0x17AA
 
 D_80045EF8:
-	.short 0x179B, 0x179C, 0x179D, 0x179E, 0x179F, 0x17A0, 0x17A1, 0x17A2
+	.short 0x179B
+	.short 0x179C
+	.short 0x179D
+	.short 0x179E
+	.short 0x179F
+	.short 0x17A0
+	.short 0x17A1
+	.short 0x17A2
 
 ptrTbl_80045F08:
 	.word D_80045ED8
@@ -10916,13 +11503,34 @@ ptrTbl_80045F08:
 # 80045F18 (Z64 0x46B18; data01 bin offset: 0xBBD4) "extra hair color mods"
 
 D_80045F18:
-	.short 0x17C8, 0x17C9, 0x17CA, 0x17CB, 0x17CC, 0x17CD, 0x17CE, 0x17CF
+	.short 0x17C8
+	.short 0x17C9
+	.short 0x17CA
+	.short 0x17CB
+	.short 0x17CC
+	.short 0x17CD
+	.short 0x17CE
+	.short 0x17CF
 
 D_80045F28:
-	.short 0x17C0, 0x17C1, 0x17C2, 0x17C3, 0x17C4, 0x17C5, 0x17C6, 0x17C7
+	.short 0x17C0
+	.short 0x17C1
+	.short 0x17C2
+	.short 0x17C3
+	.short 0x17C4
+	.short 0x17C5
+	.short 0x17C6
+	.short 0x17C7
 
 D_80045F38:
-	.short 0x17B8, 0x17B9, 0x17BA, 0x17BB, 0x17BC, 0x17BD, 0x17BE, 0x17BF
+	.short 0x17B8
+	.short 0x17B9
+	.short 0x17BA
+	.short 0x17BB
+	.short 0x17BC
+	.short 0x17BD
+	.short 0x17BE
+	.short 0x17BF
 
 ptrTbl_80045F48:
 	.word D_80045F18
@@ -10934,10 +11542,24 @@ ptrTbl_80045F48:
 # 80045F58 (Z64 0x46B58; data01 bin offset: 0xBC14) facial hair colors
 
 tbl_80045F58:
-	.short 0x17EE, 0x17EE, 0x17EE, 0x17EE, 0x17EE, 0x17EE, 0x17EE, 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
+	.short 0x17EE
 
 tbl_80045F68:
-	.short 0x17ED, 0x17ED, 0x17ED, 0x17ED, 0x17ED, 0x17ED, 0x17ED, 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
+	.short 0x17ED
 
 ptrTbl_FacialHairColors:
 	.word tbl_80045F58
@@ -10949,58 +11571,106 @@ ptrTbl_FacialHairColors:
 # 80045F88 (Z64 0x46B88; data01 bin offset: 0xBC44) hair textures
 
 D_80045F88:
-	.short 0, 0, 0, 0
+	.short 0
+	.short 0
+	.short 0
+	.short 0
 
 # (unused)
 D_80045F90:
-	.short 0x176A, 0, 0, 0
+	.short 0x176A
+	.short 0
+	.short 0
+	.short 0
 
 D_80045F98:
-	.short 0x176D, 0, 0, 0
+	.short 0x176D
+	.short 0
+	.short 0
+	.short 0
 
 D_80045FA0:
-	.short 0x1770, 0, 0, 0
+	.short 0x1770
+	.short 0
+	.short 0
+	.short 0
 
 D_80045FA8:
-	.short 0x176B, 0x1783, 0, 0
+	.short 0x176B
+	.short 0x1783
+	.short 0
+	.short 0
 
 D_80045FB0:
-	.short 0x176E, 0x1783, 0, 0
+	.short 0x176E
+	.short 0x1783
+	.short 0
+	.short 0
 
 D_80045FB8:
-	.short 0x177C, 0x178A, 0, 0
+	.short 0x177C
+	.short 0x178A
+	.short 0
+	.short 0
 
 D_80045FC0:
-	.short 0x176F, 0x1783, 0, 0
+	.short 0x176F
+	.short 0x1783
+	.short 0
+	.short 0
 
 # afro
 D_80045FC8:
-	.short 0x1774, 0, 0x177D, 0
+	.short 0x1774
+	.short 0
+	.short 0x177D
+	.short 0
 
 # shaved
 D_80045FD0:
-	.short 0x1775, 0, 0x177E, 0
+	.short 0x1775
+	.short 0
+	.short 0x177E
+	.short 0
 
 D_80045FD8:
-	.short 0x1776, 0, 0xFFFF, 0
+	.short 0x1776
+	.short 0
+	.short 0xFFFF
+	.short 0
 
 D_80045FE0:
-	.short 0x1777, 0, 0xFFFF, 0
+	.short 0x1777
+	.short 0
+	.short 0xFFFF
+	.short 0
 
 # buzz cut
 D_80045FE8:
-	.short 0x1778, 0, 0x177F, 0
+	.short 0x1778
+	.short 0
+	.short 0x177F
+	.short 0
 
 # dreads
 D_80045FF0:
-	.short 0x1779, 0x1787, 0x1780, 0
+	.short 0x1779
+	.short 0x1787
+	.short 0x1780
+	.short 0
 
 # mullet
 D_80045FF8:
-	.short 0x177A, 0x1788, 0x1781, 0
+	.short 0x177A
+	.short 0x1788
+	.short 0x1781
+	.short 0
 
 D_80046000:
-	.short 0x177B, 0x1789, 0, 0
+	.short 0x177B
+	.short 0x1789
+	.short 0
+	.short 0
 
 ptrTbl_HairTextures:
 	.word D_80045F88
@@ -11037,40 +11707,52 @@ tbl_PerItem_FacialHair_VertDisplacement:
 # 80046078 (Z64 0x46CA8; data01 bin offset: 0xBD34) neck hair textures
 
 D_80046078:
-	.short 0x0000, 0
+	.short 0x0000
+	.short 0
 
 D_8004607C:
-	.short 0x178B, 0
+	.short 0x178B
+	.short 0
 
 D_80046080:
-	.short 0x178C, 0
+	.short 0x178C
+	.short 0
 
 D_80046084:
-	.short 0x178D, 0
+	.short 0x178D
+	.short 0
 
 D_80046088:
-	.short 0x178E, 0
+	.short 0x178E
+	.short 0
 
 D_8004608C:
-	.short 0x178F, 0
+	.short 0x178F
+	.short 0
 
 D_80046090:
-	.short 0x1790, 0
+	.short 0x1790
+	.short 0
 
 D_80046094:
-	.short 0x1791, 0
+	.short 0x1791
+	.short 0
 
 D_80046098:
-	.short 0x1792, 0
+	.short 0x1792
+	.short 0
 
 D_8004609C:
-	.short 0x1793, 0
+	.short 0x1793
+	.short 0
 
 D_800460A0:
-	.short 0x1794, 0
+	.short 0x1794
+	.short 0
 
 D_800460A4:
-	.short 0x1795, 0
+	.short 0x1795
+	.short 0
 
 ptrTbl_NeckHairTextures:
 	.word D_80046078
@@ -11457,184 +12139,364 @@ tbl_TattooSubPals:
 # 800463CC (Z64 0x46FCC; data01 bin offset: 0xC088) mask models?
 
 D_800463CC:
-	.short 0x19A7, 0x199F, 0x1981, 0
+	.short 0x19A7
+	.short 0x199F
+	.short 0x1981
+	.short 0
 
 D_800463D4:
-	.short 0x19A7, 0x199F, 0x197B, 0
+	.short 0x19A7
+	.short 0x199F
+	.short 0x197B
+	.short 0
 
 D_800463DC:
-	.short 0x19A7, 0x199F, 0x198D, 0
+	.short 0x19A7
+	.short 0x199F
+	.short 0x198D
+	.short 0
 
 D_800463E4:
-	.short 0x19A7, 0x199F, 0x1987, 0
+	.short 0x19A7
+	.short 0x199F
+	.short 0x1987
+	.short 0
 
 D_800463EC:
-	.short 0x19A7, 0x199F, 0x1975, 0
+	.short 0x19A7
+	.short 0x199F
+	.short 0x1975
+	.short 0
 
 D_800463F4:
-	.short 0x19A7, 0x199E, 0x1980, 0
+	.short 0x19A7
+	.short 0x199E
+	.short 0x1980
+	.short 0
 
 D_800463FC:
-	.short 0x19A7, 0x199E, 0x197A, 0
+	.short 0x19A7
+	.short 0x199E
+	.short 0x197A
+	.short 0
 
 D_80046404:
-	.short 0x19A7, 0x199E, 0x198C, 0
+	.short 0x19A7
+	.short 0x199E
+	.short 0x198C
+	.short 0
 
 D_8004640C:
-	.short 0x19A7, 0x199E, 0x1986, 0
+	.short 0x19A7
+	.short 0x199E
+	.short 0x1986
+	.short 0
 
 D_80046414:
-	.short 0x19A7, 0x199E, 0x1974, 0
+	.short 0x19A7
+	.short 0x199E
+	.short 0x1974
+	.short 0
 
 D_8004641C:
-	.short 0x19A4, 0x1999, 0x1963, 0
+	.short 0x19A4
+	.short 0x1999
+	.short 0x1963
+	.short 0
 
 D_80046424:
-	.short 0x19A4, 0x1999, 0x195D, 0
+	.short 0x19A4
+	.short 0x1999
+	.short 0x195D
+	.short 0
 
 D_8004642C:
-	.short 0x19A4, 0x1999, 0x196F, 0
+	.short 0x19A4
+	.short 0x1999
+	.short 0x196F
+	.short 0
 
 D_80046434:
-	.short 0x19A4, 0x1999, 0x1969, 0
+	.short 0x19A4
+	.short 0x1999
+	.short 0x1969
+	.short 0
 
 D_8004643C:
-	.short 0x19A4, 0x1999, 0x1957, 0
+	.short 0x19A4
+	.short 0x1999
+	.short 0x1957
+	.short 0
 
 D_80046444:
-	.short 0x19A4, 0x1998, 0x1962, 0
+	.short 0x19A4
+	.short 0x1998
+	.short 0x1962
+	.short 0
 
 D_8004644C:
-	.short 0x19A4, 0x1998, 0x195C, 0
+	.short 0x19A4
+	.short 0x1998
+	.short 0x195C
+	.short 0
 
 D_80046454:
-	.short 0x19A4, 0x1998, 0x196E, 0
+	.short 0x19A4
+	.short 0x1998
+	.short 0x196E
+	.short 0
 
 D_8004645C:
-	.short 0x19A4, 0x1998, 0x1968, 0
+	.short 0x19A4
+	.short 0x1998
+	.short 0x1968
+	.short 0
 
 D_80046464:
-	.short 0x19A4, 0x1998, 0x1956, 0
+	.short 0x19A4
+	.short 0x1998
+	.short 0x1956
+	.short 0
 
 D_8004646C:
-	.short 0x19A9, 0x19A3, 0x1985, 0
+	.short 0x19A9
+	.short 0x19A3
+	.short 0x1985
+	.short 0
 
 D_80046474:
-	.short 0x19A9, 0x19A3, 0x197F, 0
+	.short 0x19A9
+	.short 0x19A3
+	.short 0x197F
+	.short 0
 
 D_8004647C:
-	.short 0x19A9, 0x19A3, 0x1991, 0
+	.short 0x19A9
+	.short 0x19A3
+	.short 0x1991
+	.short 0
 
 D_80046484:
-	.short 0x19A9, 0x19A3, 0x198B, 0
+	.short 0x19A9
+	.short 0x19A3
+	.short 0x198B
+	.short 0
 
 D_8004648C:
-	.short 0x19A9, 0x19A3, 0x1979, 0
+	.short 0x19A9
+	.short 0x19A3
+	.short 0x1979
+	.short 0
 
 D_80046494:
-	.short 0x19A9, 0x19A2, 0x1984, 0
+	.short 0x19A9
+	.short 0x19A2
+	.short 0x1984
+	.short 0
 
 D_8004649C:
-	.short 0x19A9, 0x19A2, 0x197E, 0
+	.short 0x19A9
+	.short 0x19A2
+	.short 0x197E
+	.short 0
 
 D_800464A4:
-	.short 0x19A9, 0x19A2, 0x1990, 0
+	.short 0x19A9
+	.short 0x19A2
+	.short 0x1990
+	.short 0
 
 D_800464AC:
-	.short 0x19A9, 0x19A2, 0x198A, 0
+	.short 0x19A9
+	.short 0x19A2
+	.short 0x198A
+	.short 0
 
 D_800464B4:
-	.short 0x19A9, 0x19A2, 0x1978, 0
+	.short 0x19A9
+	.short 0x19A2
+	.short 0x1978
+	.short 0
 
 D_800464BC:
-	.short 0x19A6, 0x199D, 0x1967, 0
+	.short 0x19A6
+	.short 0x199D
+	.short 0x1967
+	.short 0
 
 D_800464C4:
-	.short 0x19A6, 0x199D, 0x1961, 0
+	.short 0x19A6
+	.short 0x199D
+	.short 0x1961
+	.short 0
 
 D_800464CC:
-	.short 0x19A6, 0x199D, 0x1973, 0
+	.short 0x19A6
+	.short 0x199D
+	.short 0x1973
+	.short 0
 
 D_800464D4:
-	.short 0x19A6, 0x199D, 0x196D, 0
+	.short 0x19A6
+	.short 0x199D
+	.short 0x196D
+	.short 0
 
 D_800464DC:
-	.short 0x19A6, 0x199D, 0x195B, 0
+	.short 0x19A6
+	.short 0x199D
+	.short 0x195B
+	.short 0
 
 D_800464E4:
-	.short 0x19A6, 0x199C, 0x1966, 0
+	.short 0x19A6
+	.short 0x199C
+	.short 0x1966
+	.short 0
 
 D_800464EC:
-	.short 0x19A6, 0x199C, 0x1960, 0
+	.short 0x19A6
+	.short 0x199C
+	.short 0x1960
+	.short 0
 
 D_800464F4:
-	.short 0x19A6, 0x199C, 0x1972, 0
+	.short 0x19A6
+	.short 0x199C
+	.short 0x1972
+	.short 0
 
 D_800464FC:
-	.short 0x19A6, 0x199C, 0x196C, 0
+	.short 0x19A6
+	.short 0x199C
+	.short 0x196C
+	.short 0
 
 D_80046504:
-	.short 0x19A6, 0x199C, 0x195A, 0
+	.short 0x19A6
+	.short 0x199C
+	.short 0x195A
+	.short 0
 
 D_8004650C:
-	.short 0x19A8, 0x19A1, 0x1983, 0
+	.short 0x19A8
+	.short 0x19A1
+	.short 0x1983
+	.short 0
 
 D_80046514:
-	.short 0x19A8, 0x19A1, 0x197D, 0
+	.short 0x19A8
+	.short 0x19A1
+	.short 0x197D
+	.short 0
 
 D_8004651C:
-	.short 0x19A8, 0x19A1, 0x198F, 0
+	.short 0x19A8
+	.short 0x19A1
+	.short 0x198F
+	.short 0
 
 D_80046524:
-	.short 0x19A8, 0x19A1, 0x1989, 0
+	.short 0x19A8
+	.short 0x19A1
+	.short 0x1989
+	.short 0
 
 D_8004652C:
-	.short 0x19A8, 0x19A1, 0x1977, 0
+	.short 0x19A8
+	.short 0x19A1
+	.short 0x1977
+	.short 0
 
 D_80046534:
-	.short 0x19A8, 0x19A0, 0x1982, 0
+	.short 0x19A8
+	.short 0x19A0
+	.short 0x1982
+	.short 0
 
 D_8004653C:
-	.short 0x19A8, 0x19A0, 0x197C, 0
+	.short 0x19A8
+	.short 0x19A0
+	.short 0x197C
+	.short 0
 
 D_80046544:
-	.short 0x19A8, 0x19A0, 0x198E, 0
+	.short 0x19A8
+	.short 0x19A0
+	.short 0x198E
+	.short 0
 
 D_8004654C:
-	.short 0x19A8, 0x19A0, 0x1988, 0
+	.short 0x19A8
+	.short 0x19A0
+	.short 0x1988
+	.short 0
 
 D_80046554:
-	.short 0x19A8, 0x19A0, 0x1976, 0
+	.short 0x19A8
+	.short 0x19A0
+	.short 0x1976
+	.short 0
 
 D_8004655C:
-	.short 0x19A5, 0x199B, 0x1965, 0
+	.short 0x19A5
+	.short 0x199B
+	.short 0x1965
+	.short 0
 
 D_80046564:
-	.short 0x19A5, 0x199B, 0x195F, 0
+	.short 0x19A5
+	.short 0x199B
+	.short 0x195F
+	.short 0
 
 D_8004656C:
-	.short 0x19A5, 0x199B, 0x1971, 0
+	.short 0x19A5
+	.short 0x199B
+	.short 0x1971
+	.short 0
 
 D_80046574:
-	.short 0x19A5, 0x199B, 0x196B, 0
+	.short 0x19A5
+	.short 0x199B
+	.short 0x196B
+	.short 0
 
 D_8004657C:
-	.short 0x19A5, 0x199B, 0x1959, 0
+	.short 0x19A5
+	.short 0x199B
+	.short 0x1959
+	.short 0
 
 D_80046584:
-	.short 0x19A5, 0x199A, 0x1964, 0
+	.short 0x19A5
+	.short 0x199A
+	.short 0x1964
+	.short 0
 
 D_8004658C:
-	.short 0x19A5, 0x199A, 0x195E, 0
+	.short 0x19A5
+	.short 0x199A
+	.short 0x195E
+	.short 0
 
 D_80046594:
-	.short 0x19A5, 0x199A, 0x1970, 0
+	.short 0x19A5
+	.short 0x199A
+	.short 0x1970
+	.short 0
 
 D_8004659C:
-	.short 0x19A5, 0x199A, 0x196A, 0
+	.short 0x19A5
+	.short 0x199A
+	.short 0x196A
+	.short 0
 
 D_800465A4:
-	.short 0x19A5, 0x199A, 0x1958, 0
+	.short 0x19A5
+	.short 0x199A
+	.short 0x1958
+	.short 0
 
 /* ---------------------- */
 ptrTbl_800465AC:
@@ -11842,28 +12704,137 @@ ptrTbl_80046764:
 /*----------------------------------------------------------------------------*/
 # 80046778 (Z64 0x47378; data01 bin offset: 0xC434): begin MaskTextureSet entries
 
-MaskTextureSet_Mask01: .short 0x19CE, 0, 0x19AA, 0
-MaskTextureSet_Mask02: .short 0x19CF, 0, 0x19AB, 0
-MaskTextureSet_Mask03: .short 0x19D0, 0, 0x19AC, 0
-MaskTextureSet_Mask04: .short 0x19D1, 0, 0x19AD, 0
-MaskTextureSet_Mask05: .short 0x19D2, 0, 0x19AE, 0
-MaskTextureSet_Mask06: .short 0x19D3, 0, 0x19AF, 0
-MaskTextureSet_Mask07: .short 0x19D4, 0, 0x19B0, 0
-MaskTextureSet_Mask08: .short 0x19D5, 0, 0x19B1, 0
-MaskTextureSet_Mask09: .short 0x19D6, 0x19C9, 0x19B2, 0
-MaskTextureSet_Mask10: .short 0x19D7, 0, 0x19B3, 0
-MaskTextureSet_Mask11: .short 0x19D8, 0, 0x19B4, 0
-MaskTextureSet_Mask12: .short 0x19D9, 0, 0x19B5, 0
-MaskTextureSet_Mask13: .short 0x19DA, 0, 0x19B6, 0
-MaskTextureSet_Mask14: .short 0x19DB, 0, 0x19B7, 0
-MaskTextureSet_Mask15: .short 0x19DC, 0, 0x19B8, 0
-MaskTextureSet_Mask16: .short 0x19DD, 0, 0x19B9, 0
-MaskTextureSet_Mask17: .short 0x19DE, 0, 0x19BA, 0
-MaskTextureSet_Mask18: .short 0x19DF, 0, 0x19BB, 0
-MaskTextureSet_Mask19: .short 0x19E0, 0, 0x19BC, 0
-MaskTextureSet_Mask20: .short 0x19E1, 0, 0x19BD, 0
-MaskTextureSet_Mask21: .short 0x19E2, 0, 0x19BE, 0
-MaskTextureSet_Mask22: .short 0x19E3, 0, 0x19BF, 0
+MaskTextureSet_Mask01:
+	.short 0x19CE
+	.short 0
+	.short 0x19AA
+	.short 0
+
+MaskTextureSet_Mask02:
+	.short 0x19CF
+	.short 0
+	.short 0x19AB
+	.short 0
+
+MaskTextureSet_Mask03:
+	.short 0x19D0
+	.short 0
+	.short 0x19AC
+	.short 0
+
+MaskTextureSet_Mask04:
+	.short 0x19D1
+	.short 0
+	.short 0x19AD
+	.short 0
+
+MaskTextureSet_Mask05:
+	.short 0x19D2
+	.short 0
+	.short 0x19AE
+	.short 0
+
+MaskTextureSet_Mask06:
+	.short 0x19D3
+	.short 0
+	.short 0x19AF
+	.short 0
+
+MaskTextureSet_Mask07:
+	.short 0x19D4
+	.short 0
+	.short 0x19B0
+	.short 0
+
+MaskTextureSet_Mask08:
+	.short 0x19D5
+	.short 0
+	.short 0x19B1
+	.short 0
+
+MaskTextureSet_Mask09:
+	.short 0x19D6
+	.short 0x19C9
+	.short 0x19B2
+	.short 0
+
+MaskTextureSet_Mask10:
+	.short 0x19D7
+	.short 0
+	.short 0x19B3
+	.short 0
+
+MaskTextureSet_Mask11:
+	.short 0x19D8
+	.short 0
+	.short 0x19B4
+	.short 0
+
+MaskTextureSet_Mask12:
+	.short 0x19D9
+	.short 0
+	.short 0x19B5
+	.short 0
+
+MaskTextureSet_Mask13:
+	.short 0x19DA
+	.short 0
+	.short 0x19B6
+	.short 0
+
+MaskTextureSet_Mask14:
+	.short 0x19DB
+	.short 0
+	.short 0x19B7
+	.short 0
+
+MaskTextureSet_Mask15:
+	.short 0x19DC
+	.short 0
+	.short 0x19B8
+	.short 0
+
+MaskTextureSet_Mask16:
+	.short 0x19DD
+	.short 0
+	.short 0x19B9
+	.short 0
+
+MaskTextureSet_Mask17:
+	.short 0x19DE
+	.short 0
+	.short 0x19BA
+	.short 0
+
+MaskTextureSet_Mask18:
+	.short 0x19DF
+	.short 0
+	.short 0x19BB
+	.short 0
+
+MaskTextureSet_Mask19:
+	.short 0x19E0
+	.short 0
+	.short 0x19BC
+	.short 0
+
+MaskTextureSet_Mask20:
+	.short 0x19E1
+	.short 0
+	.short 0x19BD
+	.short 0
+
+MaskTextureSet_Mask21:
+	.short 0x19E2
+	.short 0
+	.short 0x19BE
+	.short 0
+
+MaskTextureSet_Mask22:
+	.short 0x19E3
+	.short 0
+	.short 0x19BF
+	.short 0
 
 ptrTbl_MaskTextureSet:
 	.word MaskTextureSet_Mask01
@@ -11891,20 +12862,54 @@ ptrTbl_MaskTextureSet:
 
 # 80046880 (Z64 0x47480; data01 bin offset: 0xC53C) ripped mask textures
 tbl_RippedMaskTextures:
-	.short 0x19E4, 0x19E5, 0x19E6, 0x19E7, 0x19E8, 0x19E9, 0x19EA, 0x19EB
-	.short 0x19EC, 0x19ED, 0x19EE, 0x19EF, 0x19F0, 0x19F1, 0x19F2, 0x19F3
-	.short 0x19F4, 0x19F5, 0x19F6, 0x19F7, 0x19F8, 0x19F9
+	.short 0x19E4
+	.short 0x19E5
+	.short 0x19E6
+	.short 0x19E7
+	.short 0x19E8
+	.short 0x19E9
+	.short 0x19EA
+	.short 0x19EB
+	.short 0x19EC
+	.short 0x19ED
+	.short 0x19EE
+	.short 0x19EF
+	.short 0x19F0
+	.short 0x19F1
+	.short 0x19F2
+	.short 0x19F3
+	.short 0x19F4
+	.short 0x19F5
+	.short 0x19F6
+	.short 0x19F7
+	.short 0x19F8
+	.short 0x19F9
 
 # 800468AC (Z64 0x474AC; data01 bin offset: 0xC568) mask neck textures
 
 D_800468AC:
-	.short 0, 0x19CA, 0, 0
+	.short 0
+	.short 0x19CA
+	.short 0
+	.short 0
+
 D_800468B4:
-	.short 0, 0x19CB, 0, 0
+	.short 0
+	.short 0x19CB
+	.short 0
+	.short 0
+
 D_800468BC:
-	.short 0, 0x19CC, 0, 0
+	.short 0
+	.short 0x19CC
+	.short 0
+	.short 0
+
 D_800468C4:
-	.short 0, 0x19CD, 0x19C0, 0
+	.short 0
+	.short 0x19CD
+	.short 0x19C0
+	.short 0
 
 ptrTbl_800468CC:
 	.word D_800468AC
@@ -11915,130 +12920,172 @@ ptrTbl_800468CC:
 # 800468DC (Z64 0x474DC; data01 bin offset: 0xC598) head accessories 2
 
 D_800468DC:
-	.short 0x193E, 0x19C1
+	.short 0x193E
+	.short 0x19C1
 
 D_800468E0:
-	.short 0x1938, 0x19C1
+	.short 0x1938
+	.short 0x19C1
 
 D_800468E4:
-	.short 0x193F, 0x19C2
+	.short 0x193F
+	.short 0x19C2
 
 D_800468E8:
-	.short 0x1939, 0x19C2
+	.short 0x1939
+	.short 0x19C2
 
 D_800468EC:
-	.short 0x1940, 0x19C3
+	.short 0x1940
+	.short 0x19C3
 
 D_800468F0:
-	.short 0x193A, 0x19C3
+	.short 0x193A
+	.short 0x19C3
 
 D_800468F4:
-	.short 0x1941, 0x19C4
+	.short 0x1941
+	.short 0x19C4
 
 D_800468F8:
-	.short 0x193B, 0x19C4
+	.short 0x193B
+	.short 0x19C4
 
 D_800468FC:
-	.short 0x1942, 0x19C5
+	.short 0x1942
+	.short 0x19C5
 
 D_80046900:
-	.short 0x193C, 0x19C5
+	.short 0x193C
+	.short 0x19C5
 
 D_80046904:
-	.short 0x1944, 0
+	.short 0x1944
+	.short 0
 
 D_80046908:
-	.short 0x1947, 0
+	.short 0x1947
+	.short 0
 
 D_8004690C:
-	.short 0x194A, 0
+	.short 0x194A
+	.short 0
 
 D_80046910:
-	.short 0x194D, 0
+	.short 0x194D
+	.short 0
 
 D_80046914:
-	.short 0x1950, 0
+	.short 0x1950
+	.short 0
 
 D_80046918:
-	.short 0x1953, 0
+	.short 0x1953
+	.short 0
 
 D_8004691C:
-	.short 0x1932, 0x19C6
+	.short 0x1932
+	.short 0x19C6
 
 D_80046920:
-	.short 0x1934, 0x19C6
+	.short 0x1934
+	.short 0x19C6
 
 D_80046924:
-	.short 0x1936, 0x19C6
+	.short 0x1936
+	.short 0x19C6
 
 D_80046928:
-	.short 0x192C, 0x19C6
+	.short 0x192C
+	.short 0x19C6
 
 D_8004692C:
-	.short 0x192E, 0x19C6
+	.short 0x192E
+	.short 0x19C6
 
 D_80046930:
-	.short 0x1930, 0x19C6
+	.short 0x1930
+	.short 0x19C6
 
 D_80046934:
-	.short 0x1945, 0
+	.short 0x1945
+	.short 0
 
 D_80046938:
-	.short 0x1948, 0
+	.short 0x1948
+	.short 0
 
 D_8004693C:
-	.short 0x194B, 0
+	.short 0x194B
+	.short 0
 
 D_80046940:
-	.short 0x194E, 0
+	.short 0x194E
+	.short 0
 
 D_80046944:
-	.short 0x1951, 0
+	.short 0x1951
+	.short 0
 
 D_80046948:
-	.short 0x1954, 0
+	.short 0x1954
+	.short 0
 
 D_8004694C:
-	.short 0x1943, 0x19C7
+	.short 0x1943
+	.short 0x19C7
 
 D_80046950:
-	.short 0x193D, 0x19C7
+	.short 0x193D
+	.short 0x19C7
 
 D_80046954:
-	.short 0x1946, 0
+	.short 0x1946
+	.short 0
 
 D_80046958:
-	.short 0x1949, 0
+	.short 0x1949
+	.short 0
 
 D_8004695C:
-	.short 0x194C, 0
+	.short 0x194C
+	.short 0
 
 D_80046960:
-	.short 0x194F, 0
+	.short 0x194F
+	.short 0
 
 D_80046964:
-	.short 0x1952, 0
+	.short 0x1952
+	.short 0
 
 D_80046968:
-	.short 0x1955, 0
+	.short 0x1955
+	.short 0
 
 D_8004696C:
-	.short 0x1933, 0x19C8
+	.short 0x1933
+	.short 0x19C8
 
 D_80046970:
-	.short 0x1935, 0x19C8
+	.short 0x1935
+	.short 0x19C8
 
 D_80046974:
-	.short 0x1937, 0x19C8
+	.short 0x1937
+	.short 0x19C8
 
 D_80046978:
-	.short 0x192D, 0x19C8
+	.short 0x192D
+	.short 0x19C8
 
 D_8004697C:
-	.short 0x192F, 0x19C8
+	.short 0x192F
+	.short 0x19C8
 
 D_80046980:
-	.short 0x1931, 0x19C8
+	.short 0x1931
+	.short 0x19C8
 
 ptrTbl_80046984:
 	.word 0
