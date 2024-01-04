@@ -2305,8 +2305,8 @@ func_800188AC:
 /* 01AE04 8001A204 00051027 */  nor   $v0, $zero, $a1
 
 .L8001A208:
-/* 01AE08 8001A208 3C038004 */  lui   $v1, %hi(ptrTbl_NeckHairTextures) # $v1, 0x8004
-/* 01AE0C 8001A20C 246360A8 */  addiu $v1, %lo(ptrTbl_NeckHairTextures) # addiu $v1, $v1, 0x60a8
+/* 01AE08 8001A208 3C038004 */  lui   $v1, %hi(ptrTbl_FaceAccessoryHeadTextures) # $v1, 0x8004
+/* 01AE0C 8001A20C 246360A8 */  addiu $v1, %lo(ptrTbl_FaceAccessoryHeadTextures) # addiu $v1, $v1, 0x60a8
 /* 01AE10 8001A210 00021080 */  sll   $v0, $v0, 2
 /* 01AE14 8001A214 00431021 */  addu  $v0, $v0, $v1
 /* 01AE18 8001A218 8C430000 */  lw    $v1, ($v0)
@@ -2411,8 +2411,8 @@ func_800188AC:
 /* 01AF34 8001A334 00051027 */  nor   $v0, $zero, $a1
 
 .L8001A338:
-/* 01AF38 8001A338 3C038004 */  lui   $v1, %hi(ptrTbl_NeckHairTextures) # $v1, 0x8004
-/* 01AF3C 8001A33C 246360A8 */  addiu $v1, %lo(ptrTbl_NeckHairTextures) # addiu $v1, $v1, 0x60a8
+/* 01AF38 8001A338 3C038004 */  lui   $v1, %hi(ptrTbl_FaceAccessoryHeadTextures) # $v1, 0x8004
+/* 01AF3C 8001A33C 246360A8 */  addiu $v1, %lo(ptrTbl_FaceAccessoryHeadTextures) # addiu $v1, $v1, 0x60a8
 /* 01AF40 8001A340 00021080 */  sll   $v0, $v0, 2
 /* 01AF44 8001A344 00432021 */  addu  $a0, $v0, $v1
 /* 01AF48 8001A348 8C820000 */  lw    $v0, ($a0)

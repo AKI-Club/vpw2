@@ -10617,7 +10617,7 @@ tbl_Boot_DefaultColors:
 	.byte 0, 0
 
 /*----------------------------------------------------------------------------*/
-# 800458CC hair models (data01 offset 0xB588, z64 0x464CC)
+# 800458CC head/sides, neck, and face models (data01 offset 0xB588, z64 0x464CC)
 
 D_800458CC:
 	.short 0x16D3
@@ -11364,14 +11364,14 @@ tbl_FacePalettes:
 	.short 0x1747
 	.short 0x1748
 
-# skin colors?
+# head colors
 D_80045D9C:
 	.short 0x173D
 	.short 0x173E
 	.short 0x173F
 	.short 0x1740
 
-# ? colors
+# neck colors
 D_80045DA4:
 	.short 0x1741
 	.short 0x1742
@@ -11422,7 +11422,7 @@ tbl_DefaultFace_PaintAccessory_VertDisplacement:
 	.byte 0x1B, 0x1A, 0x1C, 0x1C, 0x1B, 0x1C, 0x00, 0x00
 
 /*----------------------------------------------------------------------------*/
-# 80045E98 (Z64 0x46A98; data01 bin offset: 0xBB54) related to front hair colors
+# 80045E98 (Z64 0x46A98; data01 bin offset: 0xBB54) Front Hair palettes
 
 D_80045E98:
 	.short 0x17E5
@@ -11461,7 +11461,7 @@ D_80045EB8:
 	.word D_80045EB8
 
 /*----------------------------------------------------------------------------*/
-# 80045ED8 (Z64 0x46AD8; data01 bin offset: 0xBB94) normal hair colors
+# 80045ED8 (Z64 0x46AD8; data01 bin offset: 0xBB94) Main Hair palettes
 
 D_80045ED8:
 	.short 0x17AB
@@ -11500,7 +11500,7 @@ ptrTbl_80045F08:
 	.word D_80045EF8
 
 /*----------------------------------------------------------------------------*/
-# 80045F18 (Z64 0x46B18; data01 bin offset: 0xBBD4) "extra hair color mods"
+# 80045F18 (Z64 0x46B18; data01 bin offset: 0xBBD4) Neck Hair palettes
 
 D_80045F18:
 	.short 0x17C8
@@ -11539,7 +11539,7 @@ ptrTbl_80045F48:
 	.word D_80045F38
 
 /*----------------------------------------------------------------------------*/
-# 80045F58 (Z64 0x46B58; data01 bin offset: 0xBC14) facial hair colors
+# 80045F58 (Z64 0x46B58; data01 bin offset: 0xBC14) Facial Hair palettes
 
 tbl_80045F58:
 	.short 0x17EE
@@ -11704,7 +11704,7 @@ tbl_PerItem_FacialHair_VertDisplacement:
 	.byte 0x2E, 0x2D, 0x2D, 0x2E, 0x2F, 0x2E, 0x2E, 0x30
 
 /*----------------------------------------------------------------------------*/
-# 80046078 (Z64 0x46CA8; data01 bin offset: 0xBD34) neck hair textures
+# 80046078 (Z64 0x46CA8; data01 bin offset: 0xBD34) face accessory side textures
 
 D_80046078:
 	.short 0x0000
@@ -11754,7 +11754,7 @@ D_800460A4:
 	.short 0x1795
 	.short 0
 
-ptrTbl_NeckHairTextures:
+ptrTbl_FaceAccessoryHeadTextures:
 	.word D_80046078
 	.word D_8004607C
 	.word D_80046080
