@@ -5,7 +5,7 @@ This might not be complete. You have been warned.
 --------------------------------------------------------------------------------
 
 * things kholdfuzion told me about
-- extract filetable contents
++ extract filetable contents
 - look into n64split subfolders hack
 - try to find all splits before fucking with it
 - linker sections (part of the splits thing but also the overlays)
@@ -45,7 +45,7 @@ Not all of them have been identified.
 
 --------------------------------------------------------------------------------
 
-* create filetable builder
++ create filetable builder
 Since the game code references specific file IDs, this tool would need to spit
 out a header file with identifiers that can be used in the code. Sometimes,
 file sizes are also hardcoded; the build tool will need to figure this out.
@@ -80,5 +80,5 @@ a non-matching version.
 A few things to fix:
 - "&207 Lock" (requires editing an AkiText archive)
 - Battle Royal Shootfighter Elimination outside the ring (fixed by WldFb)
-- Event mode attendance bug (found by Melonbread)
+- Event mode attendance bug (found by Melonbread; need to code a proper fix)
 - Game softlocks on exiting a match with a manager/second under player control (todo: re-confirm)
