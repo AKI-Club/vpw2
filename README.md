@@ -88,3 +88,8 @@ Run `make` in the main directory.
 ## Further Steps
 
 todo: the next steps (a.k.a. ~~draw~~ disassemble the rest of the fucking ~~owl~~ game)
+
+## Notice
+
+None of the contributors are affiliated with AKI Corporation (now known as syn sophia)
+or Nintendo.
