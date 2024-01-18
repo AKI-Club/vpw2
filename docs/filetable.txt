@@ -4,12 +4,11 @@ Notes on the Filetable
 Extracting Filetable Data
 -------------------------
 This is handled with an ad-hoc tool, "extract_filetable".
+The filetable index and data files are passed in as arguments, and all files
+are extracted as-is.
 
-The tool passes in the filetable index and the filetable data.
-(This may cause issues with WWF No Mercy, as its filetable has some weirdness
-going on at the end.)
-
-Any LZSS'd data will need to be decoded by aki_lzss before it becomes editable.
+Any LZSS'd data will need to be decoded by "aki_lzss" before it becomes editable.
+Data will also need to be re-LZSS'd (if necessary) when building the filetable.
 
 Converting Assets
 -----------------
@@ -23,26 +22,27 @@ Example for converting a TEX file (title screen logo) with n64graphics:
 ./n64graphics -e 0015.tex -g 0015.png -p 0015.tex -o 0x210 -P 0x10 -f ci8 -w 320 -h 240
 
 However, n64graphics (technically stb_image) seems to ignore palettes,
-which is not ideal for a game that relies on them.
+which is a non-starter for a game that relies on them.
+
+Some asset types require bespoke converters. Currently available tools include:
+- akiarc  | AkiArchive format
+- akitext | AkiText format
+- menubg  | MenuBackground conversion
 
 Building the Filetable
 ----------------------
-Game code references file table indices in the code.
-A tool needs to be created to handle this. The preferred way would be to have
-said tool generate a header file consisting of #defines of file IDs.
-
-The tool would take a file with entries like this:
-filepath,compressed,exportfilesize,identifier
-
-where...
-filepath is the path to the file to include.
-compressed is either 0 for false or 1 for true. data is compressed with LZSS.
-exportfilesize is either 0 for false or 1 for true.
-identifier is the define name to be put in the header.
+Game code references hardcoded file table indices. This becomes a problem if
+you want to modify the filetable in any way. Ideally, the tool that builds
+the filetable should be responsible for generating a file with #defines of
+file IDs. The "akifiletable" program allows for this, as well as definitions
+for the assembler and linker. (insert grumbling about current repo state here)
 
 Since file IDs can be used as-is or as the first entry in a series, we can't
 automatically generate the identifiers. Most file ID identifiers will start with
-"FILE_ID_*", while sequential base file IDs will be defined as "FILE_ID_FIRST_*".
+"FILEID_*", while sequential base file IDs will be defined as "FILEID_FIRST_*".
 
 If a filesize export is requested, the symbol would be "FILESIZE_identifier".
-I am still unsure if the game expects the compressed or uncompressed size.
+The game seems to expect the uncompressed size in most cases, with some extra
+padding in the remaining instances.
+
+More information on symbol naming schemes can be found in docs/fileid_symbols.txt.
