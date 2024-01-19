@@ -4340,6 +4340,8 @@ func_8011C3DC:
 /* 074EE8 8011C8A8 27BD0058 */   addiu $sp, $sp, 0x58
 
 /*----------------------------------------------------------------------------*/
+# todo: this references the AkiArchive file with referee images
+
 func_8011C8AC:
 /* 074EEC 8011C8AC 27BDFFC0 */  addiu $sp, $sp, -0x40
 /* 074EF0 8011C8B0 AFB10034 */  sw    $s1, 0x34($sp)
@@ -4347,7 +4349,7 @@ func_8011C8AC:
 /* 074EF8 8011C8B8 AFBF0038 */  sw    $ra, 0x38($sp)
 /* 074EFC 8011C8BC AFB00030 */  sw    $s0, 0x30($sp)
 /* 074F00 8011C8C0 8E220000 */  lw    $v0, ($s1)
-/* 074F04 8011C8C4 24040087 */  li    $a0, 135
+/* 074F04 8011C8C4 24040087 */  li    $a0, 0x0087 # file ID
 /* 074F08 8011C8C8 00002821 */  addu  $a1, $zero, $zero
 /* 074F0C 8011C8CC 0C03C320 */  jal   func_800F0C80
 /* 074F10 8011C8D0 AFA20028 */   sw    $v0, 0x28($sp)
