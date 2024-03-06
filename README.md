@@ -30,6 +30,7 @@ This repository has two main purposes:
 - `binutils-mips-linux-gnu`
 - `gcc-mips-linux-gnu`
 - `gcc-multilib`
+- Python 3.x
 - an **unmodified** Virtual Pro-Wrestling 2 ROM in **Z64 format**, legally obtained
 
 While [`qemu-irix`](https://github.com/n64decomp/qemu-irix/releases) was previously
