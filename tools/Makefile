@@ -25,12 +25,12 @@ clean:
 	rm -rf $(KMC_DIR) gcc_kmc
 
 $(KMC_GCC): | $(KMC_DIR)
-	wget https://github.com/decompals/mips-gcc-2.7.2/releases/download/main/gcc-2.7.2-linux.tar.gz
+	wget https://github.com/gumorr/mips-gcc-2.7.2/releases/download/v0.1-FILE_OFFSET_FIX/gcc-2.7.2-linux.tar.gz
 	tar xf gcc-2.7.2-linux.tar.gz -C $(KMC_DIR)
 	$(RM) gcc-2.7.2-linux.tar.gz
 
 $(KMC_BINUTILS): | $(KMC_DIR)
-	wget https://github.com/decompals/mips-binutils-2.6/releases/download/main/binutils-2.6-linux.tar.gz
+	wget https://github.com/gumorr/mips-binutils-2.6/releases/download/v0.3-FILE_OFFSET_FIX/binutils-2.6-linux.tar.gz
 	tar xf binutils-2.6-linux.tar.gz -C $(KMC_DIR)
 	$(RM) binutils-2.6-linux.tar.gz
 
