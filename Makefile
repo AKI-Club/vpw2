@@ -69,7 +69,6 @@ else
 	$(error Unable to detect a suitable MIPS toolchain installed)
 endif
 
-CROSS = mips64-elf-
 AS = $(CROSS)as
 CC = COMPILER_PATH=$(TOOLS_DIR)/gcc_kmc/linux/2.7.2 $(TOOLS_DIR)/gcc_kmc/linux/2.7.2/gcc
 CC_CHECK = gcc -fsyntax-only -fno-builtin -fsigned-char -std=gnu90 -m32 $(CHECK_WARNINGS) -I $(INCLUDE_DIR)
