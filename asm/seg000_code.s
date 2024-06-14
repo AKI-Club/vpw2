@@ -38725,7 +38725,7 @@ D_80108ED4:
 
 # 80108EE0 (normal/wrestling)
 D_80108EE0:
-	.short 0x1A95 # standing tall
+	.short 0x1A95 # standing tall (locker room stance?)
 	.short 0x1A90 # normal/wrestling
 	.short 0x1A9F # walking 1
 	.short 0x1A95
