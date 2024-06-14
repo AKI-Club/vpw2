@@ -57,9 +57,20 @@ O_FILES += $(BUILD_DIR)/$(TARGET).o
 ################################################################################
 # Compiler & Assembler Options
 ################################################################################
-CROSS = mips-linux-gnu-
+
+ifneq ($(CROSS),)
+else ifneq ($(shell which mips-linux-gnu-ld 2> /dev/null),)
+	CROSS := mips-linux-gnu-
+else ifneq ($(shell which mips64-linux-gnu-ld 2> /dev/null),)
+	CROSS := mips64-linux-gnu-
+else ifneq ($(shell which mips64-elf-ld 2> /dev/null),)
+	CROSS := mips64-elf-
+else
+	$(error Unable to detect a suitable MIPS toolchain installed)
+endif
+
 AS = $(CROSS)as
-CC = $(TOOLS_DIR)/kmc-gcc-wrapper/gcc
+CC = COMPILER_PATH=$(TOOLS_DIR)/gcc_kmc/linux/2.7.2 $(TOOLS_DIR)/gcc_kmc/linux/2.7.2/gcc
 CC_CHECK = gcc -fsyntax-only -fno-builtin -fsigned-char -std=gnu90 -m32 $(CHECK_WARNINGS) -I $(INCLUDE_DIR)
 CPP = cpp -P
 GREP = grep -rl
@@ -132,7 +143,6 @@ setup: tools extractbins extractft delzss
 tools:
 	make -C $(TOOLS_DIR)
 	make -C $(TOOLS_DIR)/sm64tools n64cksum n64graphics
-	make -C $(TOOLS_DIR)/kmc-gcc-wrapper
 	mv $(TOOLS_DIR)/sm64tools/n64cksum $(N64CKSUM)
 	mv $(TOOLS_DIR)/sm64tools/n64graphics $(N64GRAPHICS)
 
@@ -171,7 +181,7 @@ $(BUILD_DIR):
 #$(BUILD_DIR)/%.o: asm/%.s
 #	$(AS) $(ASFLAGS) -o $@ $<
 
-$(GLOBAL_ASM_O_FILES): CC = $(ASM_PROCESSOR_BUILD) $(TOOLS_DIR)/kmc-gcc-wrapper/gcc -- $(AS) $(ASFLAGS) --
+$(GLOBAL_ASM_O_FILES): CC = COMPILER_PATH=$(TOOLS_DIR)/gcc_kmc/linux/2.7.2 $(ASM_PROCESSOR_BUILD) $(TOOLS_DIR)/gcc_kmc/linux/2.7.2/gcc -- $(AS) $(ASFLAGS) --
 
 # need to make the build/src directory otherwise this will shit the bed
 
