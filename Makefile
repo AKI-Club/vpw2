@@ -112,9 +112,12 @@ GLOBAL_ASM_O_FILES := $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.
 ################################################################################
 # Filetable-related 
 ################################################################################
-FILETABLE_INDEX  := $(MAIN_BIN_DIR)/filetable.idx
-FILETABLE_DATA   := $(MAIN_BIN_DIR)/filedata.bin
+FILETABLE_INPUT_LIST := vpw2filetable.json
+FILETABLE_INDEX := $(MAIN_BIN_DIR)/filetable.idx
+FILETABLE_DATA := $(MAIN_BIN_DIR)/filedata.bin
 FILETABLE_HEADER := $(INCLUDE_DIR)/filetable.h
+FILETABLE_ASMINCLUDE := $(INCLUDE_DIR)/filetable.inc
+FILETABLE_LINKER := filetable.txt
 
 ################################################################################
 # Targets 
@@ -137,7 +140,7 @@ distclean:
 	rm -f $(OUT_ROM)
 
 #------------------------------------------------------------#
-setup: tools extractbins extractft delzss
+setup: tools extractbins extractft buildfth
 
 # tools - build any tools used
 tools:
@@ -172,7 +175,13 @@ $(FILETABLE_BINDIR)/%.bin: $(FILETABLE_BINDIR)/%.lzss
 # (game-ready to human-editable and vice versa)
 
 #------------------------------------------------------------#
-# todo: filetable re-building process
+# filetable re-building process
+buildft:
+	$(AKI_FILETABLE) -l $(FILETABLE_INPUT_LIST) -o $(FILETABLE_DATA) -i $(FILETABLE_INDEX) -h $(FILETABLE_HEADER) -a $(FILETABLE_ASMINCLUDE) -n $(FILETABLE_LINKER)
+
+# header only version
+buildfth:
+	$(AKI_FILETABLE) -l $(FILETABLE_INPUT_LIST) -d -h $(FILETABLE_HEADER) -a $(FILETABLE_ASMINCLUDE) -n $(FILETABLE_LINKER)
 
 #------------------------------------------------------------#
 $(BUILD_DIR):
