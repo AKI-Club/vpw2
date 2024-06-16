@@ -38941,6 +38941,7 @@ tbl_80109010:
 # 8F - [shootfighter only] "(Facing Up) Mount Joint Reversal"
 # 90 - [shootfighter only] "Mount Joint Technique (Face Down)"
 # 91 - [shootfighter only] "(Face Down) Mount Joint Reversal"
+# AA - Outside [R]/[C] Replacement Move
 
 tbl0_80109044:
 	# "All Moves"
