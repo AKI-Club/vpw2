@@ -39603,34 +39603,34 @@ tbl0_801094B4:
 # 8010953C (0x53AC data offset) [h] move links
 # e.g. "Counter to Weak Grapple, Sleeper takedown to submission etc" -SK
 tbl0_8010953C:
-	.short 0x28E7, 0x0063
-	.short 0x28E9, 0x0064
-	.short 0x28EB, 0x0065
-	.short 0x28ED, 0x0066
-	.short 0x294B, 0x0086
-	.short 0x2902, 0x008A
-	.short 0x2AF5, 0x0060
-	.short 0x2AF7, 0x0061
-	.short 0x2B01, 0x0062
-	.short 0x2B27, 0x0009
-	.short 0x2B29, 0x000A
-	.short 0x2B2B, 0x000B
-	.short 0x2B2D, 0x000C
-	.short 0x2B2F, 0x000D
-	.short 0x2B31, 0x000E
-	.short 0x2B33, 0x000F
-	.short 0x2B35, 0x0010
-	.short 0x2B37, 0x0016
-	.short 0x2B65, 0x0019
-	.short 0x2B65, 0x001A
-	.short 0x2B67, 0x001B
-	.short 0x2B69, 0x001C
-	.short 0x2B6B, 0x001D
-	.short 0x2B6D, 0x001E
-	.short 0x2B6F, 0x001F
-	.short 0x2B71, 0x0020
-	.short 0x2B73, 0x0021
-	.short 0x2B77, 0x0022
+	.short 0x28E7, 0x0063 # german reversal -> weak running strike B
+	.short 0x28E9, 0x0064 # german reversal -> weak running strike A+B
+	.short 0x28EB, 0x0065 # german reversal -> strong running strike B
+	.short 0x28ED, 0x0066 # german reversal -> strong running strike A+B
+	.short 0x294B, 0x0086 # sleeper to downed face up
+	.short 0x2902, 0x008A # sleeper to sitting
+	.short 0x2AF5, 0x0060 # strong strike B
+	.short 0x2AF7, 0x0061 # strong strike B+dir
+	.short 0x2B01, 0x0062 # strong strike A+B
+	.short 0x2B27, 0x0009 # front strong grapple A
+	.short 0x2B29, 0x000A # front strong grapple A+Left/Right
+	.short 0x2B2B, 0x000B # front strong grapple A+Up
+	.short 0x2B2D, 0x000C # front strong grapple A+Down
+	.short 0x2B2F, 0x000D # front strong grapple B
+	.short 0x2B31, 0x000E # front strong grapple B+Left/Right
+	.short 0x2B33, 0x000F # front strong grapple B+Up
+	.short 0x2B35, 0x0010 # front strong grapple B+Down
+	.short 0x2B37, 0x0016 # front special grapple
+	.short 0x2B65, 0x0019 # back weak grapple A
+	.short 0x2B65, 0x001A # back weak grapple A (shootfighters only)
+	.short 0x2B67, 0x001B # back weak grapple A+direction
+	.short 0x2B69, 0x001C # back weak grapple B
+	.short 0x2B6B, 0x001D # back weak grapple B+direction
+	.short 0x2B6D, 0x001E # back strong grapple A
+	.short 0x2B6F, 0x001F # back strong grapple A+direction
+	.short 0x2B71, 0x0020 # back strong grapple B
+	.short 0x2B73, 0x0021 # back strong grapple B+direction
+	.short 0x2B77, 0x0022 # back special grapple
 	.short 0xFFFF, 0xFFFF
 
 /*----------------------------------------------------------------------------*/
