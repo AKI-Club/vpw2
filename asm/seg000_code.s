@@ -36455,6 +36455,14 @@ tbl0_80106600:
 	.short 0x0249, 0x012C, 0x00C8, 0xFED4
 
 /*----------------------------------------------------------------------------*/
+#.short unknown value 1, model archive file id 1 (faces)
+#.short unknown value 2, model archive file id 2 (vertices)
+#.short texture archive file id 1 (texture)
+#.short texture archive file id 1 (palette)
+#.short texture x size?
+#.short texture y size?
+# remaining four shorts are unknown
+
 # 80106638
 tbl0_80106638:
 	.short 0x002A, 0x0000, 0x0026, 0x0001, 0x0001, 0x0000
@@ -36585,6 +36593,7 @@ ptrTbl_80106828:
 
 # 80106878 (0x26E8)
 # budokan arena select model related
+
 tbl0_80106878:
 	.short 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
 	.short 0x0101, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000
