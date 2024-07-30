@@ -36455,8 +36455,8 @@ tbl0_80106600:
 	.short 0x0249, 0x012C, 0x00C8, 0xFED4
 
 /*----------------------------------------------------------------------------*/
-#.short unknown value 1, model archive file id 1 (faces)
-#.short unknown value 2, model archive file id 2 (vertices)
+#.short number of face defs, model archive file id 1 (faces)
+#.short number of vertex defs, model archive file id 2 (vertices)
 #.short texture archive file id 1 (texture)
 #.short texture archive file id 1 (palette)
 #.short texture x size?
