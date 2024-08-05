@@ -1,3 +1,5 @@
+# related to monochrome mode
+
 glabel func_8000C294
 /* 00CE94 8000C294 27BDFFF8 */  addiu $sp, $sp, -8
 /* 00CE98 8000C298 00803821 */  addu  $a3, $a0, $zero
