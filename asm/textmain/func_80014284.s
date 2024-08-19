@@ -1,7 +1,7 @@
 # Params:
 # $a0 - ? address 1
 # $a1 - ? address 2
-# $a2 - ? value
+# $a2 - color value
 
 glabel func_80014284
 /* 014E84 80014284 27BDFFE0 */  addiu $sp, $sp, -0x20
@@ -19,7 +19,7 @@ glabel func_80014284
 /* 014EB0 800142B0 8E020024 */  lw    $v0, 0x24($s0)
 /* 014EB4 800142B4 00004821 */  addu  $t1, $zero, $zero
 /* 014EB8 800142B8 240800FF */  li    $t0, 255
-/* 014EBC 800142BC A44601FE */  sh    $a2, 0x1fe($v0)
+/* 014EBC 800142BC A44601FE */  sh    $a2, 0x1fe($v0) # store color
 
 .L800142C0:
 /* 014EC0 800142C0 3C078000 */  lui   $a3, 0x8000
@@ -53,7 +53,7 @@ glabel func_80014284
 
 .L80014314:
 /* 014F14 80014314 8E020024 */  lw    $v0, 0x24($s0)
-/* 014F18 80014318 A446001E */  sh    $a2, 0x1e($v0)
+/* 014F18 80014318 A446001E */  sh    $a2, 0x1e($v0) # store color
 /* 014F1C 8001431C 90830000 */  lbu   $v1, ($a0)
 /* 014F20 80014320 90820001 */  lbu   $v0, 1($a0)
 /* 014F24 80014324 00620018 */  mult  $v1, $v0
