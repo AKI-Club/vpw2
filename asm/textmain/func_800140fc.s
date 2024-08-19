@@ -1,5 +1,7 @@
+# related to mask ripping?
+
 # Params:
-# $a0 -
+# $a0 - [h] 
 
 glabel func_800140FC
 /* 014CFC 800140FC 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -24,7 +26,7 @@ glabel func_800140FC
 /* 014D44 80014144 00A32821 */  addu  $a1, $a1, $v1
 /* 014D48 80014148 8CA50B70 */  lw    $a1, %lo(bssMain_800A0B70)($a1)
 /* 014D4C 8001414C 0C00C888 */  jal   bcopy
-/* 014D50 80014150 24060808 */   li    $a2, 2056
+/* 014D50 80014150 24060808 */   li    $a2, 2056 # size of a 32x64px CI8 texture (i.e. wrestler face/mask front)
 
 .L80014154:
 /* 014D54 80014154 8FBF0010 */  lw    $ra, 0x10($sp)
