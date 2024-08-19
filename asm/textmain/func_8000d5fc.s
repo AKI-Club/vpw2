@@ -56,7 +56,7 @@ glabel func_8000D5FC
 /* 00E298 8000D698 AE260010 */   sw    $a2, 0x10($s1)
 
 # check for monochrome mode
-/* 00E29C 8000D69C 3C028004 */  lui   $v0, %hi(D_80040004) # $v0, 0x8004
+/* 00E29C 8000D69C 3C028004 */  lui   $v0, %hi(var_8003FDB0) # $v0, 0x8004
 /* 00E2A0 8000D6A0 9442FDB0 */  lhu   $v0, %lo(var_8003FDB0)($v0)
 /* 00E2A4 8000D6A4 24100001 */  li    $s0, 1
 /* 00E2A8 8000D6A8 14500009 */  bne   $v0, $s0, .L8000D6D0
