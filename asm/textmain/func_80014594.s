@@ -1,4 +1,4 @@
-# Related to bleeding?
+# Related to bleeding
 
 # Params:
 # $a0 -
@@ -26,14 +26,14 @@ glabel func_80014594
 /* 0151DC 800145DC 3C058004 */  lui   $a1, %hi(D_8003FFB0) # $a1, 0x8004
 /* 0151E0 800145E0 24A5FFB0 */  addiu $a1, %lo(D_8003FFB0) # addiu $a1, $a1, -0x50
 /* 0151E4 800145E4 0C0050A1 */  jal   func_80014284
-/* 0151E8 800145E8 3406F801 */   li    $a2, 63489
+/* 0151E8 800145E8 3406F801 */   li    $a2, 0xF801 # face blood color
 
 /* 0151EC 800145EC 2624FCC0 */  addiu $a0, $s1, -0x340
 /* 0151F0 800145F0 02042021 */  addu  $a0, $s0, $a0
 /* 0151F4 800145F4 3C058004 */  lui   $a1, %hi(D_800400B0) # $a1, 0x8004
 /* 0151F8 800145F8 24A500B0 */  addiu $a1, %lo(D_800400B0) # addiu $a1, $a1, 0xb0
 /* 0151FC 800145FC 0C0050A1 */  jal   func_80014284
-/* 015200 80014600 3406F801 */   li    $a2, 63489
+/* 015200 80014600 3406F801 */   li    $a2, 0xF801 # neck blood color
 
 /* 015204 80014604 3C02800A */  lui   $v0, %hi(bssMain_800A07FC)
 /* 015208 80014608 00501021 */  addu  $v0, $v0, $s0
@@ -55,7 +55,7 @@ glabel func_80014594
 
 .L8001463C:
 /* 01523C 8001463C 0C0050A1 */  jal   func_80014284
-/* 015240 80014640 3406F801 */   li    $a2, 63489
+/* 015240 80014640 3406F801 */   li    $a2, 0xF801 # chest blood color
 
 .L80014644:
 /* 015244 80014644 8FBF0018 */  lw    $ra, 0x18($sp)
