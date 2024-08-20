@@ -49474,7 +49474,7 @@ bssMain_80079EC8: .word 0
 bssMain_80079ED0: .word 0
 	.skip 0x34
 
-# 80079F08 [w]
+# 80079F08 [w] pointers to active wrestler ripped mask texture and palette data
 bssMain_80079F08: .word 0
 	.skip 0x1C
 
@@ -51310,9 +51310,14 @@ bssMain_800A08AC: .byte 0
 bssMain_800A0B50: .byte 0
 	.skip 0x1F
 
-# 800A0B70 [w]
+# 800A0B70 [w] pointer to P1 face texture data
+# 0x514 offset between players
 bssMain_800A0B70: .word 0
 	.skip 0x101C
+
+# 800A1084 [w] pointer to P2 face texture data
+# 800A1598 [w] pointer to P3 face texture data
+# 800A1AAC [w] pointer to P4 face texture data
 
 # 800A1B90: [b] ?
 bssMain_800A1B90: .byte 0
