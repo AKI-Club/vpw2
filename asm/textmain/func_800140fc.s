@@ -1,7 +1,7 @@
-# related to mask ripping?
+# related to mask ripping
 
 # Params:
-# $a0 - [h] 
+# $a0 - [h] player number (0-3)
 
 glabel func_800140FC
 /* 014CFC 800140FC 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -32,6 +32,8 @@ glabel func_800140FC
 /* 014D54 80014154 8FBF0010 */  lw    $ra, 0x10($sp)
 /* 014D58 80014158 03E00008 */  jr    $ra
 /* 014D5C 8001415C 27BD0018 */   addiu $sp, $sp, 0x18
+
+/*============================================================================*/
 
 /* 014D60 80014160 03E00008 */  jr    $ra
 /* 014D64 80014164 00000000 */   nop   
