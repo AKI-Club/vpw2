@@ -3,145 +3,148 @@
 # These are meant to go at 0x3E63C in the Z64 ROM; 8003DA3C runtime.
 
 # https://www.tapatalk.com/groups/vpw2dojo/master-move-mods-t79.html
-# todo: a better explanation of what these actually are...
+
+# "Master Move Mods" are used as indices into a few files:
+# - 0278 (FILEID_MOVE_ANIMATION_VALUES) controls what animation IDs to use.
+# - 0279 (FILEID_MOVE_PROPERTIES_VALUES) controls move damage indices (file ID 0277).
 
 /*----------------------------------------------------------------------------*/
-# List of first entries in each group?
+# List of first entries in each group
 
 tbl_8003DA3C:
 	.short 0x0000
-	.short 0x000A
-	.short 0x0136
-	.short 0x04C4
-	.short 0x07F8
-	.short 0x0B36
-	.short 0x0BFE
-	.short 0x0D70
-	.short 0x0DE8
-	.short 0x0F1E
-	.short 0x0F46
-	.short 0x0FBE
+	.short 0x000A # Front Weak Grapple
+	.short 0x0136 # Front Strong Grapple
+	.short 0x04C4 # Front Special Grapple
+	.short 0x07F8 # Combo Strikes
+	.short 0x0B36 # Back Weak Grapple
+	.short 0x0BFE # Back Strong Grapple
+	.short 0x0D70 # Back Grapple Reversal
+	.short 0x0DE8 # Irish Whip Grapple
+	.short 0x0F1E # Special Irish Whip Grapple
+	.short 0x0F46 # Front Running Grapple
+	.short 0x0FBE # Back Running Grapple
 	.short 0x0FF0
 	.short 0x0FFA
-	.short 0x1004
-	.short 0x107C
-	.short 0x111C
-	.short 0x1194
-	.short 0x11A8
+	.short 0x1004 # Corner Weak Grapple
+	.short 0x107C # Corner Strong Grapple
+	.short 0x111C # Corner Special Grapple
+	.short 0x1194 # Back Corner Grapple
+	.short 0x11A8 # Back Corner Special Grapple
 	.short 0x11BC
-	.short 0x11D0
-	.short 0x11E4
+	.short 0x11D0 # Front Turnbuckle Grab Reversal
+	.short 0x11E4 # Back Turnbuckle Grab Reversal
 	.short 0x11EE
 	.short 0x11F8
-	.short 0x1216
+	.short 0x1216 # Grapple to Apron
 	.short 0x122A
-	.short 0x1234
-	.short 0x1248
-	.short 0x127A
+	.short 0x1234 # Apron Grapple Reversal
+	.short 0x1248 # Grapple from Apron
+	.short 0x127A # Special Grapple from Apron
 	.short 0x1298
-	.short 0x12A2
-	.short 0x12B6
-	.short 0x12D4
-	.short 0x12E8
-	.short 0x12FC
+	.short 0x12A2 # Test of Strength
+	.short 0x12B6 # Apron Strike to Ring
+	.short 0x12D4 # Apron Strike to Outside
+	.short 0x12E8 # Cut Strike
+	.short 0x12FC # Running Cut Strike
 	.short 0x1310
-	.short 0x131A
-	.short 0x132E
-	.short 0x1342
-	.short 0x1374
-	.short 0x1388
+	.short 0x131A # Super Heavyweight Front Grapple
+	.short 0x132E # Super Heavyweight Back Grapple
+	.short 0x1342 # Double Team Front Grapple
+	.short 0x1374 # Double Team Back Grapple
+	.short 0x1388 # Double Team Sandwich Grapple
 	.short 0x139C
 	.short 0x13BA
-	.short 0x13D8
+	.short 0x13D8 # Double Team Reversal
 	.short 0x13F6
 	.short 0x140A
 	.short 0x1414
-	.short 0x141E
-	.short 0x14BE
-	.short 0x1586
-	.short 0x15FE
-	.short 0x1612
-	.short 0x1676
-	.short 0x16C6
-	.short 0x1766
+	.short 0x141E # Weak Arm Striking
+	.short 0x14BE # Weak Leg Striking
+	.short 0x1586 # Corner Striking
+	.short 0x15FE # Tree of Woe Striking
+	.short 0x1612 # Counter Punch
+	.short 0x1676 # Counter Punch Special
+	.short 0x16C6 # Counter Kick
+	.short 0x1766 # Counter Kick Special
 	.short 0x178E
-	.short 0x1798
+	.short 0x1798 # Strong Striking
 	.short 0x1BD0
 	.short 0x1BDA
-	.short 0x1BE4
-	.short 0x1CDE
-	.short 0x1CF2
-	.short 0x1D88
-	.short 0x1DC4
-	.short 0x1DE2
-	.short 0x1DF6
-	.short 0x1F22
-	.short 0x1F90
-	.short 0x213E
-	.short 0x2314
+	.short 0x1BE4 # Weak Running Strike
+	.short 0x1CDE # Corner Running Strike
+	.short 0x1CF2 # Back Special Grapple
+	.short 0x1D88 # Irish Whip Counter
+	.short 0x1DC4 # Corner Stop Reversal
+	.short 0x1DE2 # Run Evasion
+	.short 0x1DF6 # Downed Strike
+	.short 0x1F22 # Running Downed Strike
+	.short 0x1F90 # Sitting Strike Face Up
+	.short 0x213E # Sitting Strike Face Down
+	.short 0x2314 # Ducking Strike
 	.short 0x2382
-	.short 0x23A0
-	.short 0x23F0
-	.short 0x2422
-	.short 0x2710
+	.short 0x23A0 # Counter Kick Special Grapple Reversals
+	.short 0x23F0 # Waiting Stance
+	.short 0x2422 # Introduction Taunt
+	.short 0x2710 # Standing Taunt
 	.short 0x2CC4
-	.short 0x2CCE
-	.short 0x2D78
-	.short 0x2DC8
-	.short 0x2E2C
-	.short 0x2E72
-	.short 0x2F58
-	.short 0x2FB2
-	.short 0x2FBC
-	.short 0x2FC6
-	.short 0x3070
-	.short 0x30CA
-	.short 0x30D4
-	.short 0x30DE
-	.short 0x312E
-	.short 0x314C
-	.short 0x3156
-	.short 0x3160
-	.short 0x316A
-	.short 0x3174
-	.short 0x317E
-	.short 0x3188
-	.short 0x3232
-	.short 0x3296
-	.short 0x32FA
-	.short 0x3372
-	.short 0x3386
-	.short 0x33AE
-	.short 0x33B8
-	.short 0x33E0
-	.short 0x33FE
-	.short 0x3426
-	.short 0x344E
-	.short 0x3458
-	.short 0x3476
-	.short 0x348A
-	.short 0x3494
-	.short 0x34D0
-	.short 0x34E4
-	.short 0x3516
-	.short 0x35E8
-	.short 0x364C
-	.short 0x3A2A
-	.short 0x3A52
-	.short 0x3AF2
+	.short 0x2CCE # Ducking Taunt
+	.short 0x2D78 # In Corner Taunt
+	.short 0x2DC8 # On Post Taunt
+	.short 0x2E2C # Apron Taunt
+	.short 0x2E72 # Downed Head Submission Face Up
+	.short 0x2F58 # Downed Head Submission Face Down
+	.short 0x2FB2 # Downed Head Submission Face Up Reversal
+	.short 0x2FBC # Downed Head Submission Face Down Reversal
+	.short 0x2FC6 # Downed Legs Submission Face Up
+	.short 0x3070 # Downed Legs Submission Face Down
+	.short 0x30CA # Downed Legs Submission Face Up Reversal
+	.short 0x30D4 # Downed Legs Submission Face Down Reversal
+	.short 0x30DE # Sitting Head Submission Face Up
+	.short 0x312E # Sitting Head Submission Face Down
+	.short 0x314C # Sitting Head Submission Face Up Reversal
+	.short 0x3156 # Sitting Head Submission Face Down Reversal
+	.short 0x3160 # Mounted Face Up Grapple
+	.short 0x316A # Mounted Face Up Grapple Reversal
+	.short 0x3174 # Mounted Face Down Grapple
+	.short 0x317E # Mounted Face Down Grapple Reversal
+	.short 0x3188 # Diving Attack to Standing
+	.short 0x3232 # Diving Attack to Ground (non-pinning)
+	.short 0x3296 # Diving Attack to Ground (pinning)
+	.short 0x32FA # Running Dive
+	.short 0x3372 # Running Tope Feint
+	.short 0x3386 # Plancha
+	.short 0x33AE # Rope Splash Attack
+	.short 0x33B8 # Corner Splash Attack
+	.short 0x33E0 # Apron Dive
+	.short 0x33FE # Running Apron Dive
+	.short 0x3426 # Springboard Standing Attack
+	.short 0x344E # Double Team Springboard Attack
+	.short 0x3458 # Springboard Grounded Attack
+	.short 0x3476 # Rope Rebound Attack
+	.short 0x348A # Double Team Post Attack
+	.short 0x3494 # Combo Stance
+	.short 0x34D0 # Apron to Apron Strike
+	.short 0x34E4 # Old Shootfighting Combo Strikes
+	.short 0x3516 # Introduction Taunt 2
+	.short 0x35E8 # Introduction Taunt 3
+	.short 0x364C # Standing Taunt 2
+	.short 0x3A2A # Counter Punch Special Grapple Reversals
+	.short 0x3A52 # Ducking Taunt 2
+	.short 0x3AF2 # In Corner Taunt 2
 	.short 0x3B56
-	.short 0x3B60
-	.short 0x3BA6
+	.short 0x3B60 # Apron Taunt 2
+	.short 0x3BA6 # Introduction Walking
 	.short 0x3BB0
 	.short 0x3BD8
-	.short 0x3BF6
-	.short 0x3C00
-	.short 0x3C0A
-	.short 0x3C14
-	.short 0x3C1E
-	.short 0x3C3C
-	.short 0x3C46
-	.short 0x3DCC
+	.short 0x3BF6 # WM2K Sitting Leg Face Up Attack
+	.short 0x3C00 # WM2K Sitting Leg Face Up Attack Reversal
+	.short 0x3C0A # WM2K Sitting Leg Face Down Attack
+	.short 0x3C14 # WM2K Sitting Leg Face Down Attack Reversal
+	.short 0x3C1E # Front Maximum Grapple
+	.short 0x3C3C # Back Maximum Grapple
+	.short 0x3C46 # Front Weak Grapple B
+	.short 0x3DCC # Strong Running Strike
 
 	.short 0x7530 # unsure what this is for, though.
 
@@ -370,8 +373,8 @@ tbl_MasterMoveMods_FrontGrappleSpecial:
 	.short 0x07EE
 	.short 0xFFFF # section end
 
-# 8003DCF0
-tbl_MasterMoveMods_8003DCF0:
+# 8003DCF0 (Combo Strikes)
+tbl_MasterMoveMods_ComboStrikes:
 	.short 0x0000 # None
 	.short 0x07F8 # Low Kick
 	.short 0x0802
@@ -544,8 +547,8 @@ tbl_MasterMoveMods_BackGrappleCounter:
 	.short 0x0DDE
 	.short 0xFFFF # section end
 
-# 8003DE34 (Grapple to Running Opponent?)
-tbl_MasterMoveMods_8003DE34:
+# 8003DE34 (Irish Whip Grapple)
+tbl_MasterMoveMods_IrishWhipGrapple:
 	.short 0x0000 # None
 	.short 0x0DE8 # Monkey Flip
 	.short 0x0DF2
@@ -581,8 +584,8 @@ tbl_MasterMoveMods_8003DE34:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DE78 (Special Grapple to Running Opponent)
-tbl_MasterMoveMods_8003DE78:
+# 8003DE78 (Special Irish Whip Grapple)
+tbl_MasterMoveMods_IrishWhipGrappleSpecial:
 	.short 0x0000 # None
 	.short 0x0F1E
 	.short 0x0F28 # Body Press Ace Crusher
@@ -618,14 +621,14 @@ tbl_MasterMoveMods_RunningBackGrapple:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DEB0
+# 8003DEB0 (Corner Running Front Grapple - unimplemented)
 tbl_MasterMoveMods_8003DEB0:
 	.short 0x0000 # None
 	.short 0x0FF0
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DEB8
+# 8003DEB8 (Corner Running Back Grapple - unimplemented)
 tbl_MasterMoveMods_8003DEB8:
 	.short 0x0000 # None
 	.short 0x0FFA
@@ -739,7 +742,7 @@ tbl_MasterMoveMods_8003DF4C:
 	.short 0x0000
 
 # 8003DF58 (Ring to Apron Grapple)
-tbl_MasterMoveMods_8003DF58:
+tbl_MasterMoveMods_RingToApronGrapple:
 	.short 0x0000 # None
 	.short 0x1216 # Club to Chest
 	.short 0x1220 # Suplex to Inside
@@ -752,15 +755,15 @@ tbl_MasterMoveMods_8003DF60:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DF68
-tbl_MasterMoveMods_8003DF68:
+# 8003DF68 (Apron Grapple Reversal)
+tbl_MasterMoveMods_ApronGrappleReversal:
 	.short 0x0000 # None
 	.short 0x1234
 	.short 0x123E
 	.short 0xFFFF # section end
 
 # 8003DF70 (Apron to Ring Grapple)
-tbl_MasterMoveMods_8003DF70:
+tbl_MasterMoveMods_ApronToRingGrapple:
 	.short 0x0000 # None
 	.short 0x1248 # Arm Breaker
 	.short 0x1252
@@ -771,7 +774,7 @@ tbl_MasterMoveMods_8003DF70:
 	.short 0x0000
 
 # 8003DF80 (Apron to Ring Grapple Special)
-tbl_MasterMoveMods_8003DF80:
+tbl_MasterMoveMods_ApronToRingSpecialGrapple:
 	.short 0x0000 # None
 	.short 0x127A # Chokeslam to outside
 	.short 0x1284 # Powerbomb to outside
@@ -786,15 +789,15 @@ tbl_MasterMoveMods_8003DF8C:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DF94
-tbl_MasterMoveMods_8003DF94:
+# 8003DF94 (Test of Strength)
+tbl_MasterMoveMods_TestOfStrength:
 	.short 0x0000 # None
 	.short 0x12A2
 	.short 0x12AC
 	.short 0xFFFF # section end
 
-# 8003DF9C
-tbl_MasterMoveMods_8003DF9C:
+# 8003DF9C (Apron Strike to Ring)
+tbl_MasterMoveMods_ApronStrikeToRing:
 	.short 0x0000 # None
 	.short 0x12B6 # Elbow Smash
 	.short 0x12C0 # Knee Strike
@@ -802,22 +805,22 @@ tbl_MasterMoveMods_8003DF9C:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DFA8
-tbl_MasterMoveMods_8003DFA8:
+# 8003DFA8 (Apron Strike to Outside)
+tbl_MasterMoveMods_ApronStrikeToOutside:
 	.short 0x0000 # None
 	.short 0x12D4 # Strong Kick
 	.short 0x12DE # Weak Kick
 	.short 0xFFFF # section end
 
-# 8003DFB0
-tbl_MasterMoveMods_8003DFB0:
+# 8003DFB0 (Cut Strike)
+tbl_MasterMoveMods_CutStrike:
 	.short 0x0000 # None
 	.short 0x12E8
 	.short 0x12F2
 	.short 0xFFFF # section end
 
-# 8003DFB8
-tbl_MasterMoveMods_8003DFB8:
+# 8003DFB8 (Running Cut Strike)
+tbl_MasterMoveMods_RunningCutStrike:
 	.short 0x0000 # None
 	.short 0x12FC
 	.short 0x1306
@@ -830,22 +833,22 @@ tbl_MasterMoveMods_8003DFC0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003DFC8
-tbl_MasterMoveMods_8003DFC8:
+# 8003DFC8 (Super Heavyweight Front Grapple)
+tbl_MasterMoveMods_SuperHeavyFrontGrapple:
 	.short 0x0000 # None
 	.short 0x131A # Super Heavyweight Bodyslam
 	.short 0x1324
 	.short 0xFFFF # section end
 
-# 8003DFD0
-tbl_MasterMoveMods_8003DFD0:
+# 8003DFD0 (Super Heavyweight Back Grapple)
+tbl_MasterMoveMods_SuperHeavyBackGrapple:
 	.short 0x0000 # None
 	.short 0x132E # Super Heavyweight Backdrop
 	.short 0x1338
 	.short 0xFFFF # section end
 
 # 8003DFD8 (Double Team Front Grapple)
-tbl_MasterMoveMods_8003DFD8:
+tbl_MasterMoveMods_DoubleTeamFrontGrapple:
 	.short 0x0000 # None
 	.short 0x1342 # Wishbone Split
 	.short 0x134C
@@ -856,20 +859,20 @@ tbl_MasterMoveMods_8003DFD8:
 	.short 0x0000
 
 # 8003DFE8 (Double Team Back Grapple)
-tbl_MasterMoveMods_8003DFE8:
+tbl_MasterMoveMods_DoubleTeamBackGrapple:
 	.short 0x0000 # None
 	.short 0x1374 # Double Atomic Drop
 	.short 0x137E # Double Face Crusher
 	.short 0xFFFF # section end
 
 # 8003DFF0 (Double Team Sandwich Grapple)
-tbl_MasterMoveMods_8003DFF0:
+tbl_MasterMoveMods_DoubleTeamSandwichGrapple:
 	.short 0x0000 # None
 	.short 0x1388 # Double Piledriver
 	.short 0x1392 # Double Powerbomb
 	.short 0xFFFF # section end
 
-# 8003DFF8
+# 8003DFF8 (Double Team Front Grapple On Shoulders - unimplemented)
 tbl_MasterMoveMods_8003DFF8:
 	.short 0x0000 # None
 	.short 0x139C
@@ -878,7 +881,7 @@ tbl_MasterMoveMods_8003DFF8:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E004
+# 8003E004 (Double Team Back Grapple On Shoulders - unimplemented)
 tbl_MasterMoveMods_8003E004:
 	.short 0x0000 # None
 	.short 0x13BA
@@ -887,8 +890,8 @@ tbl_MasterMoveMods_8003E004:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E010 (probably Double Team Lifted Reversal)
-tbl_MasterMoveMods_8003E010:
+# 8003E010 (Double Team Lifted Reversal)
+tbl_MasterMoveMods_DoubleTeamLiftReversal:
 	.short 0x0000 # None
 	.short 0x13D8 # Punching Reversal
 	.short 0x13E2 # Pinning Reversal
@@ -896,29 +899,29 @@ tbl_MasterMoveMods_8003E010:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E01C
+# 8003E01C (Double Team Front Grapple Brainbuster - unimplemented)
 tbl_MasterMoveMods_8003E01C:
 	.short 0x0000 # None
 	.short 0x13F6
 	.short 0x1400
 	.short 0xFFFF # section end
 
-# 8003E024
+# 8003E024 (Double Team Back Grapple Brainbuster - unimplemented)
 tbl_MasterMoveMods_8003E024:
 	.short 0x0000 # None
 	.short 0x140A
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E02C
+# 8003E02C (Double Team Front Reversal - unimplemented)
 tbl_MasterMoveMods_8003E02C:
 	.short 0x0000 # None
 	.short 0x1414
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E034
-tbl_MasterMoveMods_8003E034:
+# 8003E034 (Weak Arm Striking)
+tbl_MasterMoveMods_WeakArmStrikes:
 	.short 0x0000 # None
 	.short 0x141E # Elbow Strike
 	.short 0x1428 # Chop
@@ -938,8 +941,8 @@ tbl_MasterMoveMods_8003E034:
 	.short 0x14B4
 	.short 0xFFFF # section end
 
-# 8003E058
-tbl_MasterMoveMods_8003E058:
+# 8003E058 (Weak Leg Striking)
+tbl_MasterMoveMods_WeakLegStrikes:
 	.short 0x0000 # None
 	.short 0x14BE # "Front Kick 04"
 	.short 0x14C8
@@ -963,8 +966,8 @@ tbl_MasterMoveMods_8003E058:
 	.short 0x157C
 	.short 0xFFFF # section end
 
-# 8003E084
-tbl_MasterMoveMods_8003E084:
+# 8003E084 (Corner Striking)
+tbl_MasterMoveMods_CornerStrikes:
 	.short 0x0000 # None
 	.short 0x1586 # Elbow Strike
 	.short 0x1590
@@ -980,15 +983,15 @@ tbl_MasterMoveMods_8003E084:
 	.short 0x15F4
 	.short 0xFFFF # section end
 
-# 8003E0A0
-tbl_MasterMoveMods_8003E0A0:
+# 8003E0A0 (Tree of Woe Striking)
+tbl_MasterMoveMods_TreeOfWoeStrikes:
 	.short 0x0000 # None
 	.short 0x15FE # Front Kick
 	.short 0x1608 # Middle Kick
 	.short 0xFFFF # section end
 
-# 8003E0A8
-tbl_MasterMoveMods_8003E0A8:
+# 8003E0A8 (Counter Punch)
+tbl_MasterMoveMods_CounterPunch:
 	.short 0x0000 # None
 	.short 0x1612 # Armbreaker
 	.short 0x161C
@@ -1002,8 +1005,8 @@ tbl_MasterMoveMods_8003E0A8:
 	.short 0x166C
 	.short 0xFFFF # section end
 
-# 8003E0C0
-tbl_MasterMoveMods_8003E0C0:
+# 8003E0C0 (Counter Punch Special)
+tbl_MasterMoveMods_CounterPunchSpecial:
 	.short 0x0000 # None
 	.short 0x1676 # Backslide
 	.short 0x1680
@@ -1015,8 +1018,8 @@ tbl_MasterMoveMods_8003E0C0:
 	.short 0x16BC
 	.short 0xFFFF # section end
 
-# 8003E0D4
-tbl_MasterMoveMods_8003E0D4:
+# 8003E0D4 (Counter Kick)
+tbl_MasterMoveMods_CounterKick:
 	.short 0x0000 # None
 	.short 0x16C6 # Pushing Takedown
 	.short 0x16D0
@@ -1036,8 +1039,8 @@ tbl_MasterMoveMods_8003E0D4:
 	.short 0x175C # Low Blow 4
 	.short 0xFFFF # section end
 
-# 8003E0F8
-tbl_MasterMoveMods_8003E0F8:
+# 8003E0F8 (Counter Kick Special)
+tbl_MasterMoveMods_CounterKickSpecial:
 	.short 0x0000 # None
 	.short 0x1766 # Capture Suplex
 	.short 0x1770
@@ -1052,8 +1055,8 @@ tbl_MasterMoveMods_8003E104:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E10C
-tbl_MasterMoveMods_8003E10C:
+# 8003E10C (Strong Striking)
+tbl_MasterMoveMods_StrongStrikes:
 	.short 0x0000 # None
 	.short 0x1798 # Big Kick
 	.short 0x17A2
@@ -1179,8 +1182,8 @@ tbl_MasterMoveMods_8003E1F0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E1F8
-tbl_MasterMoveMods_8003E1F8:
+# 8003E1F8 (Weak Running Strike)
+tbl_MasterMoveMods_WeakRunningStrikes:
 	.short 0x0000 # None
 	.short 0x1BE4 # Kitchen Sink 01
 	.short 0x1BEE
@@ -1210,8 +1213,8 @@ tbl_MasterMoveMods_8003E1F8:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E230
-tbl_MasterMoveMods_8003E230:
+# 8003E230 (Corner Running Strike)
+tbl_MasterMoveMods_CornerRunningStrikes:
 	.short 0x0000 # None
 	.short 0x1CDE # Handspring Back Elbow Smash
 	.short 0x1CE8 # Stinger Splash
@@ -1238,8 +1241,8 @@ tbl_MasterMoveMods_BackGrappleSpecial:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E25C
-tbl_MasterMoveMods_8003E25C:
+# 8003E25C (Irish Whip Counter)
+tbl_MasterMoveMods_IrishWhipCounter:
 	.short 0x0000 # None
 	.short 0x1D88 # Back Elbow
 	.short 0x1D92
@@ -1249,8 +1252,8 @@ tbl_MasterMoveMods_8003E25C:
 	.short 0x1DBA
 	.short 0xFFFF # section end
 
-# 8003E26C (Corner Reversal Type?)
-tbl_MasterMoveMods_8003E26C:
+# 8003E26C (Corner Stop Reversal)
+tbl_MasterMoveMods_CornerStopReversal:
 	.short 0x0000 # None
 	.short 0x1DC4 # Boot to Face
 	.short 0x1DCE # Slingshot
@@ -1266,7 +1269,7 @@ tbl_MasterMoveMods_Evasion:
 	.short 0xFFFF # section end
 
 # 8003E280 (Attack to Downed)
-tbl_MasterMoveMods_8003E280:
+tbl_MasterMoveMods_AttackToDowned:
 	.short 0x0000 # None
 	.short 0x1DF6 # Stomping
 	.short 0x1E00
@@ -1301,7 +1304,7 @@ tbl_MasterMoveMods_8003E280:
 	.short 0xFFFF # section end
 
 # 8003E2C0 (Running Attack to Downed)
-tbl_MasterMoveMods_8003E2C0:
+tbl_MasterMoveMods_RunningAttackToDowned:
 	.short 0x0000 # None
 	.short 0x1F22 # Running Elbowdrop
 	.short 0x1F2C
@@ -1317,8 +1320,8 @@ tbl_MasterMoveMods_8003E2C0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E2DC
-tbl_MasterMoveMods_8003E2DC:
+# 8003E2DC (Sitting Strike Face Up)
+tbl_MasterMoveMods_SittingFaceUpStrikes:
 	.short 0x0000 # None
 	.short 0x1F90 # Jumping Front Dropkick
 	.short 0x1F9A
@@ -1366,8 +1369,8 @@ tbl_MasterMoveMods_8003E2DC:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E338
-tbl_MasterMoveMods_8003E338:
+# 8003E338 (Sitting Strike Face Down)
+tbl_MasterMoveMods_SittingFaceDownStrikes:
 	.short 0x0000 # None
 	.short 0x213E # "Flipping Heel Kick"
 	.short 0x2148
@@ -1445,8 +1448,8 @@ tbl_MasterMoveMods_8003E3B8:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E3C4
-tbl_MasterMoveMods_8003E3C4:
+# 8003E3C4 (Counter Kick Special Grapple Reversals)
+tbl_MasterMoveMods_CounterKickSpecial_GrappleReversals:
 	.short 0x0000 # None
 	.short 0x23A0 # Counter Back Weak Grapple [A+Direction]
 	.short 0x23AA
@@ -1551,7 +1554,7 @@ tbl_MasterMoveMods_IntroTaunts:
 	.short 0x0000
 
 # 8003E484 (Standing Taunts)
-tbl_MasterMoveMods_8003E484:
+tbl_MasterMoveMods_StandingTaunts:
 	.short 0x0000 # None
 	.short 0x2710 # Giant Baba 01
 	.short 0x271A
@@ -1708,8 +1711,8 @@ tbl_MasterMoveMods_8003E5AC:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E5B4
-tbl_MasterMoveMods_8003E5B4:
+# 8003E5B4 (Ducking Taunt)
+tbl_MasterMoveMods_DuckingTaunts:
 	.short 0x0000 # None
 	.short 0x2CCE # "taunt 09"
 	.short 0x2CD8
@@ -1731,8 +1734,8 @@ tbl_MasterMoveMods_8003E5B4:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E5DC
-tbl_MasterMoveMods_8003E5DC:
+# 8003E5DC (In Corner Taunt)
+tbl_MasterMoveMods_InCornerTaunts:
 	.short 0x0000 # None
 	.short 0x2D78 # "taunt 07"
 	.short 0x2D82
@@ -1744,8 +1747,8 @@ tbl_MasterMoveMods_8003E5DC:
 	.short 0x2DBE
 	.short 0xFFFF # section end
 
-# 8003E5F0
-tbl_MasterMoveMods_8003E5F0:
+# 8003E5F0 (On Post Taunt)
+tbl_MasterMoveMods_OnPostTaunts:
 	.short 0x0000 # None
 	.short 0x2DC8 # "taunt 02"
 	.short 0x2DD2
@@ -1759,8 +1762,8 @@ tbl_MasterMoveMods_8003E5F0:
 	.short 0x2E22
 	.short 0xFFFF # section end
 
-# 8003E608
-tbl_MasterMoveMods_8003E608:
+# 8003E608 (Apron Taunt)
+tbl_MasterMoveMods_ApronTaunts:
 	.short 0x0000 # None
 	.short 0x2E2C # "taunt 01"
 	.short 0x2E36
@@ -1773,7 +1776,7 @@ tbl_MasterMoveMods_8003E608:
 	.short 0x0000
 
 # 8003E61C (Ground Grapple Face Up at Head)
-tbl_MasterMoveMods_8003E61C:
+tbl_MasterMoveMods_GroundGrapple_FaceUp_Head:
 	.short 0x0000 # None
 	.short 0x2E72 # Front Headlock
 	.short 0x2E7C
@@ -1802,7 +1805,7 @@ tbl_MasterMoveMods_8003E61C:
 	.short 0x0000
 
 # 8003E650 (Ground Grapple Face Down at Head)
-tbl_MasterMoveMods_8003E650:
+tbl_MasterMoveMods_GroundGrapple_FaceDown_Head:
 	.short 0x0000 # None
 	.short 0x2F58 # Camel Clutch
 	.short 0x2F62
@@ -1816,22 +1819,22 @@ tbl_MasterMoveMods_8003E650:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E668
-tbl_MasterMoveMods_8003E668:
+# 8003E668 (Downed Head Submission Face Up Reversal)
+tbl_MasterMoveMods_GroundGrapple_FaceUp_Head_Reversal:
 	.short 0x0000 # None
 	.short 0x2FB2
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E670
-tbl_MasterMoveMods_8003E670:
+# 8003E670 (Downed Head Submission Face Down Reversal)
+tbl_MasterMoveMods_GroundGrapple_FaceDown_Head_Reversal:
 	.short 0x0000 # None
 	.short 0x2FBC
 	.short 0xFFFF # section end
 	.short 0x0000
 
 # 8003E678 (Ground Grapple Face Up at Legs)
-tbl_MasterMoveMods_8003E678:
+tbl_MasterMoveMods_GroundGrapple_FaceUp_Legs:
 	.short 0x0000 # None
 	.short 0x2FC6 # Boston Crab
 	.short 0x2FD0
@@ -1854,7 +1857,7 @@ tbl_MasterMoveMods_8003E678:
 	.short 0x0000
 
 # 8003E6A0 (Ground Grapple Face Down at Legs)
-tbl_MasterMoveMods_8003E6A0:
+tbl_MasterMoveMods_GroundGrapple_FaceDown_Legs:
 	.short 0x0000 # None
 	.short 0x3070 # Boston Crab
 	.short 0x307A
@@ -1868,14 +1871,14 @@ tbl_MasterMoveMods_8003E6A0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E6B8
+# 8003E6B8 (Downed Legs Submission Face Up Reversal)
 tbl_MasterMoveMods_8003E6B8:
 	.short 0x0000 # None
 	.short 0x30CA # Kick to Face Reversal
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E6C0
+# 8003E6C0 (Downed Legs Submission Face Down Reversal)
 tbl_MasterMoveMods_8003E6C0:
 	.short 0x0000 # None
 	.short 0x30D4 # Boston Crab Reversal
@@ -1904,50 +1907,50 @@ tbl_MasterMoveMods_8003E6DC:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E6E8
+# 8003E6E8 (Sitting Head Submission Face Up Reversal)
 tbl_MasterMoveMods_8003E6E8:
 	.short 0x0000 # None
 	.short 0x314C # Kick to Head Counter
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E6F0
+# 8003E6F0 (Sitting Head Submission Face Down Reversal)
 tbl_MasterMoveMods_8003E6F0:
 	.short 0x0000 # None
 	.short 0x3156 # Leg Trip Counter
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E6F8
-tbl_MasterMoveMods_8003E6F8:
+# 8003E6F8 (Mounted Face Up Grapple)
+tbl_MasterMoveMods_MountFaceUpGrapple:
 	.short 0x0000 # None
 	.short 0x3160 # Armbar
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E700
-tbl_MasterMoveMods_8003E700:
+# 8003E700 (Mounted Face Up Grapple Reversal)
+tbl_MasterMoveMods_MountFaceUpGrappleReversal:
 	.short 0x0000 # None
 	.short 0x316A # Armbar to Armbar Counter
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E708
-tbl_MasterMoveMods_8003E708:
+# 8003E708 (Mounted Face Down Grapple)
+tbl_MasterMoveMods_MountFaceDownGrapple:
 	.short 0x0000 # None
 	.short 0x3174 # Rear Naked Choke
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E710
-tbl_MasterMoveMods_8003E710:
+# 8003E710 (Mounted Face Down Grapple Reversal)
+tbl_MasterMoveMods_MountFaceDownGrappleReversal:
 	.short 0x0000 # None
 	.short 0x317E # Rear Naked Choke Counter
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E718
-tbl_MasterMoveMods_8003E718:
+# 8003E718 (Diving Attack to Standing)
+tbl_MasterMoveMods_PostStandingAttack:
 	.short 0x0000 # None
 	.short 0x3188 # Elbow Strike
 	.short 0x3192
@@ -1969,8 +1972,8 @@ tbl_MasterMoveMods_8003E718:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E740
-tbl_MasterMoveMods_8003E740:
+# 8003E740 (Diving Attack to Ground, non-pinning)
+tbl_MasterMoveMods_PostGroundAttack_NoPin:
 	.short 0x0000 # None
 	.short 0x3232 # Elbowdrop
 	.short 0x323C
@@ -1984,8 +1987,8 @@ tbl_MasterMoveMods_8003E740:
 	.short 0x328C
 	.short 0xFFFF # section end
 
-# 8003E758
-tbl_MasterMoveMods_8003E758:
+# 8003E758 (Diving Attack to Ground, pinning)
+tbl_MasterMoveMods_PostGroundAttack_Pin:
 	.short 0x0000 # None
 	.short 0x3296 # Moonsault
 	.short 0x32A0
@@ -1999,8 +2002,8 @@ tbl_MasterMoveMods_8003E758:
 	.short 0x32F0
 	.short 0xFFFF # section end
 
-# 8003E770
-tbl_MasterMoveMods_8003E770:
+# 8003E770 (Running Dive)
+tbl_MasterMoveMods_RunningDive:
 	.short 0x0000 # None
 	.short 0x32FA # Baseball Slide
 	.short 0x3304
@@ -2017,14 +2020,14 @@ tbl_MasterMoveMods_8003E770:
 	.short 0xFFFF # section end
 
 # 8003E78C (Running Rope Taunt)
-tbl_MasterMoveMods_8003E78C:
+tbl_MasterMoveMods_RunningDiveTaunts:
 	.short 0x0000 # None
 	.short 0x3372 # Dive Feint
 	.short 0x337C # Misawa Flip Feint
 	.short 0xFFFF # section end
 
-# 8003E794
-tbl_MasterMoveMods_8003E794:
+# 8003E794 (Plancha)
+tbl_MasterMoveMods_Plancha:
 	.short 0x0000 # None
 	.short 0x3386 # Plancha
 	.short 0x3390
@@ -2032,15 +2035,15 @@ tbl_MasterMoveMods_8003E794:
 	.short 0x33A4
 	.short 0xFFFF # section end
 
-# 8003E7A0 (probably Direction+A near ropes with downed opponent)
-tbl_MasterMoveMods_8003E7A0:
+# 8003E7A0 (Rope Splash Attack)
+tbl_MasterMoveMods_RopeSplashAttack:
 	.short 0x0000 # None
 	.short 0x33AE # Moonsault from 2nd rope
 	.short 0xFFFF # section end
 	.short 0x0000
 
 # 8003E7A8 (Corner Splash Attack)
-tbl_MasterMoveMods_8003E7A8:
+tbl_MasterMoveMods_CornerSplashAttack:
 	.short 0x0000 # None
 	.short 0x33B8 # Body Splash
 	.short 0x33C2 # Diving Elbow
@@ -2049,7 +2052,7 @@ tbl_MasterMoveMods_8003E7A8:
 	.short 0xFFFF # section end
 
 # 8003E7B4 (Dive from Apron to Outside)
-tbl_MasterMoveMods_8003E7B4:
+tbl_MasterMoveMods_ApronDive:
 	.short 0x0000 # None
 	.short 0x33E0
 	.short 0x33EA
@@ -2058,7 +2061,7 @@ tbl_MasterMoveMods_8003E7B4:
 	.short 0x0000
 
 # 8003E7C0 (Running Dive from Apron to Outside)
-tbl_MasterMoveMods_8003E7C0:
+tbl_MasterMoveMods_RunningApronDive:
 	.short 0x0000 # None
 	.short 0x33FE # con Hilo
 	.short 0x3408 # Dropkick
@@ -2066,8 +2069,8 @@ tbl_MasterMoveMods_8003E7C0:
 	.short 0x341C
 	.short 0xFFFF # section end
 
-# 8003E7CC
-tbl_MasterMoveMods_8003E7CC:
+# 8003E7CC (Springboard Standing Attack)
+tbl_MasterMoveMods_SpringboardToStanding:
 	.short 0x0000 # None
 	.short 0x3426 # Dropkick
 	.short 0x3430
@@ -2075,15 +2078,15 @@ tbl_MasterMoveMods_8003E7CC:
 	.short 0x3444
 	.short 0xFFFF # section end
 
-# 8003E7D8
-tbl_MasterMoveMods_8003E7D8:
+# 8003E7D8 (Springboard Double Team Attack)
+tbl_MasterMoveMods_SpringboardDoubleTeam:
 	.short 0x0000 # None
 	.short 0x344E # Missile Dropkick
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E7E0
-tbl_MasterMoveMods_8003E7E0:
+# 8003E7E0 (Springboard Downed Attack)
+tbl_MasterMoveMods_SpringboardToDowned:
 	.short 0x0000 # None
 	.short 0x3458 # Slingshot Body Splash
 	.short 0x3462
@@ -2091,17 +2094,17 @@ tbl_MasterMoveMods_8003E7E0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E7EC
-tbl_MasterMoveMods_8003E7EC:
+# 8003E7EC (Rope Rebound Attack)
+tbl_MasterMoveMods_RopeReboundAttack:
 	.short 0x0000 # None
 	.short 0x3476 # Moonsault
 	.short 0x3480 # Back Elbow
 	.short 0xFFFF # section end
 
-# 8003E7F4
-tbl_MasterMoveMods_8003E7F4:
+# 8003E7F4 (Double Team Post Attack)
+tbl_MasterMoveMods_PostDoubleTeamAttack:
 	.short 0x0000 # None
-	.short 0x348A # Doomsday Device (??)
+	.short 0x348A # Doomsday Device
 	.short 0xFFFF # section end
 	.short 0x0000
 
@@ -2116,15 +2119,15 @@ tbl_MasterMoveMods_ComboStance:
 	.short 0x34C6
 	.short 0xFFFF # section end
 
-# 8003E80C
-tbl_MasterMoveMods_8003E80C:
+# 8003E80C (Apron to Apron Strike)
+tbl_MasterMoveMods_ApronToApronStrikes:
 	.short 0x0000 # None
 	.short 0x34D0 # Kick off apron
 	.short 0x34DA # Chop off apron
 	.short 0xFFFF # section end
 
-# 8003E814
-tbl_MasterMoveMods_8003E814:
+# 8003E814 (Old Shootfighting Combo Strikes)
+tbl_MasterMoveMods_OldShootComboStrikes:
 	.short 0x0000 # None
 	.short 0x34E4
 	.short 0x34EE
@@ -2134,8 +2137,8 @@ tbl_MasterMoveMods_8003E814:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E824
-tbl_MasterMoveMods_8003E824:
+# 8003E824 (Introduction Taunts 2)
+tbl_MasterMoveMods_IntroTaunts2:
 	.short 0x0000 # None
 	.short 0x3516 # "Al Snow"
 	.short 0x3520
@@ -2161,8 +2164,8 @@ tbl_MasterMoveMods_8003E824:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E854
-tbl_MasterMoveMods_8003E854:
+# 8003E854 (Introduction Taunts 3)
+tbl_MasterMoveMods_IntroTaunts3:
 	.short 0x0000 # None
 	.short 0x35E8 # "Big Show"
 	.short 0x35F2
@@ -2176,8 +2179,8 @@ tbl_MasterMoveMods_8003E854:
 	.short 0x3642
 	.short 0xFFFF # section end
 
-# 8003E86C
-tbl_MasterMoveMods_8003E86C:
+# 8003E86C (Standing Taunts 2)
+tbl_MasterMoveMods_StandingTaunts2:
 	.short 0x0000 # None
 	.short 0x364C # "Big Show 01"
 	.short 0x3656
@@ -2281,8 +2284,8 @@ tbl_MasterMoveMods_8003E86C:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E938
-tbl_MasterMoveMods_8003E938:
+# 8003E938 (Counter Punch Special Grapple Reversals)
+tbl_MasterMoveMods_CounterPunchSpecial_GrappleReversals:
 	.short 0x0000 # None
 	.short 0x3A2A # Counter Strong Grapple [B]
 	.short 0x3A34 # Counter Strong Grapple [B+Left/Right]
@@ -2290,8 +2293,8 @@ tbl_MasterMoveMods_8003E938:
 	.short 0x3A48 # Counter Strong Grapple [B+Down]
 	.short 0xFFFF # section end
 
-# 8003E944
-tbl_MasterMoveMods_8003E944:
+# 8003E944 (Ducking Taunts 2)
+tbl_MasterMoveMods_DuckingTaunts2:
 	.short 0x0000 # None
 	.short 0x3A52 # "Edge"
 	.short 0x3A5C
@@ -2311,8 +2314,8 @@ tbl_MasterMoveMods_8003E944:
 	.short 0x3AE8
 	.short 0xFFFF # section end
 
-# 8003E968
-tbl_MasterMoveMods_8003E968:
+# 8003E968 (In Corner Taunts 2)
+tbl_MasterMoveMods_InCornerTaunts2:
 	.short 0x0000 # None
 	.short 0x3AF2 # "Steve Austin"
 	.short 0x3AFC
@@ -2333,8 +2336,8 @@ tbl_MasterMoveMods_8003E980:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E988
-tbl_MasterMoveMods_8003E988:
+# 8003E988 (Apron Taunts 2)
+tbl_MasterMoveMods_ApronTaunts2:
 	.short 0x0000 # None
 	.short 0x3B60 # "nWo"
 	.short 0x3B6A
@@ -2346,8 +2349,8 @@ tbl_MasterMoveMods_8003E988:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E99C
-tbl_MasterMoveMods_8003E99C:
+# 8003E99C (Introduction Walking)
+tbl_MasterMoveMods_IntroWalking:
 	.short 0x0000 # None
 	.short 0x3BA6 # Generic Walk
 	.short 0xFFFF # section end
@@ -2371,28 +2374,28 @@ tbl_MasterMoveMods_8003E9B0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E9BC
+# 8003E9BC (WM2K Sitting Leg Face Up Attack)
 tbl_MasterMoveMods_8003E9BC:
 	.short 0x0000 # None
 	.short 0x3BF6
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E9C4
+# 8003E9C4 (WM2K Sitting Leg Face Up Attack Reversal)
 tbl_MasterMoveMods_8003E9C4:
 	.short 0x0000 # None
 	.short 0x3C00
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E9CC
+# 8003E9CC (WM2K Sitting Leg Face Down Attack)
 tbl_MasterMoveMods_8003E9CC:
 	.short 0x0000 # None
 	.short 0x3C0A
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E9D4
+# 8003E9D4 (WM2K Sitting Leg Face Down Reversal)
 tbl_MasterMoveMods_8003E9D4:
 	.short 0x0000 # None
 	.short 0x3C14
@@ -2415,8 +2418,8 @@ tbl_MasterMoveMods_BackGrappleSuperSpecial:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003E9F0
-tbl_MasterMoveMods_8003E9F0:
+# 8003E9F0 (Front Weak Grapple B)
+tbl_MasterMoveMods_FrontGrappleWeakB:
 	.short 0x0000 # None
 	.short 0x3C46 # Headlock Takedown
 	.short 0x3C50
@@ -2460,8 +2463,8 @@ tbl_MasterMoveMods_8003E9F0:
 	.short 0xFFFF # section end
 	.short 0x0000
 
-# 8003EA44
-tbl_MasterMoveMods_8003EA44:
+# 8003EA44 (Strong Running Strike)
+tbl_MasterMoveMods_StrongRunningStrikes:
 	.short 0x0000 # None
 	.short 0x3DCC # "Running Clothesline 01"
 	.short 0x3DD6
@@ -2506,12 +2509,12 @@ ptrTbl_MasterMoveMods:
 	.word tbl_MasterMoveMods_FrontGrappleWeak
 	.word tbl_MasterMoveMods_FrontGrappleStrong
 	.word tbl_MasterMoveMods_FrontGrappleSpecial
-	.word tbl_MasterMoveMods_8003DCF0
+	.word tbl_MasterMoveMods_ComboStrikes
 	.word tbl_MasterMoveMods_BackGrappleWeak
 	.word tbl_MasterMoveMods_BackGrappleStrong
 	.word tbl_MasterMoveMods_BackGrappleCounter
-	.word tbl_MasterMoveMods_8003DE34
-	.word tbl_MasterMoveMods_8003DE78
+	.word tbl_MasterMoveMods_IrishWhipGrapple
+	.word tbl_MasterMoveMods_IrishWhipGrappleSpecial
 	.word tbl_MasterMoveMods_RunningFrontGrapple
 	.word tbl_MasterMoveMods_RunningBackGrapple
 	.word tbl_MasterMoveMods_8003DEB0
@@ -2526,105 +2529,105 @@ ptrTbl_MasterMoveMods:
 	.word tbl_MasterMoveMods_TurnbuckleCounterBack
 	.word tbl_MasterMoveMods_8003DF44
 	.word tbl_MasterMoveMods_8003DF4C
-	.word tbl_MasterMoveMods_8003DF58
+	.word tbl_MasterMoveMods_RingToApronGrapple
 	.word tbl_MasterMoveMods_8003DF60
-	.word tbl_MasterMoveMods_8003DF68
-	.word tbl_MasterMoveMods_8003DF70
-	.word tbl_MasterMoveMods_8003DF80
+	.word tbl_MasterMoveMods_ApronGrappleReversal
+	.word tbl_MasterMoveMods_ApronToRingGrapple
+	.word tbl_MasterMoveMods_ApronToRingSpecialGrapple
 	.word tbl_MasterMoveMods_8003DF8C
-	.word tbl_MasterMoveMods_8003DF94
-	.word tbl_MasterMoveMods_8003DF9C
-	.word tbl_MasterMoveMods_8003DFA8
-	.word tbl_MasterMoveMods_8003DFB0
-	.word tbl_MasterMoveMods_8003DFB8
+	.word tbl_MasterMoveMods_TestOfStrength
+	.word tbl_MasterMoveMods_ApronStrikeToRing
+	.word tbl_MasterMoveMods_ApronStrikeToOutside
+	.word tbl_MasterMoveMods_CutStrike
+	.word tbl_MasterMoveMods_RunningCutStrike
 	.word tbl_MasterMoveMods_8003DFC0
-	.word tbl_MasterMoveMods_8003DFC8
-	.word tbl_MasterMoveMods_8003DFD0
-	.word tbl_MasterMoveMods_8003DFD8
-	.word tbl_MasterMoveMods_8003DFE8
-	.word tbl_MasterMoveMods_8003DFF0
+	.word tbl_MasterMoveMods_SuperHeavyFrontGrapple
+	.word tbl_MasterMoveMods_SuperHeavyBackGrapple
+	.word tbl_MasterMoveMods_DoubleTeamFrontGrapple
+	.word tbl_MasterMoveMods_DoubleTeamBackGrapple
+	.word tbl_MasterMoveMods_DoubleTeamSandwichGrapple
 	.word tbl_MasterMoveMods_8003DFF8
 	.word tbl_MasterMoveMods_8003E004
-	.word tbl_MasterMoveMods_8003E010
+	.word tbl_MasterMoveMods_DoubleTeamLiftReversal
 	.word tbl_MasterMoveMods_8003E01C
 	.word tbl_MasterMoveMods_8003E024
 	.word tbl_MasterMoveMods_8003E02C
-	.word tbl_MasterMoveMods_8003E034
-	.word tbl_MasterMoveMods_8003E058
-	.word tbl_MasterMoveMods_8003E084
-	.word tbl_MasterMoveMods_8003E0A0
-	.word tbl_MasterMoveMods_8003E0A8
-	.word tbl_MasterMoveMods_8003E0C0
-	.word tbl_MasterMoveMods_8003E0D4
-	.word tbl_MasterMoveMods_8003E0F8
+	.word tbl_MasterMoveMods_WeakArmStrikes
+	.word tbl_MasterMoveMods_WeakLegStrikes
+	.word tbl_MasterMoveMods_CornerStrikes
+	.word tbl_MasterMoveMods_TreeOfWoeStrikes
+	.word tbl_MasterMoveMods_CounterPunch
+	.word tbl_MasterMoveMods_CounterPunchSpecial
+	.word tbl_MasterMoveMods_CounterKick
+	.word tbl_MasterMoveMods_CounterKickSpecial
 	.word tbl_MasterMoveMods_8003E104
-	.word tbl_MasterMoveMods_8003E10C
+	.word tbl_MasterMoveMods_StrongStrikes
 	.word tbl_MasterMoveMods_8003E1E8
 	.word tbl_MasterMoveMods_8003E1F0
-	.word tbl_MasterMoveMods_8003E1F8
-	.word tbl_MasterMoveMods_8003E230
+	.word tbl_MasterMoveMods_WeakRunningStrikes
+	.word tbl_MasterMoveMods_CornerRunningStrikes
 	.word tbl_MasterMoveMods_BackGrappleSpecial
-	.word tbl_MasterMoveMods_8003E25C
-	.word tbl_MasterMoveMods_8003E26C
+	.word tbl_MasterMoveMods_IrishWhipCounter
+	.word tbl_MasterMoveMods_CornerStopReversal
 	.word tbl_MasterMoveMods_Evasion
-	.word tbl_MasterMoveMods_8003E280
-	.word tbl_MasterMoveMods_8003E2C0
-	.word tbl_MasterMoveMods_8003E2DC
-	.word tbl_MasterMoveMods_8003E338
+	.word tbl_MasterMoveMods_AttackToDowned
+	.word tbl_MasterMoveMods_RunningAttackToDowned
+	.word tbl_MasterMoveMods_SittingFaceUpStrikes
+	.word tbl_MasterMoveMods_SittingFaceDownStrikes
 	.word tbl_MasterMoveMods_DuckingStrike
 	.word tbl_MasterMoveMods_8003E3B8
-	.word tbl_MasterMoveMods_8003E3C4
+	.word tbl_MasterMoveMods_CounterKickSpecial_GrappleReversals
 	.word tbl_MasterMoveMods_IntroStance
 	.word tbl_MasterMoveMods_IntroTaunts
-	.word tbl_MasterMoveMods_8003E484
+	.word tbl_MasterMoveMods_StandingTaunts
 	.word tbl_MasterMoveMods_8003E5AC
-	.word tbl_MasterMoveMods_8003E5B4
-	.word tbl_MasterMoveMods_8003E5DC
-	.word tbl_MasterMoveMods_8003E5F0
-	.word tbl_MasterMoveMods_8003E608
-	.word tbl_MasterMoveMods_8003E61C
-	.word tbl_MasterMoveMods_8003E650
-	.word tbl_MasterMoveMods_8003E668
-	.word tbl_MasterMoveMods_8003E670
-	.word tbl_MasterMoveMods_8003E678
-	.word tbl_MasterMoveMods_8003E6A0
+	.word tbl_MasterMoveMods_DuckingTaunts
+	.word tbl_MasterMoveMods_InCornerTaunts
+	.word tbl_MasterMoveMods_OnPostTaunts
+	.word tbl_MasterMoveMods_ApronTaunts
+	.word tbl_MasterMoveMods_GroundGrapple_FaceUp_Head
+	.word tbl_MasterMoveMods_GroundGrapple_FaceDown_Head
+	.word tbl_MasterMoveMods_GroundGrapple_FaceUp_Head_Reversal
+	.word tbl_MasterMoveMods_GroundGrapple_FaceDown_Head_Reversal
+	.word tbl_MasterMoveMods_GroundGrapple_FaceUp_Legs
+	.word tbl_MasterMoveMods_GroundGrapple_FaceDown_Legs
 	.word tbl_MasterMoveMods_8003E6B8
 	.word tbl_MasterMoveMods_8003E6C0
 	.word tbl_MasterMoveMods_8003E6C8
 	.word tbl_MasterMoveMods_8003E6DC
 	.word tbl_MasterMoveMods_8003E6E8
 	.word tbl_MasterMoveMods_8003E6F0
-	.word tbl_MasterMoveMods_8003E6F8
-	.word tbl_MasterMoveMods_8003E700
-	.word tbl_MasterMoveMods_8003E708
-	.word tbl_MasterMoveMods_8003E710
-	.word tbl_MasterMoveMods_8003E718
-	.word tbl_MasterMoveMods_8003E740
-	.word tbl_MasterMoveMods_8003E758
-	.word tbl_MasterMoveMods_8003E770
-	.word tbl_MasterMoveMods_8003E78C
-	.word tbl_MasterMoveMods_8003E794
-	.word tbl_MasterMoveMods_8003E7A0
-	.word tbl_MasterMoveMods_8003E7A8
-	.word tbl_MasterMoveMods_8003E7B4
-	.word tbl_MasterMoveMods_8003E7C0
-	.word tbl_MasterMoveMods_8003E7CC
-	.word tbl_MasterMoveMods_8003E7D8
-	.word tbl_MasterMoveMods_8003E7E0
-	.word tbl_MasterMoveMods_8003E7EC
-	.word tbl_MasterMoveMods_8003E7F4
+	.word tbl_MasterMoveMods_MountFaceUpGrapple
+	.word tbl_MasterMoveMods_MountFaceUpGrappleReversal
+	.word tbl_MasterMoveMods_MountFaceDownGrapple
+	.word tbl_MasterMoveMods_MountFaceDownGrappleReversal
+	.word tbl_MasterMoveMods_PostStandingAttack
+	.word tbl_MasterMoveMods_PostGroundAttack_NoPin
+	.word tbl_MasterMoveMods_PostGroundAttack_Pin
+	.word tbl_MasterMoveMods_RunningDive
+	.word tbl_MasterMoveMods_RunningDiveTaunts
+	.word tbl_MasterMoveMods_Plancha
+	.word tbl_MasterMoveMods_RopeSplashAttack
+	.word tbl_MasterMoveMods_CornerSplashAttack
+	.word tbl_MasterMoveMods_ApronDive
+	.word tbl_MasterMoveMods_RunningApronDive
+	.word tbl_MasterMoveMods_SpringboardToStanding
+	.word tbl_MasterMoveMods_SpringboardDoubleTeam
+	.word tbl_MasterMoveMods_SpringboardToDowned
+	.word tbl_MasterMoveMods_RopeReboundAttack
+	.word tbl_MasterMoveMods_PostDoubleTeamAttack
 	.word tbl_MasterMoveMods_ComboStance
-	.word tbl_MasterMoveMods_8003E80C
-	.word tbl_MasterMoveMods_8003E814
-	.word tbl_MasterMoveMods_8003E824
-	.word tbl_MasterMoveMods_8003E854
-	.word tbl_MasterMoveMods_8003E86C
-	.word tbl_MasterMoveMods_8003E938
-	.word tbl_MasterMoveMods_8003E944
-	.word tbl_MasterMoveMods_8003E968
+	.word tbl_MasterMoveMods_ApronToApronStrikes
+	.word tbl_MasterMoveMods_OldShootComboStrikes
+	.word tbl_MasterMoveMods_IntroTaunts2
+	.word tbl_MasterMoveMods_IntroTaunts3
+	.word tbl_MasterMoveMods_StandingTaunts2
+	.word tbl_MasterMoveMods_CounterPunchSpecial_GrappleReversals
+	.word tbl_MasterMoveMods_DuckingTaunts2
+	.word tbl_MasterMoveMods_InCornerTaunts2
 	.word tbl_MasterMoveMods_8003E980
-	.word tbl_MasterMoveMods_8003E988
-	.word tbl_MasterMoveMods_8003E99C
+	.word tbl_MasterMoveMods_ApronTaunts2
+	.word tbl_MasterMoveMods_IntroWalking
 	.word tbl_MasterMoveMods_8003E9A4
 	.word tbl_MasterMoveMods_8003E9B0
 	.word tbl_MasterMoveMods_8003E9BC
@@ -2633,5 +2636,5 @@ ptrTbl_MasterMoveMods:
 	.word tbl_MasterMoveMods_8003E9D4
 	.word tbl_MasterMoveMods_FrontGrappleSuperSpecial
 	.word tbl_MasterMoveMods_BackGrappleSuperSpecial
-	.word tbl_MasterMoveMods_8003E9F0
-	.word tbl_MasterMoveMods_8003EA44
+	.word tbl_MasterMoveMods_FrontGrappleWeakB
+	.word tbl_MasterMoveMods_StrongRunningStrikes
