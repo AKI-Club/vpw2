@@ -6751,6 +6751,7 @@ func_8011E5D8:
 /* 076C28 8011E5E8 1060000C */  beqz  $v1, .L8011E61C
 /* 076C2C 8011E5EC AFB00018 */   sw    $s0, 0x18($sp)
 
+# get blur value
 /* 076C30 8011E5F0 3C028013 */  lui   $v0, %hi(bss1_8012C48C) # $v0, 0x8013
 /* 076C34 8011E5F4 8C42C48C */  lw    $v0, %lo(bss1_8012C48C)($v0)
 /* 076C38 8011E5F8 00621823 */  subu  $v1, $v1, $v0
@@ -6761,6 +6762,7 @@ func_8011E5D8:
 /* 076C4C 8011E60C 1C600003 */  bgtz  $v1, .L8011E61C
 /* 076C50 8011E610 AC22C48C */   sw    $v0, %lo(bss1_8012C48C)($at)
 
+# remove blur
 /* 076C54 8011E614 3C018010 */  lui   $at, %hi(D_801041B4) # $at, 0x8010
 /* 076C58 8011E618 AC2041B4 */  sw    $zero, %lo(D_801041B4)($at)
 
@@ -8585,6 +8587,7 @@ func_8011F60C:
 /* 078150 8011FB10 1C600003 */  bgtz  $v1, .L8011FB20
 /* 078154 8011FB14 AC22C48C */   sw    $v0, %lo(bss1_8012C48C)($at)
 
+# remove blur
 /* 078158 8011FB18 3C018010 */  lui   $at, %hi(D_801041B4) # $at, 0x8010
 /* 07815C 8011FB1C AC2041B4 */  sw    $zero, %lo(D_801041B4)($at)
 
@@ -10689,6 +10692,7 @@ func_801211A0:
 /* 079A5C 8012141C 1C600003 */  bgtz  $v1, .L8012142C
 /* 079A60 80121420 AC22C48C */   sw    $v0, %lo(bss1_8012C48C)($at)
 
+# remove blur
 /* 079A64 80121424 3C018010 */  lui   $at, %hi(D_801041B4) # $at, 0x8010
 /* 079A68 80121428 AC2041B4 */  sw    $zero, %lo(D_801041B4)($at)
 
