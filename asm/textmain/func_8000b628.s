@@ -84,12 +84,12 @@ glabel func_8000B628
 /* 00C300 8000B700 02402021 */  addu  $a0, $s2, $zero
 /* 00C304 8000B704 02002821 */  addu  $a1, $s0, $zero
 /* 00C308 8000B708 0C00C888 */  jal   bcopy
-/* 00C30C 8000B70C 24060019 */   li    $a2, 25
+/* 00C30C 8000B70C 24060019 */   li    $a2, 25 # 12 double byte chars + 1 null terminator byte
 
 /* 00C310 8000B710 26440019 */  addiu $a0, $s2, 0x19
 /* 00C314 8000B714 26050019 */  addiu $a1, $s0, 0x19
 /* 00C318 8000B718 0C00C888 */  jal   bcopy
-/* 00C31C 8000B71C 2406000F */   li    $a2, 15
+/* 00C31C 8000B71C 2406000F */   li    $a2, 15 # 7 double byte chars + 1 null terminator byte
 
 /* 00C320 8000B720 26310001 */  addiu $s1, $s1, 1
 /* 00C324 8000B724 2A220004 */  slti  $v0, $s1, 4
