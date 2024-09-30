@@ -112,7 +112,7 @@ glabel func_8000B3E4
 /* 00C134 8000B534 3C118004 */  lui   $s1, %hi(dynPtr_DefaultNames) # $s1, 0x8004
 /* 00C138 8000B538 8E31FDA0 */  lw    $s1, %lo(dynPtr_DefaultNames)($s1)
 /* 00C13C 8000B53C 0C00C950 */  jal   bzero
-/* 00C140 8000B540 24050019 */   li    $a1, 25
+/* 00C140 8000B540 24050019 */   li    $a1, 25 # 12 double byte chars + 1 null terminator byte
 
 /* 00C144 8000B544 3C058004 */  lui   $a1, %hi(dynPtr_DefaultNames) # $a1, 0x8004
 /* 00C148 8000B548 8CA5FDA0 */  lw    $a1, %lo(dynPtr_DefaultNames)($a1)
@@ -127,7 +127,7 @@ glabel func_8000B3E4
 /* 00C168 8000B568 26510019 */  addiu $s1, $s2, 0x19
 /* 00C16C 8000B56C 02202021 */  addu  $a0, $s1, $zero
 /* 00C170 8000B570 0C00C950 */  jal   bzero
-/* 00C174 8000B574 2405000F */   li    $a1, 15
+/* 00C174 8000B574 2405000F */   li    $a1, 15 # 7 double byte chars + 1 null terminator byte
 
 /* 00C178 8000B578 96020002 */  lhu   $v0, 2($s0)
 /* 00C17C 8000B57C 3C058004 */  lui   $a1, %hi(dynPtr_DefaultNames) # $a1, 0x8004

@@ -238,17 +238,17 @@ glabel func_8000B748
 /* 00C5E4 8000B9E4 02202021 */  addu  $a0, $s1, $zero
 /* 00C5E8 8000B9E8 260500F4 */  addiu $a1, $s0, 0xf4
 /* 00C5EC 8000B9EC 0C00C888 */  jal   bcopy
-/* 00C5F0 8000B9F0 24060019 */   li    $a2, 25
+/* 00C5F0 8000B9F0 24060019 */   li    $a2, 25 # 12 double byte chars + 1 null terminator byte
 
 /* 00C5F4 8000B9F4 26240019 */  addiu $a0, $s1, 0x19
 /* 00C5F8 8000B9F8 2605010D */  addiu $a1, $s0, 0x10d
 /* 00C5FC 8000B9FC 0C00C888 */  jal   bcopy
-/* 00C600 8000BA00 2406000F */   li    $a2, 15
+/* 00C600 8000BA00 2406000F */   li    $a2, 15 # 7 double byte chars + 1 null terminator byte
 
 /* 00C604 8000BA04 26240029 */  addiu $a0, $s1, 0x29
 /* 00C608 8000BA08 2605011C */  addiu $a1, $s0, 0x11c
 /* 00C60C 8000BA0C 0C00C888 */  jal   bcopy
-/* 00C610 8000BA10 24060015 */   li    $a2, 21
+/* 00C610 8000BA10 24060015 */   li    $a2, 21 # 10 double byte chars + 1 null terminator byte
 
 .L8000BA14:
 /* 00C614 8000BA14 8FBF001C */  lw    $ra, 0x1c($sp)
