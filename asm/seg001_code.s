@@ -19899,6 +19899,8 @@ D_8012A280:
 
 /*----------------------------------------------------------------------------*/
 # 8012A710 (0x6640 offset)
+# each entry is 5 shorts; first value is text index, others currently unknown.
+
 D_8012A710:
 	.short 0xF5C9, 0x00F0, 0x0078, 0x0030, 0x0C00
 	.short 0, 0, 0, 0, 0
@@ -20091,7 +20093,7 @@ ptrTbl_8012AA08:
 	.word D_8012A9E8
 
 /*----------------------------------------------------------------------------*/
-# 8012AA6C (0x699C offset) more text IDs?
+# 8012AA6C (0x699C offset) more text IDs
 D_8012AA6C:
 	.short 0xF692
 	.short 0xF693
