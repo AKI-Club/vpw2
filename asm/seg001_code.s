@@ -20689,6 +20689,7 @@ tbl1_8012B18B:
 # +01: entrance type offset (into table following this one)
 # +02: camera pan
 
+# Budokan
 tbl1_8012B198:
 	.byte 0x00
 
@@ -20698,9 +20699,9 @@ tbl1_8012B199:
 tbl1_8012B19A:
 	.byte 0x0E
 
-	.byte 0x00, 0x00, 0x12
-	.byte 0x00, 0x00, 0x13
-	.byte 0x00, 0x00, 0x16
+	.byte 0x00, 0x00, 0x12 # TKO Dome
+	.byte 0x00, 0x00, 0x13 # AKI Hall
+	.byte 0x00, 0x00, 0x16 # Stadium
 	.byte 0x05, 0x10, 0x17 # Dome Road
 	.byte 0 # alignment
 
