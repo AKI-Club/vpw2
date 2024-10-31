@@ -3,7 +3,7 @@
 # These are meant to go at 0x6F6F0 in the Z64 ROM; 8010A2A0 runtime.
 /*----------------------------------------------------------------------------*/
 # Most names in this list are taken from VPW2 freem Edition.
-# Names enclosed in <> don't actually appear in the Edit Mode list.
+# Names enclosed in <> don't appear as selections in the Edit Mode move list.
 
 tbl0_8010A2A0:
 # [Weak Front Grapple A]
@@ -46,7 +46,7 @@ tbl0_8010A2A0:
 	.short 0x235C # <Small Package Reversal>
 	.short 0x24BA # <Small Package Pin loop>
 	.short 0x0000 # empty ok
-	.short 0x24FE
+	.short 0x24FE # <roll forward pin loop>
 	.short 0x2360 # High Angle Bodyslam
 	.short 0x25DE # Oklahoma Stampede
 	.short 0x2562 # Corner Oklahoma Stampede
@@ -64,7 +64,7 @@ tbl0_8010A2A0:
 	.short 0x23A0 # <Hammer Blow Reversal>
 	.short 0x23A2 # <Knee Lift Reversal>
 	.short 0x2570 # Reverse Ipponzeoi
-	.short 0x2572 
+	.short 0x2572 # <Reverse Ipponzeoi Back Grapple Reversal>
 	.short 0x2422 # Body Scoop Slam
 	.short 0x2424 # <DDT Reversal>
 	.short 0x2426 # <Armbar Reversal>
@@ -81,7 +81,7 @@ tbl0_8010A2A0:
 	.short 0x2608 # Arm Trap Headbutts
 	.short 0x25AA # <Knee Strike Reversal>
 	.short 0x25CA # Coconut Crush
-	.short 0x25CC
+	.short 0x25CC # <Coconut Crush Reversal>
 	.short 0x256E # Manhattan Drop
 	.short 0x23FE # Front Facebuster
 	.short 0x232A # <Flip Behind Reversal>
@@ -98,7 +98,7 @@ tbl0_8010A2A0:
 	.short 0x2348 # <Backdrop Reversal>
 	.short 0x0000 # empty ok
 	.short 0x0000 # empty ok
-	.short 0x266E
+	.short 0x266E # <small package loop?>
 	.short 0x0000 # empty ok
 	.short 0x2582 # Piledriver-style Facebuster
 	.short 0x2352 # Tombstone Piledriver
@@ -111,40 +111,40 @@ tbl0_8010A2A0:
 	.short 0x24D4 # <Pinning Hurricanrana Reversal pin loop>
 	.short 0x2456 # <Mist Reversal>
 	.short 0x2458 # <Heavy/Junior Special Hurricanrana Reversal>
-	.short 0x25A6 # Sroida
-	.short 0x25A2
+	.short 0x25A6 # Belly to Belly Suplex/Sroida
+	.short 0x25A2 # <Front Suplex Sweep Throw Reversal>
 	.short 0x25A0 # Front Suplex
-	.short 0x25A4 # ? Front Suplex
+	.short 0x25A4 # Followthrough Front Suplex
 	.short 0x243C # Step Front Suplex
 	.short 0x25A8 # Arm Trap Suplex
-	.short 0x25AC # ? Arm Trap Suplex
+	.short 0x25AC # Followthrough Arm Trap Suplex
 	.short 0x25AE # Exploder
 	.short 0x25B0 # <Elbow to Head Reversal>
 	.short 0x25E4 # Capture Suplex
 	.short 0x0000 # empty ok
-	.short 0x2CA2
+	.short 0x2CA2 # <armbar loop?>
 	.short 0x25DA # <Leg Hold Enzuigiri Reversal>
 	.short 0x0000 # empty ok
 	.short 0x0000 # empty ok
 	.short 0x24F2 # Devil Windmill Hold
-	.short 0x24F4
-	.short 0x24F0
+	.short 0x24F4 # <Devil Windmill Hold loop>
+	.short 0x24F0 # <Devil Windmill Hold Punch Reversal>
 	.short 0x24AC # Fisherman Suplex
-	.short 0x24AE
-	.short 0x24AA
+	.short 0x24AE # <Fisherman Suplex loop>
+	.short 0x24AA # <Fisherman Suplex Punch Reversal>
 	.short 0x0000 # empty ok
 	.short 0x2584 # Fisherman Buster
 	.short 0x24A0 # Northern Lights Suplex
-	.short 0x24A2
+	.short 0x24A2 # <Northern Lights Suplex loop>
 	.short 0x0000 # empty ok
 	.short 0x0000 # empty ok
 	.short 0x0000 # empty ok
-	.short 0x25B6
-	.short 0x249E
+	.short 0x25B6 # <Cradle Front Neck Lock Loop>
+	.short 0x249E # <Northern Lights Suplex Knee Reversal>
 	.short 0x23D0 # Throwing Northern Lights Suplex
 	.short 0x2592 # DDT
-	.short 0x2596 # <Armbar Reversal>
-	.short 0x2594 # <Punch Reversal>
+	.short 0x2596 # <DDT Armbar Reversal>
+	.short 0x2594 # <DDT Punch Reversal>
 	.short 0x2598 # Jumping DDT
 	.short 0x2444 # Double Arm DDT
 	.short 0x2446 # <Overhead Front Suplex Reversal>
@@ -152,13 +152,13 @@ tbl0_8010A2A0:
 	.short 0x2378 # <Backdrop Reversal>
 	.short 0x259A # Antonio Driver
 	.short 0x2574 # Nodowa Otoshi
-	.short 0x2576
+	.short 0x2576 # <Nodowa Otoshi/Chokeslam Takedown Reversal>
 	.short 0x2578 # Chokeslam
 	.short 0x2450 # Darkness Chokeslam
-	.short 0x2452 # <Break Away Reversal>
+	.short 0x2452 # <Darkness Chokeslam Break Away Reversal>
 	.short 0x242C # Death Valley Driver
 	.short 0x259C # Ace Crusher
-	.short 0x259E # <Back Grapple Reversal>
+	.short 0x259E # <Ace Crusher Back Grapple Reversal>
 	.short 0x256C # Hokuto Driver
 	.short 0x245A # Powerbomb Pin
 	.short 0x245E # <Powerbomb Pin loop>
@@ -182,10 +182,10 @@ tbl0_8010A2A0:
 	.short 0x24E6 # Michinoku Driver 2
 	.short 0x24E8 # <Michinoku Driver 2 Pin loop>
 	.short 0x24C8 # Doctor Bomb
-	.short 0x24C4
-	.short 0x24CA
-	.short 0x24C6
-	.short 0x24CC
+	.short 0x24C4 # <Doctor Bomb Backdrop Reversal>
+	.short 0x24CA # <Doctor Bomb Frankensteiner Reversal>
+	.short 0x24C6 # <Doctor Bomb Backdrop Reversal 2>
+	.short 0x24CC # <Doctor Bomb Frankensteiner Reversal 2>
 	.short 0x23E8 # Tornado Bomb
 	.short 0x23EA # <Elbow Reversal>
 	.short 0x23D2 # Samurai Bomb
@@ -211,25 +211,25 @@ tbl0_8010A2A0:
 	.short 0x24D0 # <Roll Through Roll Up Reversal>
 	.short 0x0000 # empty ok
 	.short 0x24FC # Rolling Forward Pin
-	.short 0x23EC
+	.short 0x23EC # <Rolling Forward Pin Fall Back Reversal>
 	.short 0x2506 # Rolling Backward Pin
 	.short 0x2530 # Headlock
-	.short 0x2532
+	.short 0x2532 # <Headlock loop>
 	.short 0x2556 # Cobra Claw
-	.short 0x2558
-	.short 0x2554
+	.short 0x2558 # <Cobra Claw loop>
+	.short 0x2554 # <Cobra Claw Back Grapple Reversal>
 	.short 0x2524 # Armbar
-	.short 0x2522
+	.short 0x2522 # <Armbar Rollthrough Reversal>
 	.short 0x260C # Bearhug
-	.short 0x260E
-	.short 0x260A # <Elbow to Back Reversal>
+	.short 0x260E # <Bearhug loop>
+	.short 0x260A # <Bearhug Elbow to Back Reversal>
 	.short 0x254A # Neck Hanging Choke
-	.short 0x254C
-	.short 0x2546
-	.short 0x2548
+	.short 0x254C # <Neck Hanging Choke loop>
+	.short 0x2546 # <Neck Hanging Choke Knee Reversal>
+	.short 0x2548 # <Neck Hanging Choke Knee Reversal 2>
 	.short 0x0000 # empty ok
 	.short 0x253C # Canadian Backbreaker
-	.short 0x253E
+	.short 0x253E # <Canadian Backbreaker loop>
 	.short 0x25B4 # Cradling Front Neck Lock
 	.short 0x25B2
 	.short 0x25C0 # Victory Roll Kneebar
@@ -238,10 +238,10 @@ tbl0_8010A2A0:
 	.short 0x0000 # empty ok
 	.short 0x0000 # empty ok
 	.short 0x25FE # Sambo Armbar
-	.short 0x2600
-	.short 0x25FC # <Throwing Reversal>
+	.short 0x2600 # <Sambo Armbar loop>
+	.short 0x25FC # <Sambo Armbar Throwing Reversal>
 	.short 0x23B6 # Jiu Jitsu Takedown to Side Punch
-	.short 0x23B8
+	.short 0x23B8 # <Jiu Jitsu Takedown to Side Punch loop>
 	.short 0x23B4 # <Throwing Reversal>
 
 # [Front Grapple Specials]
@@ -269,7 +269,7 @@ tbl0_8010A2A0:
 	.short 0x26B0 # K. Yamazaki Kick Combo
 	.short 0x2698 # Double Original Dragon Screw
 	.short 0x2616 # Stalling Powerbomb
-	.short 0x2618
+	.short 0x2618 # - <stalling powerbomb loop>
 	.short 0x26BE # Tsuppari Rush Combo
 	.short 0x2678 # T. Yasuda Tsuppari Attack
 	.short 0x267A
@@ -352,319 +352,401 @@ tbl0_8010A2A0:
 	.short 0x2194
 	.short 0x2195
 	.short 0x2197
+	#----------------------------------------------------------#
 	.short 0x20DB # Right Elbow
 	.short 0x20DD
 	.short 0x20DE
 	.short 0x20E0
+	#----------------------------------------------------------#
 	.short 0x2105 # Left Elbow
 	.short 0x2107
 	.short 0x2108
 	.short 0x210A
+	#----------------------------------------------------------#
 	.short 0x20E2 # Multiple Elbows (Right)
 	.short 0x20E4
 	.short 0x20E5
 	.short 0x20E7
+	#----------------------------------------------------------#
 	.short 0x22CE # European Uppercut (Tiger)
 	.short 0x22D0
 	.short 0x22D1
 	.short 0x22D3
+	#----------------------------------------------------------#
 	.short 0x22BC # Royal Road Chop
 	.short 0x22BE
 	.short 0x22BF
 	.short 0x22C1
+	#----------------------------------------------------------#
 	.short 0x22AE # Royal Road Headbutt
 	.short 0x22B0
 	.short 0x22B1
 	.short 0x22B3
+	#----------------------------------------------------------#
 	.short 0x20BB # Heel Drop (kamisori, Right)
 	.short 0x20BD
 	.short 0x20BE
 	.short 0x20C0
+	#----------------------------------------------------------#
 	.short 0x2253 # Heavyweight Heel Drop (Right)
 	.short 0x2255
 	.short 0x2256
 	.short 0x2258
+	#----------------------------------------------------------#
 	.short 0x2112 # High Kick to Face (Right)
 	.short 0x2114
 	.short 0x2115
 	.short 0x2117
+	#----------------------------------------------------------#
 	.short 0x2120 # Horizontal Chop
 	.short 0x2122
 	.short 0x2123
 	.short 0x2125
+	#----------------------------------------------------------#
 	.short 0x2127 # Neck Chop (Right)
 	.short 0x2129
 	.short 0x212A
 	.short 0x212C
+	#----------------------------------------------------------#
 	.short 0x2088 # Kesagiri Chop (Right)
 	.short 0x208A
 	.short 0x208B
 	.short 0x208D
+	#----------------------------------------------------------#
 	.short 0x22B5 # Coconut Crush
 	.short 0x22B7
 	.short 0x22B8
 	.short 0x22BA
+	#----------------------------------------------------------#
 	.short 0x21A9 # Right Jab
 	.short 0x21AB
 	.short 0x21AD
 	.short 0x21AF
+	#----------------------------------------------------------#
 	.short 0x21A2 # Left Jab
 	.short 0x21A4
 	.short 0x21A5
 	.short 0x21A7
+	#----------------------------------------------------------#
 	.short 0x21BB # Shake Jab (Left)
 	.short 0x21BD
 	.short 0x21BE
 	.short 0x21C0
+	#----------------------------------------------------------#
 	.short 0x20E9 # Jumping Kick (Right)
 	.short 0x20EB
 	.short 0x20EC
 	.short 0x20EE
+	#----------------------------------------------------------#
 	.short 0x21DB # Jiu-Jitsu Punch (Right)
 	.short 0x21DD
 	.short 0x21DE
 	.short 0x21E0
+	#----------------------------------------------------------#
 	.short 0x2157 # Short Uppercut
 	.short 0x2159
 	.short 0x215A
 	.short 0x215C
+	#----------------------------------------------------------#
 	.short 0x20FE # Turn Kick (Right)
 	.short 0x2100
 	.short 0x2101
 	.short 0x2103
+	#----------------------------------------------------------#
 	.short 0x208F # Spinning Back Chop (Right)
 	.short 0x2091
 	.short 0x2093
 	.short 0x2095
+	#----------------------------------------------------------#
 	.short 0x2288 # Knuckle Part (Right)
 	.short 0x228A
 	.short 0x228B
 	.short 0x228D
+	#----------------------------------------------------------#
 	.short 0x2132 # Kneelift (Right)
 	.short 0x2134
 	.short 0x2135
 	.short 0x2137
+	#----------------------------------------------------------#
 	.short 0x224C # Side Kneelift (Right)
 	.short 0x224E
 	.short 0x224F
 	.short 0x2251
+	#----------------------------------------------------------#
 	.short 0x21C2 # 2nd Floor Palm Strike (Left)
 	.short 0x21C4
 	.short 0x21C5
 	.short 0x21C7
+	#----------------------------------------------------------#
 	.short 0x22A6 # Brain Chop
 	.short 0x22A8
 	.short 0x22AA
 	.short 0x22AC
+	#----------------------------------------------------------#
 	.short 0x21E2 # Right High Kick
 	.short 0x21E4
 	.short 0x21E5
 	.short 0x21E7
+	#----------------------------------------------------------#
 	.short 0x2150 # High Kick (Takada) (Right)
 	.short 0x2152
 	.short 0x2153
 	.short 0x2155
+	#----------------------------------------------------------#
 	.short 0x2147 # High Kick (Takada) (Left)
 	.short 0x2149
 	.short 0x214A
 	.short 0x214C
 	.short 0x214E
 	.short 0x20A5
+	#----------------------------------------------------------#
 	.short 0x221F # Feint High Kick (Left)
 	.short 0x2221
 	.short 0x2222
 	.short 0x2224
 	.short 0x2226
+	#----------------------------------------------------------#
 	.short 0x226A # Hammer Punch (Right)
 	.short 0x226C
 	.short 0x226D
 	.short 0x226F
+	#----------------------------------------------------------#
 	.short 0x2261 # Hammer Punch (Left)
 	.short 0x2263
 	.short 0x2264
 	.short 0x2266
+	#----------------------------------------------------------#
 	.short 0x2231 # Backhand Blow
 	.short 0x2233
 	.short 0x2234
 	.short 0x2236
+	#----------------------------------------------------------#
 	.short 0x2210 # Backhand Blow (Han)
 	.short 0x2212
 	.short 0x2213
 	.short 0x2215
+	#----------------------------------------------------------#
 	.short 0x20C2 # Knee Kick (Left)
 	.short 0x20C4
 	.short 0x20C5
 	.short 0x20C7
 	.short 0x20C9
+	#----------------------------------------------------------#
 	.short 0x2217 # Twist Throw
 	.short 0x2219
 	.short 0x221B
 	.short 0x221D
+	#----------------------------------------------------------#
 	.short 0x229F # Inoki Slap (Right)
 	.short 0x22A1
 	.short 0x22A2
 	.short 0x22A4
+	#----------------------------------------------------------#
 	.short 0x2296 # Inoki Slap (Left)
 	.short 0x2298
 	.short 0x2299
 	.short 0x229B
+	#----------------------------------------------------------#
 	.short 0x217C # Hook Palm Strike (Right)
 	.short 0x217E
 	.short 0x217F
 	.short 0x2181
+	#----------------------------------------------------------#
 	.short 0x2172 # Hook Palm Strike (Left)
 	.short 0x2174
 	.short 0x2176
 	.short 0x2178
+	#----------------------------------------------------------#
 	.short 0x20B4 # Headbutt (K. Yamazaki)
 	.short 0x20B6
 	.short 0x20B7
 	.short 0x20B9
+	#----------------------------------------------------------#
 	.short 0x2281 # Headbutt (Inoki)
 	.short 0x2283
 	.short 0x2284
 	.short 0x2286
+	#----------------------------------------------------------#
 	.short 0x21F9 # Body Blow (Right)
 	.short 0x21FB
 	.short 0x21FC
 	.short 0x21FE
+	#----------------------------------------------------------#
 	.short 0x2228 # Body Blow (Left)
 	.short 0x222A
 	.short 0x222B
 	.short 0x222D
+	#----------------------------------------------------------#
 	.short 0x227A # Heavyweight Body Blow (Right)
 	.short 0x227C
 	.short 0x227D
 	.short 0x227F
+	#----------------------------------------------------------#
 	.short 0x2271 # Heavyweight Body Blow (Left)
 	.short 0x2273
 	.short 0x2274
 	.short 0x2276
+	#----------------------------------------------------------#
 	.short 0x2139 # Front Kick ? (Right)
 	.short 0x213B
 	.short 0x213C
 	.short 0x213E
+	#----------------------------------------------------------#
 	.short 0x21D4 # Jiu Jitsu Front Kick (Right)
 	.short 0x21D6
 	.short 0x21D7
 	.short 0x21D9
+	#----------------------------------------------------------#
 	.short 0x2238 # Suzuki Front Kick (Right)
 	.short 0x223A
 	.short 0x223B
 	.short 0x223D
+	#----------------------------------------------------------#
 	.short 0x2209 # K. Tamura Front Kick (Right)
 	.short 0x220B
 	.short 0x220C
 	.short 0x220E
+	#----------------------------------------------------------#
 	.short 0x2199 # Middle Kick (Left)
 	.short 0x219B
 	.short 0x219C
 	.short 0x219E
 	.short 0x21A0
+	#----------------------------------------------------------#
 	.short 0x20D4 # High Speed Middle Kick (Right)
 	.short 0x20D6
 	.short 0x20D7
 	.short 0x20D9
+	#----------------------------------------------------------#
 	.short 0x20CB # High Speed Middle Kick (Left)
 	.short 0x20CD
 	.short 0x20CE
 	.short 0x20D0
 	.short 0x20D2
+	#----------------------------------------------------------#
 	.short 0x20AD # Shinya Middle Kick (Right)
 	.short 0x20AF
 	.short 0x20B0
 	.short 0x20B2
+	#----------------------------------------------------------#
 	.short 0x209B # Shinya Middle Kick (Left)
 	.short 0x209D
 	.short 0x209F
 	.short 0x20A1
 	.short 0x20A3
+	#----------------------------------------------------------#
 	.short 0x2200 # K. Tamura Middle Kick (Left)
 	.short 0x2202
 	.short 0x2203
 	.short 0x2205
 	.short 0x2207
+	#----------------------------------------------------------#
 	.short 0x21F2 # Maeda Middle Kick (Right)
 	.short 0x21F4
 	.short 0x21F5
 	.short 0x21F7
+	#----------------------------------------------------------#
 	.short 0x21E9 # Maeda Middle Kick (Left)
 	.short 0x21EB
 	.short 0x21EC
 	.short 0x21EE
 	.short 0x21F0
+	#----------------------------------------------------------#
 	.short 0x22C7 # Face Slap (Right)
 	.short 0x22C9
 	.short 0x22CA
 	.short 0x22CC
+	#----------------------------------------------------------#
 	.short 0x20F7 # Reverse Rolling Elbow
 	.short 0x20F9
 	.short 0x20FA
 	.short 0x20FC
+	#----------------------------------------------------------#
 	.short 0x2140 # Low Kick (Right)
 	.short 0x2142
 	.short 0x2143
 	.short 0x2145
+	#----------------------------------------------------------#
 	.short 0x228F # Inoki Low Kick (Right)
 	.short 0x2291
 	.short 0x2292
 	.short 0x2294
+	#----------------------------------------------------------#
 	.short 0x2119 # Kawada Low Kick (Right)
 	.short 0x211B
 	.short 0x211C
 	.short 0x211E
+	#----------------------------------------------------------#
 	.short 0x223F # Suzuki Low Kick (Right)
 	.short 0x2241
 	.short 0x2242
 	.short 0x2244
+	#----------------------------------------------------------#
 	.short 0x22E5 # Tiger Low Kick (Right)
 	.short 0x22E7
 	.short 0x22E8
 	.short 0x22EA
+	#----------------------------------------------------------#
 	.short 0x225A # Heavyweight Low Kick (Right)
 	.short 0x225C
 	.short 0x225D
 	.short 0x225F
+	#----------------------------------------------------------#
 	.short 0x20F0 # Rolling Elbow Smash
 	.short 0x20F2
 	.short 0x20F3
 	.short 0x20F5
+	#----------------------------------------------------------#
 	.short 0x22D5 # Rolling Sobat
 	.short 0x22D7
 	.short 0x22D8
 	.short 0x22DA
+	#----------------------------------------------------------#
 	.short 0x218B # Low Rolling Sobat
 	.short 0x218D
 	.short 0x218E
 	.short 0x2190
+	#----------------------------------------------------------#
 	.short 0x21CD # Takada Rolling Sobat
 	.short 0x21CF
 	.short 0x21D0
 	.short 0x21D2
+	#----------------------------------------------------------#
 	.short 0x22DC # Rolling High Kick (Tiger)
 	.short 0x22DE
 	.short 0x22DF
 	.short 0x22E1
+	#----------------------------------------------------------#
 	.short 0x22C3 # 16 mon kick <Finish>
 	.short 0x22C5
+	#----------------------------------------------------------#
 	.short 0x2162 # Ali Kick <Finish>
 	.short 0x2164 # <dodge]
+	#----------------------------------------------------------#
 	.short 0x216A # Enzuigiri <Finish>
 	.short 0x216C
+	#----------------------------------------------------------#
 	.short 0x212E # Jumping High Kick <Finish>
 	.short 0x2130
+	#----------------------------------------------------------#
 	.short 0x210E # Jumping Back Kneel Kick <Finish>
 	.short 0x2110
+	#----------------------------------------------------------#
 	.short 0x2097 # Leg Sweep <Finish>
 	.short 0x2099 # <dodge]
+	#----------------------------------------------------------#
 	.short 0x2246 # Straight Palm Strike <Finish>
 	.short 0x2248
+	#----------------------------------------------------------#
 	.short 0x2183 # Whirlwind Kick <Finish>
 	.short 0x2185
+	#----------------------------------------------------------#
 	.short 0x21C9 # Kneel Kick (Nagata) <Finish>
 	.short 0x21CB
+	#----------------------------------------------------------#
 	.short 0x2187 # Koji Kanemoto Kneel Kick <Finish>
 	.short 0x2189
+	#----------------------------------------------------------#
 	.short 0x215E # Maeda Kneel Kick <Finish>
 	.short 0x2160
 
@@ -686,17 +768,17 @@ tbl0_8010A2A0:
 	.short 0x27A2 # Bulldog
 	.short 0x27A0 # Face Crusher
 	.short 0x2790 # School Boy
-	.short 0x2792
+	.short 0x2792 # <School Boy loop>
 	.short 0x277C # Abdominal Stretch
-	.short 0x277E
+	.short 0x277E # <Abdominal Stretch loop>
 	.short 0x2772 # Sleeperhold
-	.short 0x2774
+	.short 0x2774 # <Sleeperhold loop>
 	.short 0x2786 # Surfboard Stretch
-	.short 0x2788
+	.short 0x2788 # <Surfboard Stretch loop>
 
 # [Back Strong Grapple]
 	.short 0x281A # Backdrop Hold
-	.short 0x281C
+	.short 0x281C # <Backdrop Hold loop>
 	.short 0x27B4 # Dangerous Backdrop
 	.short 0x27E8 # German Suplex
 	.short 0x27EA
@@ -1010,8 +1092,13 @@ tbl0_8010A2A0:
 	.short 0x2C8F # Throw off
 	.short 0x2C91 # Pull ropes
 
+# [Corner Back Grapple Reversal]
 	.short 0x2C93 # <Axe Handle Smash to Front Suplex?>
+
+# [unlabeled section at RAM address 8003DF44]
 	.short 0x2DBC
+
+# [unlabeled section at RAM address 8003DF4C]
 	.short 0x2DBE
 	.short 0x2DC0
 	.short 0x2DC8
@@ -1020,7 +1107,11 @@ tbl0_8010A2A0:
 # [Grapple to Apron]
 	.short 0x30AE # Club to Chest
 	.short 0x30AC # Suplex to Inside
+
+# [unlabeled section at RAM address 8003DF60]
 	.short 0x30B0
+
+# [Apron Grapple Reversal]
 	.short 0x30B2 # Suplex Go Behind
 	.short 0x30B4 # Suplex to Outside
 
@@ -1037,6 +1128,7 @@ tbl0_8010A2A0:
 	.short 0x30C8 # Apron Powerbomb
 	.short 0x30CA # Apron Tiger Driver
 
+# ["?? Apron Grapple Reversal ??" at RAM address 8003DF8C]
 	.short 0x30CC
 
 # [Test of Strength] 
@@ -1060,16 +1152,21 @@ tbl0_8010A2A0:
 	.short 0x30D5
 	.short 0x30D6
 
+# [unlabeled section at RAM address 8003DFC0]
 	.short 0x30D7
+
+# [Super Heavyweight Front Grapple]
 	.short 0x31FA # <Super Heavyweight Bodyslam>
 	.short 0x31FC # <Super Heavyweight Bodyslam failed>
 	.short 0x0000
 	.short 0x0000
+
+# [Super Heavyweight Back Grapple]
 	.short 0x31FE # <Super Heavyweight Back Suplex>
 	.short 0x3200 # <Super Heavyweight Back Suplex failed>
-	.short 0x3204
-	.short 0x3206
-	.short 0x3202
+	.short 0x3204 # <Super Heavyweight German Suplex>
+	.short 0x3206 # <Super Heavyweight German Suplex loop>
+	.short 0x3202 # <Super Heavyweight German Suplex Groin Kick Reversal>
 
 # [Double Team Front Grapple]
 	.short 0x30E6 # Wishbone Split
@@ -1086,9 +1183,12 @@ tbl0_8010A2A0:
 	.short 0x30FB # Hijack Piledriver
 	.short 0x30F8 # Double Team Powerbomb
 
+# [Double Team Front Grapple on Shoulders (unimplemented)]
 	.short 0x30FE # <hip swivel taunt>
 	.short 0x0000
 	.short 0x0000
+
+# [Double Team Back Grapple on Shoulders (unimplemented)]
 	.short 0x3101 # <hip swivel taunt>
 	.short 0x0000
 	.short 0x3104 # <invalid chop>
@@ -1098,9 +1198,15 @@ tbl0_8010A2A0:
 	.short 0x3109 # Roll Backward Pin
 	.short 0x310B # <Roll Backward Pin loop>
 	.short 0x3113 # Roll Forward Pin
+
+# [Double Team Front Grapple Brainbuster (unimplemented)]
 	.short 0x3115 # <hip swivel taunt>
 	.short 0x3118 # <invalid chop>
+
+# [Double Team Back Grapple Brainbuster (unimplemented)]
 	.short 0x311B # <hip swivel taunt>
+
+# [Double Team Front Reversal (unimplemented)]
 	.short 0x311E
 
 # [Weak Punch]
@@ -1341,8 +1447,11 @@ tbl0_8010A2A0:
 	.short 0x2A5F # [Women] Hard Slap (Right)
 	.short 0x2A5E # [Women] Hard Slap (Left)
 
-	.short 0x2A76
-	.short 0x2A77
+# [unlabeled section at RAM address 8003E1E8]
+	.short 0x2A76 # <unknown jumping front dropkick>
+
+# [unlabeled section at RAM address 8003E1F0]
+	.short 0x2A77 # <unknown jumping front dropkick>
 
 # [Weak Running Strike]
 	.short 0x2A80 # Kitchen Sink
@@ -2154,9 +2263,11 @@ tbl0_8010A2A0:
 	.short 0x2C0B # Inoki
 	.short 0x2C0D # <Grapple>
 
-	.short 0x3292
-	.short 0x3293
+# [Apron to Apron Strikes]
+	.short 0x3292 # <kick>
+	.short 0x3293 # <chop>
 
+# [Old Shootfighter Combo System]
 	.short 0x3294
 	.short 0x3296
 	.short 0x3298
@@ -2312,10 +2423,11 @@ tbl0_8010A2A0:
 	.short 0x326D
 	.short 0x326E
 
-	.short 0x2B2F
-	.short 0x2B31
-	.short 0x2B33
-	.short 0x2B35
+# [Counter Punch Special Grapple Reversals]
+	.short 0x2B2F # Front Strong Grapple B
+	.short 0x2B31 # Front Strong Grapple B+Left/Right
+	.short 0x2B33 # Front Strong Grapple B+Up
+	.short 0x2B35 # Front Strong Grapple B+Down
 
 # [Ground Taunts 2]
 	.short 0x331C # ? (Edge)
@@ -2346,6 +2458,8 @@ tbl0_8010A2A0:
 	.short 0x3282 # Dance Fever
 	.short 0x3284 # Corner Headstand
 	.short 0x3285 # Headbanging Guts Pose
+
+# [unlabeled section at RAM address 8003E980]
 	.short 0x0000
 
 # [Apron Taunts 2]
@@ -2357,14 +2471,21 @@ tbl0_8010A2A0:
 	.short 0x328E # arms up stretch out
 	.short 0x3291 # Glamorous Banzai
 
+# [Walking Moves]
 	.short 0x3322
+
+# [unlabeled unknown running move section at RAM address 8003E9A4]
 	.short 0x32BC
 	.short 0x32BD
 	.short 0x32BE
 	.short 0x32BF
+
+# [unlabeled unknown running move section at RAM address 8003E9B0]
 	.short 0x32C0
 	.short 0x32C1
 	.short 0x32C2
+
+# [WM2K sitting up/down leg grapples]
 	.short 0x32C3
 	.short 0x32C5
 	.short 0x32C7
@@ -2374,7 +2495,7 @@ tbl0_8010A2A0:
 	.short 0x2722 # Emerald Flowsion
 	.short 0x2738 # Ganso Bomb
 	.short 0x26A4 # Muken
-	.short 0x26A6
+	.short 0x26A6 # <Muken pin loop>
 
 # [Back Super Special/Maximum]
 	.short 0x27E2 # Burning Hammer
