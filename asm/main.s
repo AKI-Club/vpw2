@@ -44077,6 +44077,7 @@ D_8003ECA0:
 	.word 4
 
 # 8003ECAC [w]
+# "compression values used for stances when being compressed for a match" - S.K.
 D_8003ECAC:
 	.word 0x0008
 	.word 0x0020
