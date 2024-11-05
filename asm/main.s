@@ -5138,7 +5138,11 @@ func_8001C37C:
 /* 01D028 8001C428 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
-/* moveset reading? */
+/* costume reading? */
+
+# Params:
+# $a0 - source address
+# $a1 - ? address
 
 func_8001C42C:
 /* 01D02C 8001C42C 27BDFFD8 */  addiu $sp, $sp, -0x28
@@ -5404,7 +5408,11 @@ func_8001C42C:
 /* 01D36C 8001C76C 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
-/* moveset writing? */
+/* costume writing? */
+
+# Params:
+# $a0 - 
+# $a1 - destination address
 
 func_8001C770:
 /* 01D370 8001C770 27BDFFD8 */  addiu $sp, $sp, -0x28
