@@ -5426,256 +5426,306 @@ func_8001C770:
 /* 01D390 8001C790 0C008BBC */  jal   BitRWSetup
 /* 01D394 8001C794 AFB00018 */   sw    $s0, 0x18($sp)
 
+# offset 0x00: body type
 /* 01D398 8001C798 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D39C 8001C79C 0C008BEE */  jal   WriteBits
 /* 01D3A0 8001C7A0 24050004 */   li    $a1, 4
 
+# offset 0x01: skin color
 /* 01D3A4 8001C7A4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3A8 8001C7A8 24050002 */  li    $a1, 2
 /* 01D3AC 8001C7AC 0C008BEE */  jal   WriteBits
-/* 01D3B0 8001C7B0 A2220000 */   sb    $v0, ($s1)
+/* 01D3B0 8001C7B0 A2220000 */   sb    $v0, ($s1) # write body type
 
+# offset 0x02: nothing??
 /* 01D3B4 8001C7B4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3B8 8001C7B8 00002821 */  addu  $a1, $zero, $zero
 /* 01D3BC 8001C7BC 0C008BEE */  jal   WriteBits
-/* 01D3C0 8001C7C0 A2220001 */   sb    $v0, 1($s1)
+/* 01D3C0 8001C7C0 A2220001 */   sb    $v0, 1($s1) # write skin color
 
+# offset 0x03: ring attire item
 /* 01D3C4 8001C7C4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3C8 8001C7C8 24050007 */  li    $a1, 7
 /* 01D3CC 8001C7CC 0C008BEE */  jal   WriteBits
-/* 01D3D0 8001C7D0 A2220002 */   sb    $v0, 2($s1)
+/* 01D3D0 8001C7D0 A2220002 */   sb    $v0, 2($s1) # write whatever goes to offset 0x02
 
+# offset 0x04: ring attire color 1
 /* 01D3D4 8001C7D4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3D8 8001C7D8 24050005 */  li    $a1, 5
 /* 01D3DC 8001C7DC 0C008BEE */  jal   WriteBits
-/* 01D3E0 8001C7E0 A2220003 */   sb    $v0, 3($s1)
+/* 01D3E0 8001C7E0 A2220003 */   sb    $v0, 3($s1) # write ring attire item
 
+# offset 0x05: ring attire color 2
 /* 01D3E4 8001C7E4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3E8 8001C7E8 24050005 */  li    $a1, 5
 /* 01D3EC 8001C7EC 0C008BEE */  jal   WriteBits
-/* 01D3F0 8001C7F0 A2220004 */   sb    $v0, 4($s1)
+/* 01D3F0 8001C7F0 A2220004 */   sb    $v0, 4($s1) # write ring attire color 1
 
+# offset 0x06: upper attire item
 /* 01D3F4 8001C7F4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D3F8 8001C7F8 24050006 */  li    $a1, 6
 /* 01D3FC 8001C7FC 0C008BEE */  jal   WriteBits
-/* 01D400 8001C800 A2220005 */   sb    $v0, 5($s1)
+/* 01D400 8001C800 A2220005 */   sb    $v0, 5($s1) # write ring attire color 2
 
+# offset 0x07: upper attire color 1
 /* 01D404 8001C804 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D408 8001C808 24050005 */  li    $a1, 5
 /* 01D40C 8001C80C 0C008BEE */  jal   WriteBits
-/* 01D410 8001C810 A2220006 */   sb    $v0, 6($s1)
+/* 01D410 8001C810 A2220006 */   sb    $v0, 6($s1) # write upper attire item
 
+# offset 0x08: upper attire color 2
 /* 01D414 8001C814 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D418 8001C818 24050005 */  li    $a1, 5
 /* 01D41C 8001C81C 0C008BEE */  jal   WriteBits
-/* 01D420 8001C820 A2220007 */   sb    $v0, 7($s1)
+/* 01D420 8001C820 A2220007 */   sb    $v0, 7($s1) # write upper attire color 1
 
+# offset 0x1E: gloves item
 /* 01D424 8001C824 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D428 8001C828 24050003 */  li    $a1, 3
 /* 01D42C 8001C82C 0C008BEE */  jal   WriteBits
-/* 01D430 8001C830 A2220008 */   sb    $v0, 8($s1)
+/* 01D430 8001C830 A2220008 */   sb    $v0, 8($s1) # write upper attire color 2
 
+# offset 0x1F: gloves color 1
 /* 01D434 8001C834 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D438 8001C838 24050005 */  li    $a1, 5
 /* 01D43C 8001C83C 0C008BEE */  jal   WriteBits
-/* 01D440 8001C840 A222001E */   sb    $v0, 0x1e($s1)
+/* 01D440 8001C840 A222001E */   sb    $v0, 0x1e($s1) # write gloves item
 
+# offset 0x20: gloves color 1
 /* 01D444 8001C844 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D448 8001C848 24050005 */  li    $a1, 5
 /* 01D44C 8001C84C 0C008BEE */  jal   WriteBits
-/* 01D450 8001C850 A222001F */   sb    $v0, 0x1f($s1)
+/* 01D450 8001C850 A222001F */   sb    $v0, 0x1f($s1) # write gloves color 1
 
+# offset 0x21: left elbow pad item
 /* 01D454 8001C854 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D458 8001C858 24050002 */  li    $a1, 2
 /* 01D45C 8001C85C 0C008BEE */  jal   WriteBits
-/* 01D460 8001C860 A2220020 */   sb    $v0, 0x20($s1)
+/* 01D460 8001C860 A2220020 */   sb    $v0, 0x20($s1) # write gloves color 2
 
+# offset 0x22: left elbow pad color
 /* 01D464 8001C864 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D468 8001C868 24050005 */  li    $a1, 5
 /* 01D46C 8001C86C 0C008BEE */  jal   WriteBits
-/* 01D470 8001C870 A2220021 */   sb    $v0, 0x21($s1)
+/* 01D470 8001C870 A2220021 */   sb    $v0, 0x21($s1) # write left elbow pad item
 
+# offset 0x24: right elbow pad item
 /* 01D474 8001C874 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D478 8001C878 24050002 */  li    $a1, 2
 /* 01D47C 8001C87C 0C008BEE */  jal   WriteBits
-/* 01D480 8001C880 A2220022 */   sb    $v0, 0x22($s1)
+/* 01D480 8001C880 A2220022 */   sb    $v0, 0x22($s1) # write left elbow pad color
 
+# offset 0x25: right elbow pad color
 /* 01D484 8001C884 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D488 8001C888 24050005 */  li    $a1, 5
 /* 01D48C 8001C88C 0C008BEE */  jal   WriteBits
-/* 01D490 8001C890 A2220024 */   sb    $v0, 0x24($s1)
+/* 01D490 8001C890 A2220024 */   sb    $v0, 0x24($s1) # write right elbow pad item
 
+# offset 0x27: tattoo
 /* 01D494 8001C894 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D498 8001C898 24050004 */  li    $a1, 4
 /* 01D49C 8001C89C 0C008BEE */  jal   WriteBits
-/* 01D4A0 8001C8A0 A2220025 */   sb    $v0, 0x25($s1)
+/* 01D4A0 8001C8A0 A2220025 */   sb    $v0, 0x25($s1) # write right elbow pad color
 
+# offset 0x28: ???
 /* 01D4A4 8001C8A4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4A8 8001C8A8 00002821 */  addu  $a1, $zero, $zero
 /* 01D4AC 8001C8AC 0C008BEE */  jal   WriteBits
-/* 01D4B0 8001C8B0 A2220027 */   sb    $v0, 0x27($s1)
+/* 01D4B0 8001C8B0 A2220027 */   sb    $v0, 0x27($s1) # write tattoo
 
+# offset 0x2A: wristband item
 /* 01D4B4 8001C8B4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4B8 8001C8B8 24050004 */  li    $a1, 4
 /* 01D4BC 8001C8BC 0C008BEE */  jal   WriteBits
 /* 01D4C0 8001C8C0 A2220028 */   sb    $v0, 0x28($s1)
 
+# offset 0x2B: wristband color
 /* 01D4C4 8001C8C4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4C8 8001C8C8 24050005 */  li    $a1, 5
 /* 01D4CC 8001C8CC 0C008BEE */  jal   WriteBits
-/* 01D4D0 8001C8D0 A222002A */   sb    $v0, 0x2a($s1)
+/* 01D4D0 8001C8D0 A222002A */   sb    $v0, 0x2a($s1) # write wristband item
 
+# offset 0x2D: left knee pad item
 /* 01D4D4 8001C8D4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4D8 8001C8D8 24050004 */  li    $a1, 4
 /* 01D4DC 8001C8DC 0C008BEE */  jal   WriteBits
-/* 01D4E0 8001C8E0 A222002B */   sb    $v0, 0x2b($s1)
+/* 01D4E0 8001C8E0 A222002B */   sb    $v0, 0x2b($s1) # write wristband color
 
+# offset 0x2E: left knee pad color
 /* 01D4E4 8001C8E4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4E8 8001C8E8 24050005 */  li    $a1, 5
 /* 01D4EC 8001C8EC 0C008BEE */  jal   WriteBits
-/* 01D4F0 8001C8F0 A222002D */   sb    $v0, 0x2d($s1)
+/* 01D4F0 8001C8F0 A222002D */   sb    $v0, 0x2d($s1) # write left knee pad item
 
+# offset 0x30: right knee pad item
 /* 01D4F4 8001C8F4 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D4F8 8001C8F8 24050004 */  li    $a1, 4
 /* 01D4FC 8001C8FC 0C008BEE */  jal   WriteBits
-/* 01D500 8001C900 A222002E */   sb    $v0, 0x2e($s1)
+/* 01D500 8001C900 A222002E */   sb    $v0, 0x2e($s1) # write left knee pad color
 
+# offset 0x31: right knee pad color
 /* 01D504 8001C904 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D508 8001C908 24050005 */  li    $a1, 5
 /* 01D50C 8001C90C 0C008BEE */  jal   WriteBits
-/* 01D510 8001C910 A2220030 */   sb    $v0, 0x30($s1)
+/* 01D510 8001C910 A2220030 */   sb    $v0, 0x30($s1) # write right knee pad item
 
+# offset 0x33: boots item
 /* 01D514 8001C914 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D518 8001C918 24050006 */  li    $a1, 6
 /* 01D51C 8001C91C 0C008BEE */  jal   WriteBits
-/* 01D520 8001C920 A2220031 */   sb    $v0, 0x31($s1)
+/* 01D520 8001C920 A2220031 */   sb    $v0, 0x31($s1) # write right knee pad color
 
+# offset 0x34: boots color 1
 /* 01D524 8001C924 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D528 8001C928 24050005 */  li    $a1, 5
 /* 01D52C 8001C92C 0C008BEE */  jal   WriteBits
-/* 01D530 8001C930 A2220033 */   sb    $v0, 0x33($s1)
+/* 01D530 8001C930 A2220033 */   sb    $v0, 0x33($s1) # write boots item
 
+# offset 0x35: boots color 2
 /* 01D534 8001C934 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D538 8001C938 24050005 */  li    $a1, 5
 /* 01D53C 8001C93C 0C008BEE */  jal   WriteBits
-/* 01D540 8001C940 A2220034 */   sb    $v0, 0x34($s1)
+/* 01D540 8001C940 A2220034 */   sb    $v0, 0x34($s1) # write boots color 1
 
+# offset 0x36: entrance attire item
 /* 01D544 8001C944 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D548 8001C948 24050005 */  li    $a1, 5
 /* 01D54C 8001C94C 0C008BEE */  jal   WriteBits
-/* 01D550 8001C950 A2220035 */   sb    $v0, 0x35($s1)
+/* 01D550 8001C950 A2220035 */   sb    $v0, 0x35($s1) # write boots color 2
 
+# offset 0x37: entrance attire color 1
 /* 01D554 8001C954 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D558 8001C958 24050005 */  li    $a1, 5
 /* 01D55C 8001C95C 0C008BEE */  jal   WriteBits
-/* 01D560 8001C960 A2220036 */   sb    $v0, 0x36($s1)
+/* 01D560 8001C960 A2220036 */   sb    $v0, 0x36($s1) # write entrance attire item
 
+# offset 0x38: entrance attire color 2
 /* 01D564 8001C964 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D568 8001C968 24050005 */  li    $a1, 5
 /* 01D56C 8001C96C 0C008BEE */  jal   WriteBits
-/* 01D570 8001C970 A2220037 */   sb    $v0, 0x37($s1)
+/* 01D570 8001C970 A2220037 */   sb    $v0, 0x37($s1) # write entrance attire color 1
 
+# offset 0x0A: hair color
 /* 01D574 8001C974 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D578 8001C978 24050003 */  li    $a1, 3
 /* 01D57C 8001C97C 0C008BEE */  jal   WriteBits
-/* 01D580 8001C980 A2220038 */   sb    $v0, 0x38($s1)
+/* 01D580 8001C980 A2220038 */   sb    $v0, 0x38($s1) # write entrance attire color 2
 
+# offset 0x0B: "using mask" flag
 /* 01D584 8001C984 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D588 8001C988 24050001 */  li    $a1, 1
 /* 01D58C 8001C98C 0C008BEE */  jal   WriteBits
-/* 01D590 8001C990 A222000A */   sb    $v0, 0xa($s1)
+/* 01D590 8001C990 A222000A */   sb    $v0, 0xa($s1) # write hair color
 
-/* 01D594 8001C994 A222000B */  sb    $v0, 0xb($s1)
+/* 01D594 8001C994 A222000B */  sb    $v0, 0xb($s1) # write "using mask" flag
 /* 01D598 8001C998 00021600 */  sll   $v0, $v0, 0x18
-/* 01D59C 8001C99C 1440001D */  bnez  $v0, .L8001CA14
+/* 01D59C 8001C99C 1440001D */  bnez  $v0, .L8001CA14 # jump to mask section
 /* 01D5A0 8001C9A0 27A40010 */   addiu $a0, $sp, 0x10
 
+# offset 0x09: head shape
 /* 01D5A4 8001C9A4 0C008BEE */  jal   WriteBits
 /* 01D5A8 8001C9A8 24050003 */   li    $a1, 3
 
+# offset 0x0F: hair type
 /* 01D5AC 8001C9AC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D5B0 8001C9B0 24050004 */  li    $a1, 4
 /* 01D5B4 8001C9B4 0C008BEE */  jal   WriteBits
-/* 01D5B8 8001C9B8 A2220009 */   sb    $v0, 9($s1)
+/* 01D5B8 8001C9B8 A2220009 */   sb    $v0, 9($s1) # write head shape
 
+# offset 0x0C: face number
 /* 01D5BC 8001C9BC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D5C0 8001C9C0 24050007 */  li    $a1, 7
 /* 01D5C4 8001C9C4 0C008BEE */  jal   WriteBits
-/* 01D5C8 8001C9C8 A222000F */   sb    $v0, 0xf($s1)
+/* 01D5C8 8001C9C8 A222000F */   sb    $v0, 0xf($s1) # write hair type
 
+# offset 0x12: front hair
 /* 01D5CC 8001C9CC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D5D0 8001C9D0 24050007 */  li    $a1, 7
 /* 01D5D4 8001C9D4 0C008BEE */  jal   WriteBits
-/* 01D5D8 8001C9D8 A222000C */   sb    $v0, 0xc($s1)
+/* 01D5D8 8001C9D8 A222000C */   sb    $v0, 0xc($s1) # write face number
 
+# offset 0x15: facial hair
 /* 01D5DC 8001C9DC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D5E0 8001C9E0 24050005 */  li    $a1, 5
 /* 01D5E4 8001C9E4 0C008BEE */  jal   WriteBits
-/* 01D5E8 8001C9E8 A2220012 */   sb    $v0, 0x12($s1)
+/* 01D5E8 8001C9E8 A2220012 */   sb    $v0, 0x12($s1) # write front hair
 
+# offset 0x18: facepaint
 /* 01D5EC 8001C9EC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D5F0 8001C9F0 24050005 */  li    $a1, 5
 /* 01D5F4 8001C9F4 0C008BEE */  jal   WriteBits
-/* 01D5F8 8001C9F8 A2220015 */   sb    $v0, 0x15($s1)
+/* 01D5F8 8001C9F8 A2220015 */   sb    $v0, 0x15($s1) # write facial hair
 
+# offset 0x1B: face accessory
 /* 01D5FC 8001C9FC 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D600 8001CA00 24050005 */  li    $a1, 5
 /* 01D604 8001CA04 0C008BEE */  jal   WriteBits
-/* 01D608 8001CA08 A2220018 */   sb    $v0, 0x18($s1)
+/* 01D608 8001CA08 A2220018 */   sb    $v0, 0x18($s1) # write facepaint
 
 /* 01D60C 8001CA0C 080072AE */  j     .L8001CAB8
-/* 01D610 8001CA10 A222001B */   sb    $v0, 0x1b($s1)
+/* 01D610 8001CA10 A222001B */   sb    $v0, 0x1b($s1) # write face accessory
 
+# if the wrestler is wearing a mask:
 .L8001CA14:
+# offset 0x09?: head shape
 /* 01D614 8001CA14 0C008BEE */  jal   WriteBits
 /* 01D618 8001CA18 24050004 */   li    $a1, 4
 
+# offset 0x0F: hair type
 /* 01D61C 8001CA1C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D620 8001CA20 24050002 */  li    $a1, 2
 /* 01D624 8001CA24 0C008BEE */  jal   WriteBits
-/* 01D628 8001CA28 00408021 */   addu  $s0, $v0, $zero
+/* 01D628 8001CA28 00408021 */   addu  $s0, $v0, $zero # save head shape value
 
+# offset 0x0C: mask number
 /* 01D62C 8001CA2C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D630 8001CA30 24050005 */  li    $a1, 5
 /* 01D634 8001CA34 0C008BEE */  jal   WriteBits
-/* 01D638 8001CA38 A222000F */   sb    $v0, 0xf($s1)
+/* 01D638 8001CA38 A222000F */   sb    $v0, 0xf($s1) # write hair type
 
+# offset 0x15: mask extra 2
 /* 01D63C 8001CA3C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D640 8001CA40 24050005 */  li    $a1, 5
 /* 01D644 8001CA44 0C008BEE */  jal   WriteBits
-/* 01D648 8001CA48 A222000C */   sb    $v0, 0xc($s1)
+/* 01D648 8001CA48 A222000C */   sb    $v0, 0xc($s1) # write mask number
 
+# offset 0x13: mask color 1
 /* 01D64C 8001CA4C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D650 8001CA50 24050005 */  li    $a1, 5
 /* 01D654 8001CA54 0C008BEE */  jal   WriteBits
-/* 01D658 8001CA58 A2220015 */   sb    $v0, 0x15($s1)
+/* 01D658 8001CA58 A2220015 */   sb    $v0, 0x15($s1) # write mask extra 2
 
+# offset 0x14: mask color 2
 /* 01D65C 8001CA5C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D660 8001CA60 24050005 */  li    $a1, 5
 /* 01D664 8001CA64 0C008BEE */  jal   WriteBits
-/* 01D668 8001CA68 A2220013 */   sb    $v0, 0x13($s1)
+/* 01D668 8001CA68 A2220013 */   sb    $v0, 0x13($s1) # write mask color 1
 
+# offset 0x16: mask color 3
 /* 01D66C 8001CA6C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D670 8001CA70 24050005 */  li    $a1, 5
 /* 01D674 8001CA74 0C008BEE */  jal   WriteBits
-/* 01D678 8001CA78 A2220014 */   sb    $v0, 0x14($s1)
+/* 01D678 8001CA78 A2220014 */   sb    $v0, 0x14($s1) # write mask color 2
 
+# offset 0x17: mask color 4
 /* 01D67C 8001CA7C 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D680 8001CA80 24050005 */  li    $a1, 5
 /* 01D684 8001CA84 0C008BEE */  jal   WriteBits
-/* 01D688 8001CA88 A2220016 */   sb    $v0, 0x16($s1)
+/* 01D688 8001CA88 A2220016 */   sb    $v0, 0x16($s1) # write mask color 3
 
+# some confusing stuff to generate head shape and mask extra 1
+# m2c says this is essentially "divide by 5, modulo by 5"
 /* 01D68C 8001CA8C 3C03CCCC */  lui   $v1, (0xCCCCCCCD >> 16) # lui $v1, 0xcccc
 /* 01D690 8001CA90 3463CCCD */  ori   $v1, (0xCCCCCCCD & 0xFFFF) # ori $v1, $v1, 0xcccd
 /* 01D694 8001CA94 02030019 */  multu $s0, $v1
-/* 01D698 8001CA98 A2220017 */  sb    $v0, 0x17($s1)
+/* 01D698 8001CA98 A2220017 */  sb    $v0, 0x17($s1) # write mask color 4
 /* 01D69C 8001CA9C 00003810 */  mfhi  $a3
 /* 01D6A0 8001CAA0 00071882 */  srl   $v1, $a3, 2
 /* 01D6A4 8001CAA4 00031080 */  sll   $v0, $v1, 2
 /* 01D6A8 8001CAA8 00431021 */  addu  $v0, $v0, $v1
 /* 01D6AC 8001CAAC 02028023 */  subu  $s0, $s0, $v0
-/* 01D6B0 8001CAB0 A2230009 */  sb    $v1, 9($s1)
-/* 01D6B4 8001CAB4 A2300012 */  sb    $s0, 0x12($s1)
+/* 01D6B0 8001CAB0 A2230009 */  sb    $v1, 9($s1) # write head shape
+/* 01D6B4 8001CAB4 A2300012 */  sb    $s0, 0x12($s1) # write mask extra 1
 
 .L8001CAB8:
 /* 01D6B8 8001CAB8 8FBF0020 */  lw    $ra, 0x20($sp)
