@@ -5138,7 +5138,7 @@ func_8001C37C:
 /* 01D028 8001C428 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
-/* costume reading? */
+# Read packed (SRAM/save data) costume data?
 
 # Params:
 # $a0 - source address
@@ -5159,242 +5159,245 @@ func_8001C42C:
 /* 01D054 8001C454 0C00C950 */  jal   bzero
 /* 01D058 8001C458 24050015 */   li    $a1, 21
 
-/* 01D05C 8001C45C 82250000 */  lb    $a1, ($s1)
+/* 01D05C 8001C45C 82250000 */  lb    $a1, ($s1) # offset 0x00: body type
 /* 01D060 8001C460 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D064 8001C464 0C008BC1 */  jal   ReadBits
 /* 01D068 8001C468 24060004 */   li    $a2, 4
 
-/* 01D06C 8001C46C 82250001 */  lb    $a1, 1($s1)
+/* 01D06C 8001C46C 82250001 */  lb    $a1, 1($s1) # offset 0x01: skin color
 /* 01D070 8001C470 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D074 8001C474 0C008BC1 */  jal   ReadBits
 /* 01D078 8001C478 24060002 */   li    $a2, 2
 
-/* 01D07C 8001C47C 82250002 */  lb    $a1, 2($s1)
+/* 01D07C 8001C47C 82250002 */  lb    $a1, 2($s1) # offset 0x02: always 0x00
 /* 01D080 8001C480 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D084 8001C484 0C008BC1 */  jal   ReadBits
 /* 01D088 8001C488 00003021 */   addu  $a2, $zero, $zero
 
-/* 01D08C 8001C48C 82250003 */  lb    $a1, 3($s1)
+/* 01D08C 8001C48C 82250003 */  lb    $a1, 3($s1) # offset 0x03: ring attire item
 /* 01D090 8001C490 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D094 8001C494 0C008BC1 */  jal   ReadBits
 /* 01D098 8001C498 24060007 */   li    $a2, 7
 
-/* 01D09C 8001C49C 82250004 */  lb    $a1, 4($s1)
+/* 01D09C 8001C49C 82250004 */  lb    $a1, 4($s1) # offset 0x04: ring attire color 1
 /* 01D0A0 8001C4A0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0A4 8001C4A4 0C008BC1 */  jal   ReadBits
 /* 01D0A8 8001C4A8 24060005 */   li    $a2, 5
 
-/* 01D0AC 8001C4AC 82250005 */  lb    $a1, 5($s1)
+/* 01D0AC 8001C4AC 82250005 */  lb    $a1, 5($s1) # offset 0x05: ring attire color 2
 /* 01D0B0 8001C4B0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0B4 8001C4B4 0C008BC1 */  jal   ReadBits
 /* 01D0B8 8001C4B8 24060005 */   li    $a2, 5
 
-/* 01D0BC 8001C4BC 82250006 */  lb    $a1, 6($s1)
+/* 01D0BC 8001C4BC 82250006 */  lb    $a1, 6($s1) # offset 0x06: upper attire item
 /* 01D0C0 8001C4C0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0C4 8001C4C4 0C008BC1 */  jal   ReadBits
 /* 01D0C8 8001C4C8 24060006 */   li    $a2, 6
 
-/* 01D0CC 8001C4CC 82250007 */  lb    $a1, 7($s1)
+/* 01D0CC 8001C4CC 82250007 */  lb    $a1, 7($s1) # offset 0x07: upper attire color 1
 /* 01D0D0 8001C4D0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0D4 8001C4D4 0C008BC1 */  jal   ReadBits
 /* 01D0D8 8001C4D8 24060005 */   li    $a2, 5
 
-/* 01D0DC 8001C4DC 82250008 */  lb    $a1, 8($s1)
+/* 01D0DC 8001C4DC 82250008 */  lb    $a1, 8($s1) # offset 0x08: upper attire color 2
 /* 01D0E0 8001C4E0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0E4 8001C4E4 0C008BC1 */  jal   ReadBits
 /* 01D0E8 8001C4E8 24060005 */   li    $a2, 5
 
-/* 01D0EC 8001C4EC 8225001E */  lb    $a1, 0x1e($s1)
+/* 01D0EC 8001C4EC 8225001E */  lb    $a1, 0x1e($s1) # offset 0x1E: gloves item
 /* 01D0F0 8001C4F0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D0F4 8001C4F4 0C008BC1 */  jal   ReadBits
 /* 01D0F8 8001C4F8 24060003 */   li    $a2, 3
 
-/* 01D0FC 8001C4FC 8225001F */  lb    $a1, 0x1f($s1)
+/* 01D0FC 8001C4FC 8225001F */  lb    $a1, 0x1f($s1) # offset 0x1F: gloves color 1
 /* 01D100 8001C500 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D104 8001C504 0C008BC1 */  jal   ReadBits
 /* 01D108 8001C508 24060005 */   li    $a2, 5
 
-/* 01D10C 8001C50C 82250020 */  lb    $a1, 0x20($s1)
+/* 01D10C 8001C50C 82250020 */  lb    $a1, 0x20($s1) # offset 0x20: gloves color 2
 /* 01D110 8001C510 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D114 8001C514 0C008BC1 */  jal   ReadBits
 /* 01D118 8001C518 24060005 */   li    $a2, 5
 
-/* 01D11C 8001C51C 82250021 */  lb    $a1, 0x21($s1)
+/* 01D11C 8001C51C 82250021 */  lb    $a1, 0x21($s1) # offset 0x21: left elbow pad item
 /* 01D120 8001C520 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D124 8001C524 0C008BC1 */  jal   ReadBits
 /* 01D128 8001C528 24060002 */   li    $a2, 2
 
-/* 01D12C 8001C52C 82250022 */  lb    $a1, 0x22($s1)
+/* 01D12C 8001C52C 82250022 */  lb    $a1, 0x22($s1) # offset 0x22: left elbow pad color
 /* 01D130 8001C530 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D134 8001C534 0C008BC1 */  jal   ReadBits
 /* 01D138 8001C538 24060005 */   li    $a2, 5
 
-/* 01D13C 8001C53C 82250024 */  lb    $a1, 0x24($s1)
+/* 01D13C 8001C53C 82250024 */  lb    $a1, 0x24($s1) # offset 0x24: right elbow pad item
 /* 01D140 8001C540 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D144 8001C544 0C008BC1 */  jal   ReadBits
 /* 01D148 8001C548 24060002 */   li    $a2, 2
 
-/* 01D14C 8001C54C 82250025 */  lb    $a1, 0x25($s1)
+/* 01D14C 8001C54C 82250025 */  lb    $a1, 0x25($s1) # offset 0x25: right elbow pad color
 /* 01D150 8001C550 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D154 8001C554 0C008BC1 */  jal   ReadBits
 /* 01D158 8001C558 24060005 */   li    $a2, 5
 
-/* 01D15C 8001C55C 82250027 */  lb    $a1, 0x27($s1)
+/* 01D15C 8001C55C 82250027 */  lb    $a1, 0x27($s1) # offset 0x27: tattoo
 /* 01D160 8001C560 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D164 8001C564 0C008BC1 */  jal   ReadBits
 /* 01D168 8001C568 24060004 */   li    $a2, 4
 
-/* 01D16C 8001C56C 82250028 */  lb    $a1, 0x28($s1)
+/* 01D16C 8001C56C 82250028 */  lb    $a1, 0x28($s1) # offset 0x28: always 0x00
 /* 01D170 8001C570 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D174 8001C574 0C008BC1 */  jal   ReadBits
 /* 01D178 8001C578 00003021 */   addu  $a2, $zero, $zero
 
-/* 01D17C 8001C57C 8225002A */  lb    $a1, 0x2a($s1)
+/* 01D17C 8001C57C 8225002A */  lb    $a1, 0x2a($s1) # offset 0x2A: wristband item
 /* 01D180 8001C580 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D184 8001C584 0C008BC1 */  jal   ReadBits
 /* 01D188 8001C588 24060004 */   li    $a2, 4
 
-/* 01D18C 8001C58C 8225002B */  lb    $a1, 0x2b($s1)
+/* 01D18C 8001C58C 8225002B */  lb    $a1, 0x2b($s1) # offset 0x2B: wristband color
 /* 01D190 8001C590 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D194 8001C594 0C008BC1 */  jal   ReadBits
 /* 01D198 8001C598 24060005 */   li    $a2, 5
 
-/* 01D19C 8001C59C 8225002D */  lb    $a1, 0x2d($s1)
+/* 01D19C 8001C59C 8225002D */  lb    $a1, 0x2d($s1) # offset 0x2D: left knee pad item
 /* 01D1A0 8001C5A0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1A4 8001C5A4 0C008BC1 */  jal   ReadBits
 /* 01D1A8 8001C5A8 24060004 */   li    $a2, 4
 
-/* 01D1AC 8001C5AC 8225002E */  lb    $a1, 0x2e($s1)
+/* 01D1AC 8001C5AC 8225002E */  lb    $a1, 0x2e($s1) # offset 0x2E: left knee pad color
 /* 01D1B0 8001C5B0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1B4 8001C5B4 0C008BC1 */  jal   ReadBits
 /* 01D1B8 8001C5B8 24060005 */   li    $a2, 5
 
-/* 01D1BC 8001C5BC 82250030 */  lb    $a1, 0x30($s1)
+/* 01D1BC 8001C5BC 82250030 */  lb    $a1, 0x30($s1) # offset 0x30: right knee pad item
 /* 01D1C0 8001C5C0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1C4 8001C5C4 0C008BC1 */  jal   ReadBits
 /* 01D1C8 8001C5C8 24060004 */   li    $a2, 4
 
-/* 01D1CC 8001C5CC 82250031 */  lb    $a1, 0x31($s1)
+/* 01D1CC 8001C5CC 82250031 */  lb    $a1, 0x31($s1) # offset 0x31: right knee pad color
 /* 01D1D0 8001C5D0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1D4 8001C5D4 0C008BC1 */  jal   ReadBits
 /* 01D1D8 8001C5D8 24060005 */   li    $a2, 5
 
-/* 01D1DC 8001C5DC 82250033 */  lb    $a1, 0x33($s1)
+/* 01D1DC 8001C5DC 82250033 */  lb    $a1, 0x33($s1) # offset 0x33: boots item
 /* 01D1E0 8001C5E0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1E4 8001C5E4 0C008BC1 */  jal   ReadBits
 /* 01D1E8 8001C5E8 24060006 */   li    $a2, 6
 
-/* 01D1EC 8001C5EC 82250034 */  lb    $a1, 0x34($s1)
+/* 01D1EC 8001C5EC 82250034 */  lb    $a1, 0x34($s1) # offset 0x34: boots color 1
 /* 01D1F0 8001C5F0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D1F4 8001C5F4 0C008BC1 */  jal   ReadBits
 /* 01D1F8 8001C5F8 24060005 */   li    $a2, 5
 
-/* 01D1FC 8001C5FC 82250035 */  lb    $a1, 0x35($s1)
+/* 01D1FC 8001C5FC 82250035 */  lb    $a1, 0x35($s1) # offset 0x35: boots color 2
 /* 01D200 8001C600 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D204 8001C604 0C008BC1 */  jal   ReadBits
 /* 01D208 8001C608 24060005 */   li    $a2, 5
 
-/* 01D20C 8001C60C 82250036 */  lb    $a1, 0x36($s1)
+/* 01D20C 8001C60C 82250036 */  lb    $a1, 0x36($s1) # offset 0x36: entrance attire item
 /* 01D210 8001C610 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D214 8001C614 0C008BC1 */  jal   ReadBits
 /* 01D218 8001C618 24060005 */   li    $a2, 5
 
-/* 01D21C 8001C61C 82250037 */  lb    $a1, 0x37($s1)
+/* 01D21C 8001C61C 82250037 */  lb    $a1, 0x37($s1) # offset 0x37: entrance attire color 1
 /* 01D220 8001C620 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D224 8001C624 0C008BC1 */  jal   ReadBits
 /* 01D228 8001C628 24060005 */   li    $a2, 5
 
-/* 01D22C 8001C62C 82250038 */  lb    $a1, 0x38($s1)
+/* 01D22C 8001C62C 82250038 */  lb    $a1, 0x38($s1) # offset 0x38: entrance attire color 2
 /* 01D230 8001C630 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D234 8001C634 0C008BC1 */  jal   ReadBits
 /* 01D238 8001C638 24060005 */   li    $a2, 5
 
-/* 01D23C 8001C63C 8225000A */  lb    $a1, 0xa($s1)
+/* 01D23C 8001C63C 8225000A */  lb    $a1, 0xa($s1) # offset 0x0A: hair color
 /* 01D240 8001C640 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D244 8001C644 0C008BC1 */  jal   ReadBits
 /* 01D248 8001C648 24060003 */   li    $a2, 3
 
-/* 01D24C 8001C64C 8225000B */  lb    $a1, 0xb($s1)
+/* 01D24C 8001C64C 8225000B */  lb    $a1, 0xb($s1) # offset 0x0B: is wrestler wearing a mask?
 /* 01D250 8001C650 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D254 8001C654 0C008BC1 */  jal   ReadBits
 /* 01D258 8001C658 24060001 */   li    $a2, 1
 
-/* 01D25C 8001C65C 8222000B */  lb    $v0, 0xb($s1)
-/* 01D260 8001C660 1440001B */  bnez  $v0, .L8001C6D0
+/* 01D25C 8001C65C 8222000B */  lb    $v0, 0xb($s1) # re-read offset 0x0B
+/* 01D260 8001C660 1440001B */  bnez  $v0, .L8001C6D0 # mask-specific branch
 /* 01D264 8001C664 27A40010 */   addiu $a0, $sp, 0x10
-/* 01D268 8001C668 82250009 */  lb    $a1, 9($s1)
+
+/* 01D268 8001C668 82250009 */  lb    $a1, 9($s1) # offset 0x09: head shape
 /* 01D26C 8001C66C 0C008BC1 */  jal   ReadBits
 /* 01D270 8001C670 24060003 */   li    $a2, 3
 
-/* 01D274 8001C674 8225000F */  lb    $a1, 0xf($s1)
+/* 01D274 8001C674 8225000F */  lb    $a1, 0xf($s1) # offset 0x0F: hair type
 /* 01D278 8001C678 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D27C 8001C67C 0C008BC1 */  jal   ReadBits
 /* 01D280 8001C680 24060004 */   li    $a2, 4
 
-/* 01D284 8001C684 8225000C */  lb    $a1, 0xc($s1)
+/* 01D284 8001C684 8225000C */  lb    $a1, 0xc($s1) # offset 0x0C: face number
 /* 01D288 8001C688 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D28C 8001C68C 0C008BC1 */  jal   ReadBits
 /* 01D290 8001C690 24060007 */   li    $a2, 7
 
-/* 01D294 8001C694 82250012 */  lb    $a1, 0x12($s1)
+/* 01D294 8001C694 82250012 */  lb    $a1, 0x12($s1) # offset 0x12: front hair
 /* 01D298 8001C698 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D29C 8001C69C 0C008BC1 */  jal   ReadBits
 /* 01D2A0 8001C6A0 24060007 */   li    $a2, 7
 
-/* 01D2A4 8001C6A4 82250015 */  lb    $a1, 0x15($s1)
+/* 01D2A4 8001C6A4 82250015 */  lb    $a1, 0x15($s1) # offset 0x15: facial hair
 /* 01D2A8 8001C6A8 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D2AC 8001C6AC 0C008BC1 */  jal   ReadBits
 /* 01D2B0 8001C6B0 24060005 */   li    $a2, 5
 
-/* 01D2B4 8001C6B4 82250018 */  lb    $a1, 0x18($s1)
+/* 01D2B4 8001C6B4 82250018 */  lb    $a1, 0x18($s1) # offset 0x18: facepaint
 /* 01D2B8 8001C6B8 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D2BC 8001C6BC 0C008BC1 */  jal   ReadBits
 /* 01D2C0 8001C6C0 24060005 */   li    $a2, 5
 
-/* 01D2C4 8001C6C4 8225001B */  lb    $a1, 0x1b($s1)
+/* 01D2C4 8001C6C4 8225001B */  lb    $a1, 0x1b($s1) # offset 0x1B: face accessory
 /* 01D2C8 8001C6C8 080071D5 */  j     .L8001C754
 /* 01D2CC 8001C6CC 27A40010 */   addiu $a0, $sp, 0x10
 
+# if wrestler is wearing a mask
 .L8001C6D0:
-/* 01D2D0 8001C6D0 82220009 */  lb    $v0, 9($s1)
+# untangle the combined head shape/mask extra 1
+/* 01D2D0 8001C6D0 82220009 */  lb    $v0, 9($s1) # offset 0x09: head shape
 /* 01D2D4 8001C6D4 24060004 */  li    $a2, 4
-/* 01D2D8 8001C6D8 82230012 */  lb    $v1, 0x12($s1)
+/* 01D2D8 8001C6D8 82230012 */  lb    $v1, 0x12($s1) # offset 0x12: mask extra 1
 /* 01D2DC 8001C6DC 00022880 */  sll   $a1, $v0, 2
 /* 01D2E0 8001C6E0 00A22821 */  addu  $a1, $a1, $v0
 /* 01D2E4 8001C6E4 0C008BC1 */  jal   ReadBits
 /* 01D2E8 8001C6E8 00A32821 */   addu  $a1, $a1, $v1
 
-/* 01D2EC 8001C6EC 8225000F */  lb    $a1, 0xf($s1)
+/* 01D2EC 8001C6EC 8225000F */  lb    $a1, 0xf($s1) # offset 0x0F: hair type
 /* 01D2F0 8001C6F0 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D2F4 8001C6F4 0C008BC1 */  jal   ReadBits
 /* 01D2F8 8001C6F8 24060002 */   li    $a2, 2
 
-/* 01D2FC 8001C6FC 8225000C */  lb    $a1, 0xc($s1)
+/* 01D2FC 8001C6FC 8225000C */  lb    $a1, 0xc($s1) # offset 0x0C: mask number
 /* 01D300 8001C700 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D304 8001C704 0C008BC1 */  jal   ReadBits
 /* 01D308 8001C708 24060005 */   li    $a2, 5
 
-/* 01D30C 8001C70C 82250015 */  lb    $a1, 0x15($s1)
+/* 01D30C 8001C70C 82250015 */  lb    $a1, 0x15($s1) # offset 0x15: mask extra 2
 /* 01D310 8001C710 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D314 8001C714 0C008BC1 */  jal   ReadBits
 /* 01D318 8001C718 24060005 */   li    $a2, 5
 
-/* 01D31C 8001C71C 82250013 */  lb    $a1, 0x13($s1)
+/* 01D31C 8001C71C 82250013 */  lb    $a1, 0x13($s1) # offset 0x13: mask color 1
 /* 01D320 8001C720 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D324 8001C724 0C008BC1 */  jal   ReadBits
 /* 01D328 8001C728 24060005 */   li    $a2, 5
 
-/* 01D32C 8001C72C 82250014 */  lb    $a1, 0x14($s1)
+/* 01D32C 8001C72C 82250014 */  lb    $a1, 0x14($s1) # offset 0x14: mask color 2
 /* 01D330 8001C730 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D334 8001C734 0C008BC1 */  jal   ReadBits
 /* 01D338 8001C738 24060005 */   li    $a2, 5
 
-/* 01D33C 8001C73C 82250016 */  lb    $a1, 0x16($s1)
+/* 01D33C 8001C73C 82250016 */  lb    $a1, 0x16($s1) # offset 0x15: mask color 3
 /* 01D340 8001C740 27A40010 */  addiu $a0, $sp, 0x10
 /* 01D344 8001C744 0C008BC1 */  jal   ReadBits
 /* 01D348 8001C748 24060005 */   li    $a2, 5
 
-/* 01D34C 8001C74C 82250017 */  lb    $a1, 0x17($s1)
+/* 01D34C 8001C74C 82250017 */  lb    $a1, 0x17($s1) # offset 0x16: mask color 4
 /* 01D350 8001C750 27A40010 */  addiu $a0, $sp, 0x10
 
 .L8001C754:
@@ -5408,7 +5411,7 @@ func_8001C42C:
 /* 01D36C 8001C76C 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
-/* costume writing? */
+# Write packed (SRAM/save data) costume data?
 
 # Params:
 # $a0 - 
@@ -13235,10 +13238,14 @@ func_80022754:
 /*============================================================================*/
 /* possible file break? */
 
+# Sets up variables for ReadBits/WriteBits
+
 # Params:
-# $a0 - 
-# $a1 - [w]
-# $a2 - [b]
+# $a0 - variables write address?
+# $a1 - [w] value stored at offset 0
+# $a2 - [b] value stored at offset 4
+
+# Offsets 5 [b] and 6 [s] start off as 0.
 
 BitRWSetup:
 /* 023AF0 80022EF0 AC850000 */  sw    $a1, ($a0)
@@ -13248,6 +13255,11 @@ BitRWSetup:
 /* 023B00 80022F00 A0800005 */   sb    $zero, 5($a0)
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - BitRWSetup work address
+# $a1 - 
+# $a2 - number of bits?
+
 ReadBits:
 /* 023B04 80022F04 27BDFFF8 */  addiu $sp, $sp, -8
 /* 023B08 80022F08 10C00022 */  beqz  $a2, .L80022F94
@@ -13306,6 +13318,12 @@ ReadBits:
 /* 023BB4 80022FB4 27BD0008 */   addiu $sp, $sp, 8
 
 /*----------------------------------------------------------------------------*/
+# Params:
+# $a0 - BitRWSetup work address
+# $a1 - number of bits?
+
+# return value in $v0
+
 WriteBits:
 /* 023BB8 80022FB8 00804021 */  addu  $t0, $a0, $zero
 /* 023BBC 80022FBC 10A00022 */  beqz  $a1, .L80023048
