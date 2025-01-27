@@ -5,6 +5,8 @@
 /*----------------------------------------------------------------------------*/
 # hand data begins at 800405D4 (Z64 0x411D4; data01 bin offset: 0x6290)
 
+# Hand - Finger Models
+# Left Hand
 D_800405D4:
 	.short 0x1A12
 	.short 0x1A16
@@ -19,6 +21,7 @@ D_800405D4:
 	.short 0x1A14
 	.short 0
 
+# Right Hand
 D_800405EC:
 	.short 0x1A20
 	.short 0x1A24
@@ -38,9 +41,19 @@ ptrTbl_80040604:
 	.word D_800405EC
 
 /*----------------------------------------------------------------------------*/
+# Hand - Palm Models
+# Left Hand
+
+# Giant Baba body type
 D_8004060C: .short 0x19FA, 0x19FE, 0x1A02, 0x19FA
+
+# Body Types 7 and 8
 D_80040614: .short 0x19FB, 0x19FF, 0x1A03, 0x19FB
+
+# Body Types 3 through 6
 D_8004061C: .short 0x19FC, 0x1A00, 0x1A04, 0x19FC
+
+# Body Types 1 and 2
 D_80040624: .short 0x19FD, 0x1A01, 0x1A05, 0x19FD
 
 ptrTbl_8004062C:
@@ -49,9 +62,18 @@ ptrTbl_8004062C:
 	.word D_80040624
 	.word D_8004060C
 
+# Right Hand
+
+# Giant Baba body type
 D_8004063C: .short 0x1A06, 0x1A0A, 0x1A0E, 0x1A06
+
+# Body Types 7 and 8
 D_80040644: .short 0x1A07, 0x1A0B, 0x1A0F, 0x1A2E
+
+# Body Types 3 through 6
 D_8004064C: .short 0x1A08, 0x1A0C, 0x1A10, 0x1A2F
+
+# Body Types 1 and 2
 D_80040654: .short 0x1A09, 0x1A0D, 0x1A11, 0x1A30
 
 ptrTbl_8004065C:
@@ -70,7 +92,20 @@ tbl_HandTextureFiles:
 	.short 0x1A32, 0x1A34
 	.short 0x1A32, 0x1A34
 
-D_8004067C: .byte 2,2,1,1,1,1,0,0,3,0,0,0
+# 8004067C: mapping of body type to palm model table?
+D_8004067C:
+	.byte 2 # Body Type 1
+	.byte 2 # Body Type 2
+	.byte 1 # Body Type 3
+	.byte 1 # Body Type 4
+	.byte 1 # Body Type 5
+	.byte 1 # Body Type 6
+	.byte 0 # Body Type 7
+	.byte 0 # Body Type 8
+	.byte 3 # Body Type 9 (Giant Baba)
+	.byte 0
+	.byte 0
+	.byte 0
 
 /*----------------------------------------------------------------------------*/
 D_80040688:
