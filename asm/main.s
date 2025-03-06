@@ -44517,16 +44517,16 @@ tbl_MusicFileIDs:
 	.short 0xFFFF # 0x13 (no music)
 	.short 0x352  # 0x14 Original Song A
 	.short 0x353  # 0x15 Original Song B
-	.short 0 # [streamed theme] Giant Baba
-	.short 1 # [streamed theme] Mitsuharu Misawa
-	.short 2 # [streamed theme] Yoshinari Ogawa
-	.short 3 # [streamed theme] Kenta Kobashi
-	.short 4 # [streamed theme] Jun Akiyama
-	.short 5 # [streamed theme] Toshiaki Kawada
-	.short 6 # [streamed theme] Akira Taue
-	.short 7 # [streamed theme] Stan Hansen
-	.short 8 # [streamed theme] NTV Sports Theme
-	.short 9 # [streamed theme] Triple Crown Theme
+	.short 0 # 0x16 [streamed theme] Giant Baba
+	.short 1 # 0x17 [streamed theme] Mitsuharu Misawa
+	.short 2 # 0x18 [streamed theme] Yoshinari Ogawa
+	.short 3 # 0x19 [streamed theme] Kenta Kobashi
+	.short 4 # 0x1A [streamed theme] Jun Akiyama
+	.short 5 # 0x1B [streamed theme] Toshiaki Kawada
+	.short 6 # 0x1C [streamed theme] Akira Taue
+	.short 7 # 0x1D [streamed theme] Stan Hansen
+	.short 8 # 0x1E [streamed theme] NTV Sports Theme
+	.short 9 # 0x1F [streamed theme] Triple Crown Theme
 
 # 800403F0 (Z64 0x40FF0; data01 bin offset: 0x60AC): music volume values
 tbl_MusicVolumeValues:
