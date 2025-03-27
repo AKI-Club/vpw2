@@ -11378,13 +11378,14 @@ D_80045DA4:
 	.short 0x1743
 	.short 0x1744
 
-	.short 0,0
+# these might relate to the skin color
+	.byte 0,0
+	.byte 0,0
+	.byte 1,0
+	.byte 2,0
 
-/*----------------------------------------------------------------------------*/
-# 80045DB0 (Z64 0x469B0; data01 bin offset: 0xBA6C): more values I don't know
-
-D_80045DB0:
-	.byte 1, 0, 2, 0, 0, 0, 0, 0
+# padding/alignment
+	.byte 0, 0, 0, 0
 
 /*----------------------------------------------------------------------------*/
 # 80045DB8 (Z64 0x469B8; data01 bin offset: 0xBA74): per-face facial hair vert. displacement table
@@ -11797,11 +11798,9 @@ tbl_FaceAccessoryType:
 	.byte 0, 0, 0, 0, 0, 4, 0, 0
 
 # 80046158 (Z64 0x46D58; data01 bin offset: 0xBE14) unknown data related to facepaint
+# possibly related to main hair type?
 D_80046158:
 	.byte 1, 0, 1, 1, 0, 0, 0, 0
-
-# 80046160: possible file split here?
-# not sure if this data is part of the above table or not
 	.byte 1, 1, 1, 1, 1, 0, 0, 0
 
 /*----------------------------------------------------------------------------*/
