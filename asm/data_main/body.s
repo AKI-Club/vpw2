@@ -229,6 +229,7 @@ D_8003FF60:
 	.word 0x40000000 # 2.0f
 
 # 8003FFB0 (0x5C6C offset)
+# face blood texture
 D_8003FFB0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFFFFF
@@ -298,6 +299,7 @@ D_80040004:
 	.word 0xFFFFFFFF
 
 # 800400B0 (0x5D6C offset)
+# neck blood texture
 D_800400B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFEC128
@@ -364,6 +366,8 @@ D_800400B0:
 	.word 0xFFFFFFFF
 	.word 0xFFF9DD7B
 
+# 800401B0
+# chest blood texture type 1
 D_800401B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFF9C0
@@ -430,6 +434,8 @@ D_800401B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFFFFF
 
+# 800402B0
+# chest blood texture type 2
 D_800402B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFFFFF
