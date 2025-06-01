@@ -4932,7 +4932,7 @@ func_8001C248:
 /* 01CE4C 8001C24C 24020079 */   li    $v0, 121
 
 /*----------------------------------------------------------------------------*/
-# related to ring attire textures
+# related to upper? ring attire textures
 
 func_8001C250:
 /* 01CE50 8001C250 00052E00 */  sll   $a1, $a1, 0x18
@@ -44611,7 +44611,7 @@ tbl_MusicFileIDs:
 	.short 0x353  # 0x0E Original Song B
 	.short 0x356  # 0x0F unlock song
 	.short 0x357  # 0x10 (same as WCW/nWo Revenge file ID 0x220)
-	.short 0x358  # 0x11 ???? I honestly have no clue.
+	.short 0x358  # 0x11 tournament/league/belt victory
 	.short 0x354  # 0x12 post-match replay music
 	.short 0xFFFF # 0x13 (no music)
 	.short 0x352  # 0x14 Original Song A

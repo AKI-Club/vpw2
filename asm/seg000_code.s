@@ -41948,40 +41948,40 @@ bss0_801156B8: .word 0
 # 80115780 [w] pointer to ???
 bss0_80115780: .word 0, 0
 
-# 80115788 [w]
+# 80115788 [w] related to camera
 bss0_80115788: .word 0
 
-# 8011578C [w]
+# 8011578C [w] related to camera
 bss0_8011578C: .word 0
 
-# 80115790 [w]
+# 80115790 [w] related to camera
 bss0_80115790: .word 0
 
-# 80115794 [w]
+# 80115794 [w] related to camera
 bss0_80115794: .word 0
 
-# 80115798 [w]
+# 80115798 [w] related to camera
 bss0_80115798: .word 0
 
 # 8011579C [w]
 bss0_8011579C: .word 0
 
-# 801157A0 [w]
+# 801157A0 [w] related to camera
 bss0_801157A0: .word 0
 
 # 801157A4 [w]
 bss0_801157A4: .word 0
 
-# 801157A8 [w]
+# 801157A8 [w] related to camera
 bss0_801157A8: .word 0
 
-# 801157AC [w]
+# 801157AC [w] related to camera
 bss0_801157AC: .word 0
 
-# 801157B0 [w]
+# 801157B0 [w] related to camera
 bss0_801157B0: .word 0
 
-# 801157B4 [w]
+# 801157B4 [w] related to camera
 bss0_801157B4: .word 0
 
 # 801157B8 [w]
