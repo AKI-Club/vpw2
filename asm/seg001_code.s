@@ -19474,9 +19474,9 @@ ptrTbl_8012A268:
 
 /*----------------------------------------------------------------------------*/
 # 8012A280 (0x61B0 offset)
-# 0x00 [w]: pointer to camea contols
+# 0x00 [w] pointer to camera controls
 # 0x04 [s] 
-# 0x06 [s] camera motion preset?
+# 0x06 [s] camera motion preset
 
 D_8012A280:
 	.word ptrTbl_80126820
