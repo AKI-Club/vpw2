@@ -14357,6 +14357,18 @@ D_801267E0:
 	.word 0
 	.word 0
 
+/*============================================================================*/
+# Camera Movement is defined as (location,framenum) pairs.
+# frame 0x7FFF is the terminator value.
+
+# Melonbread's important notes
+# (src https://melonbread.co.uk/hacking-the-game-intro-camera-controls/)
+# - "The game actually halves the frame value"
+# - "the X axis is reversed for camera instructions"
+# - (pitch) "negative values...point the camera upwards, positive values...point it downwards"
+
+# "Height" should probably be "Y" and original "Y" should probably be "Z"
+
 /*----------------------------------------------------------------------------*/
 # 801267F0 (0x2720 offset)
 D_801267F0:
@@ -14384,12 +14396,12 @@ D_80126818:
 
 # 80126820 (0x2750 offset)
 ptrTbl_80126820:
-	.word D_801267F0
-	.word D_801267F8
-	.word D_80126800
-	.word D_80126808
-	.word D_80126810
-	.word D_80126818
+	.word D_801267F0 # x
+	.word D_801267F8 # height
+	.word D_80126800 # y
+	.word D_80126808 # pitch
+	.word D_80126810 # pan
+	.word D_80126818 # roll
 
 /*----------------------------------------------*/
 # 80126838
@@ -14418,12 +14430,12 @@ D_80126874:
 
 # 80126880 (0x27B0 offset)
 ptrTbl_80126880:
-	.word D_80126838
-	.word D_80126844
-	.word D_80126850
-	.word D_8012685C
-	.word D_80126868
-	.word D_80126874
+	.word D_80126838 # x
+	.word D_80126844 # height
+	.word D_80126850 # y
+	.word D_8012685C # pitch
+	.word D_80126868 # pan
+	.word D_80126874 # roll
 
 /*----------------------------------------------*/
 # 80126898
@@ -14452,12 +14464,12 @@ D_801268D4:
 
 # 801268E0 (0x2810 offset)
 ptrTbl_801268E0:
-	.word D_80126898
-	.word D_801268A4
-	.word D_801268B0
-	.word D_801268BC
-	.word D_801268C8
-	.word D_801268D4
+	.word D_80126898 # x
+	.word D_801268A4 # height
+	.word D_801268B0 # y
+	.word D_801268BC # pitch
+	.word D_801268C8 # pan
+	.word D_801268D4 # roll
 
 /*----------------------------------------------*/
 # 801268F8
@@ -14486,12 +14498,12 @@ D_80126934:
 
 # 80126940 (0x2870 offset)
 ptrTbl_80126940:
-	.word D_801268F8
-	.word D_80126904
-	.word D_80126910
-	.word D_8012691C
-	.word D_80126928
-	.word D_80126934
+	.word D_801268F8 # x
+	.word D_80126904 # height
+	.word D_80126910 # y
+	.word D_8012691C # pitch
+	.word D_80126928 # pan
+	.word D_80126934 # roll
 
 /*----------------------------------------------*/
 # 80126958
@@ -14520,12 +14532,12 @@ D_80126994:
 
 # 801269A0 (0x28D0 offset)
 ptrTbl_801269A0:
-	.word D_80126958
-	.word D_80126964
-	.word D_80126970
-	.word D_8012697C
-	.word D_80126988
-	.word D_80126994
+	.word D_80126958 # x
+	.word D_80126964 # height
+	.word D_80126970 # y
+	.word D_8012697C # pitch
+	.word D_80126988 # pan
+	.word D_80126994 # roll
 
 /*----------------------------------------------*/
 # 801269B8
@@ -14554,12 +14566,12 @@ D_801269F4:
 
 # 80126A00 (0x2930 offset)
 ptrTbl_80126A00:
-	.word D_801269B8
-	.word D_801269C4
-	.word D_801269D0
-	.word D_801269DC
-	.word D_801269E8
-	.word D_801269F4
+	.word D_801269B8 # x
+	.word D_801269C4 # height
+	.word D_801269D0 # y
+	.word D_801269DC # pitch
+	.word D_801269E8 # pan
+	.word D_801269F4 # roll
 
 /*----------------------------------------------*/
 # 80126A18
@@ -14588,12 +14600,12 @@ D_80126A54:
 
 # 80126A60 (0x2990 offset)
 ptrTbl_80126A60:
-	.word D_80126A18
-	.word D_80126A24
-	.word D_80126A30
-	.word D_80126A3C
-	.word D_80126A48
-	.word D_80126A54
+	.word D_80126A18 # x
+	.word D_80126A24 # height
+	.word D_80126A30 # y
+	.word D_80126A3C # pitch
+	.word D_80126A48 # pan
+	.word D_80126A54 # roll
 
 /*----------------------------------------------*/
 # 80126A78 (0x29A8 offset)
@@ -14622,12 +14634,12 @@ D_80126AB4:
 
 # 80126AC0 (0x29F0 offset)
 ptrTbl_80126AC0:
-	.word D_80126A78
-	.word D_80126A84
-	.word D_80126A90
-	.word D_80126A9C
-	.word D_80126AA8
-	.word D_80126AB4
+	.word D_80126A78 # x
+	.word D_80126A84 # height
+	.word D_80126A90 # y
+	.word D_80126A9C # pitch
+	.word D_80126AA8 # pan
+	.word D_80126AB4 # roll
 
 /*----------------------------------------------*/
 # 80126AD8
@@ -14656,12 +14668,12 @@ D_80126B14:
 
 # 80126B20
 ptrTbl_80126B20:
-	.word D_80126AD8
-	.word D_80126AE4
-	.word D_80126AF0
-	.word D_80126AFC
-	.word D_80126B08
-	.word D_80126B14
+	.word D_80126AD8 # x
+	.word D_80126AE4 # height
+	.word D_80126AF0 # y
+	.word D_80126AFC # pitch
+	.word D_80126B08 # pan
+	.word D_80126B14 # roll
 
 /*----------------------------------------------*/
 # 80126B38
@@ -14690,12 +14702,12 @@ D_80126B74:
 
 # 80126B80
 ptrTbl_80126B80:
-	.word D_80126B38
-	.word D_80126B44
-	.word D_80126B50
-	.word D_80126B5C
-	.word D_80126B68
-	.word D_80126B74
+	.word D_80126B38 # x
+	.word D_80126B44 # height
+	.word D_80126B50 # y
+	.word D_80126B5C # pitch
+	.word D_80126B68 # pan
+	.word D_80126B74 # roll
 
 /*----------------------------------------------*/
 # 80126B98
@@ -14724,12 +14736,12 @@ D_80126BD4:
 
 # 80126BE0
 ptrTbl_80126BE0:
-	.word D_80126B98
-	.word D_80126BA4
-	.word D_80126BB0
-	.word D_80126BBC
-	.word D_80126BC8
-	.word D_80126BD4
+	.word D_80126B98 # x
+	.word D_80126BA4 # height
+	.word D_80126BB0 # y
+	.word D_80126BBC # pitch
+	.word D_80126BC8 # pan
+	.word D_80126BD4 # roll
 
 /*----------------------------------------------*/
 D_80126BF8:
@@ -14757,12 +14769,12 @@ D_80126C88:
 	.short 0x0000, 0x0000, 0x0000, 0x0078, 0x0000, 0x7FFF
 
 ptrTbl_80126C94:
-	.word D_80126BF8
-	.word D_80126C70
-	.word D_80126C20
-	.word D_80126C7C
-	.word D_80126C48
-	.word D_80126C88
+	.word D_80126BF8 # x
+	.word D_80126C70 # height
+	.word D_80126C20 # y
+	.word D_80126C7C # pitch
+	.word D_80126C48 # pan
+	.word D_80126C88 # roll
 
 /*----------------------------------------------*/
 D_80126CAC:
@@ -14784,12 +14796,12 @@ D_80126CE8:
 	.short 0x0000, 0x0000, 0x0023, 0x003E, 0x0000, 0x7FFF
 
 ptrTbl_80126CF4:
-	.word D_80126CAC
-	.word D_80126CB8
-	.word D_80126CC4
-	.word D_80126CD0
-	.word D_80126CDC
-	.word D_80126CE8
+	.word D_80126CAC # x
+	.word D_80126CB8 # height
+	.word D_80126CC4 # y
+	.word D_80126CD0 # pitch
+	.word D_80126CDC # pan
+	.word D_80126CE8 # roll
 
 /*----------------------------------------------*/
 # 80126D0C
@@ -14818,12 +14830,12 @@ D_80126D34:
 
 # 80126D3C
 ptrTbl_80126D3C:
-	.word D_80126D0C
-	.word D_80126D14
-	.word D_80126D1C
-	.word D_80126D24
-	.word D_80126D2C
-	.word D_80126D34
+	.word D_80126D0C # x
+	.word D_80126D14 # height
+	.word D_80126D1C # y
+	.word D_80126D24 # pitch
+	.word D_80126D2C # pan
+	.word D_80126D34 # roll
 
 /*----------------------------------------------*/
 # 80126D54
@@ -14852,12 +14864,12 @@ D_80126D90:
 
 # 80126D9C
 ptrTbl_80126D9C:
-	.word D_80126D54
-	.word D_80126D60
-	.word D_80126D6C
-	.word D_80126D78
-	.word D_80126D84
-	.word D_80126D90
+	.word D_80126D54 # x
+	.word D_80126D60 # height
+	.word D_80126D6C # y
+	.word D_80126D78 # pitch
+	.word D_80126D84 # pan
+	.word D_80126D90 # roll
 
 /*----------------------------------------------*/
 # 80126DB4
@@ -14886,12 +14898,12 @@ D_80126DF0:
 
 # 80126DFC
 ptrTbl_80126DFC:
-	.word D_80126DB4
-	.word D_80126DC0
-	.word D_80126DCC
-	.word D_80126DD8
-	.word D_80126DE4
-	.word D_80126DF0
+	.word D_80126DB4 # x
+	.word D_80126DC0 # height
+	.word D_80126DCC # y
+	.word D_80126DD8 # pitch
+	.word D_80126DE4 # pan
+	.word D_80126DF0 # roll
 
 /*----------------------------------------------*/
 # 80126E14
@@ -14920,12 +14932,12 @@ D_80126E50:
 
 # 80126E5C
 ptrTbl_80126E5C:
-	.word D_80126E14
-	.word D_80126E20
-	.word D_80126E2C
-	.word D_80126E38
-	.word D_80126E44
-	.word D_80126E50
+	.word D_80126E14 # x
+	.word D_80126E20 # height
+	.word D_80126E2C # y
+	.word D_80126E38 # pitch
+	.word D_80126E44 # pan
+	.word D_80126E50 # roll
 
 /*----------------------------------------------*/
 # 80126E74
@@ -14954,12 +14966,12 @@ D_80126EB0:
 
 # 80126EBC
 ptrTbl_80126EBC:
-	.word D_80126E74
-	.word D_80126E80
-	.word D_80126E8C
-	.word D_80126E98
-	.word D_80126EA4
-	.word D_80126EB0
+	.word D_80126E74 # x
+	.word D_80126E80 # height
+	.word D_80126E8C # y
+	.word D_80126E98 # pitch
+	.word D_80126EA4 # pan
+	.word D_80126EB0 # roll
 
 /*----------------------------------------------*/
 # 80126ED4
@@ -14988,12 +15000,12 @@ D_80126F10:
 
 # 80126F1C
 ptrTbl_80126F1C:
-	.word D_80126ED4
-	.word D_80126EE0
-	.word D_80126EEC
-	.word D_80126EF8
-	.word D_80126F04
-	.word D_80126F10
+	.word D_80126ED4 # x
+	.word D_80126EE0 # height
+	.word D_80126EEC # y
+	.word D_80126EF8 # pitch
+	.word D_80126F04 # pan
+	.word D_80126F10 # roll
 
 /*----------------------------------------------*/
 # 80126F34
@@ -15022,12 +15034,12 @@ D_80126F70:
 
 # 80126F7C
 ptrTbl_80126F7C:
-	.word D_80126F34
-	.word D_80126F40
-	.word D_80126F4C
-	.word D_80126F58
-	.word D_80126F64
-	.word D_80126F70
+	.word D_80126F34 # x
+	.word D_80126F40 # height
+	.word D_80126F4C # y
+	.word D_80126F58 # pitch
+	.word D_80126F64 # pan
+	.word D_80126F70 # roll
 
 /*----------------------------------------------*/
 # 80126F94
@@ -15056,12 +15068,12 @@ D_80126FD0:
 
 # 80126FDC
 ptrTbl_80126FDC:
-	.word D_80126F94
-	.word D_80126FA0
-	.word D_80126FAC
-	.word D_80126FB8
-	.word D_80126FC4
-	.word D_80126FD0
+	.word D_80126F94 # x
+	.word D_80126FA0 # height
+	.word D_80126FAC # y
+	.word D_80126FB8 # pitch
+	.word D_80126FC4 # pan
+	.word D_80126FD0 # roll
 
 /*----------------------------------------------*/
 # 80126FF4
@@ -15090,12 +15102,12 @@ D_80127030:
 
 # 8012703C
 ptrTbl_8012703C:
-	.word D_80126FF4
-	.word D_80127000
-	.word D_8012700C
-	.word D_80127018
-	.word D_80127024
-	.word D_80127030
+	.word D_80126FF4 # x
+	.word D_80127000 # height
+	.word D_8012700C # y
+	.word D_80127018 # pitch
+	.word D_80127024 # pan
+	.word D_80127030 # roll
 
 /*----------------------------------------------*/
 # 80127054
@@ -15124,12 +15136,12 @@ D_80127090:
 
 # 8012709C
 ptrTbl_8012709C:
-	.word D_80127054
-	.word D_80127060
-	.word D_8012706C
-	.word D_80127078
-	.word D_80127084
-	.word D_80127090
+	.word D_80127054 # x
+	.word D_80127060 # height
+	.word D_8012706C # y
+	.word D_80127078 # pitch
+	.word D_80127084 # pan
+	.word D_80127090 # roll
 
 /*----------------------------------------------*/
 # 801270B4
@@ -15158,12 +15170,12 @@ D_801270F0:
 
 # 801270FC
 ptrTbl_801270FC:
-	.word D_801270B4
-	.word D_801270C0
-	.word D_801270CC
-	.word D_801270D8
-	.word D_801270E4
-	.word D_801270F0
+	.word D_801270B4 # x
+	.word D_801270C0 # height
+	.word D_801270CC # y
+	.word D_801270D8 # pitch
+	.word D_801270E4 # pan
+	.word D_801270F0 # roll
 
 /*----------------------------------------------*/
 # 80127114
@@ -15192,12 +15204,12 @@ D_80127150:
 
 # 8012715C
 ptrTbl_8012715C:
-	.word D_80127114
-	.word D_80127120
-	.word D_8012712C
-	.word D_80127138
-	.word D_80127144
-	.word D_80127150
+	.word D_80127114 # x
+	.word D_80127120 # height
+	.word D_8012712C # y
+	.word D_80127138 # pitch
+	.word D_80127144 # pan
+	.word D_80127150 # roll
 
 /*----------------------------------------------*/
 # 80127174
@@ -15226,12 +15238,12 @@ D_801271B0:
 
 # 801271BC
 ptrTbl_801271BC:
-	.word D_80127174
-	.word D_80127180
-	.word D_8012718C
-	.word D_80127198
-	.word D_801271A4
-	.word D_801271B0
+	.word D_80127174 # x
+	.word D_80127180 # height
+	.word D_8012718C # y
+	.word D_80127198 # pitch
+	.word D_801271A4 # pan
+	.word D_801271B0 # roll
 
 /*----------------------------------------------*/
 # 801271D4
@@ -15260,12 +15272,12 @@ D_80127210:
 
 # 8012721C
 ptrTbl_8012721C:
-	.word D_801271D4
-	.word D_801271E0
-	.word D_801271EC
-	.word D_801271F8
-	.word D_80127204
-	.word D_80127210
+	.word D_801271D4 # x
+	.word D_801271E0 # height
+	.word D_801271EC # y
+	.word D_801271F8 # pitch
+	.word D_80127204 # pan
+	.word D_80127210 # roll
 
 /*----------------------------------------------*/
 # 80127234
@@ -15294,12 +15306,12 @@ D_80127270:
 
 # 8012727C
 ptrTbl_8012727C:
-	.word D_80127234
-	.word D_80127240
-	.word D_8012724C
-	.word D_80127258
-	.word D_80127264
-	.word D_80127270
+	.word D_80127234 # x
+	.word D_80127240 # height
+	.word D_8012724C # y
+	.word D_80127258 # pitch
+	.word D_80127264 # pan
+	.word D_80127270 # roll
 
 /*----------------------------------------------*/
 # 80127294
@@ -15328,12 +15340,12 @@ D_801272D0:
 
 # 801272DC
 ptrTbl_801272DC:
-	.word D_80127294
-	.word D_801272A0
-	.word D_801272AC
-	.word D_801272B8
-	.word D_801272C4
-	.word D_801272D0
+	.word D_80127294 # x
+	.word D_801272A0 # height
+	.word D_801272AC # y
+	.word D_801272B8 # pitch
+	.word D_801272C4 # pan
+	.word D_801272D0 # roll
 
 /*----------------------------------------------*/
 # 801272F4
@@ -15362,12 +15374,12 @@ D_80127330:
 
 # 8012733C
 ptrTbl_8012733C:
-	.word D_801272F4
-	.word D_80127300
-	.word D_8012730C
-	.word D_80127318
-	.word D_80127324
-	.word D_80127330
+	.word D_801272F4 # x
+	.word D_80127300 # height
+	.word D_8012730C # y
+	.word D_80127318 # pitch
+	.word D_80127324 # pan
+	.word D_80127330 # roll
 
 /*----------------------------------------------*/
 # 80127354
@@ -15396,12 +15408,12 @@ D_80127390:
 
 # 8012739C
 ptrTbl_8012739C:
-	.word D_80127354
-	.word D_80127360
-	.word D_8012736C
-	.word D_80127378
-	.word D_80127384
-	.word D_80127390
+	.word D_80127354 # x
+	.word D_80127360 # height
+	.word D_8012736C # y
+	.word D_80127378 # pitch
+	.word D_80127384 # pan
+	.word D_80127390 # roll
 
 /*----------------------------------------------*/
 # 801273B4
@@ -15430,12 +15442,12 @@ D_801273F0:
 
 # 801273FC
 ptrTbl_801273FC:
-	.word D_801273B4
-	.word D_801273C0
-	.word D_801273CC
-	.word D_801273D8
-	.word D_801273E4
-	.word D_801273F0
+	.word D_801273B4 # x
+	.word D_801273C0 # height
+	.word D_801273CC # y
+	.word D_801273D8 # pitch
+	.word D_801273E4 # pan
+	.word D_801273F0 # roll
 
 /*----------------------------------------------*/
 # 80127414
@@ -15464,12 +15476,12 @@ D_80127450:
 
 # 8012745C
 ptrTbl_8012745C:
-	.word D_80127414
-	.word D_80127420
-	.word D_8012742C
-	.word D_80127438
-	.word D_80127444
-	.word D_80127450
+	.word D_80127414 # x
+	.word D_80127420 # height
+	.word D_8012742C # y
+	.word D_80127438 # pitch
+	.word D_80127444 # pan
+	.word D_80127450 # roll
 
 /*----------------------------------------------*/
 # 80127474
@@ -15498,12 +15510,12 @@ D_801274B0:
 
 # 801274BC
 ptrTbl_801274BC:
-	.word D_80127474
-	.word D_80127480
-	.word D_8012748C
-	.word D_80127498
-	.word D_801274A4
-	.word D_801274B0
+	.word D_80127474 # x
+	.word D_80127480 # height
+	.word D_8012748C # y
+	.word D_80127498 # pitch
+	.word D_801274A4 # pan
+	.word D_801274B0 # roll
 
 /*----------------------------------------------*/
 # 801274D4
@@ -15532,12 +15544,12 @@ D_80127510:
 
 # 8012751C
 ptrTbl_8012751C:
-	.word D_801274D4
-	.word D_801274E0
-	.word D_801274EC
-	.word D_801274F8
-	.word D_80127504
-	.word D_80127510
+	.word D_801274D4 # x
+	.word D_801274E0 # height
+	.word D_801274EC # y
+	.word D_801274F8 # pitch
+	.word D_80127504 # pan
+	.word D_80127510 # roll
 
 /*----------------------------------------------*/
 # 80127534
@@ -15566,12 +15578,12 @@ D_80127570:
 
 # 8012757C
 ptrTbl_8012757C:
-	.word D_80127534
-	.word D_80127540
-	.word D_8012754C
-	.word D_80127558
-	.word D_80127564
-	.word D_80127570
+	.word D_80127534 # x
+	.word D_80127540 # height
+	.word D_8012754C # y
+	.word D_80127558 # pitch
+	.word D_80127564 # pan
+	.word D_80127570 # roll
 
 /*----------------------------------------------*/
 # 80127594
@@ -15600,12 +15612,12 @@ D_801275D0:
 
 # 801275DC
 ptrTbl_801275DC:
-	.word D_80127594
-	.word D_801275A0
-	.word D_801275AC
-	.word D_801275B8
-	.word D_801275C4
-	.word D_801275D0
+	.word D_80127594 # x
+	.word D_801275A0 # height
+	.word D_801275AC # y
+	.word D_801275B8 # pitch
+	.word D_801275C4 # pan
+	.word D_801275D0 # roll
 
 /*----------------------------------------------*/
 # 801275F4
@@ -15640,12 +15652,12 @@ D_80127684:
 
 # 80127690
 ptrTbl_80127690:
-	.word D_801275F4
-	.word D_8012766C
-	.word D_8012761C
-	.word D_80127678
-	.word D_80127644
-	.word D_80127684
+	.word D_801275F4 # x
+	.word D_8012766C # height
+	.word D_8012761C # y
+	.word D_80127678 # pitch
+	.word D_80127644 # pan
+	.word D_80127684 # roll
 
 /*----------------------------------------------*/
 # 801276A8
@@ -15674,12 +15686,12 @@ D_801276E4:
 
 # 801276F0
 ptrTbl_801276F0:
-	.word D_801276A8
-	.word D_801276B4
-	.word D_801276C0
-	.word D_801276CC
-	.word D_801276D8
-	.word D_801276E4
+	.word D_801276A8 # x
+	.word D_801276B4 # height
+	.word D_801276C0 # y
+	.word D_801276CC # pitch
+	.word D_801276D8 # pan
+	.word D_801276E4 # roll
 
 /*----------------------------------------------*/
 # 80127708
@@ -15708,12 +15720,12 @@ D_80127744:
 
 # 80127750
 ptrTbl_80127750:
-	.word D_80127708
-	.word D_80127714
-	.word D_80127720
-	.word D_8012772C
-	.word D_80127738
-	.word D_80127744
+	.word D_80127708 # x
+	.word D_80127714 # height
+	.word D_80127720 # y
+	.word D_8012772C # pitch
+	.word D_80127738 # pan
+	.word D_80127744 # roll
 
 /*----------------------------------------------*/
 # 80127768
@@ -15742,12 +15754,12 @@ D_801277A4:
 
 # 801277B0
 ptrTbl_801277B0:
-	.word D_80127768
-	.word D_80127774
-	.word D_80127780
-	.word D_8012778C
-	.word D_80127798
-	.word D_801277A4
+	.word D_80127768 # x
+	.word D_80127774 # height
+	.word D_80127780 # y
+	.word D_8012778C # pitch
+	.word D_80127798 # pan
+	.word D_801277A4 # roll
 
 /*----------------------------------------------*/
 # 801277C8
@@ -15776,12 +15788,12 @@ D_80127804:
 
 # 80127810
 ptrTbl_80127810:
-	.word D_801277C8
-	.word D_801277D4
-	.word D_801277E0
-	.word D_801277EC
-	.word D_801277F8
-	.word D_80127804
+	.word D_801277C8 # x
+	.word D_801277D4 # height
+	.word D_801277E0 # y
+	.word D_801277EC # pitch
+	.word D_801277F8 # pan
+	.word D_80127804 # roll
 
 /*----------------------------------------------*/
 # 80127828
@@ -15810,12 +15822,12 @@ D_80127864:
 
 # 80127870
 ptrTbl_80127870:
-	.word D_80127828
-	.word D_80127834
-	.word D_80127840
-	.word D_8012784C
-	.word D_80127858
-	.word D_80127864
+	.word D_80127828 # x
+	.word D_80127834 # height
+	.word D_80127840 # y
+	.word D_8012784C # pitch
+	.word D_80127858 # pan
+	.word D_80127864 # roll
 
 /*----------------------------------------------*/
 # 80127888
@@ -15844,12 +15856,12 @@ D_801278C4:
 
 # 801278D0
 ptrTbl_801278D0:
-	.word D_80127888
-	.word D_80127894
-	.word D_801278A0
-	.word D_801278AC
-	.word D_801278B8
-	.word D_801278C4
+	.word D_80127888 # x
+	.word D_80127894 # height
+	.word D_801278A0 # y
+	.word D_801278AC # pitch
+	.word D_801278B8 # pan
+	.word D_801278C4 # roll
 
 /*----------------------------------------------*/
 # 801278E8
@@ -15878,12 +15890,12 @@ D_80127924:
 
 # 80127930
 ptrTbl_80127930:
-	.word D_801278E8
-	.word D_801278F4
-	.word D_80127900
-	.word D_8012790C
-	.word D_80127918
-	.word D_80127924
+	.word D_801278E8 # x
+	.word D_801278F4 # height
+	.word D_80127900 # y
+	.word D_8012790C # pitch
+	.word D_80127918 # pan
+	.word D_80127924 # roll
 
 /*----------------------------------------------*/
 # 80127948
@@ -15912,12 +15924,12 @@ D_80127984:
 
 # 80127990
 ptrTbl_80127990:
-	.word D_80127948
-	.word D_80127954
-	.word D_80127960
-	.word D_8012796C
-	.word D_80127978
-	.word D_80127984
+	.word D_80127948 # x
+	.word D_80127954 # height
+	.word D_80127960 # y
+	.word D_8012796C # pitch
+	.word D_80127978 # pan
+	.word D_80127984 # roll
 
 /*----------------------------------------------*/
 # 801279A8
@@ -15946,12 +15958,12 @@ D_801279E4:
 
 # 801279F0
 ptrTbl_801279F0:
-	.word D_801279A8
-	.word D_801279B4
-	.word D_801279C0
-	.word D_801279CC
-	.word D_801279D8
-	.word D_801279E4
+	.word D_801279A8 # x
+	.word D_801279B4 # height
+	.word D_801279C0 # y
+	.word D_801279CC # pitch
+	.word D_801279D8 # pan
+	.word D_801279E4 # roll
 
 /*----------------------------------------------*/
 # 80127A08
@@ -15980,12 +15992,12 @@ D_80127A44:
 
 # 80127A50
 ptrTbl_80127A50:
-	.word D_80127A08
-	.word D_80127A14
-	.word D_80127A20
-	.word D_80127A2C
-	.word D_80127A38
-	.word D_80127A44
+	.word D_80127A08 # x
+	.word D_80127A14 # height
+	.word D_80127A20 # y
+	.word D_80127A2C # pitch
+	.word D_80127A38 # pan
+	.word D_80127A44 # roll
 
 /*----------------------------------------------*/
 # 80127A68
@@ -16014,12 +16026,12 @@ D_80127AA4:
 
 # 80127AB0
 ptrTbl_80127AB0:
-	.word D_80127A68
-	.word D_80127A74
-	.word D_80127A80
-	.word D_80127A8C
-	.word D_80127A98
-	.word D_80127AA4
+	.word D_80127A68 # x
+	.word D_80127A74 # height
+	.word D_80127A80 # y
+	.word D_80127A8C # pitch
+	.word D_80127A98 # pan
+	.word D_80127AA4 # roll
 
 /*----------------------------------------------*/
 # 80127AC8
@@ -16048,12 +16060,12 @@ D_80127B04:
 
 # 80127B10
 ptrTbl_80127B10:
-	.word D_80127AC8
-	.word D_80127AD4
-	.word D_80127AE0
-	.word D_80127AEC
-	.word D_80127AF8
-	.word D_80127B04
+	.word D_80127AC8 # x
+	.word D_80127AD4 # height
+	.word D_80127AE0 # y
+	.word D_80127AEC # pitch
+	.word D_80127AF8 # pan
+	.word D_80127B04 # roll
 
 /*----------------------------------------------*/
 # 80127B28
@@ -16082,12 +16094,12 @@ D_80127B64:
 
 # 80127B70
 ptrTbl_80127B70:
-	.word D_80127B28
-	.word D_80127B34
-	.word D_80127B40
-	.word D_80127B4C
-	.word D_80127B58
-	.word D_80127B64
+	.word D_80127B28 # x
+	.word D_80127B34 # height
+	.word D_80127B40 # y
+	.word D_80127B4C # pitch
+	.word D_80127B58 # pan
+	.word D_80127B64 # roll
 
 /*----------------------------------------------*/
 # 80127B88
@@ -16116,12 +16128,12 @@ D_80127BC4:
 
 # 80127BD0
 ptrTbl_80127BD0:
-	.word D_80127B88
-	.word D_80127B94
-	.word D_80127BA0
-	.word D_80127BAC
-	.word D_80127BB8
-	.word D_80127BC4
+	.word D_80127B88 # x
+	.word D_80127B94 # height
+	.word D_80127BA0 # y
+	.word D_80127BAC # pitch
+	.word D_80127BB8 # pan
+	.word D_80127BC4 # roll
 
 /*----------------------------------------------*/
 # 80127BE8
@@ -16150,12 +16162,12 @@ D_80127C24:
 
 # 80127C30
 ptrTbl_80127C30:
-	.word D_80127BE8
-	.word D_80127BF4
-	.word D_80127C00
-	.word D_80127C0C
-	.word D_80127C18
-	.word D_80127C24
+	.word D_80127BE8 # x
+	.word D_80127BF4 # height
+	.word D_80127C00 # y
+	.word D_80127C0C # pitch
+	.word D_80127C18 # pan
+	.word D_80127C24 # roll
 
 /*----------------------------------------------*/
 # 80127C48
@@ -16184,12 +16196,12 @@ D_80127C84:
 
 # 80127C90
 ptrTbl_80127C90:
-	.word D_80127C48
-	.word D_80127C54
-	.word D_80127C60
-	.word D_80127C6C
-	.word D_80127C78
-	.word D_80127C84
+	.word D_80127C48 # x
+	.word D_80127C54 # height
+	.word D_80127C60 # y
+	.word D_80127C6C # pitch
+	.word D_80127C78 # pan
+	.word D_80127C84 # roll
 
 /*----------------------------------------------*/
 # 80127CA8
@@ -16218,12 +16230,12 @@ D_80127CE4:
 
 # 80127CF0
 ptrTbl_80127CF0:
-	.word D_80127CA8
-	.word D_80127CB4
-	.word D_80127CC0
-	.word D_80127CCC
-	.word D_80127CD8
-	.word D_80127CE4
+	.word D_80127CA8 # x
+	.word D_80127CB4 # height
+	.word D_80127CC0 # y
+	.word D_80127CCC # pitch
+	.word D_80127CD8 # pan
+	.word D_80127CE4 # roll
 
 /*----------------------------------------------*/
 # 80127D08
@@ -16252,12 +16264,12 @@ D_80127D44:
 
 # 80127D50
 ptrTbl_80127D50:
-	.word D_80127D08
-	.word D_80127D14
-	.word D_80127D20
-	.word D_80127D2C
-	.word D_80127D38
-	.word D_80127D44
+	.word D_80127D08 # x
+	.word D_80127D14 # height
+	.word D_80127D20 # y
+	.word D_80127D2C # pitch
+	.word D_80127D38 # pan
+	.word D_80127D44 # roll
 
 /*----------------------------------------------*/
 # 80127D68
@@ -16286,12 +16298,12 @@ D_80127DA4:
 
 # 80127DB0
 ptrTbl_80127DB0:
-	.word D_80127D68
-	.word D_80127D74
-	.word D_80127D80
-	.word D_80127D8C
-	.word D_80127D98
-	.word D_80127DA4
+	.word D_80127D68 # x
+	.word D_80127D74 # height
+	.word D_80127D80 # y
+	.word D_80127D8C # pitch
+	.word D_80127D98 # pan
+	.word D_80127DA4 # roll
 
 /*----------------------------------------------*/
 # 80127DC8
@@ -16320,12 +16332,12 @@ D_80127E04:
 
 # 80127E10
 ptrTbl_80127E10:
-	.word D_80127DC8
-	.word D_80127DD4
-	.word D_80127DE0
-	.word D_80127DEC
-	.word D_80127DF8
-	.word D_80127E04
+	.word D_80127DC8 # x
+	.word D_80127DD4 # height
+	.word D_80127DE0 # y
+	.word D_80127DEC # pitch
+	.word D_80127DF8 # pan
+	.word D_80127E04 # roll
 
 /*----------------------------------------------*/
 # 80127E28
@@ -16354,12 +16366,12 @@ D_80127E64:
 
 # 80127E70
 ptrTbl_80127E70:
-	.word D_80127E28
-	.word D_80127E34
-	.word D_80127E40
-	.word D_80127E4C
-	.word D_80127E58
-	.word D_80127E64
+	.word D_80127E28 # x
+	.word D_80127E34 # height
+	.word D_80127E40 # y
+	.word D_80127E4C # pitch
+	.word D_80127E58 # pan
+	.word D_80127E64 # roll
 
 /*----------------------------------------------*/
 # 80127E88
@@ -16388,12 +16400,12 @@ D_80127EC4:
 
 # 80127ED0
 ptrTbl_80127ED0:
-	.word D_80127E88
-	.word D_80127E94
-	.word D_80127EA0
-	.word D_80127EAC
-	.word D_80127EB8
-	.word D_80127EC4
+	.word D_80127E88 # x
+	.word D_80127E94 # height
+	.word D_80127EA0 # y
+	.word D_80127EAC # pitch
+	.word D_80127EB8 # pan
+	.word D_80127EC4 # roll
 
 /*----------------------------------------------*/
 # 80127EE8
@@ -16422,12 +16434,12 @@ D_80127F24:
 
 # 80127F30
 ptrTbl_80127F30:
-	.word D_80127EE8
-	.word D_80127EF4
-	.word D_80127F00
-	.word D_80127F0C
-	.word D_80127F18
-	.word D_80127F24
+	.word D_80127EE8 # x
+	.word D_80127EF4 # height
+	.word D_80127F00 # y
+	.word D_80127F0C # pitch
+	.word D_80127F18 # pan
+	.word D_80127F24 # roll
 
 /*----------------------------------------------*/
 # 80127F48
@@ -16456,12 +16468,12 @@ D_80127F84:
 
 # 80127F90
 ptrTbl_80127F90:
-	.word D_80127F48
-	.word D_80127F54
-	.word D_80127F60
-	.word D_80127F6C
-	.word D_80127F78
-	.word D_80127F84
+	.word D_80127F48 # x
+	.word D_80127F54 # height
+	.word D_80127F60 # y
+	.word D_80127F6C # pitch
+	.word D_80127F78 # pan
+	.word D_80127F84 # roll
 
 /*----------------------------------------------*/
 # 80127FA8
@@ -16490,12 +16502,12 @@ D_80127FE4:
 
 # 80127FF0
 ptrTbl_80127FF0:
-	.word D_80127FA8
-	.word D_80127FB4
-	.word D_80127FC0
-	.word D_80127FCC
-	.word D_80127FD8
-	.word D_80127FE4
+	.word D_80127FA8 # x
+	.word D_80127FB4 # height
+	.word D_80127FC0 # y
+	.word D_80127FCC # pitch
+	.word D_80127FD8 # pan
+	.word D_80127FE4 # roll
 
 /*----------------------------------------------*/
 # 80128008
@@ -16524,12 +16536,12 @@ D_80128044:
 
 # 80128050
 ptrTbl_80128050:
-	.word D_80128008
-	.word D_80128014
-	.word D_80128020
-	.word D_8012802C
-	.word D_80128038
-	.word D_80128044
+	.word D_80128008 # x
+	.word D_80128014 # height
+	.word D_80128020 # y
+	.word D_8012802C # pitch
+	.word D_80128038 # pan
+	.word D_80128044 # roll
 
 /*----------------------------------------------*/
 # 80128068
@@ -16558,12 +16570,12 @@ D_801280A4:
 
 # 801280B0
 ptrTbl_801280B0:
-	.word D_80128068
-	.word D_80128074
-	.word D_80128080
-	.word D_8012808C
-	.word D_80128098
-	.word D_801280A4
+	.word D_80128068 # x
+	.word D_80128074 # height
+	.word D_80128080 # y
+	.word D_8012808C # pitch
+	.word D_80128098 # pan
+	.word D_801280A4 # roll
 
 /*----------------------------------------------*/
 # 801280C8
@@ -16592,12 +16604,12 @@ D_80128104:
 
 # 80128110
 ptrTbl_80128110:
-	.word D_801280C8
-	.word D_801280D4
-	.word D_801280E0
-	.word D_801280EC
-	.word D_801280F8
-	.word D_80128104
+	.word D_801280C8 # x
+	.word D_801280D4 # height
+	.word D_801280E0 # y
+	.word D_801280EC # pitch
+	.word D_801280F8 # pan
+	.word D_80128104 # roll
 
 /*----------------------------------------------*/
 # 80128128
@@ -16626,12 +16638,12 @@ D_80128164:
 
 # 80128170
 ptrTbl_80128170:
-	.word D_80128128
-	.word D_80128134
-	.word D_80128140
-	.word D_8012814C
-	.word D_80128158
-	.word D_80128164
+	.word D_80128128 # x
+	.word D_80128134 # height
+	.word D_80128140 # y
+	.word D_8012814C # pitch
+	.word D_80128158 # pan
+	.word D_80128164 # roll
 
 /*----------------------------------------------*/
 # 80128188
@@ -16660,12 +16672,12 @@ D_801281C4:
 
 # 801281D0
 ptrTbl_801281D0:
-	.word D_80128188
-	.word D_80128194
-	.word D_801281A0
-	.word D_801281AC
-	.word D_801281B8
-	.word D_801281C4
+	.word D_80128188 # x
+	.word D_80128194 # height
+	.word D_801281A0 # y
+	.word D_801281AC # pitch
+	.word D_801281B8 # pan
+	.word D_801281C4 # roll
 
 /*----------------------------------------------*/
 # 801281E8
@@ -16694,12 +16706,12 @@ D_80128224:
 
 # 80128230
 ptrTbl_80128230:
-	.word D_801281E8
-	.word D_801281F4
-	.word D_80128200
-	.word D_8012820C
-	.word D_80128218
-	.word D_80128224
+	.word D_801281E8 # x
+	.word D_801281F4 # height
+	.word D_80128200 # y
+	.word D_8012820C # pitch
+	.word D_80128218 # pan
+	.word D_80128224 # roll
 
 /*----------------------------------------------*/
 # 80128248
@@ -16728,12 +16740,12 @@ D_80128284:
 
 # 80128290
 ptrTbl_80128290:
-	.word D_80128248
-	.word D_80128254
-	.word D_80128260
-	.word D_8012826C
-	.word D_80128278
-	.word D_80128284
+	.word D_80128248 # x
+	.word D_80128254 # height
+	.word D_80128260 # y
+	.word D_8012826C # pitch
+	.word D_80128278 # pan
+	.word D_80128284 # roll
 
 /*----------------------------------------------*/
 # 801282A8
@@ -16762,12 +16774,12 @@ D_801282E4:
 
 # 801282F0
 ptrTbl_801282F0:
-	.word D_801282A8
-	.word D_801282B4
-	.word D_801282C0
-	.word D_801282CC
-	.word D_801282D8
-	.word D_801282E4
+	.word D_801282A8 # x
+	.word D_801282B4 # height
+	.word D_801282C0 # y
+	.word D_801282CC # pitch
+	.word D_801282D8 # pan
+	.word D_801282E4 # roll
 
 /*----------------------------------------------*/
 # 80128308
@@ -16796,12 +16808,12 @@ D_80128344:
 
 # 80128350
 ptrTbl_80128350:
-	.word D_80128308
-	.word D_80128314
-	.word D_80128320
-	.word D_8012832C
-	.word D_80128338
-	.word D_80128344
+	.word D_80128308 # x
+	.word D_80128314 # height
+	.word D_80128320 # y
+	.word D_8012832C # pitch
+	.word D_80128338 # pan
+	.word D_80128344 # roll
 
 /*----------------------------------------------*/
 # 80128368
@@ -16830,12 +16842,12 @@ D_801283A4:
 
 # 801283B0
 ptrTbl_801283B0:
-	.word D_80128368
-	.word D_80128374
-	.word D_80128380
-	.word D_8012838C
-	.word D_80128398
-	.word D_801283A4
+	.word D_80128368 # x
+	.word D_80128374 # height
+	.word D_80128380 # y
+	.word D_8012838C # pitch
+	.word D_80128398 # pan
+	.word D_801283A4 # roll
 
 /*----------------------------------------------*/
 # 801283C8
@@ -16864,12 +16876,12 @@ D_80128404:
 
 # 80128410
 ptrTbl_80128410:
-	.word D_801283C8
-	.word D_801283D4
-	.word D_801283E0
-	.word D_801283EC
-	.word D_801283F8
-	.word D_80128404
+	.word D_801283C8 # x
+	.word D_801283D4 # height
+	.word D_801283E0 # y
+	.word D_801283EC # pitch
+	.word D_801283F8 # pan
+	.word D_80128404 # roll
 
 /*----------------------------------------------*/
 # 80128428
@@ -16898,12 +16910,12 @@ D_80128464:
 
 # 80128470
 ptrTbl_80128470:
-	.word D_80128428
-	.word D_80128434
-	.word D_80128440
-	.word D_8012844C
-	.word D_80128458
-	.word D_80128464
+	.word D_80128428 # x
+	.word D_80128434 # height
+	.word D_80128440 # y
+	.word D_8012844C # pitch
+	.word D_80128458 # pan
+	.word D_80128464 # roll
 
 /*----------------------------------------------*/
 # 80128488
@@ -16932,12 +16944,12 @@ D_801284B0:
 
 # 801284B8
 ptrTbl_801284B8:
-	.word D_80128488
-	.word D_80128490
-	.word D_80128498
-	.word D_801284A0
-	.word D_801284A8
-	.word D_801284B0
+	.word D_80128488 # x
+	.word D_80128490 # height
+	.word D_80128498 # y
+	.word D_801284A0 # pitch
+	.word D_801284A8 # pan
+	.word D_801284B0 # roll
 
 /*----------------------------------------------*/
 # 801284D0
@@ -16966,12 +16978,12 @@ D_8012850C:
 
 # 80128518
 ptrTbl_80128518:
-	.word D_801284D0
-	.word D_801284DC
-	.word D_801284E8
-	.word D_801284F4
-	.word D_80128500
-	.word D_8012850C
+	.word D_801284D0 # x
+	.word D_801284DC # height
+	.word D_801284E8 # y
+	.word D_801284F4 # pitch
+	.word D_80128500 # pan
+	.word D_8012850C # roll
 
 /*----------------------------------------------*/
 # 80128530
@@ -17000,12 +17012,12 @@ D_8012856C:
 
 # 80128578
 ptrTbl_80128578:
-	.word D_80128530
-	.word D_8012853C
-	.word D_80128548
-	.word D_80128554
-	.word D_80128560
-	.word D_8012856C
+	.word D_80128530 # x
+	.word D_8012853C # height
+	.word D_80128548 # y
+	.word D_80128554 # pitch
+	.word D_80128560 # pan
+	.word D_8012856C # roll
 
 /*----------------------------------------------*/
 # 80128590
@@ -17034,12 +17046,12 @@ D_801285CC:
 
 # 801285D8
 ptrTbl_801285D8:
-	.word D_80128590
-	.word D_8012859C
-	.word D_801285A8
-	.word D_801285B4
-	.word D_801285C0
-	.word D_801285CC
+	.word D_80128590 # x
+	.word D_8012859C # height
+	.word D_801285A8 # y
+	.word D_801285B4 # pitch
+	.word D_801285C0 # pan
+	.word D_801285CC # roll
 
 /*----------------------------------------------*/
 # 801285F0
@@ -17068,12 +17080,12 @@ D_8012862C:
 
 # 80128638
 ptrTbl_80128638:
-	.word D_801285F0
-	.word D_801285FC
-	.word D_80128608
-	.word D_80128614
-	.word D_80128620
-	.word D_8012862C
+	.word D_801285F0 # x
+	.word D_801285FC # height
+	.word D_80128608 # y
+	.word D_80128614 # pitch
+	.word D_80128620 # pan
+	.word D_8012862C # roll
 
 /*----------------------------------------------*/
 # 80128650
@@ -17102,12 +17114,12 @@ D_8012868C:
 
 # 80128698
 ptrTbl_80128698:
-	.word D_80128650
-	.word D_8012865C
-	.word D_80128668
-	.word D_80128674
-	.word D_80128680
-	.word D_8012868C
+	.word D_80128650 # x
+	.word D_8012865C # height
+	.word D_80128668 # y
+	.word D_80128674 # pitch
+	.word D_80128680 # pan
+	.word D_8012868C # roll
 
 /*----------------------------------------------*/
 # 801286B0
@@ -17136,12 +17148,12 @@ D_801286EC:
 
 # 801286F8
 ptrTbl_801286F8:
-	.word D_801286B0
-	.word D_801286BC
-	.word D_801286C8
-	.word D_801286D4
-	.word D_801286E0
-	.word D_801286EC
+	.word D_801286B0 # x
+	.word D_801286BC # height
+	.word D_801286C8 # y
+	.word D_801286D4 # pitch
+	.word D_801286E0 # pan
+	.word D_801286EC # roll
 
 /*----------------------------------------------*/
 # 80128710
@@ -17170,12 +17182,12 @@ D_8012874C:
 
 # 80128758
 ptrTbl_80128758:
-	.word D_80128710
-	.word D_8012871C
-	.word D_80128728
-	.word D_80128734
-	.word D_80128740
-	.word D_8012874C
+	.word D_80128710 # x
+	.word D_8012871C # height
+	.word D_80128728 # y
+	.word D_80128734 # pitch
+	.word D_80128740 # pan
+	.word D_8012874C # roll
 
 /*----------------------------------------------*/
 # 80128770
@@ -17204,12 +17216,12 @@ D_801287AC:
 
 # 801287B8
 ptrTbl_801287B8:
-	.word D_80128770
-	.word D_8012877C
-	.word D_80128788
-	.word D_80128794
-	.word D_801287A0
-	.word D_801287AC
+	.word D_80128770 # x
+	.word D_8012877C # height
+	.word D_80128788 # y
+	.word D_80128794 # pitch
+	.word D_801287A0 # pan
+	.word D_801287AC # roll
 
 /*----------------------------------------------*/
 # 801287D0
@@ -17238,12 +17250,12 @@ D_8012880C:
 
 # 80128818
 ptrTbl_80128818:
-	.word D_801287D0
-	.word D_801287DC
-	.word D_801287E8
-	.word D_801287F4
-	.word D_80128800
-	.word D_8012880C
+	.word D_801287D0 # x
+	.word D_801287DC # height
+	.word D_801287E8 # y
+	.word D_801287F4 # pitch
+	.word D_80128800 # pan
+	.word D_8012880C # roll
 
 /*----------------------------------------------*/
 # 80128830
@@ -17272,12 +17284,12 @@ D_80128858:
 
 #80128860
 ptrTbl_80128860:
-	.word D_80128830
-	.word D_80128838
-	.word D_80128840
-	.word D_80128848
-	.word D_80128850
-	.word D_80128858
+	.word D_80128830 # x
+	.word D_80128838 # height
+	.word D_80128840 # y
+	.word D_80128848 # pitch
+	.word D_80128850 # pan
+	.word D_80128858 # roll
 
 /*----------------------------------------------*/
 # 80128878
@@ -17306,12 +17318,12 @@ D_801288B4:
 
 # 801288C0
 ptrTbl_801288C0:
-	.word D_80128878
-	.word D_80128884
-	.word D_80128890
-	.word D_8012889C
-	.word D_801288A8
-	.word D_801288B4
+	.word D_80128878 # x
+	.word D_80128884 # height
+	.word D_80128890 # y
+	.word D_8012889C # pitch
+	.word D_801288A8 # pan
+	.word D_801288B4 # roll
 
 /*----------------------------------------------*/
 # 801288D8
@@ -17340,12 +17352,12 @@ D_80128914:
 
 # 80128920
 ptrTbl_80128920:
-	.word D_801288D8
-	.word D_801288E4
-	.word D_801288F0
-	.word D_801288FC
-	.word D_80128908
-	.word D_80128914
+	.word D_801288D8 # x
+	.word D_801288E4 # height
+	.word D_801288F0 # y
+	.word D_801288FC # pitch
+	.word D_80128908 # pan
+	.word D_80128914 # roll
 
 /*----------------------------------------------*/
 # 80128938
@@ -17374,12 +17386,12 @@ D_80128974:
 
 # 80128980
 ptrTbl_80128980:
-	.word D_80128938
-	.word D_80128944
-	.word D_80128950
-	.word D_8012895C
-	.word D_80128968
-	.word D_80128974
+	.word D_80128938 # x
+	.word D_80128944 # height
+	.word D_80128950 # y
+	.word D_8012895C # pitch
+	.word D_80128968 # pan
+	.word D_80128974 # roll
 
 /*----------------------------------------------*/
 # 80128998
@@ -17408,12 +17420,12 @@ D_801289D4:
 
 # 801289E0
 ptrTbl_801289E0:
-	.word D_80128998
-	.word D_801289A4
-	.word D_801289B0
-	.word D_801289BC
-	.word D_801289C8
-	.word D_801289D4
+	.word D_80128998 # x
+	.word D_801289A4 # height
+	.word D_801289B0 # y
+	.word D_801289BC # pitch
+	.word D_801289C8 # pan
+	.word D_801289D4 # roll
 
 /*----------------------------------------------*/
 # 801289F8
@@ -17442,12 +17454,12 @@ D_80128A34:
 
 # 80128A40
 ptrTbl_80128A40:
-	.word D_801289F8
-	.word D_80128A04
-	.word D_80128A10
-	.word D_80128A1C
-	.word D_80128A28
-	.word D_80128A34
+	.word D_801289F8 # x
+	.word D_80128A04 # height
+	.word D_80128A10 # y
+	.word D_80128A1C # pitch
+	.word D_80128A28 # pan
+	.word D_80128A34 # roll
 
 /*----------------------------------------------*/
 # 80128A58
@@ -17489,12 +17501,12 @@ D_80128B48:
 
 # 80128B5C
 ptrTbl_80128B5C:
-	.word D_80128A58
-	.word D_80128B08
-	.word D_80128A90
-	.word D_80128B24
-	.word D_80128AD0
-	.word D_80128B48
+	.word D_80128A58 # x
+	.word D_80128B08 # height
+	.word D_80128A90 # y
+	.word D_80128B24 # pitch
+	.word D_80128AD0 # pan
+	.word D_80128B48 # roll
 
 /*----------------------------------------------*/
 # 80128B74
@@ -17523,12 +17535,12 @@ D_80128B9C:
 
 # 80128BA4
 ptrTbl_80128BA4:
-	.word D_80128B74
-	.word D_80128B7C
-	.word D_80128B84
-	.word D_80128B8C
-	.word D_80128B94
-	.word D_80128B9C
+	.word D_80128B74 # x
+	.word D_80128B7C # height
+	.word D_80128B84 # y
+	.word D_80128B8C # pitch
+	.word D_80128B94 # pan
+	.word D_80128B9C # roll
 
 /*----------------------------------------------*/
 # 80128BBC
@@ -17557,12 +17569,12 @@ D_80128BF8:
 
 # 80128C04
 ptrTbl_80128C04:
-	.word D_80128BBC
-	.word D_80128BC8
-	.word D_80128BD4
-	.word D_80128BE0
-	.word D_80128BEC
-	.word D_80128BF8
+	.word D_80128BBC # x
+	.word D_80128BC8 # height
+	.word D_80128BD4 # y
+	.word D_80128BE0 # pitch
+	.word D_80128BEC # pan
+	.word D_80128BF8 # roll
 
 /*----------------------------------------------*/
 # 80128C1C
@@ -17591,12 +17603,12 @@ D_80128C58:
 
 # 80128C64
 ptrTbl_80128C64:
-	.word D_80128C1C
-	.word D_80128C28
-	.word D_80128C34
-	.word D_80128C40
-	.word D_80128C4C
-	.word D_80128C58
+	.word D_80128C1C # x
+	.word D_80128C28 # height
+	.word D_80128C34 # y
+	.word D_80128C40 # pitch
+	.word D_80128C4C # pan
+	.word D_80128C58 # roll
 
 /*----------------------------------------------*/
 # 80128C7C
@@ -17625,12 +17637,12 @@ D_80128CB8:
 
 # 80128CC4
 ptrTbl_80128CC4:
-	.word D_80128C7C
-	.word D_80128C88
-	.word D_80128C94
-	.word D_80128CA0
-	.word D_80128CAC
-	.word D_80128CB8
+	.word D_80128C7C # x
+	.word D_80128C88 # height
+	.word D_80128C94 # y
+	.word D_80128CA0 # pitch
+	.word D_80128CAC # pan
+	.word D_80128CB8 # roll
 
 /*----------------------------------------------*/
 # 80128CDC
@@ -17668,12 +17680,12 @@ D_80128D84:
 
 # 80128D98
 ptrTbl_80128D98:
-	.word D_80128CDC
-	.word D_80128D08
-	.word D_80128D1C
-	.word D_80128D48
-	.word D_80128D5C
-	.word D_80128D84
+	.word D_80128CDC # x
+	.word D_80128D08 # height
+	.word D_80128D1C # y
+	.word D_80128D48 # pitch
+	.word D_80128D5C # pan
+	.word D_80128D84 # roll
 
 /*----------------------------------------------*/
 # 80128DB0
@@ -17698,12 +17710,12 @@ D_80128DEC:
 
 # 80128E00
 ptrTbl_80128E00:
-	.word D_80128DC4
-	.word D_80128DD8
-	.word D_80128DEC
-	.word D_80128DB0
-	.word D_80128DB0
-	.word D_80128DB0
+	.word D_80128DC4 # x
+	.word D_80128DD8 # height
+	.word D_80128DEC # y
+	.word D_80128DB0 # pitch
+	.word D_80128DB0 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80128E18
@@ -17713,12 +17725,12 @@ D_80128E18:
 
 # 80128E2C
 ptrTbl_80128E2C:
-	.word D_80128E18
-	.word D_80128DD8
-	.word D_80128DEC
-	.word D_80128DB0
-	.word D_80128DB0
-	.word D_80128DB0
+	.word D_80128E18 # x
+	.word D_80128DD8 # height
+	.word D_80128DEC # y
+	.word D_80128DB0 # pitch
+	.word D_80128DB0 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80128E44
@@ -17748,12 +17760,12 @@ D_80128EA4:
 
 # 80128EBC
 ptrTbl_80128EBC:
-	.word D_80128E44
-	.word D_80128E5C
-	.word D_80128E74
-	.word D_80128E8C
-	.word D_80128EA4
-	.word D_80128DB0
+	.word D_80128E44 # x
+	.word D_80128E5C # height
+	.word D_80128E74 # y
+	.word D_80128E8C # pitch
+	.word D_80128EA4 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80128ED4
@@ -17783,12 +17795,12 @@ D_80128F34:
 
 # 80128F4C
 ptrTbl_80128F4C:
-	.word D_80128ED4
-	.word D_80128EEC
-	.word D_80128F04
-	.word D_80128F1C
-	.word D_80128F34
-	.word D_80128DB0
+	.word D_80128ED4 # x
+	.word D_80128EEC # height
+	.word D_80128F04 # y
+	.word D_80128F1C # pitch
+	.word D_80128F34 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80128F64
@@ -17818,12 +17830,12 @@ D_80128FC4:
 
 # 80128FDC
 ptrTbl_80128FDC:
-	.word D_80128F64
-	.word D_80128F7C
-	.word D_80128F94
-	.word D_80128FAC
-	.word D_80128FC4
-	.word D_80128DB0
+	.word D_80128F64 # x
+	.word D_80128F7C # height
+	.word D_80128F94 # y
+	.word D_80128FAC # pitch
+	.word D_80128FC4 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80128FF4
@@ -17853,12 +17865,12 @@ D_80129054:
 
 # 8012906C
 ptrTbl_8012906C:
-	.word D_80128FF4
-	.word D_8012900C
-	.word D_80129024
-	.word D_8012903C
-	.word D_80129054
-	.word D_80128DB0
+	.word D_80128FF4 # x
+	.word D_8012900C # height
+	.word D_80129024 # y
+	.word D_8012903C # pitch
+	.word D_80129054 # pan
+	.word D_80128DB0 # roll
 
 /*----------------------------------------------*/
 # 80129084
@@ -17887,12 +17899,12 @@ D_801290AC:
 
 # 801290B4
 ptrTbl_801290B4:
-	.word D_80129084
-	.word D_8012908C
-	.word D_80129094
-	.word D_8012909C
-	.word D_801290A4
-	.word D_801290AC
+	.word D_80129084 # x
+	.word D_8012908C # height
+	.word D_80129094 # y
+	.word D_8012909C # pitch
+	.word D_801290A4 # pan
+	.word D_801290AC # roll
 
 /*----------------------------------------------*/
 # 801290CC
@@ -17921,12 +17933,12 @@ D_80129108:
 
 # 80129114
 ptrTbl_80129114:
-	.word D_801290CC
-	.word D_801290D8
-	.word D_801290E4
-	.word D_801290F0
-	.word D_801290FC
-	.word D_80129108
+	.word D_801290CC # x
+	.word D_801290D8 # height
+	.word D_801290E4 # y
+	.word D_801290F0 # pitch
+	.word D_801290FC # pan
+	.word D_80129108 # roll
 
 /*----------------------------------------------*/
 # 8012912C
@@ -17955,12 +17967,12 @@ D_80129168:
 
 # 80129174
 ptrTbl_80129174:
-	.word D_8012912C
-	.word D_80129138
-	.word D_80129144
-	.word D_80129150
-	.word D_8012915C
-	.word D_80129168
+	.word D_8012912C # x
+	.word D_80129138 # height
+	.word D_80129144 # y
+	.word D_80129150 # pitch
+	.word D_8012915C # pan
+	.word D_80129168 # roll
 
 /*----------------------------------------------*/
 # 8012918C
@@ -17989,12 +18001,12 @@ D_801291B4:
 
 # 801291BC
 ptrTbl_801291BC:
-	.word D_8012918C
-	.word D_80129194
-	.word D_8012919C
-	.word D_801291A4
-	.word D_801291AC
-	.word D_801291B4
+	.word D_8012918C # x
+	.word D_80129194 # height
+	.word D_8012919C # y
+	.word D_801291A4 # pitch
+	.word D_801291AC # pan
+	.word D_801291B4 # roll
 
 /*----------------------------------------------*/
 # 801291D4
@@ -18023,12 +18035,12 @@ D_80129210:
 
 # 8012921C
 ptrTbl_8012921C:
-	.word D_801291D4
-	.word D_801291E0
-	.word D_801291EC
-	.word D_801291F8
-	.word D_80129204
-	.word D_80129210
+	.word D_801291D4 # x
+	.word D_801291E0 # height
+	.word D_801291EC # y
+	.word D_801291F8 # pitch
+	.word D_80129204 # pan
+	.word D_80129210 # roll
 
 /*----------------------------------------------*/
 # 80129234
@@ -18057,12 +18069,12 @@ D_80129270:
 
 # 8012927C
 ptrTbl_8012927C:
-	.word D_80129234
-	.word D_80129240
-	.word D_8012924C
-	.word D_80129258
-	.word D_80129264
-	.word D_80129270
+	.word D_80129234 # x
+	.word D_80129240 # height
+	.word D_8012924C # y
+	.word D_80129258 # pitch
+	.word D_80129264 # pan
+	.word D_80129270 # roll
 
 /*----------------------------------------------*/
 # 80129294
@@ -18091,12 +18103,12 @@ D_801292D0:
 
 # 801292DC
 ptrTbl_801292DC:
-	.word D_80129294
-	.word D_801292A0
-	.word D_801292AC
-	.word D_801292B8
-	.word D_801292C4
-	.word D_801292D0
+	.word D_80129294 # x
+	.word D_801292A0 # height
+	.word D_801292AC # y
+	.word D_801292B8 # pitch
+	.word D_801292C4 # pan
+	.word D_801292D0 # roll
 
 /*----------------------------------------------*/
 # 801292F4
@@ -18125,12 +18137,12 @@ D_80129330:
 
 # 8012933C
 ptrTbl_8012933C:
-	.word D_801292F4
-	.word D_80129300
-	.word D_8012930C
-	.word D_80129318
-	.word D_80129324
-	.word D_80129330
+	.word D_801292F4 # x
+	.word D_80129300 # height
+	.word D_8012930C # y
+	.word D_80129318 # pitch
+	.word D_80129324 # pan
+	.word D_80129330 # roll
 
 /*----------------------------------------------*/
 # 80129354
@@ -18159,12 +18171,12 @@ D_80129390:
 
 # 8012939C
 ptrTbl_8012939C:
-	.word D_80129354
-	.word D_80129360
-	.word D_8012936C
-	.word D_80129378
-	.word D_80129384
-	.word D_80129390
+	.word D_80129354 # x
+	.word D_80129360 # height
+	.word D_8012936C # y
+	.word D_80129378 # pitch
+	.word D_80129384 # pan
+	.word D_80129390 # roll
 
 /*----------------------------------------------*/
 # 801293B4
@@ -18193,12 +18205,12 @@ D_801293F0:
 
 # 801293FC
 ptrTbl_801293FC:
-	.word D_801293B4
-	.word D_801293C0
-	.word D_801293CC
-	.word D_801293D8
-	.word D_801293E4
-	.word D_801293F0
+	.word D_801293B4 # x
+	.word D_801293C0 # height
+	.word D_801293CC # y
+	.word D_801293D8 # pitch
+	.word D_801293E4 # pan
+	.word D_801293F0 # roll
 
 /*----------------------------------------------*/
 # 80129414
@@ -18227,12 +18239,12 @@ D_80129450:
 
 # 8012945C
 ptrTbl_8012945C:
-	.word D_80129414
-	.word D_80129420
-	.word D_8012942C
-	.word D_80129438
-	.word D_80129444
-	.word D_80129450
+	.word D_80129414 # x
+	.word D_80129420 # height
+	.word D_8012942C # y
+	.word D_80129438 # pitch
+	.word D_80129444 # pan
+	.word D_80129450 # roll
 
 /*----------------------------------------------*/
 # 80129474
@@ -18261,12 +18273,12 @@ D_801294B0:
 
 # 801294BC
 ptrTbl_801294BC:
-	.word D_80129474
-	.word D_80129480
-	.word D_8012948C
-	.word D_80129498
-	.word D_801294A4
-	.word D_801294B0
+	.word D_80129474 # x
+	.word D_80129480 # height
+	.word D_8012948C # y
+	.word D_80129498 # pitch
+	.word D_801294A4 # pan
+	.word D_801294B0 # roll
 
 /*----------------------------------------------*/
 # 801294D4
@@ -18295,12 +18307,12 @@ D_801294FC:
 
 # 80129504
 ptrTbl_80129504:
-	.word D_801294D4
-	.word D_801294DC
-	.word D_801294E4
-	.word D_801294EC
-	.word D_801294F4
-	.word D_801294FC
+	.word D_801294D4 # x
+	.word D_801294DC # height
+	.word D_801294E4 # y
+	.word D_801294EC # pitch
+	.word D_801294F4 # pan
+	.word D_801294FC # roll
 
 /*----------------------------------------------*/
 # 8012951C
@@ -18329,12 +18341,12 @@ D_80129558:
 
 # 80129564
 ptrTbl_80129564:
-	.word D_8012951C
-	.word D_80129528
-	.word D_80129534
-	.word D_80129540
-	.word D_8012954C
-	.word D_80129558
+	.word D_8012951C # x
+	.word D_80129528 # height
+	.word D_80129534 # y
+	.word D_80129540 # pitch
+	.word D_8012954C # pan
+	.word D_80129558 # roll
 
 /*----------------------------------------------*/
 # 8012957C
@@ -18363,12 +18375,12 @@ D_801295B8:
 
 # 801295C4
 ptrTbl_801295C4:
-	.word D_8012957C
-	.word D_80129588
-	.word D_80129594
-	.word D_801295A0
-	.word D_801295AC
-	.word D_801295B8
+	.word D_8012957C # x
+	.word D_80129588 # height
+	.word D_80129594 # y
+	.word D_801295A0 # pitch
+	.word D_801295AC # pan
+	.word D_801295B8 # roll
 
 /*----------------------------------------------*/
 # 801295DC
@@ -18397,12 +18409,12 @@ D_80129618:
 
 # 80129624
 ptrTbl_80129624:
-	.word D_801295DC
-	.word D_801295E8
-	.word D_801295F4
-	.word D_80129600
-	.word D_8012960C
-	.word D_80129618
+	.word D_801295DC # x
+	.word D_801295E8 # height
+	.word D_801295F4 # y
+	.word D_80129600 # pitch
+	.word D_8012960C # pan
+	.word D_80129618 # roll
 
 /*----------------------------------------------*/
 # 8012963C
@@ -18431,12 +18443,12 @@ D_80129678:
 
 # 80129684
 ptrTbl_80129684:
-	.word D_8012963C
-	.word D_80129648
-	.word D_80129654
-	.word D_80129660
-	.word D_8012966C
-	.word D_80129678
+	.word D_8012963C # x
+	.word D_80129648 # height
+	.word D_80129654 # y
+	.word D_80129660 # pitch
+	.word D_8012966C # pan
+	.word D_80129678 # roll
 
 /*----------------------------------------------*/
 # 8012969C
@@ -18465,12 +18477,12 @@ D_801296D8:
 
 # 801296E4
 ptrTbl_801296E4:
-	.word D_8012969C
-	.word D_801296A8
-	.word D_801296B4
-	.word D_801296C0
-	.word D_801296CC
-	.word D_801296D8
+	.word D_8012969C # x
+	.word D_801296A8 # height
+	.word D_801296B4 # y
+	.word D_801296C0 # pitch
+	.word D_801296CC # pan
+	.word D_801296D8 # roll
 
 /*----------------------------------------------*/
 # 801296FC
@@ -18499,12 +18511,12 @@ D_80129738:
 
 # 80129744
 ptrTbl_80129744:
-	.word D_801296FC
-	.word D_80129708
-	.word D_80129714
-	.word D_80129720
-	.word D_8012972C
-	.word D_80129738
+	.word D_801296FC # x
+	.word D_80129708 # height
+	.word D_80129714 # y
+	.word D_80129720 # pitch
+	.word D_8012972C # pan
+	.word D_80129738 # roll
 
 /*----------------------------------------------*/
 # 8012975C
@@ -18533,12 +18545,12 @@ D_80129798:
 
 # 801297A4
 ptrTbl_801297A4:
-	.word D_8012975C
-	.word D_80129768
-	.word D_80129774
-	.word D_80129780
-	.word D_8012978C
-	.word D_80129798
+	.word D_8012975C # x
+	.word D_80129768 # height
+	.word D_80129774 # y
+	.word D_80129780 # pitch
+	.word D_8012978C # pan
+	.word D_80129798 # roll
 
 /*----------------------------------------------*/
 # 801297BC
@@ -18567,12 +18579,12 @@ D_801297F8:
 
 # 80129804
 ptrTbl_80129804:
-	.word D_801297BC
-	.word D_801297C8
-	.word D_801297D4
-	.word D_801297E0
-	.word D_801297EC
-	.word D_801297F8
+	.word D_801297BC # x
+	.word D_801297C8 # height
+	.word D_801297D4 # y
+	.word D_801297E0 # pitch
+	.word D_801297EC # pan
+	.word D_801297F8 # roll
 
 /*----------------------------------------------*/
 # 8012981C
@@ -18601,12 +18613,12 @@ D_80129858:
 
 # 80129864
 ptrTbl_80129864:
-	.word D_8012981C
-	.word D_80129828
-	.word D_80129834
-	.word D_80129840
-	.word D_8012984C
-	.word D_80129858
+	.word D_8012981C # x
+	.word D_80129828 # height
+	.word D_80129834 # y
+	.word D_80129840 # pitch
+	.word D_8012984C # pan
+	.word D_80129858 # roll
 
 /*----------------------------------------------*/
 # 8012987C
@@ -18635,12 +18647,12 @@ D_801298B8:
 
 # 801298C4
 ptrTbl_801298C4:
-	.word D_8012987C
-	.word D_80129888
-	.word D_80129894
-	.word D_801298A0
-	.word D_801298AC
-	.word D_801298B8
+	.word D_8012987C # x
+	.word D_80129888 # height
+	.word D_80129894 # y
+	.word D_801298A0 # pitch
+	.word D_801298AC # pan
+	.word D_801298B8 # roll
 
 /*----------------------------------------------*/
 # 801298DC
@@ -18669,12 +18681,12 @@ D_80129918:
 
 # 80129924
 ptrTbl_80129924:
-	.word D_801298DC
-	.word D_801298E8
-	.word D_801298F4
-	.word D_80129900
-	.word D_8012990C
-	.word D_80129918
+	.word D_801298DC # x
+	.word D_801298E8 # height
+	.word D_801298F4 # y
+	.word D_80129900 # pitch
+	.word D_8012990C # pan
+	.word D_80129918 # roll
 
 /*----------------------------------------------*/
 # 8012993C
@@ -18703,12 +18715,12 @@ D_80129978:
 
 # 80129984
 ptrTbl_80129984:
-	.word D_8012993C
-	.word D_80129948
-	.word D_80129954
-	.word D_80129960
-	.word D_8012996C
-	.word D_80129978
+	.word D_8012993C # x
+	.word D_80129948 # height
+	.word D_80129954 # y
+	.word D_80129960 # pitch
+	.word D_8012996C # pan
+	.word D_80129978 # roll
 
 /*----------------------------------------------*/
 # 8012999C
@@ -18737,12 +18749,12 @@ D_801299C4:
 
 # 801299CC
 ptrTbl_801299CC:
-	.word D_8012999C
-	.word D_801299A4
-	.word D_801299AC
-	.word D_801299B4
-	.word D_801299BC
-	.word D_801299C4
+	.word D_8012999C # x
+	.word D_801299A4 # height
+	.word D_801299AC # y
+	.word D_801299B4 # pitch
+	.word D_801299BC # pan
+	.word D_801299C4 # roll
 
 /*----------------------------------------------*/
 # 801299E4
@@ -18771,12 +18783,12 @@ D_80129A0C:
 
 # 80129A14
 ptrTbl_80129A14:
-	.word D_801299E4
-	.word D_801299EC
-	.word D_801299F4
-	.word D_801299FC
-	.word D_80129A04
-	.word D_80129A0C
+	.word D_801299E4 # x
+	.word D_801299EC # height
+	.word D_801299F4 # y
+	.word D_801299FC # pitch
+	.word D_80129A04 # pan
+	.word D_80129A0C # roll
 
 /*----------------------------------------------*/
 # 80129A2C
@@ -18805,12 +18817,12 @@ D_80129A54:
 
 # 80129A5C
 ptrTbl_80129A5C:
-	.word D_80129A2C
-	.word D_80129A34
-	.word D_80129A3C
-	.word D_80129A44
-	.word D_80129A4C
-	.word D_80129A54
+	.word D_80129A2C # x
+	.word D_80129A34 # height
+	.word D_80129A3C # y
+	.word D_80129A44 # pitch
+	.word D_80129A4C # pan
+	.word D_80129A54 # roll
 
 /*----------------------------------------------*/
 # 80129A74
@@ -18839,12 +18851,12 @@ D_80129AB0:
 
 # 80129ABC
 ptrTbl_80129ABC:
-	.word D_80129A74
-	.word D_80129A80
-	.word D_80129A8C
-	.word D_80129A98
-	.word D_80129AA4
-	.word D_80129AB0
+	.word D_80129A74 # x
+	.word D_80129A80 # height
+	.word D_80129A8C # y
+	.word D_80129A98 # pitch
+	.word D_80129AA4 # pan
+	.word D_80129AB0 # roll
 
 /*----------------------------------------------*/
 # 80129AD4
@@ -18873,12 +18885,12 @@ D_80129B10:
 
 # 80129B1C
 ptrTbl_80129B1C:
-	.word D_80129AD4
-	.word D_80129AE0
-	.word D_80129AEC
-	.word D_80129AF8
-	.word D_80129B04
-	.word D_80129B10
+	.word D_80129AD4 # x
+	.word D_80129AE0 # height
+	.word D_80129AEC # y
+	.word D_80129AF8 # pitch
+	.word D_80129B04 # pan
+	.word D_80129B10 # roll
 
 /*----------------------------------------------*/
 # 80129B34
@@ -18907,12 +18919,12 @@ D_80129B70:
 
 # 80129B7C
 ptrTbl_80129B7C:
-	.word D_80129B34
-	.word D_80129B40
-	.word D_80129B4C
-	.word D_80129B58
-	.word D_80129B64
-	.word D_80129B70
+	.word D_80129B34 # x
+	.word D_80129B40 # height
+	.word D_80129B4C # y
+	.word D_80129B58 # pitch
+	.word D_80129B64 # pan
+	.word D_80129B70 # roll
 
 /*----------------------------------------------*/
 # 80129B94
@@ -18947,12 +18959,12 @@ D_80129C0C:
 
 # 80129C24
 ptrTbl_80129C24:
-	.word D_80129B94
-	.word D_80129BAC
-	.word D_80129BC4
-	.word D_80129BDC
-	.word D_80129BF4
-	.word D_80129C0C
+	.word D_80129B94 # x
+	.word D_80129BAC # height
+	.word D_80129BC4 # y
+	.word D_80129BDC # pitch
+	.word D_80129BF4 # pan
+	.word D_80129C0C # roll
 
 /*----------------------------------------------*/
 # 80129C3C
@@ -18981,12 +18993,12 @@ D_80129C78:
 
 # 80129C84
 ptrTbl_80129C84:
-	.word D_80129C3C
-	.word D_80129C48
-	.word D_80129C54
-	.word D_80129C60
-	.word D_80129C6C
-	.word D_80129C78
+	.word D_80129C3C # x
+	.word D_80129C48 # height
+	.word D_80129C54 # y
+	.word D_80129C60 # pitch
+	.word D_80129C6C # pan
+	.word D_80129C78 # roll
 
 /*----------------------------------------------*/
 # 80129C9C
@@ -19015,12 +19027,12 @@ D_80129CC4:
 
 # 80129CCC
 ptrTbl_80129CCC:
-	.word D_80129C9C
-	.word D_80129CA4
-	.word D_80129CAC
-	.word D_80129CB4
-	.word D_80129CBC
-	.word D_80129CC4
+	.word D_80129C9C # x
+	.word D_80129CA4 # height
+	.word D_80129CAC # y
+	.word D_80129CB4 # pitch
+	.word D_80129CBC # pan
+	.word D_80129CC4 # roll
 
 /*----------------------------------------------*/
 # 80129CE4
@@ -19060,12 +19072,12 @@ D_80129DD4:
 
 # 80129DE8
 ptrTbl_80129DE8:
-	.word D_80129CE4
-	.word D_80129D14
-	.word D_80129D44
-	.word D_80129D74
-	.word D_80129DA4
-	.word D_80129DD4
+	.word D_80129CE4 # x
+	.word D_80129D14 # height
+	.word D_80129D44 # y
+	.word D_80129D74 # pitch
+	.word D_80129DA4 # pan
+	.word D_80129DD4 # roll
 
 /*----------------------------------------------*/
 # 80129E00
@@ -19100,12 +19112,12 @@ D_80129E78:
 
 # 80129E90
 ptrTbl_80129E90:
-	.word D_80129E00
-	.word D_80129E18
-	.word D_80129E30
-	.word D_80129E48
-	.word D_80129E60
-	.word D_80129E78
+	.word D_80129E00 # x
+	.word D_80129E18 # height
+	.word D_80129E30 # y
+	.word D_80129E48 # pitch
+	.word D_80129E60 # pan
+	.word D_80129E78 # roll
 
 /*----------------------------------------------*/
 # 80129EA8
@@ -19134,12 +19146,12 @@ D_80129EE4:
 
 # 80129EF0
 ptrTbl_80129EF0:
-	.word D_80129EA8
-	.word D_80129EB4
-	.word D_80129EC0
-	.word D_80129ECC
-	.word D_80129ED8
-	.word D_80129EE4
+	.word D_80129EA8 # x
+	.word D_80129EB4 # height
+	.word D_80129EC0 # y
+	.word D_80129ECC # pitch
+	.word D_80129ED8 # pan
+	.word D_80129EE4 # roll
 
 /*----------------------------------------------*/
 # 80129F08
@@ -19168,12 +19180,12 @@ D_80129F30:
 
 # 80129F38
 ptrTbl_80129F38:
-	.word D_80129F08
-	.word D_80129F10
-	.word D_80129F18
-	.word D_80129F20
-	.word D_80129F28
-	.word D_80129F30
+	.word D_80129F08 # x
+	.word D_80129F10 # height
+	.word D_80129F18 # y
+	.word D_80129F20 # pitch
+	.word D_80129F28 # pan
+	.word D_80129F30 # roll
 
 /*----------------------------------------------*/
 # 80129F50
@@ -19202,12 +19214,12 @@ D_80129F78:
 
 # 80129F80
 ptrTbl_80129F80:
-	.word D_80129F50
-	.word D_80129F58
-	.word D_80129F60
-	.word D_80129F68
-	.word D_80129F70
-	.word D_80129F78
+	.word D_80129F50 # x
+	.word D_80129F58 # height
+	.word D_80129F60 # y
+	.word D_80129F68 # pitch
+	.word D_80129F70 # pan
+	.word D_80129F78 # roll
 
 /*----------------------------------------------*/
 # 80129F98
@@ -19236,12 +19248,12 @@ D_80129FD4:
 
 # 80129FE0
 ptrTbl_80129FE0:
-	.word D_80129F98
-	.word D_80129FA4
-	.word D_80129FB0
-	.word D_80129FBC
-	.word D_80129FC8
-	.word D_80129FD4
+	.word D_80129F98 # x
+	.word D_80129FA4 # height
+	.word D_80129FB0 # y
+	.word D_80129FBC # pitch
+	.word D_80129FC8 # pan
+	.word D_80129FD4 # roll
 
 /*----------------------------------------------*/
 # 80129FF8
@@ -19270,12 +19282,12 @@ D_8012A034:
 
 # 8012A040
 ptrTbl_8012A040:
-	.word D_80129FF8
-	.word D_8012A004
-	.word D_8012A010
-	.word D_8012A01C
-	.word D_8012A028
-	.word D_8012A034
+	.word D_80129FF8 # x
+	.word D_8012A004 # height
+	.word D_8012A010 # y
+	.word D_8012A01C # pitch
+	.word D_8012A028 # pan
+	.word D_8012A034 # roll
 
 /*----------------------------------------------*/
 # 8012A058
@@ -19304,12 +19316,12 @@ D_8012A080:
 
 # 8012A088
 ptrTbl_8012A088:
-	.word D_8012A058
-	.word D_8012A060
-	.word D_8012A068
-	.word D_8012A070
-	.word D_8012A078
-	.word D_8012A080
+	.word D_8012A058 # x
+	.word D_8012A060 # height
+	.word D_8012A068 # y
+	.word D_8012A070 # pitch
+	.word D_8012A078 # pan
+	.word D_8012A080 # roll
 
 /*----------------------------------------------*/
 # 8012A0A0
@@ -19338,12 +19350,12 @@ D_8012A0C8:
 
 # 8012A0D0
 ptrTbl_8012A0D0:
-	.word D_8012A0A0
-	.word D_8012A0A8
-	.word D_8012A0B0
-	.word D_8012A0B8
-	.word D_8012A0C0
-	.word D_8012A0C8
+	.word D_8012A0A0 # x
+	.word D_8012A0A8 # height
+	.word D_8012A0B0 # y
+	.word D_8012A0B8 # pitch
+	.word D_8012A0C0 # pan
+	.word D_8012A0C8 # roll
 
 /*----------------------------------------------*/
 # 8012A0E8
@@ -19372,12 +19384,12 @@ D_8012A110:
 
 # 8012A118
 ptrTbl_8012A118:
-	.word D_8012A0E8
-	.word D_8012A0F0
-	.word D_8012A0F8
-	.word D_8012A100
-	.word D_8012A108
-	.word D_8012A110
+	.word D_8012A0E8 # x
+	.word D_8012A0F0 # height
+	.word D_8012A0F8 # y
+	.word D_8012A100 # pitch
+	.word D_8012A108 # pan
+	.word D_8012A110 # roll
 
 /*----------------------------------------------*/
 # 8012A130
@@ -19412,12 +19424,12 @@ D_8012A1A8:
 
 # 8012A1C0
 ptrTbl_8012A1C0:
-	.word D_8012A130
-	.word D_8012A148
-	.word D_8012A160
-	.word D_8012A178
-	.word D_8012A190
-	.word D_8012A1A8
+	.word D_8012A130 # x
+	.word D_8012A148 # height
+	.word D_8012A160 # y
+	.word D_8012A178 # pitch
+	.word D_8012A190 # pan
+	.word D_8012A1A8 # roll
 
 /*----------------------------------------------*/
 # 8012A1D8
@@ -19452,16 +19464,16 @@ D_8012A250:
 
 # 8012A268
 ptrTbl_8012A268:
-	.word D_8012A1D8
-	.word D_8012A1F0
-	.word D_8012A208
-	.word D_8012A220
-	.word D_8012A238
-	.word D_8012A250
+	.word D_8012A1D8 # x
+	.word D_8012A1F0 # height
+	.word D_8012A208 # y
+	.word D_8012A220 # pitch
+	.word D_8012A238 # pan
+	.word D_8012A250 # roll
 
 /*----------------------------------------------------------------------------*/
 # 8012A280 (0x61B0 offset)
-# 0x00 [w]: pointer to some camera-related thing
+# 0x00 [w]: pointer to camea contols
 # 0x04 [s] 
 # 0x06 [s] camera motion preset?
 
