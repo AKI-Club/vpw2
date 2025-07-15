@@ -14365,6 +14365,7 @@ D_801267E0:
 # (src https://melonbread.co.uk/hacking-the-game-intro-camera-controls/)
 # - "The game actually halves the frame value"
 # - "the X axis is reversed for camera instructions"
+# - "for the X axis, moving East takes us into negative values is the OPPOSITE from the Wrestler coordinate values"
 # - (pitch) "negative values...point the camera upwards, positive values...point it downwards"
 
 # "Height" should probably be "Y" and original "Y" should probably be "Z"
