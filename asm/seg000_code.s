@@ -42785,7 +42785,7 @@ bss0_8011928C: .short 0
 bss0_80119294: .word 0
 	.skip 8
 
-# 801192A0 [w]
+# 801192A0 [w] current active costume number P1?
 bss0_801192A0: .word 0
 
 # 801192A4 [w]
