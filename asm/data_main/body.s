@@ -229,7 +229,7 @@ D_8003FF60:
 	.word 0x40000000 # 2.0f
 
 # 8003FFB0 (0x5C6C offset)
-# face blood texture
+# face blood texture (32x64px)
 D_8003FFB0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFFFFF
@@ -252,8 +252,6 @@ D_8003FFB0:
 	.word 0xFFFEEBFF
 	.word 0xFFFDEAFF
 	.word 0xFFFFCCFF
-
-D_80040004:
 	.word 0xFFFFAAFF
 	.word 0xFFFFEBFF
 	.word 0xFFFFE5FF
@@ -299,7 +297,7 @@ D_80040004:
 	.word 0xFFFFFFFF
 
 # 800400B0 (0x5D6C offset)
-# neck blood texture
+# neck blood texture (64x32px)
 D_800400B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFEC128
@@ -367,7 +365,7 @@ D_800400B0:
 	.word 0xFFF9DD7B
 
 # 800401B0
-# chest blood texture type 1
+# chest blood texture type 1 (64x32px, mirrored horizontally to cover 128x32px)
 D_800401B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFF9C0
@@ -435,7 +433,7 @@ D_800401B0:
 	.word 0xFFFFFFFF
 
 # 800402B0
-# chest blood texture type 2
+# chest blood texture type 2 (64x32px, mirrored vertically to cover 64x64px)
 D_800402B0:
 	.word 0xFFFFFFFF
 	.word 0xFFFFFFFF
