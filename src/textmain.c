@@ -154,7 +154,36 @@ GLOBAL_ASM("asm/textmain/func_80003330.s")
 GLOBAL_ASM("asm/textmain/func_80003374.s")
 GLOBAL_ASM("asm/textmain/func_80003390.s")
 GLOBAL_ASM("asm/textmain/thread_800033d4.s")
+
+/*------------------------------------------------------------*/
 GLOBAL_ASM("asm/textmain/ClearFramebuffers_800036b4.s")
+
+/*
+extern s32 framebuffer_8038F800;
+extern s32 framebuffer_803C7C00;
+
+void ClearFramebuffers(void) {
+    s32* var_a0;
+    s32* var_a0_2;
+    u32 var_v1;
+    u32 var_v1_2;
+
+    var_a0 = &framebuffer_803C7C00;
+    var_v1 = 0;
+    do {
+        *var_a0 = 0;
+        var_v1 += 1;
+        var_a0 += 1;
+    } while (var_v1 <= 0xE0FFU);
+    var_a0_2 = &framebuffer_8038F800;
+    var_v1_2 = 0;
+    do {
+        *var_a0_2 = 0;
+        var_v1_2 += 1;
+        var_a0_2 += 1;
+    } while (var_v1_2 <= 0xE0FFU);
+}
+*/
 
 /*============================================================================*/
 GLOBAL_ASM("asm/textmain/SetupSoundTable_123_80003720.s")
