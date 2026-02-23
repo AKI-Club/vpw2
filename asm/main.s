@@ -51649,7 +51649,7 @@ bssMain_800A24B8: .word 0
 bssMain_800A24BC: .word 0
 
 /*----------------------------------------------------------------------------*/
-# 800A24C0: file ID 0x0276 loaded here in-game (contains weapon damage mods?)
+# 800A24C0: file ID 0x0276 loaded here in-game (GenericDamageStats - for moves that are shared between all wrestlers (including missed dives, weapon damage, etc))
 bssMain_800A24C0: .byte 0
 	.skip 0xC7B
 
