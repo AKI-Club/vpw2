@@ -51582,7 +51582,7 @@ bssMain_800A0800: .word 0
 bssMain_800A08AC: .byte 0
 	.skip 0x2A3
 
-# 800A0B50 [b?]
+# 800A0B50 Used for face texture blood overlay (0x514 offset between players), 0x00 is face, offset 0x340 is neck, offset 0x374 is chest
 bssMain_800A0B50: .byte 0
 	.skip 0x1F
 
