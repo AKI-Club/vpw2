@@ -51582,7 +51582,7 @@ bssMain_800A0800: .word 0
 bssMain_800A08AC: .byte 0
 	.skip 0x2A3
 
-# 800A0B50 [b?]
+# 800A0B50 Used for face texture blood overlay (0x514 offset between players), 0x00 is face, offset 0x340 is neck, offset 0x374 is chest
 bssMain_800A0B50: .byte 0
 	.skip 0x1F
 
@@ -51649,7 +51649,7 @@ bssMain_800A24B8: .word 0
 bssMain_800A24BC: .word 0
 
 /*----------------------------------------------------------------------------*/
-# 800A24C0: file ID 0x0276 loaded here in-game (contains weapon damage mods?)
+# 800A24C0: file ID 0x0276 loaded here in-game (GenericDamageStats - for moves that are shared between all wrestlers (including missed dives, weapon damage, etc))
 bssMain_800A24C0: .byte 0
 	.skip 0xC7B
 
