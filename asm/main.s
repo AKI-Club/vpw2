@@ -13281,6 +13281,7 @@ BitRWSetup:
 # $a1 - 
 # $a2 - number of bits?
 
+# xxx: should actually be WriteBits
 ReadBits:
 /* 023B04 80022F04 27BDFFF8 */  addiu $sp, $sp, -8
 /* 023B08 80022F08 10C00022 */  beqz  $a2, .L80022F94
@@ -13345,6 +13346,7 @@ ReadBits:
 
 # return value in $v0
 
+# xxx: should actually be ReadBits
 WriteBits:
 /* 023BB8 80022FB8 00804021 */  addu  $t0, $a0, $zero
 /* 023BBC 80022FBC 10A00022 */  beqz  $a1, .L80023048
