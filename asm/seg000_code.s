@@ -38288,7 +38288,9 @@ D_801089BD:
 	.byte 4
 	.byte 0, 0
 
-# 801089C0 [h]
+/*============================================================================*/
+# 801089C0 [h] "tbl_SaveSections"
+# each entry { u16 offset, u16 stored, u16 used, pad }
 D_801089C0:
 	.short 0
 
@@ -38393,7 +38395,8 @@ D0_80108A10:
 D0_80108A12:
 	.short 0x0050, 0x0040, 0x0000
 
-# 80108A18 [h]
+/*============================================================================*/
+# 80108A18 [h] more SaveSection stuff
 D0_80108A18:
 	.short 0
 
@@ -38401,11 +38404,9 @@ D0_80108A18:
 D0_80108A1A:
 	.short 0x7DE0, 0x0000, 0x0000
 
-	.short 0
-	.short 0x7DE0, 0x0000, 0x0000
+	.short 0, 0x7DE0, 0x0000, 0x0000
 
-	.short 0
-	.short 0x6B50, 0x6B3E, 0x0000
+	.short 0, 0x6B50, 0x6B3E, 0x0000
 
 	.short 0x8000, 0x1D00, 0x1C88, 0x0000
 
@@ -38721,31 +38722,36 @@ D_80108CAC:
 	.byte 0x00, 0x34
 
 /*----------------------------------------------------------------------------*/
-# 80108CB4 (0x4B24 offset)
+# 80108CB4 (0x4B24 offset) "tbl0_TitleBeltIndexHigh"
 D_80108CB4:
 	.byte 0x15, 0x16, 0x71, 0
 
 D_80108CB8:
 	.word 0
 
+# "gWrestlerRecordOrder"
 D_80108CBC:
 	.word 0
 
 /*----------------------------------------------------------------------------*/
 # 80108CC0 (0x4B30 offset) [w]
+# "gSaveBuffer"
 
 # pointer to malloc'd data
 D_80108CC0:
 	.word 0
 
+# "gSaveSiQueue"
 D_80108CC4:
 	.word 0
 
+# "dynPtr_PakNoteList"
 D_80108CC8:
 	.word 0
 
 /*----------------------------------------------------------------------------*/
 # 80108CCC (0x4B3C offset): Various Shift-JIS characters
+# "tbl0_PakCharToSjis"
 D_80108CCC:
 	.short 0x8140, 0x8140
 	.short 0x8140, 0x8140, 0x8140, 0x8140, 0x8140, 0x8140, 0x8140, 0x8140
