@@ -1,3 +1,4 @@
+# Wrestler_GetWeight (func_80009E6C)
 # Params:
 # $a0 = wrestler ID4
 
@@ -9,6 +10,6 @@ glabel func_80009E6C
 
 /* 00AA7C 80009E7C 94420002 */  lhu   $v0, 2($v0)
 /* 00AA80 80009E80 8FBF0010 */  lw    $ra, 0x10($sp)
-/* 00AA84 80009E84 24420046 */  addiu $v0, $v0, 0x46
+/* 00AA84 80009E84 24420046 */  addiu $v0, $v0, 0x46 # add 70
 /* 00AA88 80009E88 03E00008 */  jr    $ra
 /* 00AA8C 80009E8C 27BD0018 */   addiu $sp, $sp, 0x18
