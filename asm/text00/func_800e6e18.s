@@ -1,3 +1,4 @@
+# Menus1_ResetFrameClock
 glabel func_800E6E18
 /* 04C268 800E6E18 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04C26C 800E6E1C AFBF0010 */  sw    $ra, 0x10($sp)

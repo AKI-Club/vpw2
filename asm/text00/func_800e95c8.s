@@ -1,3 +1,4 @@
+# Menu_DrawTextEffect
 glabel func_800E95C8
 /* 04EA18 800E95C8 27BDFFA8 */  addiu $sp, $sp, -0x58
 /* 04EA1C 800E95CC AFB5004C */  sw    $s5, 0x4c($sp)

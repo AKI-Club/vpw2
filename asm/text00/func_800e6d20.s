@@ -1,3 +1,4 @@
+# Menus1_LoadModels
 glabel func_800E6D20
 /* 04C170 800E6D20 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 04C174 800E6D24 AFBF0018 */  sw    $ra, 0x18($sp)

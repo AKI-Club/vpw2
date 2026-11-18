@@ -89710,6 +89710,8 @@ func3_GetPlayerHealth:
 /* 12ADDC 8013072C 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
+# Player_AddHealth
+
 # Params:
 # $a0 - player map data pointer
 # $a1 - health change amount?
@@ -89860,6 +89862,8 @@ func3_80130730:
 /* 12AF8C 801308DC 27BD0038 */   addiu $sp, $sp, 0x38
 
 /*----------------------------------------------------------------------------*/
+# Player_UpdateHealthRegen
+
 # Params:
 # $a0 - player map address
 # $a1 - ??
@@ -89917,6 +89921,8 @@ func3_801308E0:
 /* 12B014 80130964 27BD0018 */   addiu $sp, $sp, 0x18
 
 /*----------------------------------------------------------------------------*/
+# Player_AddSpirit
+
 # Params:
 # $a0 - Player map pointer?
 # $a1 - Spirit change value
@@ -89973,6 +89979,8 @@ func3_80130968:
 /* 12B0A0 801309F0 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
+# Player_UpdateSpirit
+
 # Params:
 # $a0 - Player map address
 # $a1 - action to perform?
@@ -90207,6 +90215,8 @@ func3_801309F4:
 /* 12B314 80130C64 27BD0008 */   addiu $sp, $sp, 8
 
 /*----------------------------------------------------------------------------*/
+# Player_GetSpiritHudValues
+
 # Params:
 # $a0 - player number
 # $a1 - (write destination 1)
@@ -90264,7 +90274,7 @@ func3_80130C68:
 /* 12B3AC 80130CFC 0002102B */   sltu  $v0, $zero, $v0
 
 /*----------------------------------------------------------------------------*/
-# related to spirit meter flashing?
+# Player_HasSpecial
 
 # Params:
 # $a0 - player number
@@ -90286,7 +90296,7 @@ func3_80130D00:
 /* 12B3E0 80130D30 0002102B */   sltu  $v0, $zero, $v0
 
 /*----------------------------------------------------------------------------*/
-# related to super special?
+# Player_HasSuperSpecial
 
 # Params:
 # $a0 - player number
@@ -90313,6 +90323,7 @@ func3_80130D34:
 /*============================================================================*/
 /* --- file break: battle royal-related code? --- */
 
+# Match_UpdateRunIns
 func3_80130D70:
 /* 12B420 80130D70 3C02800A */  lui   $v0, %hi(bssMain_800980A0) # $v0, 0x800a
 /* 12B424 80130D74 8C4280A0 */  lw    $v0, %lo(bssMain_800980A0)($v0)
@@ -111684,6 +111695,8 @@ func3_801400F8:
 /* 13AEB4 80140804 27BD0108 */   addiu $sp, $sp, 0x108
 
 /*----------------------------------------------------------------------------*/
+# Random_SeedPool
+
 # Params:
 # $a0 -
 
@@ -111735,7 +111748,7 @@ func3_80140808:
 /* 13AF38 80140888 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
-# todo: related to random numbers
+# Random_FromPool
 
 func3_8014088C:
 /* 13AF3C 8014088C 27BDFFE0 */  addiu $sp, $sp, -0x20
@@ -111761,7 +111774,8 @@ func3_8014088C:
 /* 13AF84 801408D4 27BD0020 */   addiu $sp, $sp, 0x20
 
 /*----------------------------------------------------------------------------*/
-# todo: related to random number probability
+# Random_Chance1000
+# related to random number probability
 
 # Params:
 # $a0 - 
@@ -111803,7 +111817,7 @@ func3_801408D8:
 /* 13AFF0 80140940 27BD0020 */   addiu $sp, $sp, 0x20
 
 /*----------------------------------------------------------------------------*/
-# related to random numbers
+# Random_Next1000
 
 func3_80140944:
 /* 13AFF4 80140944 3C075D58 */  lui   $a3, (0x5D588B65 >> 16) # lui $a3, 0x5d58
@@ -116255,6 +116269,8 @@ func3_80143B00:
 /* 13E3DC 80143D2C 00000000 */  nop   
 /*============================================================================*/
 /* --- file break --- */
+
+# ButtonMapping_Apply
 
 # Params:
 # $a0 - player/controller number?
@@ -124303,6 +124319,7 @@ func3_8014967C:
 /* 143E1C 8014976C 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
+# Clock_Tick
 # Used for updating various timers.
 # (includes pinfall, outside count, and match time)
 
@@ -124340,6 +124357,7 @@ func3_80149770:
 /* 143E6C 801497BC 00000000 */   nop   
 
 /*----------------------------------------------------------------------------*/
+# Clock_Set
 # Params:
 # $a0 - Pointer to data to write
 # $a1 - First value to write
@@ -134603,6 +134621,8 @@ func3_80150D3C:
 /* 14B428 80150D78 A0A20070 */   sb    $v0, 0x70($a1)
 
 /*----------------------------------------------------------------------------*/
+# Weapon_GetHitSphere
+
 # Params:
 # $a0 -
 # $a1 -
@@ -134755,6 +134775,8 @@ func3_80150D7C:
 /* 14B638 80150F88 27BD0078 */   addiu $sp, $sp, 0x78
 
 /*----------------------------------------------------------------------------*/
+# Player_TryGrabWeaponAtRingside
+
 # Params:
 # $a0 -
 # $a1 -
@@ -134907,6 +134929,8 @@ func3_80150F8C:
 /* 14B7F4 80151144 27BD0028 */   addiu $sp, $sp, 0x28
 
 /*----------------------------------------------------------------------------*/
+# Player_SpawnMist
+
 # Params:
 # $a0 -
 # $a1 -
@@ -135042,6 +135066,8 @@ func3_80151148:
 /* 14B9B4 80151304 27BD0058 */   addiu $sp, $sp, 0x58
 
 /*----------------------------------------------------------------------------*/
+# Player_ApplyMistColorToVictim
+
 # Params:
 # $a0 - Primary/attacking player map pointer
 # $a1 - Secondary/victim player map pointer

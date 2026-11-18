@@ -1,3 +1,4 @@
+# Menus1_Init
 glabel func_800E6BA0
 /* 04BFF0 800E6BA0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04BFF4 800E6BA4 AFB00010 */  sw    $s0, 0x10($sp)

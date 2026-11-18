@@ -1,3 +1,4 @@
+# Menus1_DrawFrame
 glabel func_800E6E60
 /* 04C2B0 800E6E60 3C048010 */  lui   $a0, %hi(D_801041E0) # $a0, 0x8010
 /* 04C2B4 800E6E64 8C8441E0 */  lw    $a0, %lo(D_801041E0)($a0)

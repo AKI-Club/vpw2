@@ -1,3 +1,4 @@
+# Menu_DrawTextAligned
 glabel func_800E8E9C
 /* 04E2EC 800E8E9C 27BDFFA8 */  addiu $sp, $sp, -0x58
 /* 04E2F0 800E8EA0 AFB7004C */  sw    $s7, 0x4c($sp)

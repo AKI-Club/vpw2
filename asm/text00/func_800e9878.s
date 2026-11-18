@@ -1,3 +1,4 @@
+# Menu_AllocTextQueues
 glabel func_800E9878
 /* 04ECC8 800E9878 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04ECCC 800E987C AFBF0010 */  sw    $ra, 0x10($sp)
